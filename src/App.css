@@ -1,6 +1,22 @@
+#container {
+  display: flex;
+  justify-content: center;
+}
+
+#card {
+  width: 95vw;
+}
+
+@media screen and (min-width: 1025px) {
+  #card {
+    width: 75vw;
+  }
+}
+
 #searchBar {
   display: block;
   margin: 0 auto;
+  margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
 }

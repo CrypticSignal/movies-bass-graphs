@@ -49,7 +49,7 @@ function App() {
   }, [searchTerm, allMovies]);
 
   return (
-    <Container fluid>
+    <div id="container">
       {moviesToShow.length || !showLoading ? (
         <div>
           <input
@@ -61,6 +61,7 @@ function App() {
 
           {moviesToShow.map((data) => (
             <Card
+              id="card"
               key={data.id}
               className="mb-2"
               onClick={() => window.open(data.imgurURL, "_self")}
@@ -68,7 +69,7 @@ function App() {
               <Card.Body>
                 <Card.Title className="text-center">{data.movieName}</Card.Title>
               </Card.Body>
-              <Card.Img variant="bottom" src={data.imgurURL} />
+              <img variant="bottom" src={data.imgurURL} />
             </Card>
           ))}
           <PageSelector
@@ -80,7 +81,7 @@ function App() {
       ) : (
         <p>Loading...</p>
       )}
-    </Container>
+    </div>
   );
 }
 
