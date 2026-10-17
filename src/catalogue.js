@@ -1,4 +1,4 @@
-export const OCTAVE_RANGES = ['10-20', '20-40', '30-60', '40-80'];
+export const OCTAVE_RANGES = ['10-20', '20-40', '30-60', '40-80', '50-100', '60-120'];
 export const imageURL = movie => movie?.imagePath ? import.meta.env.BASE_URL + movie.imagePath : null;
 
 export function metadata(movie, extra = {}) {
