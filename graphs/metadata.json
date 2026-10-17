@@ -2009,5 +2009,9 @@
   "618": {
     "format": "DTS-HD Master Audio",
     "formatSource": "graph-header-ocr"
+  },
+  "149-without-sine-wave-intro": {
+    "format": "DTS-HD Master Audio",
+    "formatSource": "graph-header-ocr"
   }
 }
