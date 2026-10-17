@@ -4,6 +4,9 @@ on:
     branches: [main]
     paths-ignore:
       - README.md
+      - scripts/**
+      - .github/workflows/sync.yml
+      - .github/workflows/deploy.yml
       - .github/workflows/recover-graphs.yml
   workflow_dispatch:
 permissions:

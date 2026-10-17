@@ -52,3 +52,11 @@ Vite writes the production site to `dist/`. Update `base` in `vite.config.js` if
 The build workflow publishes `dist/` to the existing `gh-pages` branch. Publishing runs from that branch to respect the repository's deployment restriction. Only successful builds are published.
 
 Built with React 19, Vite, and plain CSS.
+
+## Automatic spreadsheet sync
+
+The **Sync spreadsheet graphs** workflow runs daily at **04:23 UTC** (GitHub may delay scheduled runs) and can be started manually from Actions. It reads the spreadsheet directly, downloads new or changed direct Imgur image URLs, and extracts soundtrack labels for newly cached graphs. Already cached URLs are skipped.
+
+Failed downloads retain the last saved image and are retried on subsequent runs. Removed spreadsheet entries remain archived so saved graphs and shared links are preserved. Album links and inaccessible sources may remain unavailable. Replacing a graph requires changing its image URL in the spreadsheet; cached images are not repeatedly downloaded at the same URL.
+
+Only changed catalogue, metadata, or image files are committed. The sync then explicitly starts publishing; unchanged runs do not rebuild or deploy the site. GitHub can disable scheduled workflows after prolonged repository inactivity; a manual run remains available.

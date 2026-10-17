@@ -9,7 +9,6 @@ import subprocess
 from PIL import Image, ImageOps
 
 root = Path('public')
-rows = json.loads((root / 'graphs/catalogue.json').read_text())
 
 def extract(row):
     result = {'format': 'Unknown'}
@@ -42,8 +41,13 @@ def extract(row):
                 break
     return str(row['id']), result
 
-with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
-    details = dict(pool.map(extract, rows))
-(root / 'graphs/metadata.json').write_text(json.dumps(details, indent=2) + '\n')
-from collections import Counter
-print('Extracted soundtrack formats:', dict(Counter(value['format'] for value in details.values())), flush=True)
+def main():
+    rows = json.loads((root / 'graphs/catalogue.json').read_text())
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+        details = dict(pool.map(extract, rows))
+    (root / 'graphs/metadata.json').write_text(json.dumps(details, indent=2) + '\n')
+    from collections import Counter
+    print('Extracted soundtrack formats:', dict(Counter(value['format'] for value in details.values())), flush=True)
+
+if __name__ == '__main__':
+    main()
