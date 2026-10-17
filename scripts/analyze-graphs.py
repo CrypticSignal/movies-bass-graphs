@@ -17,6 +17,7 @@ ROOT = Path('public/graphs')
 OUTPUT = ROOT / 'levels.json'
 VERSION = 6
 PLOT_BOUNDARY_VERSION = 2
+AXIS_READER_VERSION = 2
 START_HZ = 0.5
 STEP_HZ = 0.5
 MAX_HZ = 200
@@ -91,7 +92,7 @@ def curve_pixels_outside_artwork(ys, artwork_column):
     kept = [run for run in runs if not np.all(artwork_column[run])]
     return np.concatenate(kept) if kept else np.array([], dtype=int)
 
-def analyze(path, manual=None):
+def analyze(path, manual=None, wide_labels=False):
     image = Image.open(path).convert('RGB')
     pixels = np.asarray(image).astype(np.int16)
     height, width = pixels.shape[:2]
@@ -117,7 +118,7 @@ def analyze(path, manual=None):
                 bottom = float(plot_rows[-1] + 1)
     if bottom < height * .6 or bottom > height - 5:
         raise ValueError('Plot boundary uncertain')
-    right_width = max(80, int(width * .065))
+    right_width = max(80, int(width * (.20 if wide_labels else .065)))
     if manual is not None:
         if manual['dimensions'] != [width, height]:
             raise ValueError('Manual calibration dimensions do not match image')
@@ -132,7 +133,7 @@ def analyze(path, manual=None):
         labels = ocr(image.crop((width - right_width, 0, width, int(bottom))), (width - right_width, 0))
         db_points = []
         for text, x, y in labels:
-            if x < width - right_width * .6:
+            if x < width - right_width * (.95 if wide_labels else .6):
                 continue
             match = re.fullmatch(r'(-?\d{1,3}(?:[.,]\d{1,2})?)(?:dB)?', text, re.I)
             if not match:
@@ -178,7 +179,7 @@ def analyze(path, manual=None):
         for sample in range(int((MAX_HZ - START_HZ) / STEP_HZ) + 1):
             frequency = START_HZ + sample * STEP_HZ
             x = int(round((frequency - hz_intercept) / hz_slope))
-            if not frequency_low <= frequency <= frequency_high or not 2 <= x < width - right_width:
+            if not frequency_low <= frequency <= frequency_high or not 2 <= x < width - max(80, int(width * .065)):
                 values.append(None)
                 continue
             ys = np.nonzero(mask[int(plot_top):int(bottom), x:x + 1])[0] + int(plot_top)
@@ -215,13 +216,20 @@ def main():
         cached = cache.get(identifier, {})
         retry_boundary = (cached.get('reason') == 'Plot boundary uncertain'
                           and cached.get('boundaryReaderVersion', 1) < PLOT_BOUNDARY_VERSION)
-        if cached.get('fingerprint') == fingerprint and cached.get('manualCalibration') == signature and not retry_boundary:
+        retry_axis = (cached.get('status') == 'unreadable'
+                      and cached.get('axisReaderVersion', 1) < AXIS_READER_VERSION)
+        if cached.get('fingerprint') == fingerprint and cached.get('manualCalibration') == signature and not retry_boundary and not retry_axis:
             return identifier, {**cache[identifier], 'imagePath': row['imagePath']}
         try:
-            result = analyze(path, manual)
+            try:
+                result = analyze(path, manual)
+            except ValueError:
+                if manual is not None:
+                    raise
+                result = analyze(path, wide_labels=True)
         except Exception as error:
             result = {'status': 'unreadable', 'reason': str(error)}
-        return identifier, {'imagePath': row['imagePath'], 'fingerprint': fingerprint, 'manualCalibration': signature, 'boundaryReaderVersion': PLOT_BOUNDARY_VERSION, **result}
+        return identifier, {'imagePath': row['imagePath'], 'fingerprint': fingerprint, 'manualCalibration': signature, 'boundaryReaderVersion': PLOT_BOUNDARY_VERSION, 'axisReaderVersion': AXIS_READER_VERSION, **result}
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         graphs = dict(pool.map(process, rows))
     output = {'version': VERSION, 'startHz': START_HZ, 'stepHz': STEP_HZ, 'maxHz': MAX_HZ, 'graphs': graphs}
@@ -231,4 +239,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
