@@ -68,7 +68,7 @@ function Viewer({ movie, comparison, previous, next, onClose }) {
 export default function App() {
   const [state, setState] = useState(readState);
   const stateRef = useRef(state);
-  const [frequencyInput, setFrequencyInput] = useState(() => readState().frequency || 20);
+  const [frequencyInput, setFrequencyInput] = useState(() => readState().frequency || '');
   const [levelsStatus, setLevelsStatus] = useState('loading');
   const queryEditing = useRef(false);
   const [movies, setMovies] = useState([]);
@@ -110,7 +110,7 @@ export default function App() {
     setState(updated);
   }
   useEffect(() => {
-    const restore = () => { queryEditing.current = false; const restored = readState(); stateRef.current = restored; setState(restored); setFrequencyInput(restored.frequency || 20); };
+    const restore = () => { queryEditing.current = false; const restored = readState(); stateRef.current = restored; setState(restored); setFrequencyInput(restored.frequency || ''); };
     window.addEventListener('popstate', restore);
     return () => window.removeEventListener('popstate', restore);
   }, []);
@@ -189,7 +189,7 @@ export default function App() {
           {state[filter.key] && !filter.values.includes(state[filter.key]) && <option value={state[filter.key]}>{state[filter.key]}</option>}
           {filter.values.map(value => <option key={value}>{value}</option>)}
         </select></label>)}
-        <button className="reset" onClick={() => update({ q: '', year: '', format: '', letter: '', frequency: '' })}>Reset filters</button>
+        <button className="reset" onClick={() => { setFrequencyInput(''); update({ q: '', year: '', format: '', letter: '', frequency: '' }); }}>Reset filters</button>
       </section>
       <form className="frequency-panel" onSubmit={event => {
         event.preventDefault();
@@ -199,13 +199,23 @@ export default function App() {
         update({ frequency });
         scrollToResults(350);
       }}>
-        <label>Frequency (Hz, 1–200)<input type="number" min="1" max="200" step="1" required value={frequencyInput}
-          onChange={event => setFrequencyInput(event.target.value)} /></label>
+        <label>Frequency (Hz, 1–200)<input type="number" min="1" max="200" step="1" required placeholder="20" enterKeyHint="search" value={frequencyInput}
+          onKeyDown={event => {
+            if (event.key === 'Enter' && !event.nativeEvent.isComposing) {
+              event.preventDefault();
+              event.currentTarget.form.requestSubmit();
+            }
+          }}
+          onChange={event => {
+            const value = event.target.value;
+            setFrequencyInput(value);
+            const frequency = Number(value);
+            update({ frequency: value !== '' && Number.isInteger(frequency) && frequency >= 1 && frequency <= 200 ? frequency : '' }, true);
+          }} /></label>
         <label>Curve<select value={state.curve} onChange={event => update({ curve: event.target.value })}>
           <option value="green">Green curve</option><option value="red">Red curve</option>
         </select></label>
-        <button type="submit">Rank highest first</button>
-        {state.frequency && <button type="button" onClick={() => update({ frequency: '' })}>Clear ranking</button>}
+        {state.frequency && <button type="button" onClick={() => { setFrequencyInput(''); update({ frequency: '' }); }}>Clear ranking</button>}
         <span>Estimated value at the exact frequency, not an average. Read from the image’s dB scale; not subwoofer SPL.</span>
       </form>
       <nav className="alphabet" aria-label="Browse by title">
