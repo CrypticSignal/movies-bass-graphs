@@ -125,11 +125,11 @@ export default function App() {
       }),
       fetch(import.meta.env.BASE_URL + 'graphs/metadata.json', { signal: controller.signal })
         .then(response => response.ok ? response.json() : {}).catch(() => ({})),
-      fetch(import.meta.env.BASE_URL + 'graphs/levels.json', { signal: controller.signal })
+      fetch(import.meta.env.BASE_URL + 'graphs/levels.json?sampling=0.5&schema=3', { signal: controller.signal, cache: 'no-cache' })
         .then(response => response.ok ? response.json() : null).catch(() => null),
     ]).then(([rows, details, levels]) => {
       if (!Array.isArray(rows) || rows.some(row => typeof row.movieName !== 'string' || !row.id)) throw new Error('Invalid catalogue');
-      if (!controller.signal.aborted) { setMovies(rows.map(row => ({ ...metadata(row, details[row.id] || {}), frequencyAnalysis: levels?.graphs?.[row.id] ? { ...levels.graphs[row.id], startHz: levels.startHz, stepHz: levels.stepHz } : undefined }))); setLevelsStatus(levels?.graphs ? 'ready' : 'unavailable'); setStatus('ready'); }
+      if (!controller.signal.aborted) { setMovies(rows.map(row => ({ ...metadata(row, details[row.id] || {}), frequencyAnalysis: levels?.stepHz === 0.5 && levels?.version >= 3 && levels?.graphs?.[row.id] ? { ...levels.graphs[row.id], startHz: levels.startHz, stepHz: levels.stepHz } : undefined }))); setLevelsStatus(levels?.graphs ? levels.stepHz === 0.5 && levels.version >= 3 ? 'ready' : 'outdated' : 'unavailable'); setStatus('ready'); }
     }).catch(error => { if (error.name !== 'AbortError' && !controller.signal.aborted) setStatus('error'); });
     return () => controller.abort();
   }, [attempt]);
@@ -246,7 +246,7 @@ export default function App() {
       <div className="results-heading"><p><strong>{filtered.length}</strong> {filtered.length === 1 ? 'entry' : 'entries'}<span> / {movies.length} in the archive</span></p>
         <span>Select up to two graphs to compare</span></div>
       {rankingActive && <p className="frequency-summary" role="status">{levelsStatus !== 'ready'
-        ? 'Frequency readings are unavailable. Graphs are shown without a ranking.'
+        ? levelsStatus === 'outdated' ? 'The frequency data is outdated. Reload this page to retrieve the 0.5 Hz readings; rankings are temporarily unavailable.' : 'Frequency readings are unavailable. Graphs are shown without a ranking.'
         : `${rankedCount} of ${filtered.length} matching graphs ranked by the ${state.curve} curve ${rankingLabel}, highest first. Graphs with uncertain or missing readings are listed afterward as unranked.`}</p>}
       <p role="status" className="action-message">{message}</p>
       <div ref={resultsRef} style={{ scrollMarginTop: 16, minHeight: 'calc(100svh - 16px)' }}>
