@@ -2,12 +2,12 @@ import { curvePeak, imageURL, rankingReading } from '../catalogue.js';
 import { GraphImage } from './GraphTools.jsx';
 
 function FrequencyReading({ reading, overallPeak, curve, label }) {
-  const { level, peak } = reading;
+  const { level, peak } = reading ?? {};
   return (
     <p className="mt-[14px] mb-0 px-4 text-[12px] text-accent">
-      {level === null
+      {(reading || overallPeak) && (level === null
         ? `Unranked ${label} — no complete, reliable ${curve} curve reading`
-        : `${level.toFixed(1)} dB ${label} | ${curve} curve`}
+        : `${level.toFixed(1)} dB ${label} | ${curve} curve`)}
       {peak && (
         <span className="mt-1 block">
           Octave Peak: {peak.level.toFixed(1)} dB at {peak.frequency} Hz
@@ -23,9 +23,10 @@ function FrequencyReading({ reading, overallPeak, curve, label }) {
 }
 
 export default function GraphCard({
-  movie, rank, rankingState, rankingLabel, selected, onCompare, onInspect,
+  movie, rank, rankingState, rankingLabel, curve = 'green', selected, onCompare, onInspect,
 }) {
   const reading = rankingState ? rankingReading(movie, rankingState) : null;
+  const overallPeak = curvePeak(movie, curve);
   const hasImage = Boolean(imageURL(movie));
 
   return (
@@ -70,8 +71,8 @@ export default function GraphCard({
       {reading && (
         <FrequencyReading
           reading={reading}
-          overallPeak={curvePeak(movie, rankingState.curve)}
-          curve={rankingState.curve}
+          overallPeak={overallPeak}
+          curve={curve}
           label={rankingLabel}
         />
       )}

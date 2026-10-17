@@ -166,6 +166,7 @@ export default function App() {
                   movie={movie}
                   rank={movieIndex + 1}
                   rankingState={rankingActive ? state : null}
+                  curve={state.curve}
                   rankingLabel={rankingLabel}
                   selected={state.compare.includes(movie.id)}
                   onCompare={() => toggleCompare(movie)}
