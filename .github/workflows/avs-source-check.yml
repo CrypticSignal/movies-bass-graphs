@@ -13,17 +13,23 @@ jobs:
       - run: pip install beautifulsoup4 websocket-client
       - name: Read first-post film list in browser
         run: |
-          xvfb-run -a google-chrome --no-sandbox --disable-dev-shm-usage --use-gl=angle --use-angle=swiftshader --enable-unsafe-swiftshader --remote-debugging-port=9222 --user-data-dir=/tmp/avs-browser about:blank >/tmp/chrome.log 2>&1 &
+          xvfb-run -a google-chrome --no-sandbox --no-first-run --no-default-browser-check --disable-extensions --disable-dev-shm-usage --use-gl=angle --use-angle=swiftshader --enable-unsafe-swiftshader --remote-debugging-port=9222 --user-data-dir=/tmp/avs-browser about:blank >/tmp/chrome.log 2>&1 &
           python - <<'PY'
           import urllib.request, json, time
           import websocket
           from bs4 import BeautifulSoup
-          for attempt in range(20):
+          local = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+          pages = None
+          for attempt in range(45):
               try:
-                  pages = json.load(urllib.request.urlopen('http://127.0.0.1:9222/json'))
+                  pages = json.load(local.open('http://127.0.0.1:9222/json', timeout=2))
                   break
               except OSError:
                   time.sleep(1)
+          if pages is None:
+              from pathlib import Path
+              print(Path('/tmp/chrome.log').read_text()[-3000:])
+              raise RuntimeError('Browser did not expose local debugging endpoint')
           page = next(p for p in pages if p['type'] == 'page')
           ws = websocket.create_connection(page['webSocketDebuggerUrl'], suppress_origin=True, timeout=10)
           number = 0
