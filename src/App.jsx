@@ -6,8 +6,8 @@ function FrequencyReading({ movie, state, label }) {
   const peak = state.octave && level !== null ? octavePeak(movie, state) : null;
   return <p className="frequency-value">{level === null
     ? `Unranked ${label} — no complete, reliable ${state.curve} curve reading`
-    : `≈ ${level.toFixed(1)} dB ${label} · ${state.curve} curve (estimated)`}
-    {peak && <span className="octave-peak">Peak {peak.level.toFixed(1)} dB at {peak.frequency} Hz</span>}
+    : `${level.toFixed(1)} dB ${label} | ${state.curve} curve`}
+    {peak && <span className="octave-peak">Peak: {peak.level.toFixed(1)} dB at {peak.frequency} Hz</span>}
   </p>;
 }
 
