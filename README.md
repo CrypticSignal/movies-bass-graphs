@@ -12,9 +12,11 @@ Explore bass frequency graphs of movies. Source: https://www.avsforum.com/thread
 - [Ranking by frequency or octave](#ranking-by-frequency-or-octave)
   - [How readings are extracted](#how-readings-are-extracted)
 - [Catalogue and metadata](#catalogue-and-metadata)
+  - [When metadata extraction runs](#when-metadata-extraction-runs)
+  - [How format labels are extracted](#how-format-labels-are-extracted)
 - [Develop and build](#develop-and-build)
 - [Making changes](#making-changes)
-- [Automatic AVS Forum sync](#automatic-avs-forum-sync)
+- [Automatic AVS Forum post sync](#automatic-avs-forum-post-sync)
 
 ## Ranking by frequency or octave
 
@@ -32,20 +34,41 @@ Values are estimates extracted from graph images using Python, not original nume
 
 The analysis requires consistent frequency and dB axis labels. Uncertain graphs, missing curves, and frequencies outside a graph's calibrated range remain **unranked** and sort after readable results.
 
-`scripts/analyze-graphs.py` generates `public/graphs/levels.json` using Pillow, NumPy, and Tesseract. The daily AVS sync refreshes analysis for new or changed images and reuses cached analysis for unchanged images. The **Analyze graph levels** workflow can also be started manually. To force a full recalibration after improving the analyzer, increment its `VERSION`.
+`scripts/analyze_graphs.py` generates `public/graphs/levels.json` using Pillow, NumPy, and Tesseract. The daily AVS sync refreshes analysis for new or changed images and reuses cached analysis for unchanged images. The **Analyze graph levels** workflow can also be started manually. To force a full recalibration after improving the analyzer, increment its `VERSION`.
 
 ### How readings are extracted
 
-GitHub Actions runs Python with Pillow and NumPy to find the plot grid and coloured curves, and Tesseract OCR to read axis labels. Consistent labels calibrate pixel coordinates to Hz and dB. The reader then samples the selected pixel column at each 0.5 Hz point, saves estimated curve values, and excludes ambiguous readings. The browser loads these saved readings and sorts or averages them; it does not analyse images on each interaction. ChatGPT reasoning settings do not affect this deterministic workflow.
+GitHub Actions runs Python with Pillow and NumPy to find the plot grid and coloured curves, and Tesseract OCR to read axis labels. Consistent labels calibrate pixel coordinates to Hz and dB. The reader then samples the selected pixel column at each 0.5 Hz point, saves estimated curve values, and excludes ambiguous readings. The browser loads these saved readings and sorts or averages them.
 
 ## Catalogue and metadata
 
-- `public/graphs/catalogue.json`: IDs, titles, source references, and bundled image paths.
-- `public/graphs/metadata.json`: soundtrack format labels keyed by entry ID.
-- `scripts/extract-metadata.py`: optional metadata extraction with Python, Pillow, and Tesseract. It is not needed to build or run the app.
-- The **Extract soundtrack metadata** workflow regenerates metadata when manually dispatched.
+- `public/graphs/catalogue.json` - IDs, titles, source references, and bundled image paths.
+- `public/graphs/metadata.json` - soundtrack format labels keyed by entry ID.
+- `scripts/extract_metadata.py` - reads soundtrack format labels from graph headers using Python, Pillow, and Tesseract. These labels power the sound-format filter; uncertain labels remain **Unknown**. Titles and years do not require OCR.
+- The daily AVS sync extracts format labels for new or changed graphs automatically. The **Extract soundtrack metadata** workflow can be manually dispatched to regenerate labels for the entire catalogue.
+
+Metadata extraction supplies the "Soundtrack format" filter, but it is not required to build or run the app, or to rank bass levels. The browser loads the saved metadata without running OCR.
 
 To repair a title, edit its catalogue entry. To correct an automatically read format, edit its entry in `metadata.json`. Metadata extraction overwrites that generated file, so retain any corrections when regenerating it.
+
+### When metadata extraction runs
+
+- **Automatic, incremental extraction:** the [AVS Forum post sync](.github/workflows/sync.yml) runs daily at **04:23 UTC**, when manually started, and when specified sync-related files are pushed to the main branch. After downloading graphs, it extracts format labels only for newly downloaded or replaced images. Labels for unchanged images are retained. If extraction fails for a downloaded image, its format is saved as **Unknown**.
+- **Manual, full-catalogue extraction:** in GitHub Actions, select **Extract soundtrack metadata → Run workflow**. The [metadata workflow](.github/workflows/metadata.yml) processes every catalogue entry and commits the regenerated metadata to the selected branch if it changed. This replaces the entire saved metadata file, including any manual format corrections.
+
+Extraction does not run during the frontend build or when someone opens the site. Python, Pillow, and Tesseract run in GitHub Actions; the browser only loads the saved results.
+
+### How format labels are extracted
+
+The [extraction script](scripts/extract_metadata.py) reads text printed on graph images, not audio from the movie:
+
+1. **Open the saved graph** with Pillow and crop its header: the top 24% of the image, capped at 230 pixels high, where the title and format label are expected.
+2. **Prepare the header for OCR** by converting it to grayscale and inverting its colours.
+3. **Read the text** with Tesseract OCR in sparse-text mode, then normalise it to uppercase text for matching.
+4. **Match known format labels**, including Dolby Atmos, DTS:X, DTS-HD Master Audio, Dolby TrueHD, Dolby Digital Plus, Dolby Digital, PCM, and DTS. More specific labels are checked before broader ones where needed; a partially read DTS-HD label is not classified as plain DTS.
+5. **Save the result** in [metadata.json](public/graphs/metadata.json), keyed by catalogue entry ID. Recognised labels also record that they came from graph-header OCR. Missing images or unrecognised labels produce **Unknown** rather than a format guessed from the movie title.
+
+OCR can misread small or unclear labels, and the format describes the version shown in that graph, not every release of the movie. Titles come from the catalogue and years are derived from those titles; neither requires this extraction. Bass-level analysis separately reads graph axes and curves for ranking.
 
 ## Develop and build
 
@@ -87,20 +110,20 @@ Start with the file that owns the feature:
 | Loading data, caching, and analysis compatibility | [src/useCatalogue.js](src/useCatalogue.js) |
 | Shareable URLs and browser Back/Forward | [src/useViewState.js](src/useViewState.js) |
 | Fonts, theme colours, breakpoint, and shared element styles | [src/styles.css](src/styles.css) |
-| Forum imports and keeping saved cards | [scripts/sync-avs.py](scripts/sync-avs.py) |
+| Forum imports and keeping saved cards | [scripts/sync_avs.py](scripts/sync_avs.py) |
 | Saved image filenames | [scripts/graph_files.py](scripts/graph_files.py) |
 | Reading the forum's film index | [scripts/avs_source.py](scripts/avs_source.py) |
-| Extracting curve values and calibrating axes | [scripts/analyze-graphs.py](scripts/analyze-graphs.py), [axis-calibrations.json](scripts/axis-calibrations.json) |
+| Extracting curve values and calibrating axes | [scripts/analyze_graphs.py](scripts/analyze_graphs.py), [axis-calibrations.json](scripts/axis-calibrations.json) |
 
 Components receive data and callbacks through props. The two hooks handle data loading and URL state; numerical calculations stay in plain JavaScript. No state-management library or additional dependencies are required.
 
-To add an octave, edit `OCTAVE_RANGES` in `src/catalogue.js`; the controls use that list automatically. Average and peak readings are calculated together in `rankingReading`, so their sampling and missing-value rules stay consistent. Frequency limits and sampling must match the generated analysis data and the constants in `scripts/analyze-graphs.py`.
+To add an octave, edit `OCTAVE_RANGES` in `src/catalogue.js`; the controls use that list automatically. Average and peak readings are calculated together in `rankingReading`, so their sampling and missing-value rules stay consistent. Frequency limits and sampling must match the generated analysis data and the constants in `scripts/analyze_graphs.py`.
 
 Catalogue, metadata, and level JSON files under `public/graphs/` are generated by the Python scripts. UI changes do not require downloading or analysing the graphs again.
 
-## Automatic AVS Forum sync
+## Automatic AVS Forum post sync
 
-The **Sync AVS film graphs** workflow runs daily at **04:23 UTC** (GitHub may delay scheduled runs) and can be started manually from Actions. Its only source is the numbered **List of Films,** section in the [thread’s first post](https://www.avsforum.com/threads/the-ultimate-list-of-bass-in-movies-w-frequency-charts-bass-charts-are-on-the-first-page.2763785/). Links in the update announcements, nested scene lists, replies, and other posts are excluded.
+The **AVS Forum post sync** workflow runs daily at **04:23 UTC** (GitHub may delay scheduled runs) and can be started manually from Actions. Its only source is the numbered **List of Films,** section in the [thread’s first post](https://www.avsforum.com/threads/the-ultimate-list-of-bass-in-movies-w-frequency-charts-bass-charts-are-on-the-first-page.2763785/). Links in the update announcements, nested scene lists, replies, and other posts are excluded.
 
 The sync follows each film’s Imgur hyperlink, downloads new or changed direct images, extracts soundtrack labels, and analyses changed graphs at 0.5 Hz intervals. Existing saved images and IDs are reused where possible.
 

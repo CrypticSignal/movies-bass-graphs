@@ -5,7 +5,6 @@ import hashlib
 import io
 import itertools
 import json
-import os
 from pathlib import Path
 import re
 import subprocess

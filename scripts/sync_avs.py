@@ -152,7 +152,7 @@ def main():
     rows = [row for row, _ in results] + archived
     changed_images = [row for row, downloaded in results if downloaded]
     if changed_images:
-        spec = importlib.util.spec_from_file_location('graph_metadata', 'scripts/extract-metadata.py')
+        spec = importlib.util.spec_from_file_location('graph_metadata', 'scripts/extract_metadata.py')
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         for row in changed_images:

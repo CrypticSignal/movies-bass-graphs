@@ -1,4 +1,4 @@
-name: Sync AVS film graphs
+name: AVS Forum post sync
 on:
   schedule:
     - cron: '23 4 * * *'
@@ -6,7 +6,7 @@ on:
   push:
     branches: [main]
     paths:
-      - scripts/sync-avs.py
+      - scripts/sync_avs.py
       - scripts/avs_source.py
       - scripts/graph_files.py
       - scripts/legacy-graph-names.json
@@ -32,8 +32,8 @@ jobs:
           python-version: '3.12'
       - run: sudo apt-get update -qq && sudo apt-get install -y tesseract-ocr
       - run: pip install Pillow numpy beautifulsoup4 websocket-client
-      - run: python scripts/sync-avs.py
-      - run: python scripts/analyze-graphs.py
+      - run: python scripts/sync_avs.py
+      - run: python scripts/analyze_graphs.py
       - name: Save changes and publish only when needed
         env:
           GH_TOKEN: ${{ github.token }}

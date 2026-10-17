@@ -4,7 +4,7 @@ on:
   push:
     branches: [main, feat/frequency-ranking, feat/half-hz, fix/axis-consensus]
     paths:
-      - scripts/analyze-graphs.py
+      - scripts/analyze_graphs.py
       - scripts/axis-calibrations.json
 concurrency:
   group: graph-analysis-${{ github.ref }}
@@ -25,7 +25,7 @@ jobs:
           python-version: '3.12'
       - run: sudo apt-get update -qq && sudo apt-get install -y tesseract-ocr
       - run: pip install Pillow numpy
-      - run: python scripts/analyze-graphs.py
+      - run: python scripts/analyze_graphs.py
       - name: Save estimated levels
         env:
           GH_TOKEN: ${{ github.token }}
