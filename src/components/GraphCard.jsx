@@ -93,6 +93,13 @@ export default function GraphCard({
             </summary>
             <div className="absolute right-0 bottom-10 w-[180px] rounded-md border border-[#6b835a] bg-[#203127] p-3 shadow-lg">
               <ZoomControl value={zoom} onChange={setZoom} min={100} max={400} compact />
+              <button
+                className="mt-2 w-full px-2 py-1 text-[11px]"
+                onClick={() => setZoom(1)}
+                aria-label={`Reset zoom to 100% for ${movie.movieName}`}
+              >
+                Reset
+              </button>
             </div>
           </details>
         <button
