@@ -7,7 +7,7 @@ import unicodedata
 
 def slug(title):
     title = unicodedata.normalize('NFKD', title).encode('ascii', 'ignore').decode()
-    return re.sub(r'[^a-z0-9]+', '_', title.lower()).strip('_')[:150].rstrip('_') or 'graph'
+    return re.sub(r'[^a-z0-9-]+', '_', title.lower()).strip('_')[:150].rstrip('_') or 'graph'
 
 def name_saved_images(rows):
     root = Path('public/graphs')
@@ -27,13 +27,13 @@ def name_saved_images(rows):
     for row in rows:
         stem = slug(row['movieName'])
         if counts[stem] > 1:
-            stem += '__' + slug(str(row['id']))
+            stem += '__' + slug(str(row['id'])).replace('-', '_')
         row['imagePath'] = plan(row.get('imagePath'), stem)
         if row.get('sourceImagePath'):
             parent = by_id.get(str(row.get('splitFrom')), row)
             source_stem = slug(parent['movieName']) + '_combined'
             if counts[slug(parent['movieName'])] > 1:
-                source_stem += '__' + slug(str(parent['id']))
+                source_stem += '__' + slug(str(parent['id'])).replace('-', '_')
             row['sourceImagePath'] = plan(row['sourceImagePath'], source_stem)
     # One-time names for older images which are no longer referenced by cards.
     # They remain in the repository, including earlier graph versions.
@@ -41,7 +41,7 @@ def name_saved_images(rows):
     legacy = json.loads(legacy_file.read_text()) if legacy_file.exists() else {}
     for old, detail in legacy.items():
         if old not in copies:
-            plan(old, slug(detail['title']) + '_previous_' + slug(str(detail['id'])))
+            plan(old, slug(detail['title']) + '_previous_' + slug(str(detail['id'])).replace('-', '_'))
     for old, targets in copies.items():
         data = (Path('public') / old).read_bytes()
         for target in targets:

@@ -61,7 +61,7 @@ The sync follows each film’s Imgur hyperlink, downloads new or changed direct 
 
 Chrome reads the public page when AVS Forum requires its JavaScript browser check. The runner uses a temporary profile without a login or saved user cookies. An unreadable source or malformed list fails before the saved catalogue is changed. Failed image downloads retain working copies; unavailable sources remain labelled unavailable.
 
-New downloads come only from the current film index. If a film leaves that index, its saved graph and card remain available; removed entries are not fetched again. Images use title-based filenames (for example, `dune-2021.jpg`), with ID suffixes for duplicate names. Earlier saved versions also have readable filenames. `public/graphs/avs-index.json` records the source titles, links, and film count from the last successful sync. The spreadsheet is no longer read.
+New downloads come only from the current film index. If a film leaves that index, its saved graph and card remain available; removed entries are not fetched again. Images use title-based filenames with underscores for spaces and preserved title hyphens (for example, `dune_2021.jpg`), with ID suffixes for duplicate names. Earlier saved versions also have readable filenames. `public/graphs/avs-index.json` records the source titles, links, and film count from the last successful sync. The spreadsheet is no longer read.
 
 Only changed catalogue, metadata, analysis, or image files are committed. The sync starts publishing when those files change; unchanged runs do not rebuild or deploy the site. GitHub can disable scheduled workflows after prolonged repository inactivity.
 
