@@ -1,10 +1,11 @@
+import { useState } from 'react';
 import { curvePeak, imageURL, rankingReading } from '../catalogue.js';
-import { GraphImage } from './GraphTools.jsx';
+import { GraphImage, ZoomControl, zoomStyle } from './GraphTools.jsx';
 
 function FrequencyReading({ reading, overallPeak, curve, label }) {
   const { level, peak } = reading ?? {};
   return (
-    <p className="mt-[14px] mb-4 pl-4 pr-12 text-[12px] text-accent">
+    <p className="mt-[14px] mb-4 pl-4 pr-24 text-[12px] text-accent">
       {reading && (level === null
         ? `Unranked ${label} — no complete, reliable ${curve} curve reading`
         : `${level.toFixed(1)} dB ${label} | ${curve} curve`)}
@@ -25,6 +26,7 @@ function FrequencyReading({ reading, overallPeak, curve, label }) {
 export default function GraphCard({
   movie, rank, rankingState, rankingLabel, curve = 'green', selected, onCompare, onInspect,
 }) {
+  const [zoom, setZoom] = useState(1);
   const reading = rankingState ? rankingReading(movie, rankingState) : null;
   const overallPeak = curvePeak(movie, curve);
   const hasImage = Boolean(imageURL(movie));
@@ -57,13 +59,16 @@ export default function GraphCard({
         </button>
       </div>
       {hasImage ? (
-        <button
-          className="block w-full rounded-none border-0 bg-black p-0 hover:bg-black"
-          onClick={onInspect}
-          aria-label={`View graph for ${movie.movieName}`}
-        >
-          <GraphImage movie={movie} loading="lazy" />
-        </button>
+        <div className="overflow-auto bg-black">
+          <button
+            className="block w-full rounded-none border-0 bg-black p-0 hover:bg-black"
+            style={zoomStyle(zoom)}
+            onClick={onInspect}
+            aria-label={`View graph for ${movie.movieName}`}
+          >
+            <GraphImage movie={movie} loading="lazy" />
+          </button>
+        </div>
       ) : <GraphImage movie={movie} />}
       {(reading || overallPeak) && (
         <FrequencyReading
@@ -74,6 +79,22 @@ export default function GraphCard({
         />
       )}
       {hasImage && (
+        <>
+          <details className="absolute right-12 bottom-2 z-1">
+            <summary
+              className="flex h-8 w-8 cursor-pointer list-none items-center justify-center rounded border border-[#6b835a] bg-[#203127e8] text-accent [&::-webkit-details-marker]:hidden"
+              aria-label={`Zoom graph for ${movie.movieName}`}
+              title="Zoom graph"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
+                <circle cx="10" cy="10" r="6" />
+                <path d="m15 15 6 6M7 10h6m-3-3v6" />
+              </svg>
+            </summary>
+            <div className="absolute right-0 bottom-10 w-[180px] rounded-md border border-[#6b835a] bg-[#203127] p-3 shadow-lg">
+              <ZoomControl value={zoom} onChange={setZoom} min={100} max={500} compact />
+            </div>
+          </details>
         <button
           className="absolute right-2 bottom-2 flex h-8 w-8 items-center justify-center rounded border border-[#6b835a] bg-[#203127e8] p-0 text-accent"
           onClick={onInspect}
@@ -85,6 +106,7 @@ export default function GraphCard({
             <circle cx="12" cy="12" r="3" />
           </svg>
         </button>
+        </>
       )}
     </article>
   );
