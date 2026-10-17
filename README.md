@@ -6,11 +6,11 @@ Explore bass frequency graphs for 618 movie and television entries.
 
 ## Browse, inspect, and compare
 
-- Search titles and filter by year, type, and soundtrack format.
+- Browse with **All · 0–9 · A–Z**, or search titles and filter by year and soundtrack format. Each selection shows all matching entries with lazy-loaded images. Opening punctuation is ignored: `[Rec]` appears under R; titles starting with “The” remain under T.
 - Open a graph in the viewer, zoom up to 400%, scroll to pan, or enter fullscreen.
 - Move between graphs in the filtered results without leaving the viewer.
 - Select up to two graphs for side-by-side comparison, with shared zoom controls. On narrow screens they stack vertically.
-- Use **Copy view link** to share your search, filters, page, selected graphs, and open viewer. Refresh and browser Back/Forward restore the view.
+- Use **Copy view link** to share your search, filters, selected letter, selected graphs, and open viewer. Refresh and browser Back/Forward restore the view.
 
 Comparison preserves each image's original axes. Check labelled scales and measurement methods before comparing values; the graphs are not normalized.
 

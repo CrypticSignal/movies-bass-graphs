@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { filterMovies, imageURL, metadata, PAGE_SIZE, readState, stateURL } from './catalogue.js';
+import { filterMovies, imageURL, metadata, readState, stateURL } from './catalogue.js';
 
 function GraphImage({ movie, ...props }) {
   const [failed, setFailed] = useState(false);
@@ -106,9 +106,6 @@ export default function App() {
   }, [attempt]);
 
   const filtered = filterMovies(movies, state);
-  const pages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
-  const page = Math.min(state.page, pages);
-  const visible = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
   const selected = state.compare.map(id => movies.find(movie => movie.id === id)).filter(movie => movie && imageURL(movie));
   const viewing = movies.find(movie => movie.id === state.graph && imageURL(movie) && (state.scope !== 'comparison' || state.compare.includes(movie.id)));
   const sequence = state.scope === 'comparison' ? selected : filtered.filter(movie => imageURL(movie));
@@ -117,11 +114,10 @@ export default function App() {
     if (status !== 'ready') return;
     const valid = state.compare.filter(id => movies.some(movie => movie.id === id && imageURL(movie)));
     const patch = {};
-    if (state.page !== page) patch.page = page;
     if (state.graph && !viewing) patch.graph = '';
     if (valid.join(',') !== state.compare.join(',')) patch.compare = valid;
     if (Object.keys(patch).length) update(patch, true);
-  }, [status, movies, page, state.page, state.graph, state.compare.join(',')]);
+  }, [status, movies, state.graph, state.compare.join(',')]);
 
   function toggleCompare(movie) {
     setMessage('');
@@ -148,15 +144,19 @@ export default function App() {
       <section className="search-panel" aria-label="Browse the archive">
         <label className="search-field">Search titles<input type="search" placeholder="Try Blade Runner…" value={state.q}
           onBlur={() => { queryEditing.current = false; }}
-          onChange={event => { update({ q: event.target.value, page: 1 }, queryEditing.current); queryEditing.current = true; }} /></label>
+          onChange={event => { update({ q: event.target.value }, queryEditing.current); queryEditing.current = true; }} /></label>
         {filters.map(filter => <label key={filter.key}>{filter.label}<select value={state[filter.key]}
-          onChange={event => update({ [filter.key]: event.target.value, page: 1 })}>
+          onChange={event => update({ [filter.key]: event.target.value })}>
           <option value="">All {filter.key === 'year' ? 'years' : 'formats'}</option>
           {state[filter.key] && !filter.values.includes(state[filter.key]) && <option value={state[filter.key]}>{state[filter.key]}</option>}
           {filter.values.map(value => <option key={value}>{value}</option>)}
         </select></label>)}
-        <button className="reset" onClick={() => update({ q: '', year: '', format: '', page: 1 })}>Reset filters</button>
+        <button className="reset" onClick={() => update({ q: '', year: '', format: '', letter: '' })}>Reset filters</button>
       </section>
+      <nav className="alphabet" aria-label="Browse by title">
+        {['', '0-9', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map(letter => <button key={letter || 'all'} aria-pressed={state.letter === letter}
+          onClick={() => update({ letter })}>{letter === '' ? 'All' : letter === '0-9' ? '0–9' : letter}</button>)}
+      </nav>
       <p className="metadata-note">Years and types are inferred from titles. Soundtrack labels are read automatically from graphs; unclear labels stay Unknown.</p>
       {selected.length > 0 && <section className="comparison" ref={comparisonRef} aria-labelledby="comparison-title">
         <div className="section-heading"><div><span className="eyebrow">A / B COMPARISON</span><h2 id="comparison-title">Compare soundtracks</h2></div>
@@ -172,14 +172,13 @@ export default function App() {
       <div className="results-heading"><p><strong>{filtered.length}</strong> {filtered.length === 1 ? 'entry' : 'entries'}<span> / {movies.length} in the archive</span></p>
         <span>Select up to two graphs to compare</span></div>
       <p role="status" className="action-message">{message}</p>
-      <section className="gallery" aria-label="Movie graphs">{visible.map(movie => <article className="graph-card" key={movie.id}>
+      <section className="gallery" aria-label="Movie graphs">{filtered.map(movie => <article className="graph-card" key={movie.id}>
         <div className="card-heading"><div><span className="card-meta">{movie.year} · {movie.type}{movie.format !== 'Unknown' ? ' · ' + movie.format : ''}</span><h2>{movie.movieName}</h2></div>
           <button aria-pressed={state.compare.includes(movie.id)} disabled={!imageURL(movie)} onClick={() => toggleCompare(movie)}>{state.compare.includes(movie.id) ? '✓ Selected' : '+ Compare'}<span className="sr-only"> {movie.movieName}</span></button></div>
         {imageURL(movie) ? <button className="graph-open" onClick={() => update({ graph: movie.id, scope: '' })} aria-label={`View graph for ${movie.movieName}`}><GraphImage movie={movie} loading="lazy" /><span className="inspect-tag">Inspect graph ↗</span></button> : <GraphImage movie={movie} />}
         <div style={{ padding: '12px 16px' }}><button disabled={!imageURL(movie)} onClick={() => update({ graph: movie.id, scope: '' })} aria-label={`Inspect graph for ${movie.movieName}`}>Inspect graph ↗</button></div>
       </article>)}</section>
       {!filtered.length && <p className="empty">No titles match these filters. Try a broader search or reset the filters.</p>}
-      {pages > 1 && <nav className="pagination" aria-label="Catalogue pages"><button disabled={page <= 1} onClick={() => update({ page: page - 1 })}>← Previous</button><span aria-live="polite">Page {page} of {pages}</span><button disabled={page >= pages} onClick={() => update({ page: page + 1 })}>Next →</button></nav>}
       <footer>Movie soundtrack graphs · Original credits and measurement details appear on each image.</footer>
       {selected.length > 0 && <aside className="compare-tray" aria-label="Comparison selection"><span>{selected.length}/2 graphs selected</span><button onClick={() => comparisonRef.current?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })}>View comparison ↑</button></aside>}
       {viewing && <Viewer movie={viewing} onClose={() => update({ graph: '', scope: '' })}

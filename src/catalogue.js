@@ -1,4 +1,3 @@
-export const PAGE_SIZE = 10;
 export const imageURL = movie => movie?.imagePath ? import.meta.env.BASE_URL + movie.imagePath : null;
 
 export function metadata(movie, extra = {}) {
@@ -11,10 +10,10 @@ export function metadata(movie, extra = {}) {
 
 export function readState(search = window.location.search) {
   const p = new URLSearchParams(search);
-  const n = Number(p.get('page'));
+  const letter = (p.get('letter') || '').toUpperCase();
   return {
     q: p.get('q') || '', year: p.get('year') || '', format: p.get('format') || '',
-    page: Number.isSafeInteger(n) && n > 0 ? n : 1,
+    letter: /^(?:[A-Z]|0-9)$/.test(letter) ? letter : '',
     scope: p.get('scope') === 'comparison' ? 'comparison' : '',
     graph: p.get('graph') || '', compare: [...new Set((p.get('compare') || '').split(',').filter(Boolean))].slice(0, 2),
   };
@@ -22,16 +21,20 @@ export function readState(search = window.location.search) {
 
 export function stateURL(state) {
   const p = new URLSearchParams();
-  for (const key of ['q', 'year', 'format', 'graph']) if (state[key]) p.set(key, state[key]);
+  for (const key of ['q', 'year', 'format', 'letter', 'graph']) if (state[key]) p.set(key, state[key]);
   if (state.graph && state.scope === 'comparison') p.set('scope', 'comparison');
-  if (state.page > 1) p.set('page', String(state.page));
   if (state.compare.length) p.set('compare', state.compare.join(','));
   return window.location.pathname + (p.size ? '?' + p.toString() : '') + window.location.hash;
+}
+
+function initial(title) {
+  return title.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/^[^\p{L}\p{N}]+/u, '').charAt(0).toUpperCase();
 }
 
 export function filterMovies(movies, state) {
   const query = state.q.trim().toLowerCase();
   return movies.filter(movie => movie.movieName.toLowerCase().includes(query)
+    && (!state.letter || (state.letter === '0-9' ? /^[0-9]$/.test(initial(movie.movieName)) : initial(movie.movieName) === state.letter))
     && (!state.year || movie.year === state.year)
     && (!state.format || movie.format === state.format));
 }
