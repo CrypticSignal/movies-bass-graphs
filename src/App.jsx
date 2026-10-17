@@ -215,7 +215,7 @@ export default function App() {
           <option value="">Single frequency</option>
           {OCTAVE_RANGES.map(range => <option key={range} value={range}>{range.replace('-', '–')} Hz octave average</option>)}
         </select></label>
-        {!state.octave && <label>Frequency (Hz, 0.5–200)<input type="text" inputMode="decimal" required placeholder="20" enterKeyHint="go" value={frequencyInput}
+        {!state.octave && <label>Frequency (Hz)<input type="text" inputMode="decimal" required placeholder="20" enterKeyHint="go" value={frequencyInput}
           onKeyDown={event => {
             if (event.key === 'Enter' && !event.nativeEvent.isComposing) {
               event.preventDefault();
@@ -223,7 +223,7 @@ export default function App() {
               const input = event.currentTarget;
               const frequency = Number(input.value.replace(',', '.'));
               if (!Number.isInteger(frequency * 2) || frequency < 0.5 || frequency > 200) {
-                input.setCustomValidity('Enter a frequency from 0.5 to 200 Hz in 0.5 Hz steps.');
+                input.setCustomValidity('Enter a frequency in Hz');
                 input.reportValidity();
                 return;
               }
@@ -241,7 +241,7 @@ export default function App() {
             update({ frequency: value !== '' && Number.isInteger(frequency * 2) && frequency >= 0.5 && frequency <= 200 ? frequency : '', octave: '' }, true);
           }} /></label>}
         <label>Curve<select value={state.curve} onChange={event => update({ curve: event.target.value })}>
-          <option value="green">Green curve</option><option value="red">Red curve</option>
+          <option value="green">Green (peak dB)</option><option value="red">Red (average dB)</option>
         </select></label>
         {rankingActive && <button type="button" onClick={() => { setFrequencyInput(''); update({ frequency: '', octave: '' }); }}>Clear ranking</button>}
         <span>{state.octave ? 'Octave ranking uses the arithmetic mean of dB readings at every 0.5 Hz, including both endpoints. The complete range must be readable.' : 'Single-frequency ranking uses the value at that frequency, not an average.'} Values are estimates as there is no numeric data, the graphs are analysed using Python.</span>
