@@ -10,6 +10,7 @@ import urllib.parse
 import urllib.request
 
 from avs_source import THREAD_URL, read_films, image_key
+from graph_files import name_saved_images
 
 from PIL import Image
 
@@ -23,10 +24,6 @@ def normalized(url):
 def recover(row):
     row = dict(row)
     if row.get('sourceImagePath'):
-        cached_url = normalized(row.get('cachedSourceURL', ''))
-        cached_path = 'graphs/' + hashlib.sha256(cached_url.encode()).hexdigest()[:20] + '.jpg'
-        if cached_url and (Path('public') / cached_path).is_file():
-            row['sourceImagePath'] = cached_path
         row['imagePath'] = row['sourceImagePath']
     source = normalized(row.get('imgurURL', ''))
     cached = normalized(row.get('cachedSourceURL', row.get('_oldSource', '')))
@@ -144,11 +141,15 @@ def main():
         item['movieName'] = incoming['movieName']
         item['imgurURL'] = incoming['imgurURL']
         item['source'] = 'avs-first-post'
+        item['listedOnAVS'] = True
         pending.append(item)
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         results = list(pool.map(recover, pending))
-    # Only indexed films are shown; saved files remain available for old links.
-    rows = [row for row, _ in results]
+    # Stop fetching removed entries, but keep their saved graphs and cards.
+    archived = [{**row, 'listedOnAVS': False} for row in base_rows
+                if str(row['id']) not in used and row.get('imagePath')
+                and (Path('public') / row['imagePath']).is_file()]
+    rows = [row for row, _ in results] + archived
     changed_images = [row for row, downloaded in results if downloaded]
     if changed_images:
         spec = importlib.util.spec_from_file_location('graph_metadata', 'scripts/extract-metadata.py')
@@ -161,7 +162,7 @@ def main():
             except Exception as error:
                 metadata[str(row['id'])] = {'format': 'Unknown'}
                 print(f"Format unknown for {row['movieName']}: {error}")
-    rows = split_graphs(rows, metadata)
+    rows = name_saved_images(split_graphs(rows, metadata))
     for row in rows:
         row.pop('_oldSource', None)
     (ROOT / 'avs-index.json').write_text(json.dumps({

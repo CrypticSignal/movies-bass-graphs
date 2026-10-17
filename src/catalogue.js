@@ -64,6 +64,18 @@ export function rankingLevel(movie, state) {
   return sum / ((high - low) / 0.5 + 1);
 }
 
+export function octavePeak(movie, state) {
+  if (!OCTAVE_RANGES.includes(state.octave)) return null;
+  const [low, high] = state.octave.split('-').map(Number);
+  let peak = null;
+  for (let frequency = low; frequency <= high; frequency += 0.5) {
+    const level = levelAt(movie, frequency, state.curve);
+    if (level === null) return null;
+    if (!peak || level > peak.level) peak = { level, frequency };
+  }
+  return peak;
+}
+
 export function filterMovies(movies, state) {
   const query = state.q.trim().toLowerCase();
   const result = movies.filter(movie => movie.movieName.toLowerCase().includes(query)

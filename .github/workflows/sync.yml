@@ -8,6 +8,8 @@ on:
     paths:
       - scripts/sync-avs.py
       - scripts/avs_source.py
+      - scripts/graph_files.py
+      - scripts/legacy-graph-names.json
       - .github/workflows/sync.yml
 permissions:
   contents: write

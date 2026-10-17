@@ -61,7 +61,7 @@ The sync follows each film’s Imgur hyperlink, downloads new or changed direct 
 
 Chrome reads the public page when AVS Forum requires its JavaScript browser check. The runner uses a temporary profile without a login or saved user cookies. An unreadable source or malformed list fails before the saved catalogue is changed. Failed image downloads retain working copies; unavailable sources remain labelled unavailable.
 
-Only currently indexed films appear in the catalogue, plus explicitly split variants. Previously saved image files remain in the repository. `public/graphs/avs-index.json` records the source titles, links, and film count from the last successful sync. The spreadsheet is no longer read.
+New downloads come only from the current film index. If a film leaves that index, its saved graph and card remain available; removed entries are not fetched again. Images use title-based filenames (for example, `dune-2021.jpg`), with ID suffixes for duplicate names. Earlier saved versions also have readable filenames. `public/graphs/avs-index.json` records the source titles, links, and film count from the last successful sync. The spreadsheet is no longer read.
 
 Only changed catalogue, metadata, analysis, or image files are committed. The sync starts publishing when those files change; unchanged runs do not rebuild or deploy the site. GitHub can disable scheduled workflows after prolonged repository inactivity.
 
@@ -69,7 +69,7 @@ Only changed catalogue, metadata, analysis, or image files are committed. The sy
 
 Enter a frequency from **0.5–200 Hz** in **0.5 Hz steps** and choose the **green** (peak dB) or **red** (average dB) curve. Ranking updates automatically; press Enter to scroll to the results. Existing title, alphabet, year, and soundtrack filters still apply.
 
-Single-frequency values are digitized at that frequency's pixel column without averaging across a band. Octave options (**10–20, 20–40, 30–60, 40–80, 50-100, 60-120 Hz**) use the arithmetic mean of the dB samples every **0.5 Hz**, including both endpoints; every sample in the range must be readable. Values are estimates as there is no numeric data, the graphs are analysed using Python.
+Single-frequency values are digitized at that frequency's pixel column without averaging across a band. Octave options (**10–20, 20–40, 30–60, 40–80, 50-100, 60-120 Hz**) use the arithmetic mean of the dB samples every **0.5 Hz**, including both endpoints; every sample in the range must be readable. Each ranked octave card also shows the highest sampled value within that octave and its frequency for the selected curve; ties show the lowest matching frequency. Values are estimates as there is no numeric data, the graphs are analysed using Python.
 
 The analysis requires consistent frequency and dB axis labels. Uncertain graphs, missing curves, and frequencies outside a graph's calibrated range remain **unranked** and sort after readable results.
 

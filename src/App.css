@@ -35,3 +35,5 @@
 .zoom-control>span{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .zoom-control output{font-variant-numeric:tabular-nums;color:#e1eae4}
 .zoom-control input[type=range]{width:100%;min-height:32px;margin:0;padding:0;border:0;background:transparent;accent-color:#c4ed9b;cursor:pointer}
+
+.octave-peak{display:block;margin-top:4px}

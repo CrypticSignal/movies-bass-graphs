@@ -1,5 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
-import { filterMovies, imageURL, rankingLevel, OCTAVE_RANGES, metadata, readState, stateURL } from './catalogue.js';
+import { filterMovies, imageURL, rankingLevel, octavePeak, OCTAVE_RANGES, metadata, readState, stateURL } from './catalogue.js';
+
+function FrequencyReading({ movie, state, label }) {
+  const level = rankingLevel(movie, state);
+  const peak = state.octave && level !== null ? octavePeak(movie, state) : null;
+  return <p className="frequency-value">{level === null
+    ? `Unranked ${label} — no complete, reliable ${state.curve} curve reading`
+    : `≈ ${level.toFixed(1)} dB ${label} · ${state.curve} curve (estimated)`}
+    {peak && <span className="octave-peak">Peak {peak.level.toFixed(1)} dB at {peak.frequency} Hz</span>}
+  </p>;
+}
 
 function GraphImage({ movie, ...props }) {
   const [failed, setFailed] = useState(false);
@@ -272,9 +282,7 @@ export default function App() {
         <div className="card-heading"><div>{rankingActive && rankingLevel(movie, state) !== null && <span className="card-rank">Rank #{movieIndex + 1}</span>}<span className="card-meta">{movie.year} · {movie.type}{movie.format !== 'Unknown' ? ' · ' + movie.format : ''}</span><h2>{movie.movieName}</h2></div>
           <button aria-pressed={state.compare.includes(movie.id)} disabled={!imageURL(movie)} onClick={() => toggleCompare(movie)}>{state.compare.includes(movie.id) ? '✓ Selected' : '+ Compare'}<span className="sr-only"> {movie.movieName}</span></button></div>
         {imageURL(movie) ? <button className="graph-open" onClick={() => update({ graph: movie.id, scope: '', view: '' })} aria-label={`View graph for ${movie.movieName}`}><GraphImage movie={movie} loading="lazy" /><span className="inspect-tag">Inspect graph ↗</span></button> : <GraphImage movie={movie} />}
-        {rankingActive && <p className="frequency-value">{rankingLevel(movie, state) === null
-          ? `Unranked ${rankingLabel} — no complete, reliable ${state.curve} curve reading`
-          : `≈ ${rankingLevel(movie, state).toFixed(1)} dB ${rankingLabel} · ${state.curve} curve (estimated)`}</p>}
+        {rankingActive && <FrequencyReading movie={movie} state={state} label={rankingLabel} />}
         <div style={{ padding: '12px 16px' }}><button disabled={!imageURL(movie)} onClick={() => update({ graph: movie.id, scope: '', view: '' })} aria-label={`Inspect graph for ${movie.movieName}`}>Inspect graph ↗</button></div>
       </article>)}</section>
       {!filtered.length && <p className="empty">No titles match these filters. Try a broader search or reset the filters.</p>}

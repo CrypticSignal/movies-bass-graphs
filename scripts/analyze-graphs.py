@@ -203,7 +203,7 @@ def main():
         manual = overrides.get(fingerprint)
         signature = hashlib.sha256(json.dumps(manual, sort_keys=True).encode()).hexdigest() if manual else None
         if cache.get(identifier, {}).get('fingerprint') == fingerprint and cache[identifier].get('manualCalibration') == signature:
-            return identifier, cache[identifier]
+            return identifier, {**cache[identifier], 'imagePath': row['imagePath']}
         try:
             result = analyze(path, manual)
         except Exception as error:
