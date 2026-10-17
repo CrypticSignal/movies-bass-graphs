@@ -17,7 +17,7 @@ ROOT = Path('public/graphs')
 OUTPUT = ROOT / 'levels.json'
 VERSION = 6
 PLOT_BOUNDARY_VERSION = 2
-AXIS_READER_VERSION = 2
+AXIS_READER_VERSION = 3
 START_HZ = 0.5
 STEP_HZ = 0.5
 MAX_HZ = 200
@@ -92,7 +92,7 @@ def curve_pixels_outside_artwork(ys, artwork_column):
     kept = [run for run in runs if not np.all(artwork_column[run])]
     return np.concatenate(kept) if kept else np.array([], dtype=int)
 
-def analyze(path, manual=None, wide_labels=False):
+def analyze(path, manual=None, wide_labels=False, crop_labels=False):
     image = Image.open(path).convert('RGB')
     pixels = np.asarray(image).astype(np.int16)
     height, width = pixels.shape[:2]
@@ -130,7 +130,10 @@ def analyze(path, manual=None, wide_labels=False):
             raise ValueError('Invalid manual axis direction')
         plot_top = min(point[0] for point in db_inliers)
     else:
-        labels = ocr(image.crop((width - right_width, 0, width, int(bottom))), (width - right_width, 0))
+        # Artwork above the plot can disrupt OCR page segmentation.
+        label_top = max(0, int(min(lines) - max(14, height * .02))) if wide_labels or crop_labels else 0
+        labels = ocr(image.crop((width - right_width, label_top, width, int(bottom))),
+                     (width - right_width, label_top))
         db_points = []
         for text, x, y in labels:
             if x < width - right_width * (.95 if wide_labels else .6):
@@ -148,8 +151,11 @@ def analyze(path, manual=None, wide_labels=False):
         if db_slope >= 0 or np.ptp([p[1] for p in db_inliers]) < 20:
             raise ValueError('dB scale uncertain')
         plot_top = min(p[0] for p in db_inliers)
-        vertical = centres(np.mean(grey[int(height * .2):int(bottom), :], axis=0) > .65)
+        grid_top = int(plot_top) if crop_labels or wide_labels else int(height * .2)
+        vertical = centres(np.mean(grey[grid_top:int(bottom), :], axis=0) > .65)
         label_top = height - min(60, max(30, int(height * .06)))
+        if crop_labels or wide_labels:
+            label_top = max(label_top, int(bottom))
         labels = ocr(image.crop((0, label_top, width, height)), (0, label_top))
         frequency_points = []
         for text, x, y in labels:
@@ -226,7 +232,10 @@ def main():
             except ValueError:
                 if manual is not None:
                     raise
-                result = analyze(path, wide_labels=True)
+                try:
+                    result = analyze(path, crop_labels=True)
+                except ValueError:
+                    result = analyze(path, wide_labels=True)
         except Exception as error:
             result = {'status': 'unreadable', 'reason': str(error)}
         return identifier, {'imagePath': row['imagePath'], 'fingerprint': fingerprint, 'manualCalibration': signature, 'boundaryReaderVersion': PLOT_BOUNDARY_VERSION, 'axisReaderVersion': AXIS_READER_VERSION, **result}
