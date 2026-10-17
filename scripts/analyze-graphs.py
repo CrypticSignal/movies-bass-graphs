@@ -16,6 +16,7 @@ from PIL import Image, ImageOps, ImageFilter
 ROOT = Path('public/graphs')
 OUTPUT = ROOT / 'levels.json'
 VERSION = 6
+PLOT_BOUNDARY_VERSION = 2
 START_HZ = 0.5
 STEP_HZ = 0.5
 MAX_HZ = 200
@@ -105,6 +106,15 @@ def analyze(path, manual=None):
     if not len(dark_rows):
         raise ValueError('Plot background uncertain')
     bottom = float(dark_rows[-1] + 1)
+    if bottom > height - 5:
+        # A black footer below the white frequency ruler is not plot area.
+        ruler_rows = np.flatnonzero(
+            np.mean(np.min(pixels[:, int(width * .05):int(width * .90)], axis=2) > 180, axis=1) > .6)
+        ruler_rows = ruler_rows[ruler_rows > height * .85]
+        if len(ruler_rows):
+            plot_rows = dark_rows[dark_rows < ruler_rows[0]]
+            if len(plot_rows):
+                bottom = float(plot_rows[-1] + 1)
     if bottom < height * .6 or bottom > height - 5:
         raise ValueError('Plot boundary uncertain')
     right_width = max(80, int(width * .065))
@@ -202,13 +212,16 @@ def main():
         fingerprint = hashlib.sha256(path.read_bytes()).hexdigest()
         manual = overrides.get(fingerprint)
         signature = hashlib.sha256(json.dumps(manual, sort_keys=True).encode()).hexdigest() if manual else None
-        if cache.get(identifier, {}).get('fingerprint') == fingerprint and cache[identifier].get('manualCalibration') == signature:
+        cached = cache.get(identifier, {})
+        retry_boundary = (cached.get('reason') == 'Plot boundary uncertain'
+                          and cached.get('boundaryReaderVersion', 1) < PLOT_BOUNDARY_VERSION)
+        if cached.get('fingerprint') == fingerprint and cached.get('manualCalibration') == signature and not retry_boundary:
             return identifier, {**cache[identifier], 'imagePath': row['imagePath']}
         try:
             result = analyze(path, manual)
         except Exception as error:
             result = {'status': 'unreadable', 'reason': str(error)}
-        return identifier, {'imagePath': row['imagePath'], 'fingerprint': fingerprint, 'manualCalibration': signature, **result}
+        return identifier, {'imagePath': row['imagePath'], 'fingerprint': fingerprint, 'manualCalibration': signature, 'boundaryReaderVersion': PLOT_BOUNDARY_VERSION, **result}
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         graphs = dict(pool.map(process, rows))
     output = {'version': VERSION, 'startHz': START_HZ, 'stepHz': STEP_HZ, 'maxHz': MAX_HZ, 'graphs': graphs}
