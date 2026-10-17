@@ -135,7 +135,6 @@ export default function App() {
   }
   const filters = [
     { key: 'year', label: 'Year', values: [...new Set(movies.map(movie => movie.year))].sort().reverse() },
-    { key: 'type', label: 'Type', values: ['Movie', 'TV series', 'Unknown'] },
     { key: 'format', label: 'Soundtrack format', values: [...new Set(movies.map(movie => movie.format))].sort() },
   ];
   return <main className="app">
@@ -152,11 +151,11 @@ export default function App() {
           onChange={event => { update({ q: event.target.value, page: 1 }, queryEditing.current); queryEditing.current = true; }} /></label>
         {filters.map(filter => <label key={filter.key}>{filter.label}<select value={state[filter.key]}
           onChange={event => update({ [filter.key]: event.target.value, page: 1 })}>
-          <option value="">All {filter.key === 'type' ? 'types' : filter.key === 'year' ? 'years' : 'formats'}</option>
+          <option value="">All {filter.key === 'year' ? 'years' : 'formats'}</option>
           {state[filter.key] && !filter.values.includes(state[filter.key]) && <option value={state[filter.key]}>{state[filter.key]}</option>}
           {filter.values.map(value => <option key={value}>{value}</option>)}
         </select></label>)}
-        <button className="reset" onClick={() => update({ q: '', year: '', type: '', format: '', page: 1 })}>Reset filters</button>
+        <button className="reset" onClick={() => update({ q: '', year: '', format: '', page: 1 })}>Reset filters</button>
       </section>
       <p className="metadata-note">Years and types are inferred from titles. Soundtrack labels are read automatically from graphs; unclear labels stay Unknown.</p>
       {selected.length > 0 && <section className="comparison" ref={comparisonRef} aria-labelledby="comparison-title">

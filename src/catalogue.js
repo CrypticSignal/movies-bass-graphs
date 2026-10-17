@@ -13,7 +13,7 @@ export function readState(search = window.location.search) {
   const p = new URLSearchParams(search);
   const n = Number(p.get('page'));
   return {
-    q: p.get('q') || '', year: p.get('year') || '', type: p.get('type') || '', format: p.get('format') || '',
+    q: p.get('q') || '', year: p.get('year') || '', format: p.get('format') || '',
     page: Number.isSafeInteger(n) && n > 0 ? n : 1,
     scope: p.get('scope') === 'comparison' ? 'comparison' : '',
     graph: p.get('graph') || '', compare: [...new Set((p.get('compare') || '').split(',').filter(Boolean))].slice(0, 2),
@@ -22,7 +22,7 @@ export function readState(search = window.location.search) {
 
 export function stateURL(state) {
   const p = new URLSearchParams();
-  for (const key of ['q', 'year', 'type', 'format', 'graph']) if (state[key]) p.set(key, state[key]);
+  for (const key of ['q', 'year', 'format', 'graph']) if (state[key]) p.set(key, state[key]);
   if (state.graph && state.scope === 'comparison') p.set('scope', 'comparison');
   if (state.page > 1) p.set('page', String(state.page));
   if (state.compare.length) p.set('compare', state.compare.join(','));
@@ -33,6 +33,5 @@ export function filterMovies(movies, state) {
   const query = state.q.trim().toLowerCase();
   return movies.filter(movie => movie.movieName.toLowerCase().includes(query)
     && (!state.year || movie.year === state.year)
-    && (!state.type || movie.type === state.type)
     && (!state.format || movie.format === state.format));
 }
