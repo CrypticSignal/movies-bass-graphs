@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { filterMovies, imageURL, levelAt, metadata, readState, stateURL } from './catalogue.js';
+import { filterMovies, imageURL, rankingLevel, OCTAVE_RANGES, metadata, readState, stateURL } from './catalogue.js';
 
 function GraphImage({ movie, ...props }) {
   const [failed, setFailed] = useState(false);
@@ -135,7 +135,9 @@ export default function App() {
   }, [attempt]);
 
   const filtered = filterMovies(movies, state);
-  const rankedCount = state.frequency ? filtered.filter(movie => levelAt(movie, state.frequency, state.curve) !== null).length : 0;
+  const rankingActive = Boolean(state.frequency || state.octave);
+  const rankingLabel = state.octave ? `average across ${state.octave.replace('-', '–')} Hz` : `at ${state.frequency} Hz`;
+  const rankedCount = rankingActive ? filtered.filter(movie => rankingLevel(movie, state) !== null).length : 0;
   const selected = state.compare.map(id => movies.find(movie => movie.id === id)).filter(movie => movie && imageURL(movie));
   const viewing = movies.find(movie => movie.id === state.graph && imageURL(movie) && (state.scope !== 'comparison' || state.compare.includes(movie.id)));
   const sequence = state.scope === 'comparison' ? selected : filtered.filter(movie => imageURL(movie));
@@ -189,17 +191,25 @@ export default function App() {
           {state[filter.key] && !filter.values.includes(state[filter.key]) && <option value={state[filter.key]}>{state[filter.key]}</option>}
           {filter.values.map(value => <option key={value}>{value}</option>)}
         </select></label>)}
-        <button className="reset" onClick={() => { setFrequencyInput(''); update({ q: '', year: '', format: '', letter: '', frequency: '' }); }}>Reset filters</button>
+        <button className="reset" onClick={() => { setFrequencyInput(''); update({ q: '', year: '', format: '', letter: '', frequency: '', octave: '' }); }}>Reset filters</button>
       </section>
       <form className="frequency-panel" onSubmit={event => {
         event.preventDefault();
         const frequency = Number(frequencyInput);
-        if (!Number.isInteger(frequency) || frequency < 1 || frequency > 200) return;
+        if (!state.octave && (!Number.isInteger(frequency) || frequency < 1 || frequency > 200)) return;
         document.activeElement?.blur();
-        update({ frequency });
+        if (!state.octave) update({ frequency });
         scrollToResults(350);
       }}>
-        <label>Frequency (Hz, 1–200)<input type="number" min="1" max="200" step="1" required placeholder="20" enterKeyHint="search" value={frequencyInput}
+        <label>Rank by<select value={state.octave || ''} onChange={event => {
+          const octave = event.target.value;
+          const frequency = Number(frequencyInput);
+          selectFilter({ octave, frequency: !octave && Number.isInteger(frequency) && frequency >= 1 && frequency <= 200 ? frequency : '' });
+        }}>
+          <option value="">Single frequency</option>
+          {OCTAVE_RANGES.map(range => <option key={range} value={range}>{range.replace('-', '–')} Hz octave average</option>)}
+        </select></label>
+        {!state.octave && <label>Frequency (Hz, 1–200)<input type="number" min="1" max="200" step="1" required placeholder="20" enterKeyHint="search" value={frequencyInput}
           onKeyDown={event => {
             if (event.key === 'Enter' && !event.nativeEvent.isComposing) {
               event.preventDefault();
@@ -210,13 +220,13 @@ export default function App() {
             const value = event.target.value;
             setFrequencyInput(value);
             const frequency = Number(value);
-            update({ frequency: value !== '' && Number.isInteger(frequency) && frequency >= 1 && frequency <= 200 ? frequency : '' }, true);
-          }} /></label>
+            update({ frequency: value !== '' && Number.isInteger(frequency) && frequency >= 1 && frequency <= 200 ? frequency : '', octave: '' }, true);
+          }} /></label>}
         <label>Curve<select value={state.curve} onChange={event => update({ curve: event.target.value })}>
           <option value="green">Green curve</option><option value="red">Red curve</option>
         </select></label>
-        {state.frequency && <button type="button" onClick={() => { setFrequencyInput(''); update({ frequency: '' }); }}>Clear ranking</button>}
-        <span>Estimated value at the exact frequency, not an average. Read from the image’s dB scale; not subwoofer SPL.</span>
+        {rankingActive && <button type="button" onClick={() => { setFrequencyInput(''); update({ frequency: '', octave: '' }); }}>Clear ranking</button>}
+        <span>{state.octave ? 'Octave ranking uses the arithmetic mean of dB readings at every 1 Hz, including both endpoints. The complete range must be readable.' : 'Single-frequency ranking uses the value at that frequency, not an average.'} Values are image estimates, not subwoofer SPL.</span>
       </form>
       <nav className="alphabet" aria-label="Browse by title">
         {['', '0-9', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map(letter => <button key={letter || 'all'} aria-pressed={!state.q.trim() && state.letter === letter}
@@ -235,18 +245,18 @@ export default function App() {
       </section>}
       <div className="results-heading"><p><strong>{filtered.length}</strong> {filtered.length === 1 ? 'entry' : 'entries'}<span> / {movies.length} in the archive</span></p>
         <span>Select up to two graphs to compare</span></div>
-      {state.frequency && <p className="frequency-summary" role="status">{levelsStatus !== 'ready'
+      {rankingActive && <p className="frequency-summary" role="status">{levelsStatus !== 'ready'
         ? 'Frequency readings are unavailable. Graphs are shown without a ranking.'
-        : `${rankedCount} of ${filtered.length} matching graphs ranked by the ${state.curve} curve at ${state.frequency} Hz, highest first. Graphs with uncertain or missing readings are listed afterward as unranked.`}</p>}
+        : `${rankedCount} of ${filtered.length} matching graphs ranked by the ${state.curve} curve ${rankingLabel}, highest first. Graphs with uncertain or missing readings are listed afterward as unranked.`}</p>}
       <p role="status" className="action-message">{message}</p>
       <div ref={resultsRef} style={{ scrollMarginTop: 16, minHeight: 'calc(100svh - 16px)' }}>
       <section className="gallery" aria-label="Movie graphs">{filtered.map(movie => <article className="graph-card" key={movie.id}>
         <div className="card-heading"><div><span className="card-meta">{movie.year} · {movie.type}{movie.format !== 'Unknown' ? ' · ' + movie.format : ''}</span><h2>{movie.movieName}</h2></div>
           <button aria-pressed={state.compare.includes(movie.id)} disabled={!imageURL(movie)} onClick={() => toggleCompare(movie)}>{state.compare.includes(movie.id) ? '✓ Selected' : '+ Compare'}<span className="sr-only"> {movie.movieName}</span></button></div>
         {imageURL(movie) ? <button className="graph-open" onClick={() => update({ graph: movie.id, scope: '', view: '' })} aria-label={`View graph for ${movie.movieName}`}><GraphImage movie={movie} loading="lazy" /><span className="inspect-tag">Inspect graph ↗</span></button> : <GraphImage movie={movie} />}
-        {state.frequency && <p className="frequency-value">{levelAt(movie, state.frequency, state.curve) === null
-          ? `Unranked at ${state.frequency} Hz — no reliable ${state.curve} curve reading`
-          : `≈ ${levelAt(movie, state.frequency, state.curve).toFixed(1)} dB at ${state.frequency} Hz · ${state.curve} curve (estimated)`}</p>}
+        {rankingActive && <p className="frequency-value">{rankingLevel(movie, state) === null
+          ? `Unranked ${rankingLabel} — no complete, reliable ${state.curve} curve reading`
+          : `≈ ${rankingLevel(movie, state).toFixed(1)} dB ${rankingLabel} · ${state.curve} curve (estimated)`}</p>}
         <div style={{ padding: '12px 16px' }}><button disabled={!imageURL(movie)} onClick={() => update({ graph: movie.id, scope: '', view: '' })} aria-label={`Inspect graph for ${movie.movieName}`}>Inspect graph ↗</button></div>
       </article>)}</section>
       {!filtered.length && <p className="empty">No titles match these filters. Try a broader search or reset the filters.</p>}
