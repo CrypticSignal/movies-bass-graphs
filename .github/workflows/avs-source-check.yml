@@ -56,7 +56,11 @@ jobs:
           if not posts:
               print('Response start:', html[:2000])
               raise RuntimeError('First post not found')
-          body = posts[0].select_one('.message-body .bbWrapper, .message-body')
+          print('Post IDs:', [p.get('data-content') for p in posts[:5]])
+          wrappers = soup.select('.bbWrapper')
+          print('Bodies:', [(w.get_text(' ', strip=True)[:100], len(w.find_all('a', href=True))) for w in wrappers[:5]])
+          import re
+          body = next((w for w in wrappers if re.search(r'List\\s+of\\s+Films', w.get_text(' ', strip=True), re.I)), None)
           if not body:
               raise RuntimeError('First post body not found')
           text = body.get_text('\n', strip=True)
