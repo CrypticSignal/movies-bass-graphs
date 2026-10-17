@@ -31,7 +31,7 @@ jobs:
           print("Catalogue entries:", len(rows), flush=True)
           def recover(row):
               row = dict(row)
-              source = row.get("imgurURL", "")
+              source = row.get("imgurURL", "").strip().replace("http://i.imgur.com/", "https://i.imgur.com/")
               try:
                   if not source.startswith("https://i.imgur.com/"):
                       raise ValueError("Not a direct HTTPS Imgur image")
@@ -65,9 +65,9 @@ jobs:
           PY
       - name: Save recovered images for review
         run: |
-          git switch -c fix/recovered-graph-images
+          git switch -c fix/recovered-graph-images-v2
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/graphs
           git commit -m "Recover movie graph images from Imgur"
-          git push origin HEAD:refs/heads/fix/recovered-graph-images
+          git push origin HEAD:refs/heads/fix/recovered-graph-images-v2
