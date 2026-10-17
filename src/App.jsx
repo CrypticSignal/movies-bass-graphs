@@ -181,6 +181,7 @@ export default function App() {
       {!filtered.length && <p className="empty">No titles match these filters. Try a broader search or reset the filters.</p>}
       {pages > 1 && <nav className="pagination" aria-label="Catalogue pages"><button disabled={page <= 1} onClick={() => update({ page: page - 1 })}>← Previous</button><span aria-live="polite">Page {page} of {pages}</span><button disabled={page >= pages} onClick={() => update({ page: page + 1 })}>Next →</button></nav>}
       <footer>Movie soundtrack graphs · Original credits and measurement details appear on each image.</footer>
+      {selected.length > 0 && <aside className="compare-tray" aria-label="Comparison selection"><span>{selected.length}/2 graphs selected</span><button onClick={() => comparisonRef.current?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })}>View comparison ↑</button></aside>}
       {viewing && <Viewer movie={viewing} onClose={() => update({ graph: '' })}
         previous={index > 0 ? () => update({ graph: sequence[index - 1].id }, true) : null}
         next={index >= 0 && index < sequence.length - 1 ? () => update({ graph: sequence[index + 1].id }, true) : null} />}

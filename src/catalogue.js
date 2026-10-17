@@ -3,7 +3,7 @@ export const imageURL = movie => movie?.imagePath ? import.meta.env.BASE_URL + m
 
 export function metadata(movie, extra = {}) {
   const title = movie.movieName || '';
-  const year = title.match(/\b(?:19|20)\d{2}\b/)?.[0] || 'Unknown';
+  const year = title.match(/\(((?:19|20)\d{2})(?:\)|-)/)?.[1] || 'Unknown';
   const type = /\bseason\b|\bseries\b|Cosmos: A Spacetime Odyssey/i.test(title)
     ? 'TV series' : year !== 'Unknown' ? 'Movie' : 'Unknown';
   return { ...movie, year, type, format: 'Unknown', ...extra, id: String(movie.id) };

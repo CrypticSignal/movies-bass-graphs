@@ -23,7 +23,7 @@ Years and types are inferred from titles. Soundtrack formats are read automatica
 - `public/graphs/catalogue.json`: IDs, titles, source references, and bundled image paths.
 - `public/graphs/metadata.json`: soundtrack format labels keyed by entry ID.
 - `scripts/extract-metadata.py`: optional metadata extraction with Python, Pillow, and Tesseract. It is not needed to build or run the app.
-- The **Extract soundtrack metadata** workflow regenerates metadata when the extraction script changes, or when manually dispatched.
+- The **Extract soundtrack metadata** workflow regenerates metadata when manually dispatched.
 
 To repair a title, edit its catalogue entry. To correct an automatically read format, edit its entry in `metadata.json`. Metadata extraction overwrites that generated file, so retain any corrections when regenerating it.
 

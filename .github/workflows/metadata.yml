@@ -1,9 +1,6 @@
 name: Extract soundtrack metadata
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - scripts/extract-metadata.py
 permissions:
   contents: write
 jobs:
