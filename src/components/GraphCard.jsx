@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import { curvePeak, imageURL, rankingReading } from '../catalogue.js';
-import { GraphImage, ZoomControl, zoomStyle } from './GraphTools.jsx';
+import { GraphImage } from './GraphTools.jsx';
 
 function FrequencyReading({ reading, overallPeak, curve, label }) {
   const { level, peak } = reading ?? {};
   return (
-    <p className="mt-[14px] mb-4 px-4 text-[12px] text-accent">
+    <p className="mt-[14px] mb-4 pl-4 pr-12 text-[12px] text-accent">
       {reading && (level === null
         ? `Unranked ${label} — no complete, reliable ${curve} curve reading`
         : `${level.toFixed(1)} dB ${label} | ${curve} curve`)}
@@ -26,13 +25,12 @@ function FrequencyReading({ reading, overallPeak, curve, label }) {
 export default function GraphCard({
   movie, rank, rankingState, rankingLabel, curve = 'green', selected, onCompare, onInspect,
 }) {
-  const [zoom, setZoom] = useState(1);
   const reading = rankingState ? rankingReading(movie, rankingState) : null;
   const overallPeak = curvePeak(movie, curve);
   const hasImage = Boolean(imageURL(movie));
 
   return (
-    <article className="min-w-0 overflow-hidden rounded-[9px] border border-[#34453a] bg-[#17221d]">
+    <article className="relative min-w-0 overflow-hidden rounded-[9px] border border-[#34453a] bg-[#17221d]">
       <div className="flex min-h-[103px] items-start justify-between gap-3 p-[15px] desktop:p-[19px]">
         <div className="min-w-0 flex-1">
           {reading?.level != null && (
@@ -59,44 +57,13 @@ export default function GraphCard({
         </button>
       </div>
       {hasImage ? (
-        <div className="relative">
-          <details className="absolute top-2 left-2 z-1 rounded border border-[#6b835a] bg-[#203127f2] text-accent">
-            <summary
-              className="flex h-10 cursor-pointer list-none items-center gap-2 px-2.5 text-[11px] [&::-webkit-details-marker]:hidden"
-              aria-label={`Zoom controls for ${movie.movieName}`}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
-                <circle cx="10" cy="10" r="6" />
-                <path d="m15 15 6 6M7 10h6m-3-3v6" />
-              </svg>
-              <span className="tabular-nums">{Math.round(zoom * 100)}%</span>
-            </summary>
-            <div className="w-[180px] px-3 pb-2">
-              <ZoomControl value={zoom} onChange={setZoom} compact />
-            </div>
-          </details>
-          <div className="overflow-auto bg-black">
-            <button
-              className="block w-full rounded-none border-0 bg-black p-0 hover:bg-black"
-              style={zoomStyle(zoom)}
-              onClick={onInspect}
-              aria-label={`View graph for ${movie.movieName}`}
-            >
-              <GraphImage movie={movie} loading="lazy" />
-            </button>
-          </div>
-          <button
-            className="absolute top-2 right-2 flex h-10 w-10 items-center justify-center rounded border border-[#6b835a] bg-[#203127e8] p-0 text-accent"
-            onClick={onInspect}
-            aria-label={`Inspect graph for ${movie.movieName}`}
-            title="Inspect graph"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
-              <circle cx="12" cy="12" r="3" />
-            </svg>
-          </button>
-        </div>
+        <button
+          className="block w-full rounded-none border-0 bg-black p-0 hover:bg-black"
+          onClick={onInspect}
+          aria-label={`View graph for ${movie.movieName}`}
+        >
+          <GraphImage movie={movie} loading="lazy" />
+        </button>
       ) : <GraphImage movie={movie} />}
       {(reading || overallPeak) && (
         <FrequencyReading
@@ -106,7 +73,19 @@ export default function GraphCard({
           label={rankingLabel}
         />
       )}
-
+      {hasImage && (
+        <button
+          className="absolute right-2 bottom-2 flex h-8 w-8 items-center justify-center rounded border border-[#6b835a] bg-[#203127e8] p-0 text-accent"
+          onClick={onInspect}
+          aria-label={`Inspect graph for ${movie.movieName}`}
+          title="Inspect graph"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+        </button>
+      )}
     </article>
   );
 }

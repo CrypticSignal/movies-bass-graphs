@@ -18,7 +18,6 @@ export default function App() {
   const { state, update } = useViewState();
   const { movies, status, levelsStatus, retry } = useCatalogue();
   const [message, setMessage] = useState('');
-  const [comparisonZoom, setComparisonZoom] = useState(1);
   const comparisonRef = useRef(null);
   const resultsRef = useRef(null);
   const scrollPending = useRef(false);
@@ -132,8 +131,6 @@ export default function App() {
           />
           <Comparison
             movies={selected}
-            zoom={comparisonZoom}
-            onZoom={setComparisonZoom}
             sectionRef={comparisonRef}
             onInspect={() => update({ view: 'comparison', graph: '', scope: '' })}
             onClear={() => update({ compare: [] })}

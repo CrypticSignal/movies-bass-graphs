@@ -1,6 +1,6 @@
-import { GraphImage, ZoomControl, zoomStyle } from './GraphTools.jsx';
+import { GraphImage } from './GraphTools.jsx';
 
-export default function Comparison({ movies, zoom, onZoom, onInspect, onClear, sectionRef }) {
+export default function Comparison({ movies, onInspect, onClear, sectionRef }) {
   if (!movies.length) return null;
 
   return (
@@ -15,7 +15,6 @@ export default function Comparison({ movies, zoom, onZoom, onInspect, onClear, s
           <h2 id="comparison-title" className="mt-2 text-[25px]">Compare soundtracks</h2>
         </div>
         <div className="flex flex-wrap items-end gap-3 desktop:flex-nowrap">
-          <ZoomControl value={zoom} onChange={onZoom} />
           <button disabled={movies.length < 2} onClick={onInspect}>Inspect graphs ↗</button>
           <button onClick={onClear}>Clear comparison</button>
         </div>
@@ -31,7 +30,7 @@ export default function Comparison({ movies, zoom, onZoom, onInspect, onClear, s
               tabIndex={0}
               aria-label={`Scrollable comparison graph for ${movie.movieName}`}
             >
-              <div style={zoomStyle(zoom)}><GraphImage movie={movie} /></div>
+              <GraphImage movie={movie} />
             </div>
           </article>
         ))}
