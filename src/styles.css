@@ -7,6 +7,14 @@
   --color-page: #101817;
   --color-ink: #dce7df;
   --color-accent: #c4ed9b;
+  --color-accent-ink: #162016;
+  --color-control: #192720;
+  --color-divider: #314039;
+  --color-accent-muted: #b9da9c;
+  --color-control-ink: #e1eae4;
+  --color-control-border: #3c5149;
+  --color-control-hover-border: #b6de8c;
+  --color-control-hover: #2a3f32;
   --breakpoint-desktop: 761px;
 }
 
@@ -22,9 +30,9 @@
   }
 
   button {
-    @apply cursor-pointer rounded-md border border-[#3c5149] bg-[#192720] px-[13px] py-[9px] text-[13px] font-semibold text-[#e1eae4];
-    @apply hover:border-[#b6de8c] hover:bg-[#2a3f32] disabled:cursor-default disabled:opacity-40;
-    @apply aria-pressed:border-accent aria-pressed:bg-accent aria-pressed:text-[#162016];
+    @apply cursor-pointer rounded-md border border-control-border bg-control px-[13px] py-[9px] text-[13px] font-semibold text-control-ink;
+    @apply hover:border-control-hover-border hover:bg-control-hover disabled:cursor-default disabled:opacity-40;
+    @apply aria-pressed:border-accent aria-pressed:bg-accent aria-pressed:text-accent-ink;
   }
 
   label {
@@ -32,7 +40,7 @@
   }
 
   input, select {
-    @apply min-h-[42px] rounded-[5px] border border-[#3e4e43] bg-[#101916] px-3 py-[11px] text-[13px] text-[#e5ece6];
+    @apply min-h-10.5 rounded-[5px] border border-[#3e4e43] bg-[#101916] px-3 py-[11px] text-[13px] text-[#e5ece6];
   }
 
   input {
@@ -40,7 +48,7 @@
   }
 
   select {
-    @apply max-w-[230px];
+    @apply max-w-57.5;
   }
 
   button:focus-visible, a:focus-visible, input:focus-visible,

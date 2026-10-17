@@ -5,7 +5,7 @@ import { GraphImage, ZoomControl, zoomStyle } from './GraphTools.jsx';
 function FrequencyReading({ reading, overallPeak, curve, label }) {
   const { level, peak } = reading ?? {};
   return (
-    <p className="mt-[14px] mb-4 pl-4 pr-24 text-[12px] text-accent">
+    <p className="mt-3.5 mb-4 pl-4 pr-24 text-[12px] text-accent">
       {reading && (level === null
         ? `Unranked ${label} — no complete, reliable ${curve} curve reading`
         : `${level.toFixed(1)} dB ${label} | ${curve} curve`)}
@@ -36,7 +36,7 @@ export default function GraphCard({
       <div className="flex min-h-[103px] items-start justify-between gap-3 p-[15px] desktop:p-[19px]">
         <div className="min-w-0 flex-1">
           {reading?.level != null && (
-            <span className="mb-[7px] table rounded bg-accent px-[7px] py-[3px] text-[12px] font-bold text-[#162016] tabular-nums">
+            <span className="mb-[7px] table rounded bg-accent px-[7px] py-[3px] text-[12px] font-bold text-accent-ink tabular-nums">
               Rank #{rank}
             </span>
           )}
@@ -91,7 +91,7 @@ export default function GraphCard({
                 <path d="m15 15 6 6M7 10h6m-3-3v6" />
               </svg>
             </summary>
-            <div className="absolute right-0 bottom-10 w-[180px] rounded-md border border-[#6b835a] bg-[#203127] p-3 shadow-lg">
+            <div className="absolute right-0 bottom-10 w-45 rounded-md border border-[#6b835a] bg-[#203127] p-3 shadow-lg">
               <ZoomControl value={zoom} onChange={setZoom} min={100} max={400} compact />
               <button
                 className="mt-2 w-full px-2 py-1 text-[11px]"

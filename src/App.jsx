@@ -99,15 +99,14 @@ export default function App() {
   }
 
   return (
-    <main className={`mx-auto max-w-[1320px] px-4 pt-[26px] desktop:px-9 desktop:pt-12 ${selected.length ? 'pb-[65px]' : ''}`}>
-      <header className="mb-[30px] flex flex-col items-start justify-between gap-5 border-b border-[#314039] pb-8 desktop:flex-row desktop:items-center desktop:gap-6">
+    <main className={`mx-auto max-w-330 px-4 pt-6.5 desktop:px-9 desktop:pt-12 ${selected.length ? 'pb-[65px]' : ''}`}>
+      <header className="mb-7.5 flex flex-col items-start justify-between gap-5 border-b border-divider pb-8 desktop:flex-row desktop:items-center desktop:gap-6">
         <div>
-          <span className="text-[10px] font-bold tracking-[2px] text-[#b9da9c]">THE LOW END / SOUNDTRACK ARCHIVE</span>
           <h1 className="my-[15px] text-[clamp(32px,5vw,54px)] tracking-[-1px] desktop:tracking-[-2px]">
-            Movies Bass Graphs<span className="text-accent">.</span>
+            Show me the bass<span className="text-accent">.</span>
           </h1>
-          <p className="m-0 max-w-[650px] text-[15px] text-[#9eafa6]">
-            Explore the low frequencies. Find a soundtrack, inspect its graph, and compare the details.
+          <p className="m-0 max-w-162.5 text-[15px] text-[#9eafa6]">Source -
+            <a href="https://www.avsforum.com/threads/the-ultimate-list-of-bass-in-movies-w-frequency-charts-bass-charts-are-on-the-first-page.2763785"> The Ultimate List of BASS in Movies w/ Frequency Charts on AVS Forum</a>
           </p>
         </div>
         <button className="whitespace-nowrap" onClick={share}>Copy view link ↗</button>
@@ -136,7 +135,7 @@ export default function App() {
             onClear={() => update({ compare: [] })}
           />
 
-          <div className="mt-5 mb-3 flex flex-col items-start justify-between gap-0 text-[12px] text-[#9bad9f] desktop:my-0 desktop:flex-row desktop:items-center desktop:gap-[14px]">
+          <div className="mt-5 mb-3 flex flex-col items-start justify-between gap-0 text-[12px] text-[#9bad9f] desktop:my-0 desktop:flex-row desktop:items-center desktop:gap-3.5">
             <p className="mt-0 mb-2 text-[15px] desktop:my-[15px]">
               <strong className="text-[#e8f0e7]">{filtered.length}</strong>
               {' '}{filtered.length === 1 ? 'entry' : 'entries'}
@@ -145,7 +144,7 @@ export default function App() {
             <span>Select up to two graphs to compare</span>
           </div>
           {rankingActive && (
-            <p className="mt-0 mb-[14px] text-[12px] text-[#b9da9c]" role="status">
+            <p className="mt-0 mb-3.5 text-[12px] text-accent-muted" role="status">
               {levelsStatus === 'ready'
                 ? `${rankedCount} of ${filtered.length} matching graphs ranked by the ${state.curve} curve ${rankingLabel}, highest first. Graphs with uncertain or missing readings are listed under “Show unranked movies”.`
                 : levelsStatus === 'outdated'
@@ -156,7 +155,7 @@ export default function App() {
           <p role="status" className="mt-0 mb-3 min-h-0 text-[13px] text-accent empty:hidden">{message}</p>
 
           <div ref={resultsRef} className="min-h-[calc(100svh_-_16px)] scroll-mt-4">
-            <section className="grid grid-cols-1 items-start gap-[22px] desktop:grid-cols-2" aria-label="Movie graphs">
+            <section className="grid grid-cols-1 items-start gap-5.5 desktop:grid-cols-2" aria-label="Movie graphs">
               {visibleMovies.map((movie, movieIndex) => (
                 <GraphCard
                   key={movie.id}
@@ -172,8 +171,8 @@ export default function App() {
               ))}
             </section>
             {rankingActive && unrankedMovies.length > 0 && (
-              <details className="my-5 rounded-lg border border-[#314039] px-4 py-3">
-                <summary className="cursor-pointer text-[14px] text-[#b9da9c]">
+              <details className="my-5 rounded-lg border border-divider px-4 py-3">
+                <summary className="cursor-pointer text-[14px] text-accent-muted">
                   Show unranked movies
                   <span className="ml-2 text-[12px] text-[#9bad9f]">({unrankedMovies.length})</span>
                 </summary>
@@ -183,18 +182,18 @@ export default function App() {
               </details>
             )}
             {!filtered.length && (
-              <p className="my-[16px] px-[15px] py-[60px] text-center text-[#a9b9ad]">
+              <p className="my-4 px-[15px] py-15 text-center text-[#a9b9ad]">
                 No titles match these filters. Try a broader search or reset the filters.
               </p>
             )}
           </div>
-          <footer className="border-t border-[#314039] pt-6 pb-[35px] text-[11px] text-[#839689]">
+          <footer className="border-t border-divider pt-6 pb-[35px] text-[11px] text-[#839689]">
             Movie soundtrack graphs · Original credits and measurement details appear on each image.
           </footer>
 
           {selected.length > 0 && (
             <aside
-              className="fixed right-3 bottom-3 left-3 z-5 flex items-center justify-between gap-[14px] rounded-lg border border-[#b9da9c] bg-[#243623f5] px-3 py-2.5 text-[12px] text-[#d7eacb] shadow-[0_8px_30px_#0008] desktop:right-6 desktop:bottom-5 desktop:left-auto"
+              className="fixed right-3 bottom-3 left-3 z-5 flex items-center justify-between gap-3.5 rounded-lg border border-accent-muted bg-[#243623f5] px-3 py-2.5 text-[12px] text-[#d7eacb] shadow-[0_8px_30px_#0008] desktop:right-6 desktop:bottom-5 desktop:left-auto"
               aria-label="Comparison selection"
             >
               <span>{selected.length}/2 graphs selected</span>

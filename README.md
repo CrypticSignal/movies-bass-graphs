@@ -1,24 +1,44 @@
 # Movies Bass Graphs
 
-Explore bass frequency graphs for the films indexed in AVS Forum’s first-post **List of Films**.
+Explore bass frequency graphs of movies. Source: https://www.avsforum.com/threads/the-ultimate-list-of-bass-in-movies-w-frequency-charts-bass-charts-are-on-the-first-page.2763785
 
-[Open the archive](https://crypticsignal.github.io/movies-bass-graphs/)
+- Filter by title, year, sound format or title starting number/letter. Opening punctuation is ignored, e.g. `[Rec]` appears under the "R" letter filter.
+- Rank movies by estimated bass level at a particular frequency or by the average level across a selected octave (see [Ranking by frequency or octave](#ranking-by-frequency-or-octave)).
+- Select up to two graphs to compare, with shared zoom controls.
+- Rank movies by their output at a particular frequency, or by their output across one of the following octaves: 10–20 Hz, 20–40 Hz, 30–60 Hz, 40–80 Hz, 50–100 Hz, or 60–120 Hz
 
-## Browse, inspect, and compare
+## Table of Contents
 
-- Browse with **All · 0–9 · A–Z**, or search titles and filter by year and soundtrack format. Each selection shows all matching entries with lazy-loaded images. Opening punctuation is ignored: `[Rec]` appears under R; titles starting with “The” remain under T.
-- Open a graph in the viewer, zoom up to 400%, scroll to pan, or enter fullscreen.
-- Move between graphs in the filtered results without leaving the viewer.
-- Select up to two graphs for side-by-side comparison, with shared zoom controls. On narrow screens they stack vertically.
-- Use **Copy view link** to share your search, filters, selected letter, selected graphs, and open viewer. Refresh and browser Back/Forward restore the view.
+- [Ranking by frequency or octave](#ranking-by-frequency-or-octave)
+  - [How readings are extracted](#how-readings-are-extracted)
+- [Catalogue and metadata](#catalogue-and-metadata)
+- [Develop and build](#develop-and-build)
+- [Making changes](#making-changes)
+- [Automatic AVS Forum sync](#automatic-avs-forum-sync)
 
-Comparison preserves each image's original axes. Check labelled scales and measurement methods before comparing values; the graphs are not normalized.
+## Ranking by frequency or octave
+
+Use the **Rank by** control to choose how to compare bass levels:
+
+- **Single frequency:** select **Single frequency**, then enter a frequency in Hz. For example, enter **20** to rank movies by their level at 20 Hz, without averaging across a band. Press Enter to scroll to the results.
+- **Octave average:** select an octave from **Rank by**: **10–20, 20–40, 30–60, 40–80, 50–100, or 60–120 Hz**. For example, choose **20–40 Hz octave average** to rank movies by their average level across that range rather than at one frequency.
+
+For either mode, choose **Green (peak dB)** or **Red (average dB)** in **Curve**. Ranking updates automatically, with the highest estimated dB level first. Existing title, year, sound format and title starting letter/number filters still apply. Use **Clear ranking** to return to browsing without changing those filters.
+
+- Single-frequency values are digitized at that frequency's pixel column.
+- Octave rankings use the arithmetic mean of the selected curve's dB samples every **0.5 Hz**, including both endpoints; every sample in the range must be readable. This is an average of dB readings, not an energy-weighted average. Each ranked octave card also shows the highest sampled value within that octave and its frequency for the selected curve; ties show the lowest matching frequency. This additional peak reading does not determine the octave ranking.
+
+Values are estimates extracted from graph images using Python, not original numeric soundtrack measurements.
+
+The analysis requires consistent frequency and dB axis labels. Uncertain graphs, missing curves, and frequencies outside a graph's calibrated range remain **unranked** and sort after readable results.
+
+`scripts/analyze-graphs.py` generates `public/graphs/levels.json` using Pillow, NumPy, and Tesseract. The daily AVS sync refreshes analysis for new or changed images and reuses cached analysis for unchanged images. The **Analyze graph levels** workflow can also be started manually. To force a full recalibration after improving the analyzer, increment its `VERSION`.
+
+### How readings are extracted
+
+GitHub Actions runs Python with Pillow and NumPy to find the plot grid and coloured curves, and Tesseract OCR to read axis labels. Consistent labels calibrate pixel coordinates to Hz and dB. The reader then samples the selected pixel column at each 0.5 Hz point, saves estimated curve values, and excludes ambiguous readings. The browser loads these saved readings and sorts or averages them; it does not analyse images on each interaction. ChatGPT reasoning settings do not affect this deterministic workflow.
 
 ## Catalogue and metadata
-
-The catalogue and recovered graph images are bundled with the site. Unavailable images remain labelled unavailable. No AVS Forum, Imgur, or Google Sheets access is required in the browser.
-
-Years and types are inferred from titles. Soundtrack formats are read automatically from graph headers and can contain recognition errors; the label on the graph remains authoritative. Unrecognized formats stay **Unknown**.
 
 - `public/graphs/catalogue.json`: IDs, titles, source references, and bundled image paths.
 - `public/graphs/metadata.json`: soundtrack format labels keyed by entry ID.
@@ -26,8 +46,6 @@ Years and types are inferred from titles. Soundtrack formats are read automatica
 - The **Extract soundtrack metadata** workflow regenerates metadata when manually dispatched.
 
 To repair a title, edit its catalogue entry. To correct an automatically read format, edit its entry in `metadata.json`. Metadata extraction overwrites that generated file, so retain any corrections when regenerating it.
-
-The [original spreadsheet](https://docs.google.com/spreadsheets/d/1SdwJ_mfYgghxZG8gy41ke22e2AM9gUPTB1EmZgYcHoY/edit) linked to Imgur graphs. Copies were recovered in October 2026. Preserve the credits shown on each graph.
 
 ## Develop and build
 
@@ -84,7 +102,7 @@ Catalogue, metadata, and level JSON files under `public/graphs/` are generated b
 
 The **Sync AVS film graphs** workflow runs daily at **04:23 UTC** (GitHub may delay scheduled runs) and can be started manually from Actions. Its only source is the numbered **List of Films,** section in the [thread’s first post](https://www.avsforum.com/threads/the-ultimate-list-of-bass-in-movies-w-frequency-charts-bass-charts-are-on-the-first-page.2763785/). Links in the update announcements, nested scene lists, replies, and other posts are excluded.
 
-The sync follows each film’s Imgur hyperlink, downloads new or changed direct images, extracts soundtrack labels, and analyses changed graphs at 0.5 Hz intervals. Existing saved images and IDs are reused where possible. The two Edge of Tomorrow cards remain separate.
+The sync follows each film’s Imgur hyperlink, downloads new or changed direct images, extracts soundtrack labels, and analyses changed graphs at 0.5 Hz intervals. Existing saved images and IDs are reused where possible.
 
 Chrome reads the public page when AVS Forum requires its JavaScript browser check. The runner uses a temporary profile without a login or saved user cookies. An unreadable source or malformed list fails before the saved catalogue is changed. Failed image downloads retain working copies; unavailable sources remain labelled unavailable.
 
@@ -92,16 +110,4 @@ New downloads come only from the current film index. If a film leaves that index
 
 Only changed catalogue, metadata, analysis, or image files are committed. The sync starts publishing when those files change; unchanged runs do not rebuild or deploy the site. GitHub can disable scheduled workflows after prolonged repository inactivity.
 
-## Ranking by frequency
 
-Enter a frequency from **0.5–200 Hz** in **0.5 Hz steps** and choose the **green** (peak dB) or **red** (average dB) curve. Ranking updates automatically; press Enter to scroll to the results. Existing title, alphabet, year, and soundtrack filters still apply.
-
-Single-frequency values are digitized at that frequency's pixel column without averaging across a band. Octave options (**10–20, 20–40, 30–60, 40–80, 50-100, 60-120 Hz**) use the arithmetic mean of the dB samples every **0.5 Hz**, including both endpoints; every sample in the range must be readable. Each ranked octave card also shows the highest sampled value within that octave and its frequency for the selected curve; ties show the lowest matching frequency. Values are estimates as there is no numeric data, the graphs are analysed using Python.
-
-The analysis requires consistent frequency and dB axis labels. Uncertain graphs, missing curves, and frequencies outside a graph's calibrated range remain **unranked** and sort after readable results.
-
-`scripts/analyze-graphs.py` generates `public/graphs/levels.json` using Pillow, NumPy, and Tesseract. The daily AVS sync refreshes analysis for new or changed images and reuses cached analysis for unchanged images. The **Analyze graph levels** workflow can also be started manually. To force a full recalibration after improving the analyzer, increment its `VERSION`.
-
-### How readings are extracted
-
-GitHub Actions runs Python with Pillow and NumPy to find the plot grid and coloured curves, and Tesseract OCR to read axis labels. Consistent labels calibrate pixel coordinates to Hz and dB. The reader then samples the selected pixel column at each 0.5 Hz point, saves estimated curve values, and excludes ambiguous readings. The browser loads these saved readings and sorts or averages them; it does not analyse images on each interaction. ChatGPT reasoning settings do not affect this deterministic workflow.

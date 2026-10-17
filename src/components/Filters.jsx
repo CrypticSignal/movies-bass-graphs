@@ -3,8 +3,8 @@ import { OCTAVE_RANGES, parseFrequency } from '../catalogue.js';
 import { readState } from '../useViewState.js';
 
 const LABEL = 'gap-[5px] text-[10px]';
-const CONTROL = 'min-h-[34px] px-[9px] py-[7px] text-[12px]';
-const COMPACT_BUTTON = 'min-h-[34px] px-2.5 py-[7px] text-[12px]';
+const CONTROL = 'min-h-8.5 px-[9px] py-[7px] text-[12px]';
+const COMPACT_BUTTON = 'min-h-8.5 px-2.5 py-[7px] text-[12px]';
 const LETTERS = ['', '0-9', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
 
 function isEnter(event) {
@@ -65,10 +65,10 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
   return (
     <>
       <section
-        className="flex flex-wrap items-end gap-[9px] rounded-[10px] border border-[#324138] bg-[#18231e] p-3 desktop:gap-2.5 desktop:px-4 desktop:py-[14px]"
+        className="flex flex-wrap items-end gap-[9px] rounded-[10px] border border-[#324138] bg-[#18231e] p-3 desktop:gap-2.5 desktop:px-4 desktop:py-3.5"
         aria-label="Browse the archive"
       >
-        <label className={`${LABEL} min-w-[210px] flex-1 basis-full desktop:basis-0`}>
+        <label className={`${LABEL} min-w-52.5 flex-1 basis-full desktop:basis-0`}>
           Search titles
           <input
             className={CONTROL}
@@ -89,10 +89,10 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
           />
         </label>
         {filters.map(filter => (
-          <label key={filter.key} className={`${LABEL} min-w-[100px] flex-1 desktop:min-w-0 desktop:flex-none`}>
+          <label key={filter.key} className={`${LABEL} min-w-25 flex-1 desktop:min-w-0 desktop:flex-none`}>
             {filter.label}
             <select
-              className={`${CONTROL} w-full max-w-none desktop:w-auto desktop:max-w-[230px]`}
+              className={`${CONTROL} w-full max-w-none desktop:w-auto desktop:max-w-57.5`}
               value={state[filter.key]}
               onChange={event => selectFilter({ [filter.key]: event.target.value })}
             >
@@ -164,7 +164,7 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
             Clear ranking
           </button>
         )}
-        <span className="min-w-[210px] flex-1 text-[11px] leading-[1.6] text-[#9eafa6]">
+        <span className="min-w-52.5 flex-1 text-[11px] leading-[1.6] text-[#9eafa6]">
           {state.octave
             ? 'Octave ranking uses the arithmetic mean of dB readings at every 0.5 Hz, including both endpoints. The complete range must be readable.'
             : 'Single-frequency ranking uses the value at that frequency, not an average.'}
@@ -175,7 +175,7 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
       <nav className="mt-3 flex flex-wrap gap-1 desktop:gap-[5px]" aria-label="Browse by title">
         {LETTERS.map(letter => (
           <button
-            className="min-h-[34px] min-w-[30px] flex-none px-2 py-1.5 text-[11px] desktop:min-h-[33px] desktop:min-w-[31px]"
+            className="min-h-8.5 min-w-7.5 flex-none px-2 py-1.5 text-[11px] desktop:min-h-[33px] desktop:min-w-[31px]"
             key={letter || 'all'}
             aria-pressed={!state.q.trim() && state.letter === letter}
             onClick={() => selectFilter({ letter, q: '' })}
@@ -184,9 +184,6 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
           </button>
         ))}
       </nav>
-      <p className="mt-[9px] mb-5 text-[11px] text-[#8e9e94]">
-        Years and types are inferred from titles. Soundtrack labels are read automatically from graphs; unclear labels stay Unknown.
-      </p>
     </>
   );
 }

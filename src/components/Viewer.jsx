@@ -107,16 +107,16 @@ export default function Viewer({ movie, comparison, previous, next, onClose }) {
       onKeyDown={handleKeyDown}
     >
       <div className="flex h-full flex-col">
-        <header className="flex shrink-0 items-center justify-between gap-5 border-b border-[#3d4c3e] p-[15px] desktop:px-[22px] desktop:py-3">
+        <header className="flex shrink-0 items-center justify-between gap-5 border-b border-[#3d4c3e] p-[15px] desktop:px-5.5 desktop:py-3">
           <div>
-            <span className="text-[10px] font-bold tracking-[2px] text-[#b9da9c]">GRAPH VIEWER</span>
+            <span className="text-[10px] font-bold tracking-[2px] text-accent-muted">GRAPH VIEWER</span>
             <h2 id="viewer-title" className="mt-1.5 text-[18px] desktop:text-[22px]">
               {comparison ? 'Compare graphs' : movie.movieName}
             </h2>
           </div>
           <button onClick={onClose} aria-label="Close graph viewer">Close ×</button>
         </header>
-        <div className="flex shrink-0 flex-wrap items-center gap-[7px] p-3 desktop:gap-2.5 desktop:px-[22px]">
+        <div className="flex shrink-0 flex-wrap items-center gap-[7px] p-3 desktop:gap-2.5 desktop:px-5.5">
           {!comparison && (
             <>
               <button className={TOOLBAR_ACTION} onClick={previous} disabled={!previous}>← Previous graph</button>
@@ -130,7 +130,7 @@ export default function Viewer({ movie, comparison, previous, next, onClose }) {
           <button className={TOOLBAR_ACTION} onClick={fullscreen}>{fullscreenActive || expanded ? 'Exit fullscreen' : 'Fullscreen'}</button>
           {!comparison && (
             <a
-              className={`${TOOLBAR_ACTION} rounded-md border border-[#3c5149] bg-[#192720] font-semibold text-[#e1eae4] no-underline hover:border-[#b6de8c] hover:bg-[#2a3f32]`}
+              className={`${TOOLBAR_ACTION} rounded-md border border-control-border bg-control font-semibold text-control-ink no-underline hover:border-control-hover-border hover:bg-control-hover`}
               href={imageURL(movie)}
               target="_blank"
               rel="noreferrer"
@@ -163,7 +163,7 @@ export default function Viewer({ movie, comparison, previous, next, onClose }) {
             ))}
           </div>
         </div>
-        <p className="m-0 shrink-0 px-[22px] py-2.5 text-[11px] text-[#9bad9b]">
+        <p className="m-0 shrink-0 px-5.5 py-2.5 text-[11px] text-[#9bad9b]">
           Zoom to inspect detail, then scroll to pan. Use Escape to close.
         </p>
       </div>
