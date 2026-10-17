@@ -74,6 +74,24 @@ export default function App() {
   const [attempt, setAttempt] = useState(0);
   const [message, setMessage] = useState('');
   const comparisonRef = useRef(null);
+  const resultsRef = useRef(null);
+  const scrollPending = useRef(false);
+  function scrollToResults() {
+    resultsRef.current?.scrollIntoView({
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+      block: 'start',
+    });
+  }
+  function selectFilter(patch) {
+    scrollPending.current = true;
+    update(patch);
+  }
+  useEffect(() => {
+    if (scrollPending.current) {
+      scrollPending.current = false;
+      scrollToResults();
+    }
+  });
   const [comparisonZoom, setComparisonZoom] = useState(1);
   function update(patch, replace = false) {
     const updated = { ...stateRef.current, ...patch };
@@ -145,10 +163,17 @@ export default function App() {
     {status === 'ready' && <>
       <section className="search-panel" aria-label="Browse the archive">
         <label className="search-field">Search titles<input type="search" placeholder="Try Blade Runner…" value={state.q}
+          onKeyDown={event => {
+            if (event.key === 'Enter' && !event.nativeEvent.isComposing) {
+              event.preventDefault();
+              event.currentTarget.blur();
+              scrollToResults();
+            }
+          }}
           onBlur={() => { queryEditing.current = false; }}
           onChange={event => { update({ q: event.target.value }, queryEditing.current); queryEditing.current = true; }} /></label>
         {filters.map(filter => <label key={filter.key}>{filter.label}<select value={state[filter.key]}
-          onChange={event => update({ [filter.key]: event.target.value })}>
+          onChange={event => selectFilter({ [filter.key]: event.target.value })}>
           <option value="">All {filter.key === 'year' ? 'years' : 'formats'}</option>
           {state[filter.key] && !filter.values.includes(state[filter.key]) && <option value={state[filter.key]}>{state[filter.key]}</option>}
           {filter.values.map(value => <option key={value}>{value}</option>)}
@@ -157,7 +182,7 @@ export default function App() {
       </section>
       <nav className="alphabet" aria-label="Browse by title">
         {['', '0-9', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map(letter => <button key={letter || 'all'} aria-pressed={state.letter === letter}
-          onClick={() => update({ letter })}>{letter === '' ? 'All' : letter === '0-9' ? '0–9' : letter}</button>)}
+          onClick={() => selectFilter({ letter })}>{letter === '' ? 'All' : letter === '0-9' ? '0–9' : letter}</button>)}
       </nav>
       <p className="metadata-note">Years and types are inferred from titles. Soundtrack labels are read automatically from graphs; unclear labels stay Unknown.</p>
       {selected.length > 0 && <section className="comparison" ref={comparisonRef} aria-labelledby="comparison-title">
@@ -170,7 +195,7 @@ export default function App() {
           <div className="comparison-viewport" tabIndex={0} aria-label={`Scrollable comparison graph for ${movie.movieName}`}><div style={{ width: `${comparisonZoom * 100}%` }}><GraphImage movie={movie} /></div></div>
         </article>)}{selected.length === 1 && <div className="comparison-empty">Select a second graph below to compare it here.</div>}</div>
       </section>}
-      <div className="results-heading"><p><strong>{filtered.length}</strong> {filtered.length === 1 ? 'entry' : 'entries'}<span> / {movies.length} in the archive</span></p>
+      <div className="results-heading" ref={resultsRef} style={{ scrollMarginTop: 16 }}><p><strong>{filtered.length}</strong> {filtered.length === 1 ? 'entry' : 'entries'}<span> / {movies.length} in the archive</span></p>
         <span>Select up to two graphs to compare</span></div>
       <p role="status" className="action-message">{message}</p>
       <section className="gallery" aria-label="Movie graphs">{filtered.map(movie => <article className="graph-card" key={movie.id}>
