@@ -19,10 +19,10 @@ export function GraphImage({ movie, ...props }) {
   );
 }
 
-export function ZoomControl({ value, onChange }) {
+export function ZoomControl({ value, onChange, compact = false }) {
   const percentage = Math.round(value * 100);
   return (
-    <label className="min-w-[140px] flex-[0_1_200px] gap-[3px]">
+    <label className={compact ? "min-w-[80px] max-w-[160px] flex-1" : "min-w-[140px] flex-[0_1_200px] gap-[3px]"}>
       <span className="flex items-center justify-between gap-3">
         Zoom
         <output className="min-w-[42px] text-center text-[12px] text-[#e1eae4] tabular-nums">

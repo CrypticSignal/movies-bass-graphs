@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { curvePeak, imageURL, rankingReading } from '../catalogue.js';
-import { GraphImage } from './GraphTools.jsx';
+import { GraphImage, ZoomControl, zoomStyle } from './GraphTools.jsx';
 
 function FrequencyReading({ reading, overallPeak, curve, label }) {
   const { level, peak } = reading ?? {};
@@ -25,6 +26,7 @@ function FrequencyReading({ reading, overallPeak, curve, label }) {
 export default function GraphCard({
   movie, rank, rankingState, rankingLabel, curve = 'green', selected, onCompare, onInspect,
 }) {
+  const [zoom, setZoom] = useState(1);
   const reading = rankingState ? rankingReading(movie, rankingState) : null;
   const overallPeak = curvePeak(movie, curve);
   const hasImage = Boolean(imageURL(movie));
@@ -46,7 +48,9 @@ export default function GraphCard({
             {movie.movieName}
           </h2>
         </div>
-        <div className="grid shrink-0 grid-cols-2 gap-2">
+        <div className="flex w-full flex-wrap items-center gap-2 text-[11px]">
+          {hasImage && <ZoomControl value={zoom} onChange={setZoom} compact />}
+          <div className="grid flex-1 grid-cols-2 gap-2">
           <button
             className="px-2.5 py-[7px] text-[11px] whitespace-nowrap"
             disabled={!hasImage}
@@ -64,11 +68,14 @@ export default function GraphCard({
             {selected ? '✓ Selected' : '+ Compare'}
             <span className="sr-only"> {movie.movieName}</span>
           </button>
+          </div>
         </div>
       </div>
       {hasImage ? (
+        <div className="overflow-auto bg-black">
         <button
           className="group relative block w-full rounded-none border-0 bg-black p-0 hover:bg-black"
+          style={zoomStyle(zoom)}
           onClick={onInspect}
           aria-label={`View graph for ${movie.movieName}`}
         >
@@ -77,6 +84,7 @@ export default function GraphCard({
             Inspect graph ↗
           </span>
         </button>
+        </div>
       ) : <GraphImage movie={movie} />}
       {(reading || overallPeak) && (
         <FrequencyReading
