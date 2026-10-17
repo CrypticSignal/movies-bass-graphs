@@ -2,7 +2,7 @@ name: Analyze graph levels
 on:
   workflow_dispatch:
   push:
-    branches: [feat/frequency-ranking]
+    branches: [feat/frequency-ranking, feat/half-hz]
     paths:
       - scripts/analyze-graphs.py
 concurrency:

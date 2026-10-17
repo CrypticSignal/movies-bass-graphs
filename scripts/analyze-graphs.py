@@ -15,7 +15,9 @@ from PIL import Image, ImageOps
 
 ROOT = Path('public/graphs')
 OUTPUT = ROOT / 'levels.json'
-VERSION = 2
+VERSION = 3
+START_HZ = 0.5
+STEP_HZ = 0.5
 MAX_HZ = 200
 
 def ocr(image, offset=(0, 0), scale=3):
@@ -114,11 +116,12 @@ def analyze(path):
     green = (g > 65) & (g > r * 1.5) & (g > b * 1.4)
     red = (r > 70) & (r > g * 1.5) & (r > b * 1.4)
     profiles = {}
-    frequency_low = max(1, min(p[1] for p in hz_inliers))
+    frequency_low = max(START_HZ, min(p[1] for p in hz_inliers))
     frequency_high = min(MAX_HZ, max(p[1] for p in hz_inliers))
     for name, mask in [('green', green), ('red', red)]:
         values = []
-        for frequency in range(1, MAX_HZ + 1):
+        for sample in range(int((MAX_HZ - START_HZ) / STEP_HZ) + 1):
+            frequency = START_HZ + sample * STEP_HZ
             x = int(round((frequency - hz_intercept) / hz_slope))
             if not frequency_low <= frequency <= frequency_high or not 2 <= x < width - right_width:
                 values.append(None)
@@ -142,14 +145,14 @@ def analyze(path):
 def main():
     rows = json.loads((ROOT / 'catalogue.json').read_text())
     previous = json.loads(OUTPUT.read_text()) if OUTPUT.exists() else {}
-    cache = previous.get('graphs', {}) if previous.get('version') in (1, VERSION) else {}
+    cache = previous.get('graphs', {}) if previous.get('version') == VERSION else {}
     def process(row):
         identifier = str(row['id'])
         if not row.get('imagePath'):
             return identifier, {'status': 'unavailable'}
         path = Path('public') / row['imagePath']
         fingerprint = hashlib.sha256(path.read_bytes()).hexdigest()
-        if cache.get(identifier, {}).get('fingerprint') == fingerprint and (previous.get('version') == VERSION or cache[identifier].get('status') == 'estimated'):
+        if cache.get(identifier, {}).get('fingerprint') == fingerprint:
             return identifier, cache[identifier]
         try:
             result = analyze(path)
@@ -158,7 +161,7 @@ def main():
         return identifier, {'imagePath': row['imagePath'], 'fingerprint': fingerprint, **result}
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         graphs = dict(pool.map(process, rows))
-    output = {'version': VERSION, 'startHz': 1, 'stepHz': 1, 'maxHz': MAX_HZ, 'graphs': graphs}
+    output = {'version': VERSION, 'startHz': START_HZ, 'stepHz': STEP_HZ, 'maxHz': MAX_HZ, 'graphs': graphs}
     OUTPUT.write_text(json.dumps(output, separators=(',', ':')) + '\n')
     from collections import Counter
     print('Graph analysis:', dict(Counter(row['status'] for row in graphs.values())), flush=True)

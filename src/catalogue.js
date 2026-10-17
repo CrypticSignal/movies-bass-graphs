@@ -16,7 +16,7 @@ export function readState(search = window.location.search) {
   const letter = (p.get('letter') || '').toUpperCase();
   return {
     octave,
-    frequency: !octave && Number.isInteger(frequency) && frequency >= 1 && frequency <= 200 ? frequency : '',
+    frequency: !octave && Number.isInteger(frequency * 2) && frequency >= 0.5 && frequency <= 200 ? frequency : '',
     curve: p.get('curve') === 'red' ? 'red' : 'green',
     q: p.get('q') || '', year: p.get('year') || '', format: p.get('format') || '',
     letter: /^(?:[A-Z]|0-9)$/.test(letter) ? letter : '',
@@ -45,7 +45,9 @@ function initial(title) {
 export function levelAt(movie, frequency, curve = 'green') {
   const analysis = movie.frequencyAnalysis;
   if (!analysis || analysis.imagePath !== movie.imagePath) return null;
-  const value = analysis.profiles?.[curve]?.[Number(frequency) - 1];
+  const index = (Number(frequency) - (analysis.startHz ?? 1)) / (analysis.stepHz ?? 1);
+  if (!Number.isInteger(index) || index < 0) return null;
+  const value = analysis.profiles?.[curve]?.[index];
   return Number.isFinite(value) ? value : null;
 }
 
@@ -54,12 +56,12 @@ export function rankingLevel(movie, state) {
   if (!OCTAVE_RANGES.includes(state.octave)) return null;
   const [low, high] = state.octave.split('-').map(Number);
   let sum = 0;
-  for (let frequency = low; frequency <= high; frequency += 1) {
+  for (let frequency = low; frequency <= high; frequency += 0.5) {
     const value = levelAt(movie, frequency, state.curve);
     if (value === null) return null;
     sum += value;
   }
-  return sum / (high - low + 1);
+  return sum / ((high - low) / 0.5 + 1);
 }
 
 export function filterMovies(movies, state) {

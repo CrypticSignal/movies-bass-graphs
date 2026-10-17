@@ -129,7 +129,7 @@ export default function App() {
         .then(response => response.ok ? response.json() : null).catch(() => null),
     ]).then(([rows, details, levels]) => {
       if (!Array.isArray(rows) || rows.some(row => typeof row.movieName !== 'string' || !row.id)) throw new Error('Invalid catalogue');
-      if (!controller.signal.aborted) { setMovies(rows.map(row => ({ ...metadata(row, details[row.id] || {}), frequencyAnalysis: levels?.graphs?.[row.id] }))); setLevelsStatus(levels?.graphs ? 'ready' : 'unavailable'); setStatus('ready'); }
+      if (!controller.signal.aborted) { setMovies(rows.map(row => ({ ...metadata(row, details[row.id] || {}), frequencyAnalysis: levels?.graphs?.[row.id] ? { ...levels.graphs[row.id], startHz: levels.startHz, stepHz: levels.stepHz } : undefined }))); setLevelsStatus(levels?.graphs ? 'ready' : 'unavailable'); setStatus('ready'); }
     }).catch(error => { if (error.name !== 'AbortError' && !controller.signal.aborted) setStatus('error'); });
     return () => controller.abort();
   }, [attempt]);
@@ -196,7 +196,7 @@ export default function App() {
       <form className="frequency-panel" onSubmit={event => {
         event.preventDefault();
         const frequency = Number(frequencyInput);
-        if (!state.octave && (!Number.isInteger(frequency) || frequency < 1 || frequency > 200)) return;
+        if (!state.octave && (!Number.isInteger(frequency * 2) || frequency < 0.5 || frequency > 200)) return;
         document.activeElement?.blur();
         if (!state.octave) update({ frequency });
         scrollToResults(350);
@@ -204,12 +204,12 @@ export default function App() {
         <label>Rank by<select value={state.octave || ''} onChange={event => {
           const octave = event.target.value;
           const frequency = Number(frequencyInput);
-          selectFilter({ octave, frequency: !octave && Number.isInteger(frequency) && frequency >= 1 && frequency <= 200 ? frequency : '' });
+          selectFilter({ octave, frequency: !octave && Number.isInteger(frequency * 2) && frequency >= 0.5 && frequency <= 200 ? frequency : '' });
         }}>
           <option value="">Single frequency</option>
           {OCTAVE_RANGES.map(range => <option key={range} value={range}>{range.replace('-', '–')} Hz octave average</option>)}
         </select></label>
-        {!state.octave && <label>Frequency (Hz, 1–200)<input type="number" min="1" max="200" step="1" required placeholder="20" enterKeyHint="search" value={frequencyInput}
+        {!state.octave && <label>Frequency (Hz, 0.5–200)<input type="number" min="0.5" max="200" step="0.5" required placeholder="20" enterKeyHint="search" value={frequencyInput}
           onKeyDown={event => {
             if (event.key === 'Enter' && !event.nativeEvent.isComposing) {
               event.preventDefault();
@@ -220,13 +220,13 @@ export default function App() {
             const value = event.target.value;
             setFrequencyInput(value);
             const frequency = Number(value);
-            update({ frequency: value !== '' && Number.isInteger(frequency) && frequency >= 1 && frequency <= 200 ? frequency : '', octave: '' }, true);
+            update({ frequency: value !== '' && Number.isInteger(frequency * 2) && frequency >= 0.5 && frequency <= 200 ? frequency : '', octave: '' }, true);
           }} /></label>}
         <label>Curve<select value={state.curve} onChange={event => update({ curve: event.target.value })}>
           <option value="green">Green curve</option><option value="red">Red curve</option>
         </select></label>
         {rankingActive && <button type="button" onClick={() => { setFrequencyInput(''); update({ frequency: '', octave: '' }); }}>Clear ranking</button>}
-        <span>{state.octave ? 'Octave ranking uses the arithmetic mean of dB readings at every 1 Hz, including both endpoints. The complete range must be readable.' : 'Single-frequency ranking uses the value at that frequency, not an average.'} Values are image estimates, not subwoofer SPL.</span>
+        <span>{state.octave ? 'Octave ranking uses the arithmetic mean of dB readings at every 0.5 Hz, including both endpoints. The complete range must be readable.' : 'Single-frequency ranking uses the value at that frequency, not an average.'} Values are image estimates, not subwoofer SPL.</span>
       </form>
       <nav className="alphabet" aria-label="Browse by title">
         {['', '0-9', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map(letter => <button key={letter || 'all'} aria-pressed={!state.q.trim() && state.letter === letter}
