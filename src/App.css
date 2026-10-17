@@ -23,3 +23,8 @@
   .alphabet{gap:4px}
   .alphabet button{min-width:30px;min-height:34px;padding:6px 8px}
 }
+
+.frequency-panel{display:flex;flex-wrap:wrap;align-items:end;gap:10px;padding:12px 16px;margin-top:10px;border:1px solid #324138;border-radius:8px;background:#152019}
+.frequency-panel label{font-size:10px;gap:5px}.frequency-panel input{width:115px}.frequency-panel input,.frequency-panel select{min-height:34px;padding:7px 9px;font-size:12px}
+.frequency-panel button{min-height:34px;padding:7px 10px;font-size:12px}.frequency-panel>span{flex:1;min-width:210px;font-size:11px;line-height:1.6;color:#9eafa6}
+.frequency-summary{font-size:12px;color:#b9da9c;margin:0 0 14px}.frequency-value{font-size:12px;color:#c4ed9b;padding:0 16px;margin:14px 0 0}

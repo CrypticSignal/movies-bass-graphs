@@ -60,3 +60,13 @@ The **Sync spreadsheet graphs** workflow runs daily at **04:23 UTC** (GitHub may
 Failed downloads retain the last saved image and are retried on subsequent runs. Removed spreadsheet entries remain archived so saved graphs and shared links are preserved. Album links and inaccessible sources may remain unavailable. Replacing a graph requires changing its image URL in the spreadsheet; cached images are not repeatedly downloaded at the same URL.
 
 Only changed catalogue, metadata, or image files are committed. The sync then explicitly starts publishing; unchanged runs do not rebuild or deploy the site. GitHub can disable scheduled workflows after prolonged repository inactivity; a manual run remains available.
+
+## Ranking by frequency
+
+Enter a whole-number frequency from **1–200 Hz**, choose the **green** or **red** curve, and select **Rank highest first**. Existing title, alphabet, year, and soundtrack filters still apply.
+
+Each value is digitized at that frequency's pixel column, with no averaging across a frequency band. Values are estimates in the graph's labelled dB scale, not subwoofer SPL. Curve colours are used because peak/average labels are not consistently available. Different soundtrack versions and measurement methods may not be directly comparable.
+
+The analysis requires consistent frequency and dB axis labels. Uncertain graphs, missing curves, and frequencies outside a graph's calibrated range remain **unranked** and sort after readable results. The original graphs are the reference for interpreting a reading.
+
+`scripts/analyze-graphs.py` generates `public/graphs/levels.json` using Pillow, NumPy, and Tesseract. The daily spreadsheet sync refreshes analysis for new or changed images and reuses cached analysis for unchanged images. The **Analyze graph levels** workflow can also be started manually. To force a full recalibration after improving the analyzer, increment its `VERSION`.

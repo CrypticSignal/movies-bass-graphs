@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { filterMovies, imageURL, metadata, readState, stateURL } from './catalogue.js';
+import { filterMovies, imageURL, levelAt, metadata, readState, stateURL } from './catalogue.js';
 
 function GraphImage({ movie, ...props }) {
   const [failed, setFailed] = useState(false);
@@ -68,6 +68,8 @@ function Viewer({ movie, comparison, previous, next, onClose }) {
 export default function App() {
   const [state, setState] = useState(readState);
   const stateRef = useRef(state);
+  const [frequencyInput, setFrequencyInput] = useState(() => readState().frequency || 20);
+  const [levelsStatus, setLevelsStatus] = useState('loading');
   const queryEditing = useRef(false);
   const [movies, setMovies] = useState([]);
   const [status, setStatus] = useState('loading');
@@ -108,13 +110,14 @@ export default function App() {
     setState(updated);
   }
   useEffect(() => {
-    const restore = () => { queryEditing.current = false; const restored = readState(); stateRef.current = restored; setState(restored); };
+    const restore = () => { queryEditing.current = false; const restored = readState(); stateRef.current = restored; setState(restored); setFrequencyInput(restored.frequency || 20); };
     window.addEventListener('popstate', restore);
     return () => window.removeEventListener('popstate', restore);
   }, []);
   useEffect(() => {
     const controller = new AbortController();
     setStatus('loading');
+    setLevelsStatus('loading');
     Promise.all([
       fetch(import.meta.env.BASE_URL + 'graphs/catalogue.json', { signal: controller.signal }).then(response => {
         if (!response.ok) throw new Error('Catalogue unavailable');
@@ -122,14 +125,17 @@ export default function App() {
       }),
       fetch(import.meta.env.BASE_URL + 'graphs/metadata.json', { signal: controller.signal })
         .then(response => response.ok ? response.json() : {}).catch(() => ({})),
-    ]).then(([rows, details]) => {
+      fetch(import.meta.env.BASE_URL + 'graphs/levels.json', { signal: controller.signal })
+        .then(response => response.ok ? response.json() : null).catch(() => null),
+    ]).then(([rows, details, levels]) => {
       if (!Array.isArray(rows) || rows.some(row => typeof row.movieName !== 'string' || !row.id)) throw new Error('Invalid catalogue');
-      if (!controller.signal.aborted) { setMovies(rows.map(row => metadata(row, details[row.id] || {}))); setStatus('ready'); }
+      if (!controller.signal.aborted) { setMovies(rows.map(row => ({ ...metadata(row, details[row.id] || {}), frequencyAnalysis: levels?.graphs?.[row.id] }))); setLevelsStatus(levels?.graphs ? 'ready' : 'unavailable'); setStatus('ready'); }
     }).catch(error => { if (error.name !== 'AbortError' && !controller.signal.aborted) setStatus('error'); });
     return () => controller.abort();
   }, [attempt]);
 
   const filtered = filterMovies(movies, state);
+  const rankedCount = state.frequency ? filtered.filter(movie => levelAt(movie, state.frequency, state.curve) !== null).length : 0;
   const selected = state.compare.map(id => movies.find(movie => movie.id === id)).filter(movie => movie && imageURL(movie));
   const viewing = movies.find(movie => movie.id === state.graph && imageURL(movie) && (state.scope !== 'comparison' || state.compare.includes(movie.id)));
   const sequence = state.scope === 'comparison' ? selected : filtered.filter(movie => imageURL(movie));
@@ -183,8 +189,25 @@ export default function App() {
           {state[filter.key] && !filter.values.includes(state[filter.key]) && <option value={state[filter.key]}>{state[filter.key]}</option>}
           {filter.values.map(value => <option key={value}>{value}</option>)}
         </select></label>)}
-        <button className="reset" onClick={() => update({ q: '', year: '', format: '', letter: '' })}>Reset filters</button>
+        <button className="reset" onClick={() => update({ q: '', year: '', format: '', letter: '', frequency: '' })}>Reset filters</button>
       </section>
+      <form className="frequency-panel" onSubmit={event => {
+        event.preventDefault();
+        const frequency = Number(frequencyInput);
+        if (!Number.isInteger(frequency) || frequency < 1 || frequency > 200) return;
+        document.activeElement?.blur();
+        update({ frequency });
+        scrollToResults(350);
+      }}>
+        <label>Frequency (Hz, 1–200)<input type="number" min="1" max="200" step="1" required value={frequencyInput}
+          onChange={event => setFrequencyInput(event.target.value)} /></label>
+        <label>Curve<select value={state.curve} onChange={event => update({ curve: event.target.value })}>
+          <option value="green">Green curve</option><option value="red">Red curve</option>
+        </select></label>
+        <button type="submit">Rank highest first</button>
+        {state.frequency && <button type="button" onClick={() => update({ frequency: '' })}>Clear ranking</button>}
+        <span>Estimated value at the exact frequency, not an average. Read from the image’s dB scale; not subwoofer SPL.</span>
+      </form>
       <nav className="alphabet" aria-label="Browse by title">
         {['', '0-9', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map(letter => <button key={letter || 'all'} aria-pressed={!state.q.trim() && state.letter === letter}
           onClick={() => selectFilter({ letter, q: '' })}>{letter === '' ? 'All' : letter === '0-9' ? '0–9' : letter}</button>)}
@@ -202,12 +225,18 @@ export default function App() {
       </section>}
       <div className="results-heading"><p><strong>{filtered.length}</strong> {filtered.length === 1 ? 'entry' : 'entries'}<span> / {movies.length} in the archive</span></p>
         <span>Select up to two graphs to compare</span></div>
+      {state.frequency && <p className="frequency-summary" role="status">{levelsStatus !== 'ready'
+        ? 'Frequency readings are unavailable. Graphs are shown without a ranking.'
+        : `${rankedCount} of ${filtered.length} matching graphs ranked by the ${state.curve} curve at ${state.frequency} Hz, highest first. Graphs with uncertain or missing readings are listed afterward as unranked.`}</p>}
       <p role="status" className="action-message">{message}</p>
       <div ref={resultsRef} style={{ scrollMarginTop: 16, minHeight: 'calc(100svh - 16px)' }}>
       <section className="gallery" aria-label="Movie graphs">{filtered.map(movie => <article className="graph-card" key={movie.id}>
         <div className="card-heading"><div><span className="card-meta">{movie.year} · {movie.type}{movie.format !== 'Unknown' ? ' · ' + movie.format : ''}</span><h2>{movie.movieName}</h2></div>
           <button aria-pressed={state.compare.includes(movie.id)} disabled={!imageURL(movie)} onClick={() => toggleCompare(movie)}>{state.compare.includes(movie.id) ? '✓ Selected' : '+ Compare'}<span className="sr-only"> {movie.movieName}</span></button></div>
         {imageURL(movie) ? <button className="graph-open" onClick={() => update({ graph: movie.id, scope: '', view: '' })} aria-label={`View graph for ${movie.movieName}`}><GraphImage movie={movie} loading="lazy" /><span className="inspect-tag">Inspect graph ↗</span></button> : <GraphImage movie={movie} />}
+        {state.frequency && <p className="frequency-value">{levelAt(movie, state.frequency, state.curve) === null
+          ? `Unranked at ${state.frequency} Hz — no reliable ${state.curve} curve reading`
+          : `≈ ${levelAt(movie, state.frequency, state.curve).toFixed(1)} dB at ${state.frequency} Hz · ${state.curve} curve (estimated)`}</p>}
         <div style={{ padding: '12px 16px' }}><button disabled={!imageURL(movie)} onClick={() => update({ graph: movie.id, scope: '', view: '' })} aria-label={`Inspect graph for ${movie.movieName}`}>Inspect graph ↗</button></div>
       </article>)}</section>
       {!filtered.length && <p className="empty">No titles match these filters. Try a broader search or reset the filters.</p>}

@@ -5,6 +5,9 @@ on:
     branches: [feat/frequency-ranking]
     paths:
       - scripts/analyze-graphs.py
+concurrency:
+  group: graph-analysis-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: write
   actions: write
@@ -28,10 +31,13 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          cp public/graphs/levels.json /tmp/graph-levels.json
+          git fetch origin "$GITHUB_REF_NAME"
+          git reset --hard "origin/$GITHUB_REF_NAME"
+          cp /tmp/graph-levels.json public/graphs/levels.json
           git add public/graphs/levels.json
           if ! git diff --cached --quiet; then
             git commit -m 'Digitize frequency levels from graph images'
-            git pull --rebase origin "$GITHUB_REF_NAME"
             git push origin HEAD:"$GITHUB_REF_NAME"
             if [ "$GITHUB_REF_NAME" = main ]; then gh workflow run deploy.yml --ref main; fi
           fi

@@ -142,14 +142,14 @@ def analyze(path):
 def main():
     rows = json.loads((ROOT / 'catalogue.json').read_text())
     previous = json.loads(OUTPUT.read_text()) if OUTPUT.exists() else {}
-    cache = previous.get('graphs', {}) if previous.get('version') == VERSION else {}
+    cache = previous.get('graphs', {}) if previous.get('version') in (1, VERSION) else {}
     def process(row):
         identifier = str(row['id'])
         if not row.get('imagePath'):
             return identifier, {'status': 'unavailable'}
         path = Path('public') / row['imagePath']
         fingerprint = hashlib.sha256(path.read_bytes()).hexdigest()
-        if cache.get(identifier, {}).get('fingerprint') == fingerprint:
+        if cache.get(identifier, {}).get('fingerprint') == fingerprint and (previous.get('version') == VERSION or cache[identifier].get('status') == 'estimated'):
             return identifier, cache[identifier]
         try:
             result = analyze(path)
