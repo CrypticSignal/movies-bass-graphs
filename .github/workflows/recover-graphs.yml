@@ -19,13 +19,13 @@ jobs:
       - name: Recover catalogue and images
         run: |
           python - <<'PY'
-          import concurrent.futures, hashlib, io, json, pathlib, urllib.request
+          import concurrent.futures, csv, hashlib, io, json, pathlib, urllib.request
           from PIL import Image
           root = pathlib.Path("public/graphs")
           root.mkdir(parents=True, exist_ok=True)
-          url = "https://opensheet.elk.sh/1SdwJ_mfYgghxZG8gy41ke22e2AM9gUPTB1EmZgYcHoY/Sheet1"
+          url = "https://docs.google.com/spreadsheets/d/1SdwJ_mfYgghxZG8gy41ke22e2AM9gUPTB1EmZgYcHoY/gviz/tq?tqx=out:csv&sheet=Sheet1"
           with urllib.request.urlopen(url, timeout=60) as response:
-              rows = json.load(response)
+              rows = list(csv.DictReader(io.StringIO(response.read().decode("utf-8-sig"))))
           if not isinstance(rows, list) or not rows:
               raise RuntimeError("Catalogue is empty or invalid")
           print("Catalogue entries:", len(rows), flush=True)
