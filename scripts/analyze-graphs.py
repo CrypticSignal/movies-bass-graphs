@@ -15,7 +15,7 @@ from PIL import Image, ImageOps
 
 ROOT = Path('public/graphs')
 OUTPUT = ROOT / 'levels.json'
-VERSION = 4
+VERSION = 5
 START_HZ = 0.5
 STEP_HZ = 0.5
 MAX_HZ = 200
@@ -144,7 +144,7 @@ def analyze(path, manual=None):
                 values.append(None)
                 continue
             ys = np.nonzero(mask[int(plot_top):int(bottom), x:x + 1])[0] + int(plot_top)
-            if not len(ys) or np.ptp(ys) > max(10, height * .018):
+            if not len(ys):
                 values.append(None)
                 continue
             value = float(np.median(ys)) * db_slope + db_intercept

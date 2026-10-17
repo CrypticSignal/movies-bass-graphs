@@ -2,9 +2,10 @@ name: Analyze graph levels
 on:
   workflow_dispatch:
   push:
-    branches: [feat/frequency-ranking, feat/half-hz, fix/axis-consensus]
+    branches: [main, feat/frequency-ranking, feat/half-hz, fix/axis-consensus]
     paths:
       - scripts/analyze-graphs.py
+      - scripts/axis-calibrations.json
 concurrency:
   group: graph-analysis-${{ github.ref }}
   cancel-in-progress: true
