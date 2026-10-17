@@ -33,8 +33,8 @@ export default function GraphCard({
 
   return (
     <article className="min-w-0 overflow-hidden rounded-[9px] border border-[#34453a] bg-[#17221d]">
-      <div className="flex min-h-[103px] flex-wrap items-start justify-between gap-3 p-[15px] desktop:p-[19px]">
-        <div className="min-w-0 flex-1 basis-[180px]">
+      <div className="flex min-h-[103px] items-start justify-between gap-3 p-[15px] desktop:p-[19px]">
+        <div className="min-w-0 flex-1">
           {reading?.level != null && (
             <span className="mb-[7px] table rounded bg-accent px-[7px] py-[3px] text-[12px] font-bold text-[#162016] tabular-nums">
               Rank #{rank}
@@ -48,20 +48,15 @@ export default function GraphCard({
             {movie.movieName}
           </h2>
         </div>
-        <div className="flex w-full flex-wrap items-center gap-2 text-[11px]">
-          {hasImage && <ZoomControl value={zoom} onChange={setZoom} min={100} max={300} compact />}
-          <div className="flex flex-1 justify-end">
-          <button
-            className="px-2.5 py-[7px] text-[11px] whitespace-nowrap"
-            aria-pressed={selected}
-            disabled={!hasImage}
-            onClick={onCompare}
-          >
-            {selected ? '✓ Selected' : '+ Compare'}
-            <span className="sr-only"> {movie.movieName}</span>
-          </button>
-          </div>
-        </div>
+        <button
+          className="shrink-0 px-2.5 py-[7px] text-[11px] whitespace-nowrap"
+          aria-pressed={selected}
+          disabled={!hasImage}
+          onClick={onCompare}
+        >
+          {selected ? '✓ Selected' : '+ Compare'}
+          <span className="sr-only"> {movie.movieName}</span>
+        </button>
       </div>
       {hasImage ? (
         <div className="relative">
@@ -88,6 +83,11 @@ export default function GraphCard({
           </button>
         </div>
       ) : <GraphImage movie={movie} />}
+      {hasImage && (
+        <div className="flex justify-end border-t border-[#314039] px-4 py-2">
+          <ZoomControl value={zoom} onChange={setZoom} min={100} max={300} compact />
+        </div>
+      )}
       {(reading || overallPeak) && (
         <FrequencyReading
           reading={reading}
