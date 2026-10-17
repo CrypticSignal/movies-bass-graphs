@@ -34,6 +34,22 @@ export function levelAt(movie, frequency, curve = 'green') {
   return Number.isFinite(value) ? value : null;
 }
 
+// Highest available sample on the selected curve, independent of ranking range.
+export function curvePeak(movie, curve = 'green') {
+  const analysis = movie.frequencyAnalysis;
+  if (!analysis || analysis.imagePath !== movie.imagePath) return null;
+  let peak = null;
+  for (const [index, level] of (analysis.profiles?.[curve] ?? []).entries()) {
+    if (Number.isFinite(level) && (!peak || level > peak.level)) {
+      peak = {
+        level,
+        frequency: (analysis.startHz ?? 1) + index * (analysis.stepHz ?? 1),
+      };
+    }
+  }
+  return peak;
+}
+
 // Single-frequency values and octave summaries share one entry point.
 export function rankingReading(movie, state) {
   if (!state.octave) {

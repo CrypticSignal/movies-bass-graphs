@@ -1,7 +1,7 @@
-import { imageURL, rankingReading } from '../catalogue.js';
+import { curvePeak, imageURL, rankingReading } from '../catalogue.js';
 import { GraphImage } from './GraphTools.jsx';
 
-function FrequencyReading({ reading, curve, label }) {
+function FrequencyReading({ reading, overallPeak, curve, label }) {
   const { level, peak } = reading;
   return (
     <p className="mt-[14px] mb-0 px-4 text-[12px] text-accent">
@@ -10,7 +10,12 @@ function FrequencyReading({ reading, curve, label }) {
         : `${level.toFixed(1)} dB ${label} | ${curve} curve`}
       {peak && (
         <span className="mt-1 block">
-          Peak: {peak.level.toFixed(1)} dB at {peak.frequency} Hz
+          Octave Peak: {peak.level.toFixed(1)} dB at {peak.frequency} Hz
+        </span>
+      )}
+      {overallPeak && (
+        <span className="mt-1 block" title="Highest available analysed sample across the selected curve">
+          Peak: {overallPeak.level.toFixed(1)} dB at {overallPeak.frequency} Hz
         </span>
       )}
     </p>
@@ -63,7 +68,12 @@ export default function GraphCard({
         </button>
       ) : <GraphImage movie={movie} />}
       {reading && (
-        <FrequencyReading reading={reading} curve={rankingState.curve} label={rankingLabel} />
+        <FrequencyReading
+          reading={reading}
+          overallPeak={curvePeak(movie, rankingState.curve)}
+          curve={rankingState.curve}
+          label={rankingLabel}
+        />
       )}
       <div className="px-4 py-3">
         <button
