@@ -74,5 +74,89 @@
       ]
     ],
     "note": "Positions confirmed from printed axis labels on this exact image; curve values remain pixel estimates."
+  },
+  "7c5908857d67abcad79a4f9e0b407eee7c62e90d7b600d320a21a11a23ef5a16": {
+    "title": "DUNE (2021)",
+    "dimensions": [
+      1915,
+      1335
+    ],
+    "frequencyPoints": [
+      [
+        61,
+        5
+      ],
+      [
+        122,
+        10
+      ],
+      [
+        245,
+        20
+      ],
+      [
+        617,
+        50
+      ],
+      [
+        1235,
+        100
+      ],
+      [
+        1854,
+        150
+      ]
+    ],
+    "dbPoints": [
+      [
+        533,
+        -10
+      ],
+      [
+        597,
+        -15
+      ],
+      [
+        662,
+        -20
+      ],
+      [
+        726,
+        -25
+      ],
+      [
+        791,
+        -30
+      ],
+      [
+        855,
+        -35
+      ],
+      [
+        920,
+        -40
+      ],
+      [
+        984,
+        -45
+      ],
+      [
+        1049,
+        -50
+      ],
+      [
+        1113,
+        -55
+      ],
+      [
+        1178,
+        -60
+      ],
+      [
+        1242,
+        -65
+      ]
+    ],
+    "note": "Positions confirmed from printed axis labels on this exact image; curve values remain pixel estimates."
   }
 }

@@ -63,7 +63,7 @@ def browser_html():
     chrome = shutil.which('google-chrome') or shutil.which('chromium')
     if not chrome:
         raise RuntimeError('Chrome is required to read the AVS browser check')
-    with tempfile.TemporaryDirectory(prefix='avs-reader-') as temporary:
+    with tempfile.TemporaryDirectory(prefix='avs-reader-', ignore_cleanup_errors=True) as temporary:
         with socket.socket() as probe:
             probe.bind(('127.0.0.1', 0))
             port = probe.getsockname()[1]
