@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --color-page: #101817;
+  --color-ink: #dce7df;
+  --color-accent: #c4ed9b;
+  --breakpoint-desktop: 761px;
+}
+
+@layer base {
+  :root {
+    @apply bg-page font-sans text-ink leading-[normal];
+    color-scheme: dark;
+    font-synthesis: none;
+  }
+
+  button, input, select {
+    font: inherit;
+  }
+
+  button {
+    @apply cursor-pointer rounded-md border border-[#3c5149] bg-[#192720] px-[13px] py-[9px] text-[13px] font-semibold text-[#e1eae4];
+    @apply hover:border-[#b6de8c] hover:bg-[#2a3f32] disabled:cursor-default disabled:opacity-40;
+    @apply aria-pressed:border-accent aria-pressed:bg-accent aria-pressed:text-[#162016];
+  }
+
+  label {
+    @apply flex flex-col gap-[9px] text-[11px] font-semibold text-[#adbbb2];
+  }
+
+  input, select {
+    @apply min-h-[42px] rounded-[5px] border border-[#3e4e43] bg-[#101916] px-3 py-[11px] text-[13px] text-[#e5ece6];
+  }
+
+  input {
+    @apply placeholder:text-[#778b7c];
+  }
+
+  select {
+    @apply max-w-[230px];
+  }
+
+  button:focus-visible, a:focus-visible, input:focus-visible,
+  select:focus-visible, [tabindex]:focus-visible {
+    @apply outline-2 outline-offset-4 outline-accent;
+  }
+
+  h1, h2, h3 {
+    @apply m-0 font-display font-medium;
+  }
+
+  p {
+    @apply my-4 leading-[1.65];
+  }
+}

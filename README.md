@@ -51,7 +51,7 @@ Vite writes the production site to `dist/`. Update `base` in `vite.config.js` if
 
 The build workflow publishes `dist/` to the existing `gh-pages` branch. Publishing runs from that branch to respect the repository's deployment restriction. Only successful builds are published.
 
-Built with React 19, Vite, and plain CSS.
+Built with React 19, Vite, and Tailwind CSS v4. Tailwind utilities live in the React components; `src/styles.css` defines theme tokens, fonts, and shared element defaults.
 
 ## Automatic AVS Forum sync
 
