@@ -8,3 +8,18 @@
 .alphabet{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}.alphabet button{min-width:40px;min-height:44px;padding:8px 11px}.alphabet button[aria-pressed=true]{background:#c4ed9b;color:#162016;border-color:#c4ed9b}@media(max-width:760px){.alphabet{gap:6px}.alphabet button{flex:0 0 auto;min-width:40px}}
 
 .compact-comparison{grid-template-columns:1fr;gap:0}.compact-comparison .comparison-viewport{margin:0;border:0;max-height:none}.compact-comparison article{margin:0;padding:0}.stacked-viewport{padding:0}.stacked-viewport>div{display:flex;flex-direction:column;gap:0}.stacked-viewport img{display:block;margin:0;padding:0;border:0;flex:none}.shared-zoom-label{font-size:12px;color:#adbc9f}@media(max-width:760px){.comparison-controls{flex-wrap:wrap}.compact-comparison{gap:0}.compact-comparison .comparison-viewport{max-height:none}}
+
+/* Compact archive filters and alphabet navigation. */
+.search-panel{padding:14px 16px;gap:10px}
+.search-panel label{gap:5px;font-size:10px}
+.search-panel input,.search-panel select{min-height:34px;padding:7px 9px;font-size:12px}
+.search-panel .reset{min-height:34px;padding:7px 10px;font-size:12px}
+.alphabet{gap:5px;margin-top:12px}
+.alphabet button{min-width:31px;min-height:33px;padding:6px 8px;font-size:11px}
+.metadata-note{margin:9px 0 20px}
+@media(max-width:760px){
+  .search-panel{padding:12px;gap:9px}
+  .search-panel label:not(.search-field){min-width:100px}
+  .alphabet{gap:4px}
+  .alphabet button{min-width:30px;min-height:34px;padding:6px 8px}
+}
