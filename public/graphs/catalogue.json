@@ -373,7 +373,7 @@
     "movieName": "Ant-Man (2015)",
     "imgurURL": "https://i.imgur.com/RlD0AF2.jpg",
     "": "",
-    "imagePath": "graphs/ant_man_2015.jpg",
+    "imagePath": "graphs/ant-man_2015.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -382,7 +382,7 @@
     "movieName": "Ant-Man and the Wasp (2018)",
     "imgurURL": "https://i.imgur.com/4oJlIB3.png",
     "": "",
-    "imagePath": "graphs/ant_man_and_the_wasp_2018.jpg",
+    "imagePath": "graphs/ant-man_and_the_wasp_2018.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -391,13 +391,13 @@
     "movieName": "Ant-Man and the Wasp (2018) UHD",
     "imgurURL": "https://i.imgur.com/KZ3Srjp.png",
     "": "",
-    "imagePath": "graphs/ant_man_and_the_wasp_2018_uhd.jpg",
+    "imagePath": "graphs/ant-man_and_the_wasp_2018_uhd.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
   {
     "id": "avs-67446298b8b635d3",
-    "imagePath": "graphs/ant_man_and_the_wasp_quantumania_2023.jpg",
+    "imagePath": "graphs/ant-man_and_the_wasp_quantumania_2023.jpg",
     "movieName": "Ant-Man and the Wasp: Quantumania (2023)",
     "imgurURL": "https://i.imgur.com/GXyTKjV.png",
     "source": "avs-first-post",
@@ -406,7 +406,7 @@
   },
   {
     "id": "avs-27c44881bfb1b6bb",
-    "imagePath": "graphs/ant_man_and_the_wasp_quantumania_2023_uhd.jpg",
+    "imagePath": "graphs/ant-man_and_the_wasp_quantumania_2023_uhd.jpg",
     "movieName": "Ant-Man and the Wasp: Quantumania (2023) UHD",
     "imgurURL": "https://i.imgur.com/587AG91.png",
     "source": "avs-first-post",
@@ -2397,7 +2397,7 @@
     "movieName": "John Wick Chapter 3 - Parabellum",
     "imgurURL": "https://i.imgur.com/tkCgHZH.png",
     "": "",
-    "imagePath": "graphs/john_wick_chapter_3_parabellum.jpg",
+    "imagePath": "graphs/john_wick_chapter_3_-_parabellum.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -2937,7 +2937,7 @@
     "movieName": "Mission: Impossible - Rogue Nation (2015)",
     "imgurURL": "https://i.imgur.com/YT2Q2tJ.jpg",
     "": "",
-    "imagePath": "graphs/mission_impossible_rogue_nation_2015.jpg",
+    "imagePath": "graphs/mission_impossible_-_rogue_nation_2015.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -2955,7 +2955,7 @@
     "movieName": "Mission: Impossible - Fallout (2018)",
     "imgurURL": "https://i.imgur.com/FzGsKHr.png",
     "": "",
-    "imagePath": "graphs/mission_impossible_fallout_2018.jpg",
+    "imagePath": "graphs/mission_impossible_-_fallout_2018.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -3766,7 +3766,7 @@
     "movieName": "Shang-Chi and the Legend of the Ten Rings (2021) UHD",
     "imgurURL": "https://i.imgur.com/9mY1ar8.png",
     "": "",
-    "imagePath": "graphs/shang_chi_and_the_legend_of_the_ten_rings_2021_uhd.jpg",
+    "imagePath": "graphs/shang-chi_and_the_legend_of_the_ten_rings_2021_uhd.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -3955,7 +3955,7 @@
     "movieName": "Spider-Man: Far from Home (2019) BD",
     "imgurURL": "https://i.imgur.com/OPZ5EzF.png",
     "": "",
-    "imagePath": "graphs/spider_man_far_from_home_2019_bd.jpg",
+    "imagePath": "graphs/spider-man_far_from_home_2019_bd.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -3964,7 +3964,7 @@
     "movieName": "Spider-Man: Far from Home (2019) UHD",
     "imgurURL": "https://i.imgur.com/jQlg9sy.png",
     "": "",
-    "imagePath": "graphs/spider_man_far_from_home_2019_uhd.jpg",
+    "imagePath": "graphs/spider-man_far_from_home_2019_uhd.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -3973,7 +3973,7 @@
     "movieName": "Spider-Man: Homecoming (2017)",
     "imgurURL": "https://i.imgur.com/KwkEYBH.png",
     "": "",
-    "imagePath": "graphs/spider_man_homecoming_2017.jpg",
+    "imagePath": "graphs/spider-man_homecoming_2017.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -3982,7 +3982,7 @@
     "movieName": "Spider-Man: Into the Spider-Verse (2018) BD",
     "imgurURL": "https://i.imgur.com/7MNT6qg.png",
     "": "",
-    "imagePath": "graphs/spider_man_into_the_spider_verse_2018_bd.jpg",
+    "imagePath": "graphs/spider-man_into_the_spider-verse_2018_bd.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -3991,13 +3991,13 @@
     "movieName": "Spider-Man: Into the Spider-Verse (2018) UHD",
     "imgurURL": "https://i.imgur.com/aIIkVN1.png",
     "": "",
-    "imagePath": "graphs/spider_man_into_the_spider_verse_2018_uhd.jpg",
+    "imagePath": "graphs/spider-man_into_the_spider-verse_2018_uhd.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
   {
     "id": "avs-c2654762224ba55b",
-    "imagePath": "graphs/spider_man_no_way_home_2021_uhd.jpg",
+    "imagePath": "graphs/spider-man_no_way_home_2021_uhd.jpg",
     "movieName": "Spider-Man: No Way Home (2021) UHD",
     "imgurURL": "https://i.imgur.com/JNNoNYu.png",
     "source": "avs-first-post",
@@ -4081,7 +4081,7 @@
     "movieName": "Star Wars: Episode VII - The Force Awakens (2015)",
     "imgurURL": "https://i.imgur.com/xY9VThg.png",
     "": "",
-    "imagePath": "graphs/star_wars_episode_vii_the_force_awakens_2015.jpg",
+    "imagePath": "graphs/star_wars_episode_vii_-_the_force_awakens_2015.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -4090,7 +4090,7 @@
     "movieName": "Star Wars: Episode VIII - The Last Jedi (2017)",
     "imgurURL": "https://i.imgur.com/MsseA7J.png",
     "": "",
-    "imagePath": "graphs/star_wars_episode_viii_the_last_jedi_2017.jpg",
+    "imagePath": "graphs/star_wars_episode_viii_-_the_last_jedi_2017.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -4099,7 +4099,7 @@
     "movieName": "Star Wars: Episode IX - The Rise of Skywalker",
     "imgurURL": "https://i.imgur.com/jQhQAjf.png",
     "": "",
-    "imagePath": "graphs/star_wars_episode_ix_the_rise_of_skywalker.jpg",
+    "imagePath": "graphs/star_wars_episode_ix_-_the_rise_of_skywalker.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -4730,7 +4730,7 @@
     "movieName": "The Hunger Games: Mockingjay - Part 2 (2015)",
     "imgurURL": "https://i.imgur.com/bmO9nrV.jpg",
     "": "",
-    "imagePath": "graphs/the_hunger_games_mockingjay_part_2_2015.jpg",
+    "imagePath": "graphs/the_hunger_games_mockingjay_-_part_2_2015.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -5189,7 +5189,7 @@
     "movieName": "The Witch: Part 1 - The Subversion (2018)",
     "imgurURL": "https://i.imgur.com/jHavw0y.png",
     "": "",
-    "imagePath": "graphs/the_witch_part_1_the_subversion_2018.jpg",
+    "imagePath": "graphs/the_witch_part_1_-_the_subversion_2018.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -5684,7 +5684,7 @@
     "movieName": "X-Men: Apocalypse (2016)",
     "imgurURL": "https://i.imgur.com/28sL7j1.png",
     "": "",
-    "imagePath": "graphs/x_men_apocalypse_2016.jpg",
+    "imagePath": "graphs/x-men_apocalypse_2016.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -5693,7 +5693,7 @@
     "movieName": "X-Men: Dark Phoenix (2019) BD",
     "imgurURL": "https://i.imgur.com/onZSEpZ.png",
     "": "",
-    "imagePath": "graphs/x_men_dark_phoenix_2019_bd.jpg",
+    "imagePath": "graphs/x-men_dark_phoenix_2019_bd.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -5702,7 +5702,7 @@
     "movieName": "X-Men: Dark Phoenix (2019) UHD",
     "imgurURL": "https://i.imgur.com/ng4F5Dm.png",
     "": "",
-    "imagePath": "graphs/x_men_dark_phoenix_2019_uhd.jpg",
+    "imagePath": "graphs/x-men_dark_phoenix_2019_uhd.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -5711,7 +5711,7 @@
     "movieName": "X-Men: Days of Future Past (2014)",
     "imgurURL": "https://i.imgur.com/OktpWo2.png",
     "": "",
-    "imagePath": "graphs/x_men_days_of_future_past_2014.jpg",
+    "imagePath": "graphs/x-men_days_of_future_past_2014.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
@@ -5720,7 +5720,7 @@
     "movieName": "X-Men: First Class (2011)",
     "imgurURL": "https://i.imgur.com/CJlAdh8.png",
     "": "",
-    "imagePath": "graphs/x_men_first_class_2011.jpg",
+    "imagePath": "graphs/x-men_first_class_2011.jpg",
     "source": "avs-first-post",
     "listedOnAVS": true
   },
