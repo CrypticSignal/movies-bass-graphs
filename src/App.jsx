@@ -195,7 +195,7 @@ export default function App() {
       </section>
       <form className="frequency-panel" onSubmit={event => {
         event.preventDefault();
-        const frequency = Number(frequencyInput);
+        const frequency = Number(String(frequencyInput).replace(',', '.'));
         if (!state.octave && (!Number.isInteger(frequency * 2) || frequency < 0.5 || frequency > 200)) return;
         document.activeElement?.blur();
         if (!state.octave) update({ frequency });
@@ -203,23 +203,35 @@ export default function App() {
       }}>
         <label>Rank by<select value={state.octave || ''} onChange={event => {
           const octave = event.target.value;
-          const frequency = Number(frequencyInput);
+          const frequency = Number(String(frequencyInput).replace(',', '.'));
           selectFilter({ octave, frequency: !octave && Number.isInteger(frequency * 2) && frequency >= 0.5 && frequency <= 200 ? frequency : '' });
         }}>
           <option value="">Single frequency</option>
           {OCTAVE_RANGES.map(range => <option key={range} value={range}>{range.replace('-', '–')} Hz octave average</option>)}
         </select></label>
-        {!state.octave && <label>Frequency (Hz, 0.5–200)<input type="number" min="0.5" max="200" step="0.5" required placeholder="20" enterKeyHint="search" value={frequencyInput}
+        {!state.octave && <label>Frequency (Hz, 0.5–200)<input type="text" inputMode="decimal" required placeholder="20" enterKeyHint="go" value={frequencyInput}
           onKeyDown={event => {
             if (event.key === 'Enter' && !event.nativeEvent.isComposing) {
               event.preventDefault();
-              event.currentTarget.form.requestSubmit();
+              event.stopPropagation();
+              const input = event.currentTarget;
+              const frequency = Number(input.value.replace(',', '.'));
+              if (!Number.isInteger(frequency * 2) || frequency < 0.5 || frequency > 200) {
+                input.setCustomValidity('Enter a frequency from 0.5 to 200 Hz in 0.5 Hz steps.');
+                input.reportValidity();
+                return;
+              }
+              input.setCustomValidity('');
+              update({ frequency, octave: '' });
+              input.blur();
+              scrollToResults(400);
             }
           }}
           onChange={event => {
+            event.target.setCustomValidity('');
             const value = event.target.value;
             setFrequencyInput(value);
-            const frequency = Number(value);
+            const frequency = Number(value.replace(',', '.'));
             update({ frequency: value !== '' && Number.isInteger(frequency * 2) && frequency >= 0.5 && frequency <= 200 ? frequency : '', octave: '' }, true);
           }} /></label>}
         <label>Curve<select value={state.curve} onChange={event => update({ curve: event.target.value })}>
