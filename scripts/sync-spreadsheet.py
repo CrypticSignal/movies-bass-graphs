@@ -50,6 +50,8 @@ def read_sheet():
 
 def recover(row):
     row = dict(row)
+    if row.get('sourceImagePath'):
+        row['imagePath'] = row['sourceImagePath']
     source = normalized(row.get('imgurURL', ''))
     cached = normalized(row.get('cachedSourceURL', row.get('_oldSource', '')))
     image_path = row.get('imagePath')
@@ -93,13 +95,44 @@ def recover(row):
         print(f"Kept saved copy for {row['movieName']}: {error}", flush=True)
         return row, False
 
+def split_graphs(rows, metadata):
+    # Keep the original cached source so spreadsheet syncs never crop a crop.
+    result = []
+    for row in rows:
+        if row.get('splitFrom'):
+            continue
+        if str(row['id']) != '149' or not row.get('imagePath'):
+            result.append(row)
+            continue
+        source_path = row.get('sourceImagePath', row['imagePath'])
+        with Image.open(Path('public') / source_path) as image:
+            if image.size != (1790, 1861):
+                raise ValueError('Edge of Tomorrow source layout changed; split needs review')
+            for identifier, title, box, suffix in [
+                ('149', 'Edge of Tomorrow (2014)', (0, 0, 1790, 865), 'top'),
+                ('149-without-sine-wave-intro', 'Edge of Tomorrow (2014) | without sine wave intro',
+                 (0, 865, 1790, 1858), 'without-intro'),
+            ]:
+                destination = ROOT / (Path(source_path).stem + '-' + suffix + '.png')
+                output = io.BytesIO()
+                image.crop(box).save(output, format='PNG')
+                if not destination.exists() or destination.read_bytes() != output.getvalue():
+                    destination.write_bytes(output.getvalue())
+                item = {**row, 'id': identifier, 'movieName': title,
+                        'sourceImagePath': source_path, 'imagePath': 'graphs/' + destination.name}
+                if identifier != '149':
+                    item['splitFrom'] = '149'
+                    metadata[identifier] = dict(metadata.get('149', {'format': 'Unknown'}))
+                result.append(item)
+    return result
+
 def main():
     previous = json.loads(CATALOGUE.read_text())
     remote = read_sheet()
     metadata = json.loads(METADATA.read_text()) if METADATA.exists() else {}
     by_id = {str(row['id']): row for row in previous}
-    by_source = {normalized(row.get('imgurURL', '')): row for row in previous if row.get('imgurURL')}
-    by_title = {row['movieName'].casefold(): row for row in previous}
+    by_source = {normalized(row.get('imgurURL', '')): row for row in previous if row.get('imgurURL') and not row.get('splitFrom')}
+    by_title = {row['movieName'].casefold(): row for row in previous if not row.get('splitFrom')}
     occupied = set(by_id)
     used = set()
     pending = []
@@ -146,6 +179,7 @@ def main():
             except Exception as error:
                 metadata[str(row['id'])] = {'format': 'Unknown'}
                 print(f"Format unknown for {row['movieName']}: {error}")
+    rows = split_graphs(rows, metadata)
     for row in rows:
         row.pop('_oldSource', None)
     CATALOGUE.write_text(json.dumps(rows, indent=2) + '\n')

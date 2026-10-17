@@ -1026,7 +1026,17 @@
     "movieName": "Edge of Tomorrow (2014)",
     "imgurURL": "http://i.imgur.com/VQCRl7z.png",
     "": "",
-    "imagePath": "graphs/32239fd753c505b39862.jpg"
+    "imagePath": "graphs/32239fd753c505b39862-top.png",
+    "sourceImagePath": "graphs/32239fd753c505b39862.jpg"
+  },
+  {
+    "id": "149-without-sine-wave-intro",
+    "movieName": "Edge of Tomorrow (2014) | without sine wave intro",
+    "imgurURL": "http://i.imgur.com/VQCRl7z.png",
+    "": "",
+    "imagePath": "graphs/32239fd753c505b39862-without-intro.png",
+    "sourceImagePath": "graphs/32239fd753c505b39862.jpg",
+    "splitFrom": "149"
   },
   {
     "id": "150",
@@ -2017,7 +2027,7 @@
   },
   {
     "id": "291",
-    "movieName": "L\u00e9on: The Professional (1994)",
+    "movieName": "Léon: The Professional (1994)",
     "imgurURL": "https://i.imgur.com/AMHRRsw.png",
     "": "",
     "imagePath": "graphs/91296847f45ee7be35fc.jpg"
@@ -2543,7 +2553,7 @@
   },
   {
     "id": "367",
-    "movieName": "Pok\u00e9mon: Detective Pikachu (2019)",
+    "movieName": "Pokémon: Detective Pikachu (2019)",
     "imgurURL": "https://i.imgur.com/S3dc6Jh.png",
     "": "",
     "imagePath": "graphs/ae4a03eb6bf2f3ba954b.jpg"
