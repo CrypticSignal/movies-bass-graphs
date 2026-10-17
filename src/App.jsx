@@ -186,7 +186,7 @@ export default function App() {
         <button className="reset" onClick={() => update({ q: '', year: '', format: '', letter: '' })}>Reset filters</button>
       </section>
       <nav className="alphabet" aria-label="Browse by title">
-        {['', '0-9', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map(letter => <button key={letter || 'all'} aria-pressed={state.letter === letter}
+        {['', '0-9', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map(letter => <button key={letter || 'all'} aria-pressed={!state.q.trim() && state.letter === letter}
           onClick={() => selectFilter({ letter })}>{letter === '' ? 'All' : letter === '0-9' ? '0–9' : letter}</button>)}
       </nav>
       <p className="metadata-note">Years and types are inferred from titles. Soundtrack labels are read automatically from graphs; unclear labels stay Unknown.</p>
