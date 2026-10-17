@@ -9,7 +9,7 @@ function GraphImage({ movie, ...props }) {
     : <p className="unavailable">Graph unavailable. The original image could not be recovered.</p>;
 }
 
-function Viewer({ movie, previous, next, onClose }) {
+function Viewer({ movie, comparison, previous, next, onClose }) {
   const dialog = useRef(null);
   const [zoom, setZoom] = useState(1);
   const [notice, setNotice] = useState('');
@@ -43,21 +43,22 @@ function Viewer({ movie, previous, next, onClose }) {
       if (event.key === 'ArrowRight' && next) { event.preventDefault(); next(); }
     }}>
     <div className="viewer-shell">
-      <header className="viewer-header"><div><span className="eyebrow">GRAPH VIEWER</span><h2 id="viewer-title">{movie.movieName}</h2></div>
+      <header className="viewer-header"><div><span className="eyebrow">GRAPH VIEWER</span><h2 id="viewer-title">{comparison ? 'Compare graphs' : movie.movieName}</h2></div>
         <button onClick={onClose} aria-label="Close graph viewer">Close ×</button></header>
       <div className="viewer-toolbar">
-        <button onClick={previous} disabled={!previous}>← Previous graph</button>
-        <button onClick={next} disabled={!next}>Next graph →</button>
+        {!comparison && <><button onClick={previous} disabled={!previous}>← Previous graph</button>
+        <button onClick={next} disabled={!next}>Next graph →</button></>}
+        {comparison && <span className="shared-zoom-label">Zoom applies to both graphs</span>}
         <span className="toolbar-spacer" />
         <button disabled={zoom <= 1} onClick={() => setZoom(value => Math.max(1, value - 0.5))} aria-label="Zoom out">−</button>
         <output aria-live="polite">{Math.round(zoom * 100)}%</output>
         <button disabled={zoom >= 4} onClick={() => setZoom(value => Math.min(4, value + 0.5))} aria-label="Zoom in">+</button>
         <button onClick={() => setZoom(1)}>Fit</button><button onClick={fullscreen}>Fullscreen</button>
-        <a className="button" href={imageURL(movie)} target="_blank" rel="noreferrer">Original image ↗</a>
+        {!comparison && <a className="button" href={imageURL(movie)} target="_blank" rel="noreferrer">Original image ↗</a>}
       </div>
       {notice && <p role="status">{notice}</p>}
-      <div className="graph-viewport" tabIndex={0} aria-label="Graph image; scroll to pan when zoomed">
-        <div style={{ width: `${zoom * 100}%` }}><GraphImage movie={movie} /></div>
+      <div className={comparison ? "graph-viewport stacked-viewport" : "graph-viewport"} tabIndex={0} aria-label={comparison ? "Stacked comparison graphs; scroll to pan when zoomed" : "Graph image; scroll to pan when zoomed"}>
+        <div style={{ width: `${zoom * 100}%` }}>{comparison ? comparison.map(graph => <GraphImage key={graph.id} movie={graph} />) : <GraphImage movie={movie} />}</div>
       </div>
       <p className="viewer-hint">Zoom to inspect detail, then scroll to pan. Use Escape to close.</p>
     </div>
@@ -115,9 +116,10 @@ export default function App() {
     const valid = state.compare.filter(id => movies.some(movie => movie.id === id && imageURL(movie)));
     const patch = {};
     if (state.graph && !viewing) patch.graph = '';
+    if (state.view === 'comparison' && !valid.length) patch.view = '';
     if (valid.join(',') !== state.compare.join(',')) patch.compare = valid;
     if (Object.keys(patch).length) update(patch, true);
-  }, [status, movies, state.graph, state.compare.join(',')]);
+  }, [status, movies, state.graph, state.view, state.compare.join(',')]);
 
   function toggleCompare(movie) {
     setMessage('');
@@ -161,12 +163,11 @@ export default function App() {
       {selected.length > 0 && <section className="comparison" ref={comparisonRef} aria-labelledby="comparison-title">
         <div className="section-heading"><div><span className="eyebrow">A / B COMPARISON</span><h2 id="comparison-title">Compare soundtracks</h2></div>
           <div className="comparison-controls"><label>Detail<select value={comparisonZoom} onChange={event => setComparisonZoom(Number(event.target.value))}><option value={1}>Fit</option><option value={1.5}>150%</option><option value={2}>200%</option><option value={3}>300%</option></select></label>
+            <button disabled={selected.length < 2} onClick={() => update({ view: 'comparison', graph: '', scope: '' })}>Inspect graphs ↗</button>
             <button onClick={() => update({ compare: [] })}>Clear comparison</button></div></div>
         <p className="comparison-note">Compare shapes and labelled values; graphs may use different axis ranges and measurement methods.</p>
-        <div className="comparison-grid">{selected.map(movie => <article key={movie.id}>
-          <div className="comparison-title"><h3>{movie.movieName}</h3><button aria-label={`Remove ${movie.movieName} from comparison`} onClick={() => toggleCompare(movie)}>Remove</button></div>
+        <div className="comparison-grid compact-comparison">{selected.map(movie => <article key={movie.id}>
           <div className="comparison-viewport" tabIndex={0} aria-label={`Scrollable comparison graph for ${movie.movieName}`}><div style={{ width: `${comparisonZoom * 100}%` }}><GraphImage movie={movie} /></div></div>
-          <button onClick={() => update({ graph: movie.id, scope: 'comparison' })}>Inspect graph ↗</button>
         </article>)}{selected.length === 1 && <div className="comparison-empty">Select a second graph below to compare it here.</div>}</div>
       </section>}
       <div className="results-heading"><p><strong>{filtered.length}</strong> {filtered.length === 1 ? 'entry' : 'entries'}<span> / {movies.length} in the archive</span></p>
@@ -175,13 +176,15 @@ export default function App() {
       <section className="gallery" aria-label="Movie graphs">{filtered.map(movie => <article className="graph-card" key={movie.id}>
         <div className="card-heading"><div><span className="card-meta">{movie.year} · {movie.type}{movie.format !== 'Unknown' ? ' · ' + movie.format : ''}</span><h2>{movie.movieName}</h2></div>
           <button aria-pressed={state.compare.includes(movie.id)} disabled={!imageURL(movie)} onClick={() => toggleCompare(movie)}>{state.compare.includes(movie.id) ? '✓ Selected' : '+ Compare'}<span className="sr-only"> {movie.movieName}</span></button></div>
-        {imageURL(movie) ? <button className="graph-open" onClick={() => update({ graph: movie.id, scope: '' })} aria-label={`View graph for ${movie.movieName}`}><GraphImage movie={movie} loading="lazy" /><span className="inspect-tag">Inspect graph ↗</span></button> : <GraphImage movie={movie} />}
-        <div style={{ padding: '12px 16px' }}><button disabled={!imageURL(movie)} onClick={() => update({ graph: movie.id, scope: '' })} aria-label={`Inspect graph for ${movie.movieName}`}>Inspect graph ↗</button></div>
+        {imageURL(movie) ? <button className="graph-open" onClick={() => update({ graph: movie.id, scope: '', view: '' })} aria-label={`View graph for ${movie.movieName}`}><GraphImage movie={movie} loading="lazy" /><span className="inspect-tag">Inspect graph ↗</span></button> : <GraphImage movie={movie} />}
+        <div style={{ padding: '12px 16px' }}><button disabled={!imageURL(movie)} onClick={() => update({ graph: movie.id, scope: '', view: '' })} aria-label={`Inspect graph for ${movie.movieName}`}>Inspect graph ↗</button></div>
       </article>)}</section>
       {!filtered.length && <p className="empty">No titles match these filters. Try a broader search or reset the filters.</p>}
       <footer>Movie soundtrack graphs · Original credits and measurement details appear on each image.</footer>
       {selected.length > 0 && <aside className="compare-tray" aria-label="Comparison selection"><span>{selected.length}/2 graphs selected</span><button onClick={() => comparisonRef.current?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })}>View comparison ↑</button></aside>}
-      {viewing && <Viewer movie={viewing} onClose={() => update({ graph: '', scope: '' })}
+      {state.view === 'comparison' && selected.length > 0 && <Viewer movie={selected[0]} comparison={selected}
+        onClose={() => update({ view: '' })} />}
+      {state.view !== 'comparison' && viewing && <Viewer movie={viewing} onClose={() => update({ graph: '', scope: '' })}
         previous={index > 0 ? () => update({ graph: sequence[index - 1].id }, true) : null}
         next={index >= 0 && index < sequence.length - 1 ? () => update({ graph: sequence[index + 1].id }, true) : null} />}
     </>}

@@ -14,6 +14,7 @@ export function readState(search = window.location.search) {
   return {
     q: p.get('q') || '', year: p.get('year') || '', format: p.get('format') || '',
     letter: /^(?:[A-Z]|0-9)$/.test(letter) ? letter : '',
+    view: p.get('view') === 'comparison' ? 'comparison' : '',
     scope: p.get('scope') === 'comparison' ? 'comparison' : '',
     graph: p.get('graph') || '', compare: [...new Set((p.get('compare') || '').split(',').filter(Boolean))].slice(0, 2),
   };
@@ -22,6 +23,7 @@ export function readState(search = window.location.search) {
 export function stateURL(state) {
   const p = new URLSearchParams();
   for (const key of ['q', 'year', 'format', 'letter', 'graph']) if (state[key]) p.set(key, state[key]);
+  if (state.view === 'comparison' && state.compare.length) p.set('view', 'comparison');
   if (state.graph && state.scope === 'comparison') p.set('scope', 'comparison');
   if (state.compare.length) p.set('compare', state.compare.join(','));
   return window.location.pathname + (p.size ? '?' + p.toString() : '') + window.location.hash;
