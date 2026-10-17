@@ -36,7 +36,7 @@ function initial(title) {
 export function filterMovies(movies, state) {
   const query = state.q.trim().toLowerCase();
   return movies.filter(movie => movie.movieName.toLowerCase().includes(query)
-    && (!state.letter || (state.letter === '0-9' ? /^[0-9]$/.test(initial(movie.movieName)) : initial(movie.movieName) === state.letter))
+    && (query || !state.letter || (state.letter === '0-9' ? /^[0-9]$/.test(initial(movie.movieName)) : initial(movie.movieName) === state.letter))
     && (!state.year || movie.year === state.year)
     && (!state.format || movie.format === state.format));
 }
