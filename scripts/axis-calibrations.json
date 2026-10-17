@@ -1,0 +1,78 @@
+{
+  "b824c941b5a795e51d3bee360ec6731108563f8dc2de148337b54309dfce76f9": {
+    "title": "Chasing the Dragon (2017)",
+    "dimensions": [
+      1148,
+      1145
+    ],
+    "frequencyPoints": [
+      [
+        73,
+        10
+      ],
+      [
+        147,
+        20
+      ],
+      [
+        369,
+        50
+      ],
+      [
+        739,
+        100
+      ],
+      [
+        1109,
+        150
+      ]
+    ],
+    "dbPoints": [
+      [
+        448,
+        -15
+      ],
+      [
+        509,
+        -20
+      ],
+      [
+        570,
+        -25
+      ],
+      [
+        631,
+        -30
+      ],
+      [
+        691,
+        -35
+      ],
+      [
+        752,
+        -40
+      ],
+      [
+        813,
+        -45
+      ],
+      [
+        874,
+        -50
+      ],
+      [
+        934,
+        -55
+      ],
+      [
+        995,
+        -60
+      ],
+      [
+        1056,
+        -65
+      ]
+    ],
+    "note": "Positions confirmed from printed axis labels on this exact image; curve values remain pixel estimates."
+  }
+}

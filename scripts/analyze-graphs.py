@@ -63,7 +63,7 @@ def fit_axis(points, tolerance, minimum=4):
         raise ValueError('Axis fit exceeds calibration tolerance')
     return float(slope), float(intercept), best[1], error
 
-def analyze(path):
+def analyze(path, manual=None):
     image = Image.open(path).convert('RGB')
     pixels = np.asarray(image).astype(np.int16)
     height, width = pixels.shape[:2]
@@ -81,44 +81,55 @@ def analyze(path):
     if bottom < height * .6 or bottom > height - 5:
         raise ValueError('Plot boundary uncertain')
     right_width = max(80, int(width * .065))
-    labels = ocr(image.crop((width - right_width, 0, width, int(bottom))), (width - right_width, 0))
-    db_points = []
-    for text, x, y in labels:
-        if x < width - right_width * .6:
-            continue
-        match = re.fullmatch(r'(-?\d{1,3}(?:[.,]\d{1,2})?)(?:dB)?', text, re.I)
-        if not match:
-            continue
-        value = -abs(float(match[1].replace(',', '.')))
-        if not -120 <= value <= 0:
-            continue
-        line = min(lines, key=lambda candidate: abs(candidate - y))
-        if 0 <= line - y <= max(14, height * .02):
-            db_points.append((line, value))
-    db_slope, db_intercept, db_inliers, db_error = fit_axis(db_points, .65)
-    if db_slope >= 0 or np.ptp([p[1] for p in db_inliers]) < 20:
-        raise ValueError('dB scale uncertain')
-    plot_top = min(p[0] for p in db_inliers)
-    vertical = centres(np.mean(grey[int(height * .2):int(bottom), :], axis=0) > .65)
-    label_top = height - min(60, max(30, int(height * .06)))
-    labels = ocr(image.crop((0, label_top, width, height)), (0, label_top))
-    frequency_points = []
-    for text, x, y in labels:
-        match = re.fullmatch(r'(\d{1,3})(?:Hz)?', text, re.I)
-        if not match or not vertical:
-            continue
-        value = int(match[1])
-        if not 0 <= value <= 500:
-            continue
-        line = min(vertical, key=lambda candidate: abs(candidate - x))
-        if abs(line - x) <= max(9, width * .007):
-            frequency_points.append((line, value))
-    hz_slope, hz_intercept, hz_inliers, hz_error = fit_axis(frequency_points, .8, minimum=5)
-    if hz_slope <= 0 or np.ptp([p[1] for p in hz_inliers]) < 40:
-        raise ValueError('Frequency axis is not reliably linear')
-    # Reject a fit based on only one small portion of a differently scaled plot.
-    if np.ptp([p[0] for p in hz_inliers]) < width * .5:
-        raise ValueError('Insufficient frequency-axis coverage')
+    if manual is not None:
+        if manual['dimensions'] != [width, height]:
+            raise ValueError('Manual calibration dimensions do not match image')
+        db_points = [tuple(point) for point in manual['dbPoints']]
+        frequency_points = [tuple(point) for point in manual['frequencyPoints']]
+        db_slope, db_intercept, db_inliers, db_error = fit_axis(db_points, .15)
+        hz_slope, hz_intercept, hz_inliers, hz_error = fit_axis(frequency_points, .15, minimum=5)
+        if db_slope >= 0 or hz_slope <= 0:
+            raise ValueError('Invalid manual axis direction')
+        plot_top = min(point[0] for point in db_inliers)
+    else:
+        labels = ocr(image.crop((width - right_width, 0, width, int(bottom))), (width - right_width, 0))
+        db_points = []
+        for text, x, y in labels:
+            if x < width - right_width * .6:
+                continue
+            match = re.fullmatch(r'(-?\d{1,3}(?:[.,]\d{1,2})?)(?:dB)?', text, re.I)
+            if not match:
+                continue
+            value = -abs(float(match[1].replace(',', '.')))
+            if not -120 <= value <= 0:
+                continue
+            line = min(lines, key=lambda candidate: abs(candidate - y))
+            if 0 <= line - y <= max(14, height * .02):
+                db_points.append((line, value))
+        db_slope, db_intercept, db_inliers, db_error = fit_axis(db_points, .65)
+        if db_slope >= 0 or np.ptp([p[1] for p in db_inliers]) < 20:
+            raise ValueError('dB scale uncertain')
+        plot_top = min(p[0] for p in db_inliers)
+        vertical = centres(np.mean(grey[int(height * .2):int(bottom), :], axis=0) > .65)
+        label_top = height - min(60, max(30, int(height * .06)))
+        labels = ocr(image.crop((0, label_top, width, height)), (0, label_top))
+        frequency_points = []
+        for text, x, y in labels:
+            match = re.fullmatch(r'(\d{1,3})(?:Hz)?', text, re.I)
+            if not match or not vertical:
+                continue
+            value = int(match[1])
+            if not 0 <= value <= 500:
+                continue
+            line = min(vertical, key=lambda candidate: abs(candidate - x))
+            if abs(line - x) <= max(9, width * .007):
+                frequency_points.append((line, value))
+        hz_slope, hz_intercept, hz_inliers, hz_error = fit_axis(frequency_points, .8, minimum=5)
+        if hz_slope <= 0 or np.ptp([p[1] for p in hz_inliers]) < 40:
+            raise ValueError('Frequency axis is not reliably linear')
+        # Reject a fit based on only one small portion of a differently scaled plot.
+        if np.ptp([p[0] for p in hz_inliers]) < width * .5:
+            raise ValueError('Insufficient frequency-axis coverage')
     green = (g > 65) & (g > r * 1.5) & (g > b * 1.4)
     red = (r > 70) & (r > g * 1.5) & (r > b * 1.4)
     profiles = {}
@@ -143,7 +154,7 @@ def analyze(path):
     if not profiles:
         raise ValueError('No continuous coloured curves found')
     return {'status': 'estimated', 'profiles': profiles,
-            'calibration': {'frequencyLabels': len(hz_inliers), 'dbLabels': len(db_inliers),
+            'calibration': {'source': 'manual-axis' if manual is not None else 'ocr', 'frequencyLabels': len(hz_inliers), 'dbLabels': len(db_inliers),
                             'frequencyErrorHz': round(hz_error, 2), 'dbError': round(db_error, 2)},
             'axis': {'hzSlope': hz_slope, 'hzIntercept': hz_intercept, 'dbSlope': db_slope, 'dbIntercept': db_intercept},
             'rangeHz': [frequency_low, frequency_high]}
@@ -152,19 +163,23 @@ def main():
     rows = json.loads((ROOT / 'catalogue.json').read_text())
     previous = json.loads(OUTPUT.read_text()) if OUTPUT.exists() else {}
     cache = previous.get('graphs', {}) if previous.get('version') == VERSION else {}
+    calibration_file = Path('scripts/axis-calibrations.json')
+    overrides = json.loads(calibration_file.read_text()) if calibration_file.exists() else {}
     def process(row):
         identifier = str(row['id'])
         if not row.get('imagePath'):
             return identifier, {'status': 'unavailable'}
         path = Path('public') / row['imagePath']
         fingerprint = hashlib.sha256(path.read_bytes()).hexdigest()
-        if cache.get(identifier, {}).get('fingerprint') == fingerprint:
+        manual = overrides.get(fingerprint)
+        signature = hashlib.sha256(json.dumps(manual, sort_keys=True).encode()).hexdigest() if manual else None
+        if cache.get(identifier, {}).get('fingerprint') == fingerprint and cache[identifier].get('manualCalibration') == signature:
             return identifier, cache[identifier]
         try:
-            result = analyze(path)
+            result = analyze(path, manual)
         except Exception as error:
             result = {'status': 'unreadable', 'reason': str(error)}
-        return identifier, {'imagePath': row['imagePath'], 'fingerprint': fingerprint, **result}
+        return identifier, {'imagePath': row['imagePath'], 'fingerprint': fingerprint, 'manualCalibration': signature, **result}
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         graphs = dict(pool.map(process, rows))
     output = {'version': VERSION, 'startHz': START_HZ, 'stepHz': STEP_HZ, 'maxHz': MAX_HZ, 'graphs': graphs}
