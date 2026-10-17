@@ -1,87 +1,94 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import Card from "react-bootstrap/Card";
-import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { PageSelector } from "./PageSelector";
+
+const base = process.env.PUBLIC_URL || "";
+const moviesPerPage = 10;
+
+function Graph({ movie }) {
+  const [failed, setFailed] = useState(false);
+  const imageURL = movie.imagePath ? base + "/" + movie.imagePath : null;
+  return (
+    <Card id="card" className="mb-2">
+      <Card.Body>
+        <Card.Title className="text-center">{movie.movieName}</Card.Title>
+      </Card.Body>
+      {imageURL && !failed ? (
+        <a href={imageURL} aria-label={"Open graph for " + movie.movieName}>
+          <img src={imageURL} alt={"Bass frequency graph for " + movie.movieName}
+            loading="lazy" style={{ width: "100%" }} onError={() => setFailed(true)} />
+        </a>
+      ) : (
+        <Card.Body>Graph currently unavailable. The original image could not be recovered.</Card.Body>
+      )}
+    </Card>
+  );
+}
 
 function App() {
-  const [showLoading, setShowLoading] = useState(true);
-  const [allMovies, setAllMovies] = useState([]);
-  const [moviesToShow, setMoviesToShow] = useState([]);
+  const [movies, setMovies] = useState([]);
+  const [status, setStatus] = useState("loading");
   const [searchTerm, setSearchTerm] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const moviesPerPage = 10;
-
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
+  const [page, setPage] = useState(1);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
-    const indexOfLastMovie = currentPage * moviesPerPage;
-    const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
-    setMoviesToShow(allMovies.slice(indexOfFirstMovie, indexOfLastMovie));
-  }, [currentPage, allMovies]);
+    const controller = new AbortController();
+    setStatus("loading");
+    fetch(base + "/graphs/catalogue.json", { signal: controller.signal })
+      .then(response => {
+        if (!response.ok) throw new Error("Catalogue unavailable");
+        return response.json();
+      })
+      .then(rows => {
+        if (!Array.isArray(rows)) throw new Error("Invalid catalogue");
+        setMovies(rows);
+        setStatus("ready");
+      })
+      .catch(error => {
+        if (error.name !== "AbortError") setStatus("error");
+      });
+    return () => controller.abort();
+  }, [attempt]);
 
-  useEffect(() => {
-    async function getData() {
-      const res = await fetch(
-        "https://opensheet.elk.sh/1SdwJ_mfYgghxZG8gy41ke22e2AM9gUPTB1EmZgYcHoY/Sheet1"
-      );
-      const jsonData = await res.json();
-      setMoviesToShow(jsonData.slice(0, 10));
-      setShowLoading(false);
-      setAllMovies(jsonData);
-    }
-    getData();
-  }, []);
-
-  useEffect(() => {
-    if (searchTerm) {
-      const filteredMovies = allMovies.filter((data) =>
-        data.movieName.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      setMoviesToShow(filteredMovies);
-    } else {
-      setMoviesToShow(allMovies.slice(0, 10));
-    }
-  }, [searchTerm, allMovies]);
+  const filtered = movies.filter(movie =>
+    movie.movieName.toLowerCase().includes(searchTerm.trim().toLowerCase())
+  );
+  const totalPages = Math.max(1, Math.ceil(filtered.length / moviesPerPage));
+  const currentPage = Math.min(page, totalPages);
+  const visible = filtered.slice((currentPage - 1) * moviesPerPage, currentPage * moviesPerPage);
 
   return (
-    <div id="container">
-      {moviesToShow.length || !showLoading ? (
-        <div>
-          <input
-            id="searchBar"
-            type="search"
-            onInput={(e) => setSearchTerm(e.target.value)}
-            placeholder="Search"
-          ></input>
-
-          {moviesToShow.map((data) => (
-            <Card
-              id="card"
-              key={data.id}
-              className="mb-2"
-              onClick={() => window.open(data.imgurURL, "_self")}
-            >
-              <Card.Body>
-                <Card.Title className="text-center">{data.movieName}</Card.Title>
-              </Card.Body>
-              <img variant="bottom" src={data.imgurURL} />
-            </Card>
-          ))}
-          <PageSelector
-            moviesPerPage={moviesPerPage}
-            totalMovies={allMovies.length}
-            paginate={paginate}
-          />
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
+    <main id="container">
+      <div>
+        <h1 className="text-center">Movies Bass Graphs</h1>
+        {status === "loading" && <p role="status">Loading graphs…</p>}
+        {status === "error" && (
+          <div role="alert">
+            <p>The movie catalogue could not be loaded.</p>
+            <button onClick={() => setAttempt(value => value + 1)}>Try again</button>
+          </div>
+        )}
+        {status === "ready" && (
+          <>
+            <input id="searchBar" type="search" aria-label="Search movie titles"
+              placeholder="Search movies" value={searchTerm}
+              onChange={event => { setSearchTerm(event.target.value); setPage(1); }} />
+            <p className="text-center">{filtered.length} movies</p>
+            {visible.map(movie => <Graph key={movie.id || movie.movieName} movie={movie} />)}
+            {!filtered.length && <p>No movies match your search.</p>}
+            {filtered.length > moviesPerPage && (
+              <nav aria-label="Movie pages" className="mb-3">
+                <button disabled={currentPage === 1} onClick={() => setPage(currentPage - 1)}>Previous</button>
+                <span aria-live="polite"> Page {currentPage} of {totalPages} </span>
+                <button disabled={currentPage === totalPages} onClick={() => setPage(currentPage + 1)}>Next</button>
+              </nav>
+            )}
+          </>
+        )}
+      </div>
+    </main>
   );
 }
 
