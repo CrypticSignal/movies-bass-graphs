@@ -364,15 +364,8 @@
     "imagePath": "graphs/66ef300e0ee9ae7153b8.jpg"
   },
   {
-    "id": "53",
-    "movieName": "Avengers: Endgame (2019)",
-    "imgurURL": "https://i.imgur.com/n9lIn0w.png",
-    "": "",
-    "imagePath": "graphs/7433f45c6a279f43999c.jpg"
-  },
-  {
     "id": "54",
-    "movieName": "UHD",
+    "movieName": "Avengers: Endgame (2019)",
     "imgurURL": "https://i.imgur.com/n9lIn0w.png",
     "": "",
     "imagePath": "graphs/7433f45c6a279f43999c.jpg"
@@ -840,15 +833,8 @@
     "imagePath": "graphs/b64bbe377c86d42e6c7f.jpg"
   },
   {
-    "id": "121",
-    "movieName": "Deadpool 2 (2018)",
-    "imgurURL": "https://i.imgur.com/5U5ojt9.png",
-    "": "",
-    "imagePath": "graphs/9d8bd17f8442b60c96c6.jpg"
-  },
-  {
     "id": "122",
-    "movieName": "(Theatrical Cut)",
+    "movieName": "Deadpool 2 (2018)",
     "imgurURL": "https://i.imgur.com/5U5ojt9.png",
     "": "",
     "imagePath": "graphs/9d8bd17f8442b60c96c6.jpg"
@@ -2170,15 +2156,8 @@
     "imagePath": "graphs/0f3e55fad75c2e7fd9eb.jpg"
   },
   {
-    "id": "311",
-    "movieName": "Men in Black: International (2019)",
-    "imgurURL": "https://i.imgur.com/ZViLXiA.png",
-    "": "",
-    "imagePath": "graphs/a3ba584cf7890d240523.jpg"
-  },
-  {
     "id": "312",
-    "movieName": "UHD",
+    "movieName": "Men in Black: International (2019)",
     "imgurURL": "https://i.imgur.com/ZViLXiA.png",
     "": "",
     "imagePath": "graphs/a3ba584cf7890d240523.jpg"
@@ -2248,10 +2227,11 @@
   },
   {
     "id": "322",
-    "movieName": "Monsters",
-    "imgurURL": "Inc. (2001)",
+    "movieName": "Monsters, Inc. (2001)",
+    "imgurURL": "http://i.imgur.com/eO2aCRM.png",
     "": "",
-    "imagePath": null
+    "imagePath": "graphs/7592c34e0e846e4cd02f.jpg",
+    "cachedSourceURL": "https://i.imgur.com/eO2aCRM.png"
   },
   {
     "id": "323",
@@ -3466,10 +3446,11 @@
   },
   {
     "id": "496",
-    "movieName": "The Good",
-    "imgurURL": "the Bad",
+    "movieName": "The Good, the Bad, the Weird (2008)",
+    "imgurURL": "http://i.imgur.com/ZHjktv2.png",
     "": "http://i.imgur.com/ZHjktv2.png",
-    "imagePath": null
+    "imagePath": "graphs/d98fd29c5bf85a43f046.jpg",
+    "cachedSourceURL": "https://i.imgur.com/ZHjktv2.png"
   },
   {
     "id": "497",
@@ -4324,5 +4305,26 @@
     "imgurURL": "http://i.imgur.com/1czzIvy.jpg",
     "": "",
     "imagePath": "graphs/3a9d5e2903281b685632.jpg"
+  },
+  {
+    "id": "53",
+    "movieName": "Avengers: Endgame (2019)",
+    "imgurURL": "https://i.imgur.com/n9lIn0w.png",
+    "": "",
+    "imagePath": "graphs/7433f45c6a279f43999c.jpg"
+  },
+  {
+    "id": "121",
+    "movieName": "Deadpool 2 (2018)",
+    "imgurURL": "https://i.imgur.com/5U5ojt9.png",
+    "": "",
+    "imagePath": "graphs/9d8bd17f8442b60c96c6.jpg"
+  },
+  {
+    "id": "311",
+    "movieName": "Men in Black: International (2019)",
+    "imgurURL": "https://i.imgur.com/ZViLXiA.png",
+    "": "",
+    "imagePath": "graphs/a3ba584cf7890d240523.jpg"
   }
 ]
