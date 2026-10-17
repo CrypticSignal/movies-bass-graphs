@@ -19,7 +19,7 @@ export function GraphImage({ movie, ...props }) {
   );
 }
 
-export function ZoomControl({ value, onChange, compact = false, min = 50, max = 200 }) {
+export function ZoomControl({ value, onChange, compact = false, min = 100, max = 500 }) {
   const percentage = Math.round(value * 100);
   return (
     <label className={compact ? "min-w-[80px] max-w-[160px] flex-1" : "min-w-[140px] flex-[0_1_200px] gap-[3px]"}>

@@ -60,6 +60,21 @@ export default function GraphCard({
       </div>
       {hasImage ? (
         <div className="relative">
+          <details className="absolute top-2 left-2 z-1 rounded border border-[#6b835a] bg-[#203127f2] text-accent">
+            <summary
+              className="flex h-10 cursor-pointer list-none items-center gap-2 px-2.5 text-[11px] [&::-webkit-details-marker]:hidden"
+              aria-label={`Zoom controls for ${movie.movieName}`}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
+                <circle cx="10" cy="10" r="6" />
+                <path d="m15 15 6 6M7 10h6m-3-3v6" />
+              </svg>
+              <span className="tabular-nums">{Math.round(zoom * 100)}%</span>
+            </summary>
+            <div className="w-[180px] px-3 pb-2">
+              <ZoomControl value={zoom} onChange={setZoom} compact />
+            </div>
+          </details>
           <div className="overflow-auto bg-black">
             <button
               className="block w-full rounded-none border-0 bg-black p-0 hover:bg-black"
@@ -83,11 +98,6 @@ export default function GraphCard({
           </button>
         </div>
       ) : <GraphImage movie={movie} />}
-      {hasImage && (
-        <div className="flex justify-end border-t border-[#314039] px-4 py-2">
-          <ZoomControl value={zoom} onChange={setZoom} min={100} max={300} compact />
-        </div>
-      )}
       {(reading || overallPeak) && (
         <FrequencyReading
           reading={reading}
