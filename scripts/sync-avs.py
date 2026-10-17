@@ -1,6 +1,5 @@
-"""Cache new or changed spreadsheet graphs without discarding working copies."""
+"""Sync only the first-post AVS List of Films and cache its Imgur graphs."""
 import concurrent.futures
-import csv
 import hashlib
 import importlib.util
 import io
@@ -10,43 +9,16 @@ import re
 import urllib.parse
 import urllib.request
 
+from avs_source import THREAD_URL, read_films, image_key
+
 from PIL import Image
 
 ROOT = Path('public/graphs')
-SHEET = '1SdwJ_mfYgghxZG8gy41ke22e2AM9gUPTB1EmZgYcHoY'
 CATALOGUE = ROOT / 'catalogue.json'
 METADATA = ROOT / 'metadata.json'
 
 def normalized(url):
     return url.strip().replace('http://i.imgur.com/', 'https://i.imgur.com/')
-
-def read_sheet():
-    url = f'https://docs.google.com/spreadsheets/d/{SHEET}/gviz/tq?tqx=out:csv&sheet=Sheet1'
-    request = urllib.request.Request(url, headers={'User-Agent': 'MoviesBassGraphs/1.0'})
-    with urllib.request.urlopen(request, timeout=60) as response:
-        records = list(csv.reader(io.StringIO(response.read().decode('utf-8-sig'))))
-    if not records or not {'id', 'movieName', 'imgurURL'}.issubset(records[0]):
-        raise RuntimeError('Spreadsheet headers are missing; saved catalogue left unchanged')
-    headers = records[0]
-    id_column, title_column = headers.index('id'), headers.index('movieName')
-    rows = []
-    for cells in records[1:]:
-        if not any(cells):
-            continue
-        if len(cells) <= max(id_column, title_column):
-            raise RuntimeError('Incomplete spreadsheet row; saved catalogue left unchanged')
-        # A few source titles are split across columns at commas. Locate the URL,
-        # then reassemble the title rather than treating its words as a URL.
-        url_index = next((i for i in range(title_column + 1, len(cells))
-                          if re.match(r'^https?://(?:i\.)?imgur\.com/', cells[i].strip())), None)
-        title = ', '.join(part.strip() for part in cells[title_column:url_index]) if url_index else cells[title_column].strip()
-        source = cells[url_index].strip() if url_index else ''
-        if not title:
-            continue
-        rows.append({'sheetID': cells[id_column].strip(), 'movieName': title, 'imgurURL': source})
-    if not rows:
-        raise RuntimeError('Spreadsheet is empty; saved catalogue left unchanged')
-    return rows
 
 def recover(row):
     row = dict(row)
@@ -96,12 +68,12 @@ def recover(row):
         return row, False
 
 def split_graphs(rows, metadata):
-    # Keep the original cached source so spreadsheet syncs never crop a crop.
+    # Keep the original cached source so source syncs never crop a crop.
     result = []
     for row in rows:
         if row.get('splitFrom'):
             continue
-        if str(row['id']) != '149' or not row.get('imagePath'):
+        if row['movieName'] != 'Edge of Tomorrow (2014)' or not row.get('imagePath'):
             result.append(row)
             continue
         source_path = row.get('sourceImagePath', row['imagePath'])
@@ -128,45 +100,39 @@ def split_graphs(rows, metadata):
 
 def main():
     previous = json.loads(CATALOGUE.read_text())
-    remote = read_sheet()
+    remote = read_films()
     metadata = json.loads(METADATA.read_text()) if METADATA.exists() else {}
-    by_id = {str(row['id']): row for row in previous}
-    by_source = {normalized(row.get('imgurURL', '')): row for row in previous if row.get('imgurURL') and not row.get('splitFrom')}
-    by_title = {row['movieName'].casefold(): row for row in previous if not row.get('splitFrom')}
-    occupied = set(by_id)
+    base_rows = [row for row in previous if not row.get('splitFrom')]
+    by_source = {image_key(row.get('imgurURL', '')): row for row in base_rows if row.get('imgurURL')}
+    by_title = {row['movieName'].casefold(): row for row in base_rows}
+    occupied = {str(row['id']) for row in previous}
     used = set()
     pending = []
     for incoming in remote:
         source = normalized(incoming['imgurURL'])
-        old = by_source.get(source) or by_title.get(incoming['movieName'].casefold())
-        candidate = by_id.get(incoming['sheetID'])
-        if old is None and candidate:
-            # A changed URL on an existing numbered row should replace that
-            # row's graph, while a newly inserted row must not steal its ID.
-            if candidate['movieName'] == incoming['movieName'] or incoming['movieName'].startswith(candidate['movieName'] + ','):
-                old = candidate
+        old = by_source.get(image_key(source)) or by_title.get(incoming['movieName'].casefold())
         if old and str(old['id']) in used:
-            continue
+            old = None
         if old:
             item = dict(old)
             item['_oldSource'] = old.get('imgurURL', '')
         else:
-            identifier = incoming['sheetID']
-            if not identifier or identifier in occupied:
-                identifier = 'sheet-' + hashlib.sha256((incoming['movieName'] + source).encode()).hexdigest()[:16]
+            identifier = 'avs-' + hashlib.sha256(incoming['movieName'].casefold().encode()).hexdigest()[:16]
+            if identifier in occupied:
+                raise RuntimeError('Duplicate film identity in AVS list; catalogue unchanged')
             occupied.add(identifier)
             item = {'id': identifier, 'imagePath': None, '_oldSource': ''}
         used.add(str(item['id']))
         if source != normalized(item.get('cachedSourceURL', item.get('_oldSource', ''))) and item.get('imagePath'):
             item.setdefault('cachedSourceURL', normalized(item.get('_oldSource', '')))
         item['movieName'] = incoming['movieName']
-        if source:
-            item['imgurURL'] = incoming['imgurURL']
+        item['imgurURL'] = incoming['imgurURL']
+        item['source'] = 'avs-first-post'
         pending.append(item)
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         results = list(pool.map(recover, pending))
-    # Spreadsheet deletions do not erase saved graphs or break shared links.
-    rows = [row for row, _ in results] + [row for row in previous if str(row['id']) not in used]
+    # Only indexed films are shown; saved files remain available for old links.
+    rows = [row for row, _ in results]
     changed_images = [row for row, downloaded in results if downloaded]
     if changed_images:
         spec = importlib.util.spec_from_file_location('graph_metadata', 'scripts/extract-metadata.py')
@@ -182,9 +148,13 @@ def main():
     rows = split_graphs(rows, metadata)
     for row in rows:
         row.pop('_oldSource', None)
+    (ROOT / 'avs-index.json').write_text(json.dumps({
+        'sourceURL': THREAD_URL, 'section': 'List of Films,', 'filmCount': len(remote),
+        'films': remote,
+    }, indent=2) + '\n')
     CATALOGUE.write_text(json.dumps(rows, indent=2) + '\n')
     METADATA.write_text(json.dumps(metadata, indent=2) + '\n')
-    print(f'Synced {len(remote)} spreadsheet rows; downloaded {len(changed_images)} graphs; retained {len(rows)} entries.')
+    print(f'Synced {len(remote)} AVS first-post films; downloaded {len(changed_images)} graphs; published {len(rows)} cards.')
 
 if __name__ == '__main__':
     main()

@@ -1,6 +1,6 @@
 # Movies Bass Graphs
 
-Explore bass frequency graphs for 618 movie and television entries.
+Explore bass frequency graphs for the films indexed in AVS Forum’s first-post **List of Films**.
 
 [Open the archive](https://crypticsignal.github.io/movies-bass-graphs/)
 
@@ -16,7 +16,7 @@ Comparison preserves each image's original axes. Check labelled scales and measu
 
 ## Catalogue and metadata
 
-The catalogue and 611 recovered graph images are bundled with the site. Seven unavailable entries remain visible with an explanation. No Imgur or Google Sheets access is required at runtime.
+The catalogue and recovered graph images are bundled with the site. Unavailable images remain labelled unavailable. No AVS Forum, Imgur, or Google Sheets access is required in the browser.
 
 Years and types are inferred from titles. Soundtrack formats are read automatically from graph headers and can contain recognition errors; the label on the graph remains authoritative. Unrecognized formats stay **Unknown**.
 
@@ -53,13 +53,17 @@ The build workflow publishes `dist/` to the existing `gh-pages` branch. Publishi
 
 Built with React 19, Vite, and plain CSS.
 
-## Automatic spreadsheet sync
+## Automatic AVS Forum sync
 
-The **Sync spreadsheet graphs** workflow runs daily at **04:23 UTC** (GitHub may delay scheduled runs) and can be started manually from Actions. It reads the spreadsheet directly, downloads new or changed direct Imgur image URLs, and extracts soundtrack labels for newly cached graphs. Already cached URLs are skipped.
+The **Sync AVS film graphs** workflow runs daily at **04:23 UTC** (GitHub may delay scheduled runs) and can be started manually from Actions. Its only source is the numbered **List of Films,** section in the [thread’s first post](https://www.avsforum.com/threads/the-ultimate-list-of-bass-in-movies-w-frequency-charts-bass-charts-are-on-the-first-page.2763785/). Links in the update announcements, nested scene lists, replies, and other posts are excluded.
 
-Failed downloads retain the last saved image and are retried on subsequent runs. Removed spreadsheet entries remain archived so saved graphs and shared links are preserved. Album links and inaccessible sources may remain unavailable. Replacing a graph requires changing its image URL in the spreadsheet; cached images are not repeatedly downloaded at the same URL.
+The sync follows each film’s Imgur hyperlink, downloads new or changed direct images, extracts soundtrack labels, and analyses changed graphs at 0.5 Hz intervals. Existing saved images and IDs are reused where possible. The two Edge of Tomorrow cards remain separate.
 
-Only changed catalogue, metadata, or image files are committed. The sync then explicitly starts publishing; unchanged runs do not rebuild or deploy the site. GitHub can disable scheduled workflows after prolonged repository inactivity; a manual run remains available.
+Chrome reads the public page when AVS Forum requires its JavaScript browser check. The runner uses a temporary profile without a login or saved user cookies. An unreadable source or malformed list fails before the saved catalogue is changed. Failed image downloads retain working copies; unavailable sources remain labelled unavailable.
+
+Only currently indexed films appear in the catalogue, plus explicitly split variants. Previously saved image files remain in the repository. `public/graphs/avs-index.json` records the source titles, links, and film count from the last successful sync. The spreadsheet is no longer read.
+
+Only changed catalogue, metadata, analysis, or image files are committed. The sync starts publishing when those files change; unchanged runs do not rebuild or deploy the site. GitHub can disable scheduled workflows after prolonged repository inactivity.
 
 ## Ranking by frequency
 
@@ -69,7 +73,7 @@ Single-frequency values are digitized at that frequency's pixel column without a
 
 The analysis requires consistent frequency and dB axis labels. Uncertain graphs, missing curves, and frequencies outside a graph's calibrated range remain **unranked** and sort after readable results.
 
-`scripts/analyze-graphs.py` generates `public/graphs/levels.json` using Pillow, NumPy, and Tesseract. The daily spreadsheet sync refreshes analysis for new or changed images and reuses cached analysis for unchanged images. The **Analyze graph levels** workflow can also be started manually. To force a full recalibration after improving the analyzer, increment its `VERSION`.
+`scripts/analyze-graphs.py` generates `public/graphs/levels.json` using Pillow, NumPy, and Tesseract. The daily AVS sync refreshes analysis for new or changed images and reuses cached analysis for unchanged images. The **Analyze graph levels** workflow can also be started manually. To force a full recalibration after improving the analyzer, increment its `VERSION`.
 
 ### How readings are extracted
 
