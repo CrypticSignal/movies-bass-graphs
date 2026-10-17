@@ -19,7 +19,7 @@ export function GraphImage({ movie, ...props }) {
   );
 }
 
-export function ZoomControl({ value, onChange, compact = false }) {
+export function ZoomControl({ value, onChange, compact = false, min = 50, max = 200 }) {
   const percentage = Math.round(value * 100);
   return (
     <label className={compact ? "min-w-[80px] max-w-[160px] flex-1" : "min-w-[140px] flex-[0_1_200px] gap-[3px]"}>
@@ -32,8 +32,8 @@ export function ZoomControl({ value, onChange, compact = false }) {
       <input
         className="m-0 min-h-8 w-full cursor-pointer border-0 bg-transparent p-0 accent-accent"
         type="range"
-        min="50"
-        max="200"
+        min={min}
+        max={max}
         step="1"
         value={percentage}
         aria-valuetext={`${percentage}%`}

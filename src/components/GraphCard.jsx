@@ -49,7 +49,7 @@ export default function GraphCard({
           </h2>
         </div>
         <div className="flex w-full flex-wrap items-center gap-2 text-[11px]">
-          {hasImage && <ZoomControl value={zoom} onChange={setZoom} compact />}
+          {hasImage && <ZoomControl value={zoom} onChange={setZoom} min={100} max={300} compact />}
           <div className="grid flex-1 grid-cols-2 gap-2">
           <button
             className="px-2.5 py-[7px] text-[11px] whitespace-nowrap"
