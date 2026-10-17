@@ -135,13 +135,13 @@ export default function App() {
     setStatus('loading');
     setLevelsStatus('loading');
     Promise.all([
-      fetch(import.meta.env.BASE_URL + 'graphs/catalogue.json?files=movie-names-v1', { signal: controller.signal, cache: 'no-store' }).then(response => {
+      fetch(import.meta.env.BASE_URL + 'graphs/catalogue.json?files=movie_names_v2', { signal: controller.signal, cache: 'no-store' }).then(response => {
         if (!response.ok) throw new Error('Catalogue unavailable');
         return response.json();
       }),
-      fetch(import.meta.env.BASE_URL + 'graphs/metadata.json?files=movie-names-v1', { signal: controller.signal, cache: 'no-store' })
+      fetch(import.meta.env.BASE_URL + 'graphs/metadata.json?files=movie_names_v2', { signal: controller.signal, cache: 'no-store' })
         .then(response => response.ok ? response.json() : {}).catch(() => ({})),
-      fetch(import.meta.env.BASE_URL + 'graphs/levels.json?sampling=0.5&schema=4&files=movie-names-v1', { signal: controller.signal, cache: 'no-store' })
+      fetch(import.meta.env.BASE_URL + 'graphs/levels.json?sampling=0.5&schema=4&files=movie_names_v2', { signal: controller.signal, cache: 'no-store' })
         .then(response => response.ok ? response.json() : null).catch(() => null),
     ]).then(([rows, details, levels]) => {
       if (!Array.isArray(rows) || rows.some(row => typeof row.movieName !== 'string' || !row.id)) throw new Error('Invalid catalogue');
