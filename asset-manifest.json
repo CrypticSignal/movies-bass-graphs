@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/movies-bass-graphs/static/css/main.ce06ea13.css",
-    "main.js": "/movies-bass-graphs/static/js/main.76253c42.js",
+    "main.js": "/movies-bass-graphs/static/js/main.ff3dbeef.js",
     "index.html": "/movies-bass-graphs/index.html",
     "main.ce06ea13.css.map": "/movies-bass-graphs/static/css/main.ce06ea13.css.map",
-    "main.76253c42.js.map": "/movies-bass-graphs/static/js/main.76253c42.js.map"
+    "main.ff3dbeef.js.map": "/movies-bass-graphs/static/js/main.ff3dbeef.js.map"
   },
   "entrypoints": [
     "static/css/main.ce06ea13.css",
-    "static/js/main.76253c42.js"
+    "static/js/main.ff3dbeef.js"
   ]
 }
