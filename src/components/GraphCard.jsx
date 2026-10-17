@@ -92,7 +92,7 @@ export default function GraphCard({
               </svg>
             </summary>
             <div className="absolute right-0 bottom-10 w-[180px] rounded-md border border-[#6b835a] bg-[#203127] p-3 shadow-lg">
-              <ZoomControl value={zoom} onChange={setZoom} min={100} max={500} compact />
+              <ZoomControl value={zoom} onChange={setZoom} min={100} max={400} compact />
             </div>
           </details>
         <button
