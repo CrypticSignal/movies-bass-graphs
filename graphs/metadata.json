@@ -208,7 +208,8 @@
     "formatSource": "graph-header-ocr"
   },
   "67": {
-    "format": "Unknown"
+    "format": "DTS-HD Master Audio",
+    "formatSource": "graph-header-ocr"
   },
   "68": {
     "format": "Unknown"
@@ -822,7 +823,8 @@
     "format": "Unknown"
   },
   "253": {
-    "format": "Unknown"
+    "format": "Dolby Atmos",
+    "formatSource": "graph-header-ocr"
   },
   "254": {
     "format": "Unknown"
@@ -2013,5 +2015,114 @@
   "149-without-sine-wave-intro": {
     "format": "DTS-HD Master Audio",
     "formatSource": "graph-header-ocr"
+  },
+  "avs-59d73bcfcc26dbca": {
+    "format": "DTS-HD Master Audio",
+    "formatSource": "graph-header-ocr"
+  },
+  "avs-52ecbec825e1f6cc": {
+    "format": "Dolby Atmos",
+    "formatSource": "graph-header-ocr"
+  },
+  "avs-1c7aec4315be42da": {
+    "format": "Unknown"
+  },
+  "avs-67446298b8b635d3": {
+    "format": "Unknown"
+  },
+  "avs-27c44881bfb1b6bb": {
+    "format": "Dolby Atmos",
+    "formatSource": "graph-header-ocr"
+  },
+  "avs-2318fe0e30d964fe": {
+    "format": "Unknown"
+  },
+  "avs-74d35e033fa0fee4": {
+    "format": "Unknown"
+  },
+  "avs-a10d0cfaa9cbdf3a": {
+    "format": "Unknown"
+  },
+  "avs-7065e786a7bb6c93": {
+    "format": "DTS-HD Master Audio",
+    "formatSource": "graph-header-ocr"
+  },
+  "avs-f8876d25449a9087": {
+    "format": "Dolby Atmos",
+    "formatSource": "graph-header-ocr"
+  },
+  "avs-82f45fa45caec6c5": {
+    "format": "Unknown"
+  },
+  "avs-61fd865ce37835cb": {
+    "format": "Unknown"
+  },
+  "avs-7420c8994d0a4809": {
+    "format": "Unknown"
+  },
+  "avs-6ac0dbfabd418439": {
+    "format": "Dolby Atmos",
+    "formatSource": "graph-header-ocr"
+  },
+  "avs-e4e01ee680d4e2cb": {
+    "format": "DTS-HD Master Audio",
+    "formatSource": "graph-header-ocr"
+  },
+  "avs-78fae0a26de0871d": {
+    "format": "DTS-HD Master Audio",
+    "formatSource": "graph-header-ocr"
+  },
+  "avs-eaae29985a34a8d2": {
+    "format": "Unknown"
+  },
+  "avs-809586910dedb029": {
+    "format": "Unknown"
+  },
+  "avs-b24546243d7a73c0": {
+    "format": "Unknown"
+  },
+  "avs-20be2cceae28c0ad": {
+    "format": "Dolby Atmos",
+    "formatSource": "graph-header-ocr"
+  },
+  "avs-0410974120027322": {
+    "format": "Unknown"
+  },
+  "avs-0b5fb02ef8dc56eb": {
+    "format": "Unknown"
+  },
+  "avs-49dd48e1900b63ed": {
+    "format": "Dolby Atmos",
+    "formatSource": "graph-header-ocr"
+  },
+  "avs-45b51252651a49f5": {
+    "format": "DTS-HD Master Audio",
+    "formatSource": "graph-header-ocr"
+  },
+  "avs-f7ec4bc1c4058b76": {
+    "format": "Dolby Atmos",
+    "formatSource": "graph-header-ocr"
+  },
+  "avs-c2654762224ba55b": {
+    "format": "Unknown"
+  },
+  "avs-0de71d02182ab06f": {
+    "format": "Unknown"
+  },
+  "avs-5a8190a4f9133918": {
+    "format": "Unknown"
+  },
+  "avs-98f5fbe9015a260b": {
+    "format": "Unknown"
+  },
+  "avs-4608fb1b0c7fbc5f": {
+    "format": "Unknown"
+  },
+  "avs-cc0335703b286d90": {
+    "format": "Dolby Atmos",
+    "formatSource": "graph-header-ocr"
+  },
+  "avs-65168210a77a963a": {
+    "format": "Unknown"
   }
 }

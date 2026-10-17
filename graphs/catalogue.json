@@ -2,1040 +2,1303 @@
   {
     "id": "1",
     "movieName": "[Rec] (2007)",
-    "imgurURL": "http://i.imgur.com/bkRmdAV.png",
+    "imgurURL": "https://i.imgur.com/bkRmdAV.png",
     "": "",
-    "imagePath": "graphs/f6751e4c588aaf878b68.jpg"
+    "imagePath": "graphs/f6751e4c588aaf878b68.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "2",
     "movieName": "[Rec] 2 (2009)",
-    "imgurURL": "http://i.imgur.com/Enw18J6.png",
+    "imgurURL": "https://i.imgur.com/Enw18J6.png",
     "": "",
-    "imagePath": "graphs/0b3cf107b10897643ffa.jpg"
+    "imagePath": "graphs/0b3cf107b10897643ffa.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "3",
     "movieName": "10 Cloverfield Lane (2016)",
-    "imgurURL": "http://i.imgur.com/z8xKCYO.png",
+    "imgurURL": "https://i.imgur.com/z8xKCYO.png",
     "": "",
-    "imagePath": "graphs/7b513b9ed4fbe9a2ec09.jpg"
+    "imagePath": "graphs/7b513b9ed4fbe9a2ec09.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "4",
     "movieName": "12 Strong (2018)",
     "imgurURL": "https://i.imgur.com/zSeH1ov.png",
     "": "",
-    "imagePath": "graphs/b7b11fc6ed3b3d838650.jpg"
-  },
-  {
-    "id": "5",
-    "movieName": "UHD Graph",
-    "imgurURL": "https://i.imgur.com/0KY0gsL.png",
-    "": "",
-    "imagePath": "graphs/11397ff5f9de2d894bab.jpg"
+    "imagePath": "graphs/b7b11fc6ed3b3d838650.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "6",
     "movieName": "13 Hours: The Secret Soldiers of Benghazi (2016)",
     "imgurURL": "https://i.imgur.com/lPF99BP.png",
     "": "",
-    "imagePath": "graphs/ab68b831f012f2a4e8ce.jpg"
+    "imagePath": "graphs/ab68b831f012f2a4e8ce.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "7",
     "movieName": "2 Fast 2 Furious (2003)",
     "imgurURL": "https://i.imgur.com/fQeC8nS.png",
     "": "",
-    "imagePath": "graphs/00ea453f02bea7e327b7.jpg"
+    "imagePath": "graphs/00ea453f02bea7e327b7.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "8",
     "movieName": "2 Fast 2 Furious (2003) UHD",
     "imgurURL": "https://i.imgur.com/ZbpgXD7.png",
     "": "",
-    "imagePath": "graphs/0de9c2ea930194cd5d76.jpg"
+    "imagePath": "graphs/0de9c2ea930194cd5d76.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "9",
     "movieName": "2 Guns (2013)",
-    "imgurURL": "http://i.imgur.com/VOtSwS7.png",
+    "imgurURL": "https://i.imgur.com/VOtSwS7.png",
     "": "",
-    "imagePath": "graphs/0ae214fe8260e5933843.jpg"
+    "imagePath": "graphs/0ae214fe8260e5933843.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "10",
     "movieName": "2012 (2009)",
     "imgurURL": "https://i.imgur.com/617iDgm.png",
     "": "",
-    "imagePath": "graphs/8a92b4aa245ebe7e77a2.jpg"
+    "imagePath": "graphs/8a92b4aa245ebe7e77a2.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "11",
     "movieName": "30 Days of Night (2007)",
     "imgurURL": "https://i.imgur.com/7X7kgsc.jpg",
     "": "",
-    "imagePath": "graphs/20ca8cd2d7a7caad5bc9.jpg"
+    "imagePath": "graphs/20ca8cd2d7a7caad5bc9.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "12",
     "movieName": "300 (2006) UHD",
     "imgurURL": "https://i.imgur.com/45jnoZm.png",
     "": "",
-    "imagePath": "graphs/4bf363b7cef378728445.jpg"
+    "imagePath": "graphs/4bf363b7cef378728445.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "13",
     "movieName": "310 to Yuma (2007)",
     "imgurURL": "https://i.imgur.com/n7vZZuO.jpg",
     "": "",
-    "imagePath": "graphs/616986e9e10dd2c7bf4e.jpg"
+    "imagePath": "graphs/616986e9e10dd2c7bf4e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "14",
     "movieName": "7 Days in Entebbe (2018)",
     "imgurURL": "https://i.imgur.com/eNjq0yT.png",
     "": "",
-    "imagePath": "graphs/54fd1c77078fcd8607d5.jpg"
+    "imagePath": "graphs/54fd1c77078fcd8607d5.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-59d73bcfcc26dbca",
+    "imagePath": "graphs/31aa0f07de9e307731e4.jpg",
+    "movieName": "65 (2023) BD",
+    "imgurURL": "https://i.imgur.com/HJgGkRE.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/HJgGkRE.png"
+  },
+  {
+    "id": "avs-52ecbec825e1f6cc",
+    "imagePath": "graphs/7ec15f45d9d1e87f9459.jpg",
+    "movieName": "65 (2023) UHD",
+    "imgurURL": "https://i.imgur.com/G32p6nU.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/G32p6nU.png"
   },
   {
     "id": "15",
     "movieName": "A Cure for Wellness (2016)",
-    "imgurURL": "http://i.imgur.com/6Sh96PL.png",
+    "imgurURL": "https://i.imgur.com/6Sh96PL.png",
     "": "",
-    "imagePath": "graphs/cbbdf6d050328cbbea7c.jpg"
+    "imagePath": "graphs/cbbdf6d050328cbbea7c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "16",
     "movieName": "Afro Samurai",
-    "imgurURL": "http://i.imgur.com/usPJUHX.png",
+    "imgurURL": "https://i.imgur.com/usPJUHX.png",
     "": "",
-    "imagePath": "graphs/e430d8ff38226c65dc0f.jpg"
+    "imagePath": "graphs/e430d8ff38226c65dc0f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "17",
     "movieName": "A Ghost Story (2017)",
     "imgurURL": "https://i.imgur.com/3xa5Dgf.png",
     "": "",
-    "imagePath": "graphs/a92a6f000c4ebecb1747.jpg"
+    "imagePath": "graphs/a92a6f000c4ebecb1747.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "18",
     "movieName": "Air (2015)",
-    "imgurURL": "http://i.imgur.com/AbWnqEG.jpg",
+    "imgurURL": "https://i.imgur.com/AbWnqEG.jpg",
     "": "",
-    "imagePath": "graphs/24598632286a6eacd229.jpg"
+    "imagePath": "graphs/24598632286a6eacd229.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "19",
     "movieName": "Alien: Covenant (2017)",
-    "imgurURL": "http://i.imgur.com/YNJl47M.png",
+    "imgurURL": "https://i.imgur.com/YNJl47M.png",
     "": "",
-    "imagePath": "graphs/b04d30e3ec35d4e08a33.jpg"
+    "imagePath": "graphs/b04d30e3ec35d4e08a33.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "20",
     "movieName": "Alita: Battle Angel (2019)",
     "imgurURL": "https://i.imgur.com/kdY9Cdk.png",
     "": "",
-    "imagePath": "graphs/1d4d83a068fa119cecbb.jpg"
+    "imagePath": "graphs/1d4d83a068fa119cecbb.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "21",
     "movieName": "Alita: Battle Angel (2019) UHD",
     "imgurURL": "https://i.imgur.com/pEemcoP.png",
     "": "",
-    "imagePath": "graphs/07cada6c1bb53d6e567a.jpg"
+    "imagePath": "graphs/07cada6c1bb53d6e567a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "22",
     "movieName": "Along with the Gods: The Two Worlds (2017)",
     "imgurURL": "https://i.imgur.com/gFzNSGM.png",
     "": "",
-    "imagePath": "graphs/4ed8be68e7ef4b618859.jpg"
+    "imagePath": "graphs/4ed8be68e7ef4b618859.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "23",
     "movieName": "American Assassin (2017)",
     "imgurURL": "https://i.imgur.com/fV5Vomz.png",
     "": "",
-    "imagePath": "graphs/2a7d624eced3aa3e249a.jpg"
+    "imagePath": "graphs/2a7d624eced3aa3e249a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "24",
     "movieName": "American Made (2017)",
     "imgurURL": "https://i.imgur.com/cqzjsxI.png",
     "": "",
-    "imagePath": "graphs/468e15c9d3576d1d3d0c.jpg"
+    "imagePath": "graphs/468e15c9d3576d1d3d0c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "25",
     "movieName": "American Psycho (2000) UHD",
     "imgurURL": "https://i.imgur.com/mYD37XZ.png",
     "": "",
-    "imagePath": "graphs/75e692c048901c31888b.jpg"
+    "imagePath": "graphs/75e692c048901c31888b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "26",
     "movieName": "American Ultra (2015)",
-    "imgurURL": "http://i.imgur.com/rfJGPtk.jpg",
+    "imgurURL": "https://i.imgur.com/rfJGPtk.jpg",
     "": "",
-    "imagePath": "graphs/f03af685c4e95c111de1.jpg"
+    "imagePath": "graphs/f03af685c4e95c111de1.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "27",
     "movieName": "A Monster Calls (2016)",
-    "imgurURL": "http://i.imgur.com/zUYBATf.png",
+    "imgurURL": "https://i.imgur.com/zUYBATf.png",
     "": "",
-    "imagePath": "graphs/5487795dfa25d86775ff.jpg"
+    "imagePath": "graphs/5487795dfa25d86775ff.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "28",
     "movieName": "A Private War (2018)",
     "imgurURL": "https://i.imgur.com/djDuNml.png",
     "": "",
-    "imagePath": "graphs/1e748575e7dd06ac4dbd.jpg"
+    "imagePath": "graphs/1e748575e7dd06ac4dbd.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "29",
     "movieName": "A Quiet Place (2018)",
     "imgurURL": "https://i.imgur.com/TvVYeQK.png",
     "": "",
-    "imagePath": "graphs/1ff08b35dc5ab700c38e.jpg"
+    "imagePath": "graphs/1ff08b35dc5ab700c38e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "30",
     "movieName": "A Star Is Born (2018)",
     "imgurURL": "https://i.imgur.com/neaVs4j.png",
     "": "",
-    "imagePath": "graphs/5a9b971d7a36a89ae84c.jpg"
+    "imagePath": "graphs/5a9b971d7a36a89ae84c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "31",
     "movieName": "A Wrinkle in Time (2018)",
     "imgurURL": "https://i.imgur.com/7l49KcM.png",
     "": "",
-    "imagePath": "graphs/03deebf16169bb41c04e.jpg"
+    "imagePath": "graphs/03deebf16169bb41c04e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "32",
     "movieName": "Adrift (2018)",
     "imgurURL": "https://i.imgur.com/7hpiQh0.png",
     "": "",
-    "imagePath": "graphs/30cd05a5dcc2da16739c.jpg"
+    "imagePath": "graphs/30cd05a5dcc2da16739c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "33",
     "movieName": "Angels & Demons (2009)",
-    "imgurURL": "http://i.imgur.com/K9yqKGQ.jpg",
+    "imgurURL": "https://i.imgur.com/K9yqKGQ.jpg",
     "": "",
-    "imagePath": "graphs/fa5190677fe0d7e0f34d.jpg"
+    "imagePath": "graphs/fa5190677fe0d7e0f34d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "34",
     "movieName": "Annihilation (2018)",
     "imgurURL": "https://i.imgur.com/J33qwre.png",
     "": "",
-    "imagePath": "graphs/4524368d8618851f2c93.jpg"
+    "imagePath": "graphs/4524368d8618851f2c93.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "35",
     "movieName": "Anthropoid (2016)",
-    "imgurURL": "http://i.imgur.com/fulbhXG.png",
+    "imgurURL": "https://i.imgur.com/fulbhXG.png",
     "": "",
-    "imagePath": "graphs/2ad475371579e073ca63.jpg"
+    "imagePath": "graphs/2ad475371579e073ca63.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "36",
     "movieName": "Apocalypse Now (1979) UHD Final Cut",
     "imgurURL": "https://i.imgur.com/znYq5qb.png",
     "": "",
-    "imagePath": "graphs/3d76413d06588ef420cf.jpg"
+    "imagePath": "graphs/3d76413d06588ef420cf.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "37",
     "movieName": "Apollo 11 (2019)",
     "imgurURL": "https://i.imgur.com/cKKHrws.png",
     "": "",
-    "imagePath": "graphs/19a3501072486a611de5.jpg"
+    "imagePath": "graphs/19a3501072486a611de5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "38",
     "movieName": "Apollo 13 (1995)",
     "imgurURL": "https://i.imgur.com/a7EAjMO.jpg",
     "": "",
-    "imagePath": "graphs/34f84bca89185e1a06df.jpg"
+    "imagePath": "graphs/34f84bca89185e1a06df.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "39",
     "movieName": "Aquaman (2018)",
     "imgurURL": "https://i.imgur.com/OW70rbw.png",
     "": "",
-    "imagePath": "graphs/704b387c3d840b570222.jpg"
+    "imagePath": "graphs/704b387c3d840b570222.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-1c7aec4315be42da",
+    "imagePath": "graphs/fb5d6178b13e05dd6c4d.jpg",
+    "movieName": "Ambulance (2022)",
+    "imgurURL": "https://i.imgur.com/8ZOo6SK.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/8ZOo6SK.png"
   },
   {
     "id": "40",
     "movieName": "Ant-Man (2015)",
-    "imgurURL": "http://i.imgur.com/RlD0AF2.jpg",
+    "imgurURL": "https://i.imgur.com/RlD0AF2.jpg",
     "": "",
-    "imagePath": "graphs/92de66ecdb265012b934.jpg"
+    "imagePath": "graphs/92de66ecdb265012b934.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "41",
     "movieName": "Ant-Man and the Wasp (2018)",
     "imgurURL": "https://i.imgur.com/4oJlIB3.png",
     "": "",
-    "imagePath": "graphs/9798126f0b2cce38cc40.jpg"
+    "imagePath": "graphs/9798126f0b2cce38cc40.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "42",
     "movieName": "Ant-Man and the Wasp (2018) UHD",
     "imgurURL": "https://i.imgur.com/KZ3Srjp.png",
     "": "",
-    "imagePath": "graphs/f58a7f219b5abc8ddefc.jpg"
+    "imagePath": "graphs/f58a7f219b5abc8ddefc.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-67446298b8b635d3",
+    "imagePath": "graphs/b0624eba7b93b2089ed3.jpg",
+    "movieName": "Ant-Man and the Wasp: Quantumania (2023)",
+    "imgurURL": "https://i.imgur.com/GXyTKjV.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/GXyTKjV.png"
+  },
+  {
+    "id": "avs-27c44881bfb1b6bb",
+    "imagePath": "graphs/7d206314ca6e557ced89.jpg",
+    "movieName": "Ant-Man and the Wasp: Quantumania (2023) UHD",
+    "imgurURL": "https://i.imgur.com/587AG91.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/587AG91.png"
   },
   {
     "id": "43",
     "movieName": "Arrival (2016)",
     "imgurURL": "https://i.imgur.com/JHmxcPN.png",
     "": "",
-    "imagePath": "graphs/d4ae0ae0b72f60cf43d5.jpg"
+    "imagePath": "graphs/d4ae0ae0b72f60cf43d5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "44",
     "movieName": "Assassin's Creed (2016)",
-    "imgurURL": "http://i.imgur.com/xrZ5fFw.png",
+    "imgurURL": "https://i.imgur.com/xrZ5fFw.png",
     "": "",
-    "imagePath": "graphs/2da2fd3a77a7c95b05d7.jpg"
+    "imagePath": "graphs/2da2fd3a77a7c95b05d7.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "45",
     "movieName": "Atlantis: The Lost Empire (2001)",
-    "imgurURL": "http://i.imgur.com/u2hIHy5.png",
+    "imgurURL": "https://i.imgur.com/u2hIHy5.png",
     "": "",
-    "imagePath": "graphs/3c86601ef9ce1cad6dbf.jpg"
+    "imagePath": "graphs/3c86601ef9ce1cad6dbf.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "46",
     "movieName": "Atomic Blonde (2017)",
     "imgurURL": "https://i.imgur.com/4mM8pcJ.png",
     "": "",
-    "imagePath": "graphs/0adada223e2429d939cf.jpg"
+    "imagePath": "graphs/0adada223e2429d939cf.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "47",
     "movieName": "Attack the Block (2011)",
-    "imgurURL": "http://i.imgur.com/wj8pInK.png",
+    "imgurURL": "https://i.imgur.com/wj8pInK.png",
     "": "",
-    "imagePath": "graphs/e39a5b62cddf1bfe419d.jpg"
+    "imagePath": "graphs/e39a5b62cddf1bfe419d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "48",
     "movieName": "Attraction (2017)",
     "imgurURL": "https://i.imgur.com/85ftvAW.png",
     "": "",
-    "imagePath": "graphs/e9e3058eb690fab72b54.jpg"
+    "imagePath": "graphs/e9e3058eb690fab72b54.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-2318fe0e30d964fe",
+    "imagePath": "graphs/c8c92027829353c81c36.jpg",
+    "movieName": "Avatar The Way of Water (2022) UHD",
+    "imgurURL": "https://i.imgur.com/X8Peigv.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/X8Peigv.png"
+  },
+  {
+    "id": "avs-74d35e033fa0fee4",
+    "imagePath": "graphs/90d8dfe90f3c4bf2fd67.jpg",
+    "movieName": "Avatar The Way of Water (2022)",
+    "imgurURL": "https://i.imgur.com/nYMVaqx.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/nYMVaqx.png"
   },
   {
     "id": "49",
     "movieName": "Avatar (2009) Extended Collector's Edition",
     "imgurURL": "https://i.imgur.com/uF5NwGL.png",
     "": "",
-    "imagePath": "graphs/c3968187976f0e2cb84d.jpg"
+    "imagePath": "graphs/c3968187976f0e2cb84d.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-a10d0cfaa9cbdf3a",
+    "imagePath": "graphs/04cafd8c97d60eb9d790.jpg",
+    "movieName": "Avatar (2009) UHD",
+    "imgurURL": "https://i.imgur.com/AB3pFKb.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/AB3pFKb.png"
   },
   {
     "id": "50",
     "movieName": "Avengers: Age of Ultron (2015)",
-    "imgurURL": "http://i.imgur.com/47vFH2B.jpg",
+    "imgurURL": "https://i.imgur.com/47vFH2B.jpg",
     "": "",
-    "imagePath": "graphs/dca4eabe1acff1e69ac0.jpg"
+    "imagePath": "graphs/dca4eabe1acff1e69ac0.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "51",
     "movieName": "Avengers: Age of Ultron (2015)",
     "imgurURL": "https://i.imgur.com/bydxupQ.png",
     "": "",
-    "imagePath": "graphs/b5de0311a66fd3db0e79.jpg"
+    "imagePath": "graphs/b5de0311a66fd3db0e79.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "52",
     "movieName": "Avengers: Endgame (2019)",
     "imgurURL": "https://i.imgur.com/6Q7tU6M.png",
     "": "",
-    "imagePath": "graphs/66ef300e0ee9ae7153b8.jpg"
+    "imagePath": "graphs/66ef300e0ee9ae7153b8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "54",
     "movieName": "Avengers: Endgame (2019)",
     "imgurURL": "https://i.imgur.com/n9lIn0w.png",
     "": "",
-    "imagePath": "graphs/7433f45c6a279f43999c.jpg"
+    "imagePath": "graphs/7433f45c6a279f43999c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "55",
     "movieName": "Avengers: Infinity War (2018)",
     "imgurURL": "https://i.imgur.com/61viPzC.png",
     "": "",
-    "imagePath": "graphs/b9b7317073f4b22816e7.jpg"
+    "imagePath": "graphs/b9b7317073f4b22816e7.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "56",
     "movieName": "Avengers: Infinity War (2018)",
     "imgurURL": "https://i.imgur.com/rgOE7Vw.png",
     "": "",
-    "imagePath": "graphs/e95b9f6b05efbdc498e6.jpg"
+    "imagePath": "graphs/e95b9f6b05efbdc498e6.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "57",
     "movieName": "The Avengers (2012)",
     "imgurURL": "https://i.imgur.com/Vh7nxOb.png",
     "": "",
-    "imagePath": "graphs/e72d9435de346f0c9540.jpg"
+    "imagePath": "graphs/e72d9435de346f0c9540.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "58",
     "movieName": "Baby Driver (2017)",
     "imgurURL": "https://i.imgur.com/8KiduHd.png",
     "": "",
-    "imagePath": "graphs/0cbc28164b8b9a0de417.jpg"
+    "imagePath": "graphs/0cbc28164b8b9a0de417.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "59",
     "movieName": "Babylon A.D. (2008)",
     "imgurURL": "https://i.imgur.com/tCSr5n7.png",
     "": "",
-    "imagePath": "graphs/741f18613fa3c4d8bf8f.jpg"
+    "imagePath": "graphs/741f18613fa3c4d8bf8f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "60",
     "movieName": "Bad Boys (1995) UHD",
     "imgurURL": "https://i.imgur.com/dGwnwa8.png",
     "": "",
-    "imagePath": "graphs/43b57eb74409b2a96bb4.jpg"
+    "imagePath": "graphs/43b57eb74409b2a96bb4.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "61",
     "movieName": "Bad Boys II (2003) UHD",
     "imgurURL": "https://i.imgur.com/olv6tgs.png",
     "": "",
-    "imagePath": "graphs/84042a16bac772d5afb3.jpg"
+    "imagePath": "graphs/84042a16bac772d5afb3.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "62",
     "movieName": "Bad Samaritan (2018)",
     "imgurURL": "https://i.imgur.com/NyZ0aUj.jpg",
     "": "",
-    "imagePath": "graphs/156ffeaf1735efa021eb.jpg"
+    "imagePath": "graphs/156ffeaf1735efa021eb.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "63",
     "movieName": "Barely Lethal (2015)",
-    "imgurURL": "http://i.imgur.com/r1AsDYt.jpg",
+    "imgurURL": "https://i.imgur.com/r1AsDYt.jpg",
     "": "",
-    "imagePath": "graphs/c96ee706576e74e16763.jpg"
+    "imagePath": "graphs/c96ee706576e74e16763.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "64",
     "movieName": "Batman Ninja (2018)",
     "imgurURL": "https://i.imgur.com/rCF1TRN.png",
     "": "",
-    "imagePath": "graphs/07e9db705779c2595600.jpg"
+    "imagePath": "graphs/07e9db705779c2595600.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "65",
     "movieName": "Batman: Bad Blood (2016)",
-    "imgurURL": "http://i.imgur.com/mz7ZDen.png",
+    "imgurURL": "https://i.imgur.com/mz7ZDen.png",
     "": "",
-    "imagePath": "graphs/a674bf25b6bbf42ca525.jpg"
+    "imagePath": "graphs/a674bf25b6bbf42ca525.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "66",
     "movieName": "Batman: Gotham by Gaslight (2018)",
     "imgurURL": "https://i.imgur.com/0xD7IbB.png",
     "": "",
-    "imagePath": "graphs/ff0b5ab95899aaf7cd5d.jpg"
+    "imagePath": "graphs/ff0b5ab95899aaf7cd5d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "67",
     "movieName": "Battle Los Angeles (2011)",
-    "imgurURL": "https://i.imgur.com/4xojPIT.png",
+    "imgurURL": "https://i.imgur.com/us65HeU.png",
     "": "",
-    "imagePath": "graphs/21266e5e1bb58c58ae4c.jpg"
+    "imagePath": "graphs/68df45c2066b08d99788.jpg",
+    "cachedSourceURL": "https://i.imgur.com/us65HeU.png",
+    "source": "avs-first-post"
   },
   {
     "id": "68",
     "movieName": "Batman v Superman: Dawn of Justice Ultimate Edition (2016)",
     "imgurURL": "https://i.imgur.com/HjrbZdE.png",
     "": "",
-    "imagePath": "graphs/980156edcb73b08326c3.jpg"
+    "imagePath": "graphs/980156edcb73b08326c3.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "69",
     "movieName": "Baywatch (2017) UNRATED",
-    "imgurURL": "http://i.imgur.com/LgUffxj.png",
+    "imgurURL": "https://i.imgur.com/LgUffxj.png",
     "": "",
-    "imagePath": "graphs/8f187d27d8bb4b3f905b.jpg"
+    "imagePath": "graphs/8f187d27d8bb4b3f905b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "70",
     "movieName": "Better Watch Out (2016)",
     "imgurURL": "https://i.imgur.com/L5JQe5w.png",
     "": "",
-    "imagePath": "graphs/cae1847721df227c7e99.jpg"
+    "imagePath": "graphs/cae1847721df227c7e99.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "71",
     "movieName": "BlacKkKlansman (2018)",
     "imgurURL": "https://i.imgur.com/5IMuthK.png",
     "": "",
-    "imagePath": "graphs/3138cf7e089c899ec6e0.jpg"
+    "imagePath": "graphs/3138cf7e089c899ec6e0.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "72",
     "movieName": "Black Hawk Down (2001) UHD EXTENDED CUT",
     "imgurURL": "https://i.imgur.com/hbltRBb.png",
     "": "",
-    "imagePath": "graphs/f562ff0ff4b34f6269d8.jpg"
+    "imagePath": "graphs/f562ff0ff4b34f6269d8.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-7065e786a7bb6c93",
+    "imagePath": "graphs/68ca0bafa2a81ce27efd.jpg",
+    "movieName": "Black Panther: Wakanda Forever (2022)",
+    "imgurURL": "https://i.imgur.com/ACu6gFw.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/ACu6gFw.png"
+  },
+  {
+    "id": "avs-f8876d25449a9087",
+    "imagePath": "graphs/d13d0ffccb246862a37d.jpg",
+    "movieName": "Black Panther: Wakanda Forever (2022) UHD Disc",
+    "imgurURL": "https://i.imgur.com/5euy0U9.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/5euy0U9.png"
   },
   {
     "id": "73",
     "movieName": "Black Panther (2018)",
     "imgurURL": "https://i.imgur.com/FajYWFs.png",
     "": "",
-    "imagePath": "graphs/bb6c97e57846a1631e17.jpg"
+    "imagePath": "graphs/bb6c97e57846a1631e17.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "74",
     "movieName": "Blade: Trinity (2004)",
-    "imgurURL": "http://i.imgur.com/VhkvPBb.png",
+    "imgurURL": "https://i.imgur.com/VhkvPBb.png",
     "": "",
-    "imagePath": "graphs/5931a1b2418ae7bd7efe.jpg"
+    "imagePath": "graphs/5931a1b2418ae7bd7efe.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "75",
     "movieName": "Blade (1998)",
-    "imgurURL": "http://i.imgur.com/f5Eo1hF.png",
+    "imgurURL": "https://i.imgur.com/f5Eo1hF.png",
     "": "",
-    "imagePath": "graphs/0e92ffb46f4a06213de9.jpg"
+    "imagePath": "graphs/0e92ffb46f4a06213de9.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "76",
     "movieName": "Blade II (2002)",
-    "imgurURL": "http://i.imgur.com/QfnmhTz.png",
+    "imgurURL": "https://i.imgur.com/QfnmhTz.png",
     "": "",
-    "imagePath": "graphs/d039db8e7201eec94a83.jpg"
+    "imagePath": "graphs/d039db8e7201eec94a83.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "77",
     "movieName": "Blade Runner (1982)",
     "imgurURL": "https://i.imgur.com/Hx1CK2P.png",
     "": "",
-    "imagePath": "graphs/8a8308d1ac2442fd4c69.jpg"
+    "imagePath": "graphs/8a8308d1ac2442fd4c69.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "78",
     "movieName": "Blade Runner 2049 (2017)",
     "imgurURL": "https://i.imgur.com/sf9Pj67.png",
     "": "",
-    "imagePath": "graphs/a73cf0c896541031a7a0.jpg"
+    "imagePath": "graphs/a73cf0c896541031a7a0.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "79",
     "movieName": "Blair Witch (2016)",
-    "imgurURL": "http://i.imgur.com/VmC7j1v.png",
+    "imgurURL": "https://i.imgur.com/VmC7j1v.png",
     "": "",
-    "imagePath": "graphs/9976b1ffe5d4d350d9d0.jpg"
+    "imagePath": "graphs/9976b1ffe5d4d350d9d0.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-82f45fa45caec6c5",
+    "imagePath": "graphs/f5c23a130b8ef325d8c2.jpg",
+    "movieName": "Black Adam (2022)",
+    "imgurURL": "https://i.imgur.com/Y9b4yVc.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/Y9b4yVc.png"
   },
   {
     "id": "80",
     "movieName": "Blindspotting (2018)",
     "imgurURL": "https://i.imgur.com/dnehqGr.png",
     "": "",
-    "imagePath": "graphs/3601346eeaf0a123e7b5.jpg"
+    "imagePath": "graphs/3601346eeaf0a123e7b5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "81",
     "movieName": "Bohemian Rhapsody (2018)",
     "imgurURL": "https://i.imgur.com/ObXoiVx.png",
     "": "",
-    "imagePath": "graphs/6d80e49acaa693561736.jpg"
+    "imagePath": "graphs/6d80e49acaa693561736.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "82",
     "movieName": "Bohemian Rhapsody (2018) UHD Live Aid Performance",
     "imgurURL": "https://i.imgur.com/ky5ORcL.png",
     "": "",
-    "imagePath": "graphs/6d25033ce1250c29c266.jpg"
+    "imagePath": "graphs/6d25033ce1250c29c266.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-61fd865ce37835cb",
+    "imagePath": "graphs/dd8d4d910736c645b873.jpg",
+    "movieName": "Breaking (2022)",
+    "imgurURL": "https://i.imgur.com/0juijh1.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/0juijh1.png"
   },
   {
     "id": "83",
     "movieName": "Brightburn (2019) UHD",
     "imgurURL": "https://i.imgur.com/8lhUSnv.png",
     "": "",
-    "imagePath": "graphs/d6bcef0108d7fd5880f0.jpg"
+    "imagePath": "graphs/d6bcef0108d7fd5880f0.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "84",
     "movieName": "Bumblebee (2018) UHD",
     "imgurURL": "https://i.imgur.com/eNMeQur.png",
     "": "",
-    "imagePath": "graphs/67466ab402a8b46d4a77.jpg"
+    "imagePath": "graphs/67466ab402a8b46d4a77.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "85",
     "movieName": "Bohemian Rhapsody (2018) UHD",
     "imgurURL": "https://i.imgur.com/BYJEzK4.png",
     "": "",
-    "imagePath": "graphs/0afa05f044e99c3e61a0.jpg"
+    "imagePath": "graphs/0afa05f044e99c3e61a0.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "86",
     "movieName": "Busters Mal Heart (2016)",
-    "imgurURL": "http://i.imgur.com/WDEhnR2.png",
+    "imgurURL": "https://i.imgur.com/WDEhnR2.png",
     "": "",
-    "imagePath": "graphs/a65ce06b95243b1cc2da.jpg"
+    "imagePath": "graphs/a65ce06b95243b1cc2da.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "87",
     "movieName": "CHIPS (2017)",
     "imgurURL": "https://i.imgur.com/ajhDSnh.png",
     "": "",
-    "imagePath": "graphs/9ea7abc52618c890270d.jpg"
+    "imagePath": "graphs/9ea7abc52618c890270d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "88",
     "movieName": "CREED II (2018)",
     "imgurURL": "https://i.imgur.com/69AcYz0.png",
     "": "",
-    "imagePath": "graphs/a9e38f6c343a40ef6dcd.jpg"
+    "imagePath": "graphs/a9e38f6c343a40ef6dcd.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-7420c8994d0a4809",
+    "imagePath": "graphs/e14c904e206ab585c94c.jpg",
+    "movieName": "CREED III (2023)",
+    "imgurURL": "https://i.imgur.com/o0i5drY.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/o0i5drY.png"
   },
   {
     "id": "89",
     "movieName": "Captain America: Civil War (2016)",
-    "imgurURL": "http://i.imgur.com/BY3EghM.png",
+    "imgurURL": "https://i.imgur.com/BY3EghM.png",
     "": "",
-    "imagePath": "graphs/ec98ed7b3ca2a3c02f2f.jpg"
+    "imagePath": "graphs/ec98ed7b3ca2a3c02f2f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "90",
     "movieName": "Captain America: Civil War (2016) UHD",
     "imgurURL": "https://i.imgur.com/XtlRaNV.png",
     "": "",
-    "imagePath": "graphs/933491056baa76271e80.jpg"
+    "imagePath": "graphs/933491056baa76271e80.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "91",
     "movieName": "Captain America: The First Avenger (2011) UHD",
     "imgurURL": "https://i.imgur.com/MWDgO7S.png",
     "": "",
-    "imagePath": "graphs/8ac38df89a375cd138ee.jpg"
+    "imagePath": "graphs/8ac38df89a375cd138ee.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "92",
     "movieName": "Captain America: The Winter Soldier (2014) UHD",
     "imgurURL": "https://i.imgur.com/xYcVci2.png",
     "": "",
-    "imagePath": "graphs/a88ef55690255fce00e4.jpg"
+    "imagePath": "graphs/a88ef55690255fce00e4.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "93",
     "movieName": "Captain Marvel (2019)",
     "imgurURL": "https://i.imgur.com/aiRIRKR.png",
     "": "",
-    "imagePath": "graphs/fd5ada4f66f2ed16885a.jpg"
+    "imagePath": "graphs/fd5ada4f66f2ed16885a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "94",
     "movieName": "Captain Marvel (2019) UHD",
     "imgurURL": "https://i.imgur.com/YCjku7X.png",
     "": "",
-    "imagePath": "graphs/5006f638f4461e4eee1d.jpg"
+    "imagePath": "graphs/5006f638f4461e4eee1d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "95",
     "movieName": "Captive State (2019)",
     "imgurURL": "https://i.imgur.com/me4PN7x.png",
     "": "",
-    "imagePath": "graphs/c85b32f045ee0dfb696a.jpg"
+    "imagePath": "graphs/c85b32f045ee0dfb696a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "96",
     "movieName": "Cargo (2017)",
     "imgurURL": "https://i.imgur.com/Dx0Hqxh.png",
     "": "",
-    "imagePath": "graphs/c24413e3ec302a7f6ebc.jpg"
+    "imagePath": "graphs/c24413e3ec302a7f6ebc.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "97",
     "movieName": "Chaos Walking (2021)",
     "imgurURL": "https://i.imgur.com/E2IeyEG.png",
     "": "",
-    "imagePath": "graphs/aa78607a1c0b65af8716.jpg"
+    "imagePath": "graphs/aa78607a1c0b65af8716.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "98",
     "movieName": "Chappie (2015)",
     "imgurURL": "https://i.imgur.com/ldIk3pH.png",
     "": "",
-    "imagePath": "graphs/3fb0f58cb5b756b4d378.jpg"
+    "imagePath": "graphs/3fb0f58cb5b756b4d378.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "99",
     "movieName": "Chasing the Dragon (2017)",
     "imgurURL": "https://i.imgur.com/2o1PeuD.png",
     "": "",
-    "imagePath": "graphs/413de1674b70aad2c05c.jpg"
+    "imagePath": "graphs/413de1674b70aad2c05c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "100",
     "movieName": "Child",
-    "imgurURL": "http://i.imgur.com/qdlzUii.jpg",
+    "imgurURL": "https://i.imgur.com/qdlzUii.jpg",
     "": "",
-    "imagePath": "graphs/1f4d21b8fd9e757c8f6a.jpg"
+    "imagePath": "graphs/1f4d21b8fd9e757c8f6a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "101",
     "movieName": "Clash of the Titans (2010)",
     "imgurURL": "https://i.imgur.com/xg67arM.png",
     "": "",
-    "imagePath": "graphs/c3e9b39a6485350506e8.jpg"
+    "imagePath": "graphs/c3e9b39a6485350506e8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "102",
     "movieName": "Cloverfield (2008)",
     "imgurURL": "https://i.imgur.com/736d60P.png",
     "": "",
-    "imagePath": "graphs/6e5214a3e7db2a2a53ec.jpg"
+    "imagePath": "graphs/6e5214a3e7db2a2a53ec.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "103",
     "movieName": "Coco (2017)",
     "imgurURL": "https://i.imgur.com/T6RSlxw.png",
     "": "",
-    "imagePath": "graphs/1943ad031fbfe29918a3.jpg"
+    "imagePath": "graphs/1943ad031fbfe29918a3.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "104",
     "movieName": "Cold Skin (2017)",
     "imgurURL": "https://i.imgur.com/XqvbLZ1.png",
     "": "",
-    "imagePath": "graphs/bd798eba496b73e49dce.jpg"
+    "imagePath": "graphs/bd798eba496b73e49dce.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "105",
     "movieName": "Collateral (2004)",
     "imgurURL": "https://i.imgur.com/5PktRZk.jpg",
     "": "",
-    "imagePath": "graphs/f4dc7d8e10cdc7a6e97d.jpg"
+    "imagePath": "graphs/f4dc7d8e10cdc7a6e97d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "106",
     "movieName": "Collide (2016)",
-    "imgurURL": "http://i.imgur.com/lzd2xty.png",
+    "imgurURL": "https://i.imgur.com/lzd2xty.png",
     "": "",
-    "imagePath": "graphs/1a419a984c3494d9560e.jpg"
+    "imagePath": "graphs/1a419a984c3494d9560e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "107",
     "movieName": "Colossal (2016)",
-    "imgurURL": "http://i.imgur.com/mlIz2n1.png",
+    "imgurURL": "https://i.imgur.com/mlIz2n1.png",
     "": "",
-    "imagePath": "graphs/4debcb57f8ee60297c6c.jpg"
+    "imagePath": "graphs/4debcb57f8ee60297c6c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "108",
     "movieName": "Constantine (2015)",
     "imgurURL": "https://i.imgur.com/bBXv3fD.png",
     "": "",
-    "imagePath": "graphs/56f5af3087d0479926ea.jpg"
+    "imagePath": "graphs/56f5af3087d0479926ea.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-6ac0dbfabd418439",
+    "imagePath": "graphs/7cea982e5f66c8d6f994.jpg",
+    "movieName": "Constantine (2015) UHD DISC",
+    "imgurURL": "https://i.imgur.com/SAHXOvi.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/SAHXOvi.png"
   },
   {
     "id": "109",
     "movieName": "Copshop (2021)",
     "imgurURL": "https://i.imgur.com/9muy8aP.png",
     "": "",
-    "imagePath": "graphs/8c58f97171d22bd7f6db.jpg"
+    "imagePath": "graphs/8c58f97171d22bd7f6db.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "110",
     "movieName": "Cosmos: A Spacetime Odyssey",
-    "imgurURL": "http://imgur.com/a/IJPhJ",
+    "imgurURL": "https://imgur.com/a/IJPhJ",
     "": "",
-    "imagePath": null
+    "imagePath": null,
+    "source": "avs-first-post"
   },
   {
     "id": "111",
     "movieName": "Countdown (2016)",
-    "imgurURL": "http://i.imgur.com/ku68eAv.jpg",
+    "imgurURL": "https://i.imgur.com/ku68eAv.jpg",
     "": "",
-    "imagePath": "graphs/e376c3b8de41e0e5acee.jpg"
+    "imagePath": "graphs/e376c3b8de41e0e5acee.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "112",
     "movieName": "Crank (2006) UHD",
     "imgurURL": "https://i.imgur.com/O6HUvyR.png",
     "": "",
-    "imagePath": "graphs/1f1fa842e3a5ead4c7fa.jpg"
+    "imagePath": "graphs/1f1fa842e3a5ead4c7fa.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "113",
     "movieName": "Creed (2015)",
-    "imgurURL": "http://i.imgur.com/aGc3jZD.png",
+    "imgurURL": "https://i.imgur.com/aGc3jZD.png",
     "": "",
-    "imagePath": "graphs/028ee173f0da16bd10b4.jpg"
+    "imagePath": "graphs/028ee173f0da16bd10b4.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "114",
     "movieName": "Criminal (2016)",
     "imgurURL": "https://i.imgur.com/rzFPd0q.jpg",
     "": "",
-    "imagePath": "graphs/3948c419417547bb6f21.jpg"
+    "imagePath": "graphs/3948c419417547bb6f21.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "115",
     "movieName": "DUNE (2021)",
     "imgurURL": "https://i.imgur.com/NiZiFaU.png",
     "": "",
-    "imagePath": "graphs/3d58eb99ec61a684801d.jpg"
+    "imagePath": "graphs/3d58eb99ec61a684801d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "116",
     "movieName": "Darkest Hour (2017)",
     "imgurURL": "https://i.imgur.com/hqBvRJK.png",
     "": "",
-    "imagePath": "graphs/06cda91af15ce56d2477.jpg"
+    "imagePath": "graphs/06cda91af15ce56d2477.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "117",
     "movieName": "Darling (2015)",
-    "imgurURL": "http://i.imgur.com/l3mYjt3.jpg",
+    "imgurURL": "https://i.imgur.com/l3mYjt3.jpg",
     "": "",
-    "imagePath": "graphs/fefbcc621ec4c95d1688.jpg"
+    "imagePath": "graphs/fefbcc621ec4c95d1688.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "118",
     "movieName": "Deadpool (2016)",
     "imgurURL": "https://i.imgur.com/QTbcMpy.png",
     "": "",
-    "imagePath": "graphs/82b12685202de47656f4.jpg"
+    "imagePath": "graphs/82b12685202de47656f4.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "119",
     "movieName": "Deadpool 2 (2018) (Super Duper Cut)",
     "imgurURL": "https://i.imgur.com/ZTWHQ6j.png",
     "": "",
-    "imagePath": "graphs/531685befe29afe79e88.jpg"
+    "imagePath": "graphs/531685befe29afe79e88.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "120",
     "movieName": "Deadpool 2 (2018) UHD (Super Duper Cut)",
     "imgurURL": "https://i.imgur.com/fhbC08O.png",
     "": "",
-    "imagePath": "graphs/b64bbe377c86d42e6c7f.jpg"
+    "imagePath": "graphs/b64bbe377c86d42e6c7f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "122",
     "movieName": "Deadpool 2 (2018)",
     "imgurURL": "https://i.imgur.com/5U5ojt9.png",
     "": "",
-    "imagePath": "graphs/9d8bd17f8442b60c96c6.jpg"
+    "imagePath": "graphs/9d8bd17f8442b60c96c6.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "123",
     "movieName": "Deadpool 2 (2018) UHD (Theatrical Cut)",
     "imgurURL": "https://i.imgur.com/h3W5nb7.png",
     "": "",
-    "imagePath": "graphs/7e593dab518719114d43.jpg"
+    "imagePath": "graphs/7e593dab518719114d43.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "124",
     "movieName": "Dead Rising: Endgame (2016)",
-    "imgurURL": "http://i.imgur.com/55eDCwt.png",
+    "imgurURL": "https://i.imgur.com/55eDCwt.png",
     "": "",
-    "imagePath": "graphs/6cb264b9b7ec22a2aa4f.jpg"
+    "imagePath": "graphs/6cb264b9b7ec22a2aa4f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "125",
     "movieName": "Dead Room (2015)",
-    "imgurURL": "http://i.imgur.com/bp5Xiyz.png",
+    "imgurURL": "https://i.imgur.com/bp5Xiyz.png",
     "": "",
-    "imagePath": "graphs/c38023695ac038bc4478.jpg"
+    "imagePath": "graphs/c38023695ac038bc4478.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "126",
     "movieName": "Death Note: Light Up the New World",
-    "imgurURL": "http://i.imgur.com/ZogSli6.png",
+    "imgurURL": "https://i.imgur.com/ZogSli6.png",
     "": "",
-    "imagePath": "graphs/893d450b313c1464285a.jpg"
+    "imagePath": "graphs/893d450b313c1464285a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "127",
     "movieName": "Death Wish (2018)",
     "imgurURL": "https://i.imgur.com/BGrgtUv.png",
     "": "",
-    "imagePath": "graphs/f08ec53233008f1d7aa5.jpg"
+    "imagePath": "graphs/f08ec53233008f1d7aa5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "128",
     "movieName": "Deep Rising (1998)",
     "imgurURL": "https://i.imgur.com/rZPSjP1.png",
     "": "",
-    "imagePath": "graphs/c59457e3e6ca1718284a.jpg"
+    "imagePath": "graphs/c59457e3e6ca1718284a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "129",
     "movieName": "Deepwater Horizon (2016)",
-    "imgurURL": "http://i.imgur.com/98rKG2C.png",
+    "imgurURL": "https://i.imgur.com/98rKG2C.png",
     "": "",
-    "imagePath": "graphs/b07de67850504085ac7a.jpg"
+    "imagePath": "graphs/b07de67850504085ac7a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "130",
     "movieName": "Den of Thieves (2018)",
     "imgurURL": "https://i.imgur.com/1fkfbi5.png",
     "": "",
-    "imagePath": "graphs/18f515636020f3f26671.jpg"
+    "imagePath": "graphs/18f515636020f3f26671.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "131",
     "movieName": "Despicable Me (2010)",
-    "imgurURL": "http://i.imgur.com/OQUyxqv.png",
+    "imgurURL": "https://i.imgur.com/OQUyxqv.png",
     "": "",
-    "imagePath": "graphs/74dc7b72a4b7179feb30.jpg"
+    "imagePath": "graphs/74dc7b72a4b7179feb30.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "132",
     "movieName": "Despicable Me 2 (2013)",
-    "imgurURL": "http://i.imgur.com/ez0KPJv.png",
+    "imgurURL": "https://i.imgur.com/ez0KPJv.png",
     "": "",
-    "imagePath": "graphs/d0df43d38a4a914e3578.jpg"
+    "imagePath": "graphs/d0df43d38a4a914e3578.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-e4e01ee680d4e2cb",
+    "imagePath": "graphs/42b3383bee3147a3df23.jpg",
+    "movieName": "Devotion (2022)",
+    "imgurURL": "https://i.imgur.com/8Ju8g1D.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/8Ju8g1D.png"
   },
   {
     "id": "133",
     "movieName": "Detour (2016)",
-    "imgurURL": "http://i.imgur.com/M0vpr3G.png",
+    "imgurURL": "https://i.imgur.com/M0vpr3G.png",
     "": "",
-    "imagePath": "graphs/fb6d750c586c0a76df89.jpg"
+    "imagePath": "graphs/fb6d750c586c0a76df89.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "134",
     "movieName": "Detroit (2017)",
     "imgurURL": "https://i.imgur.com/nCXa190.png",
     "": "",
-    "imagePath": "graphs/c70c680853672ff24dc5.jpg"
+    "imagePath": "graphs/c70c680853672ff24dc5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "135",
     "movieName": "District 9 (2009)",
-    "imgurURL": "http://i.imgur.com/Rd5a0zv.png",
+    "imgurURL": "https://i.imgur.com/Rd5a0zv.png",
     "": "",
-    "imagePath": "graphs/c481e9b7a49d67eaf3c1.jpg"
+    "imagePath": "graphs/c481e9b7a49d67eaf3c1.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "136",
     "movieName": "Doctor Strange (2016)",
-    "imgurURL": "http://i.imgur.com/LgOM8zP.png",
+    "imgurURL": "https://i.imgur.com/LgOM8zP.png",
     "": "",
-    "imagePath": "graphs/0dcf53caa2b89ecee2d7.jpg"
+    "imagePath": "graphs/0dcf53caa2b89ecee2d7.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "137",
     "movieName": "Don't Breathe (2016)",
-    "imgurURL": "http://i.imgur.com/eDNgNz7.png",
+    "imgurURL": "https://i.imgur.com/eDNgNz7.png",
     "": "",
-    "imagePath": "graphs/83128d07837d2228ad90.jpg"
+    "imagePath": "graphs/83128d07837d2228ad90.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "138",
     "movieName": "Dope (2015)",
-    "imgurURL": "http://i.imgur.com/iIQS0mG.jpg",
+    "imgurURL": "https://i.imgur.com/iIQS0mG.jpg",
     "": "",
-    "imagePath": "graphs/39cb6a1164611a9f19ae.jpg"
+    "imagePath": "graphs/39cb6a1164611a9f19ae.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "139",
     "movieName": "Down a Dark Hall (2018)",
     "imgurURL": "https://i.imgur.com/xERpzCF.png",
     "": "",
-    "imagePath": "graphs/6da3e3a919b416249dd6.jpg"
+    "imagePath": "graphs/6da3e3a919b416249dd6.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "140",
     "movieName": "Downsizing (2017)",
     "imgurURL": "https://i.imgur.com/QI7yBer.jpg",
     "": "",
-    "imagePath": "graphs/c4003be2095317892a0a.jpg"
+    "imagePath": "graphs/c4003be2095317892a0a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "141",
     "movieName": "Dracula Untold (2014)",
     "imgurURL": "https://i.imgur.com/ZKF1hTO.jpg",
     "": "",
-    "imagePath": "graphs/84553cc5060f1b4270e8.jpg"
+    "imagePath": "graphs/84553cc5060f1b4270e8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "142",
     "movieName": "Dragon Blade (2015)",
-    "imgurURL": "http://i.imgur.com/zOrnxDm.jpg",
+    "imgurURL": "https://i.imgur.com/zOrnxDm.jpg",
     "": "",
-    "imagePath": "graphs/ce808f4cbdbef56a201e.jpg"
+    "imagePath": "graphs/ce808f4cbdbef56a201e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "143",
     "movieName": "Dredd (2012) UHD",
     "imgurURL": "https://i.imgur.com/P05qcvT.png",
     "": "",
-    "imagePath": "graphs/8ed8d7d947cbee7cfb41.jpg"
+    "imagePath": "graphs/8ed8d7d947cbee7cfb41.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "144",
     "movieName": "Drive (2011)",
     "imgurURL": "https://i.imgur.com/qHTVdoQ.png",
     "": "",
-    "imagePath": "graphs/571cad7da835f21845d8.jpg"
+    "imagePath": "graphs/571cad7da835f21845d8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "145",
     "movieName": "Dumbo (2019) UHD",
     "imgurURL": "https://i.imgur.com/QJ0helP.png",
     "": "",
-    "imagePath": "graphs/f60fd946dcc631b9ed2b.jpg"
+    "imagePath": "graphs/f60fd946dcc631b9ed2b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "146",
     "movieName": "Dunkirk (2017)",
     "imgurURL": "https://i.imgur.com/sINyyE7.png",
     "": "",
-    "imagePath": "graphs/f664194f28f753084f42.jpg"
+    "imagePath": "graphs/f664194f28f753084f42.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "147",
     "movieName": "Early Man (2018)",
     "imgurURL": "https://i.imgur.com/uXM2IIr.png",
     "": "",
-    "imagePath": "graphs/47bd6da79effd34c9263.jpg"
+    "imagePath": "graphs/47bd6da79effd34c9263.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "148",
     "movieName": "Edge of Darkness (2010)",
-    "imgurURL": "http://i.imgur.com/kLQ9Wkd.jpg",
+    "imgurURL": "https://i.imgur.com/kLQ9Wkd.jpg",
     "": "",
-    "imagePath": "graphs/9e22d922bc776b3e66f6.jpg"
+    "imagePath": "graphs/9e22d922bc776b3e66f6.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "149",
     "movieName": "Edge of Tomorrow (2014)",
-    "imgurURL": "http://i.imgur.com/VQCRl7z.png",
+    "imgurURL": "https://i.imgur.com/Gwydc1W.png",
     "": "",
     "imagePath": "graphs/32239fd753c505b39862-top.png",
-    "sourceImagePath": "graphs/32239fd753c505b39862.jpg"
+    "sourceImagePath": "graphs/32239fd753c505b39862.jpg",
+    "cachedSourceURL": "https://i.imgur.com/Gwydc1W.png",
+    "source": "avs-first-post"
   },
   {
     "id": "149-without-sine-wave-intro",
     "movieName": "Edge of Tomorrow (2014) | without sine wave intro",
-    "imgurURL": "http://i.imgur.com/VQCRl7z.png",
+    "imgurURL": "https://i.imgur.com/Gwydc1W.png",
     "": "",
     "imagePath": "graphs/32239fd753c505b39862-without-intro.png",
     "sourceImagePath": "graphs/32239fd753c505b39862.jpg",
+    "cachedSourceURL": "https://i.imgur.com/Gwydc1W.png",
+    "source": "avs-first-post",
     "splitFrom": "149"
   },
   {
@@ -1043,3298 +1306,3827 @@
     "movieName": "Elysium (2013)",
     "imgurURL": "https://i.imgur.com/RukaU0J.png",
     "": "",
-    "imagePath": "graphs/43e3fede891c4b8f965a.jpg"
+    "imagePath": "graphs/43e3fede891c4b8f965a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "151",
     "movieName": "Ender's Game (2013)",
     "imgurURL": "https://i.imgur.com/aBFjBh9.png",
     "": "",
-    "imagePath": "graphs/184bc428b3502de1d999.jpg"
+    "imagePath": "graphs/184bc428b3502de1d999.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "152",
     "movieName": "Escape Plan (2013)",
     "imgurURL": "https://i.imgur.com/PWySYTe.png",
     "": "",
-    "imagePath": "graphs/c55746a8d55ecf41a010.jpg"
+    "imagePath": "graphs/c55746a8d55ecf41a010.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "153",
     "movieName": "Eternals (2021) UHD",
     "imgurURL": "https://i.imgur.com/JD5qtjs.png",
     "": "",
-    "imagePath": "graphs/cd8c1a30635925b74804.jpg"
+    "imagePath": "graphs/cd8c1a30635925b74804.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "154",
     "movieName": "Everest (2015)",
-    "imgurURL": "http://i.imgur.com/FKMFngY.jpg",
+    "imgurURL": "https://i.imgur.com/FKMFngY.jpg",
     "": "",
-    "imagePath": "graphs/ab10ec4d40be5726678e.jpg"
+    "imagePath": "graphs/ab10ec4d40be5726678e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "155",
     "movieName": "Evil Dead (2013)",
-    "imgurURL": "http://i.imgur.com/Vw8MACe.png",
+    "imgurURL": "https://i.imgur.com/Vw8MACe.png",
     "": "",
-    "imagePath": "graphs/602a372d0b9fc8dc9202.jpg"
+    "imagePath": "graphs/602a372d0b9fc8dc9202.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "156",
     "movieName": "Extraction (2015)",
-    "imgurURL": "http://i.imgur.com/w4hCOWx.jpg",
+    "imgurURL": "https://i.imgur.com/w4hCOWx.jpg",
     "": "",
-    "imagePath": "graphs/7c805010751c9a918ec0.jpg"
+    "imagePath": "graphs/7c805010751c9a918ec0.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "157",
     "movieName": "FOUNDATION SEASON 1 (2021-)",
     "imgurURL": "https://imgur.com/a/m2qgIFd",
     "": "",
-    "imagePath": null
+    "imagePath": null,
+    "source": "avs-first-post"
   },
   {
     "id": "158",
     "movieName": "Fabricated City (2017)",
-    "imgurURL": "http://i.imgur.com/sDlYnkl.png",
+    "imgurURL": "https://i.imgur.com/sDlYnkl.png",
     "": "",
-    "imagePath": "graphs/3b7c89b03f899446791e.jpg"
+    "imagePath": "graphs/3b7c89b03f899446791e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "159",
     "movieName": "Fahrenheit 451 (2018)",
     "imgurURL": "https://i.imgur.com/gKa2Nsn.png",
     "": "",
-    "imagePath": "graphs/97f4d3130757b6280306.jpg"
+    "imagePath": "graphs/97f4d3130757b6280306.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "160",
     "movieName": "Fantastic Beasts and Where to Find Them (2016)",
     "imgurURL": "https://i.imgur.com/ZMcDMyd.png",
     "": "",
-    "imagePath": "graphs/76ae5b0a3ea1a4312d00.jpg"
+    "imagePath": "graphs/76ae5b0a3ea1a4312d00.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "161",
     "movieName": "Fantastic Beasts: The Crimes of Grindelwald (2018)",
     "imgurURL": "https://i.imgur.com/A66NSKK.png",
     "": "",
-    "imagePath": "graphs/e08bbd29e78dc84a8fe7.jpg"
+    "imagePath": "graphs/e08bbd29e78dc84a8fe7.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "162",
     "movieName": "Fantastic Four (2015)",
-    "imgurURL": "http://i.imgur.com/f3OvoOz.jpg",
+    "imgurURL": "https://i.imgur.com/f3OvoOz.jpg",
     "": "",
-    "imagePath": "graphs/e82c9d398983a80fd81c.jpg"
+    "imagePath": "graphs/e82c9d398983a80fd81c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "163",
     "movieName": "Fast & Furious (2009)",
     "imgurURL": "https://i.imgur.com/EzBDXcf.png",
     "": "",
-    "imagePath": "graphs/2ba6ae6ea21936254d1c.jpg"
+    "imagePath": "graphs/2ba6ae6ea21936254d1c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "164",
     "movieName": "Fast & Furious Presents: Hobbs & Shaw (2019)",
     "imgurURL": "https://i.imgur.com/h8XgAkn.png",
     "": "",
-    "imagePath": "graphs/77bd317a02c556d81f03.jpg"
+    "imagePath": "graphs/77bd317a02c556d81f03.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "165",
     "movieName": "Final Fantasy: The Spirits Within (2001)",
-    "imgurURL": "http://i.imgur.com/7snfzxH.jpg",
+    "imgurURL": "https://i.imgur.com/7snfzxH.jpg",
     "": "",
-    "imagePath": "graphs/38d3840477f315f61adf.jpg"
+    "imagePath": "graphs/38d3840477f315f61adf.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "166",
     "movieName": "Finding Dory (2016)",
-    "imgurURL": "http://i.imgur.com/ymW91aP.png",
+    "imgurURL": "https://i.imgur.com/ymW91aP.png",
     "": "",
-    "imagePath": "graphs/8ddb199768ccf95037c6.jpg"
+    "imagePath": "graphs/8ddb199768ccf95037c6.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "167",
     "movieName": "Finding Nemo (2003)",
     "imgurURL": "https://i.imgur.com/qRmrsiI.png",
     "": "",
-    "imagePath": "graphs/dbead1e94d7f00c0b555.jpg"
+    "imagePath": "graphs/dbead1e94d7f00c0b555.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "168",
     "movieName": "First Man (2018)",
     "imgurURL": "https://i.imgur.com/1DDNTYV.png",
     "": "",
-    "imagePath": "graphs/9a60c3f5622d967b4dbe.jpg"
+    "imagePath": "graphs/9a60c3f5622d967b4dbe.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "169",
     "movieName": "Flatliners (2017)",
     "imgurURL": "https://i.imgur.com/Qnj5kOB.png",
     "": "",
-    "imagePath": "graphs/468394aa26831242de11.jpg"
+    "imagePath": "graphs/468394aa26831242de11.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-78fae0a26de0871d",
+    "imagePath": "graphs/e7385983b87eef66b3c0.jpg",
+    "movieName": "Fight Club (1999)",
+    "imgurURL": "https://i.imgur.com/Tazwwtj.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/Tazwwtj.png"
   },
   {
     "id": "170",
     "movieName": "Full Strike (2015)",
-    "imgurURL": "http://i.imgur.com/r8vE4y0.jpg",
+    "imgurURL": "https://i.imgur.com/r8vE4y0.jpg",
     "": "",
-    "imagePath": "graphs/4329f77c3c7516eff43c.jpg"
+    "imagePath": "graphs/4329f77c3c7516eff43c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "171",
     "movieName": "Furious 7 (2015)",
-    "imgurURL": "http://i.imgur.com/IM3tGLV.jpg",
+    "imgurURL": "https://i.imgur.com/IM3tGLV.jpg",
     "": "",
-    "imagePath": "graphs/55d994f6096c2c14ec9b.jpg"
+    "imagePath": "graphs/55d994f6096c2c14ec9b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "172",
     "movieName": "Fury (2014)",
     "imgurURL": "https://i.imgur.com/wEwinqW.png",
     "": "",
-    "imagePath": "graphs/36cbc64380b80a491d5f.jpg"
+    "imagePath": "graphs/36cbc64380b80a491d5f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "173",
     "movieName": "G.I. Joe: Retaliation (2013) UHD",
     "imgurURL": "https://i.imgur.com/7RhLJRm.png",
     "": "",
-    "imagePath": "graphs/69defe6e527a3a9535b9.jpg"
+    "imagePath": "graphs/69defe6e527a3a9535b9.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "174",
     "movieName": "G.I. Joe: The Rise of Cobra (2009) UHD",
     "imgurURL": "https://i.imgur.com/kXfAEGe.png",
     "": "",
-    "imagePath": "graphs/27780601eb1a330efcbe.jpg"
+    "imagePath": "graphs/27780601eb1a330efcbe.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "175",
     "movieName": "Game Night (2018)",
     "imgurURL": "https://i.imgur.com/vvKzF5u.png",
     "": "",
-    "imagePath": "graphs/728103d2ca8892b2db3e.jpg"
+    "imagePath": "graphs/728103d2ca8892b2db3e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "176",
     "movieName": "Geostorm (2017)",
     "imgurURL": "https://i.imgur.com/unDdg2v.png",
     "": "",
-    "imagePath": "graphs/728eb4ff4b38de5dc860.jpg"
+    "imagePath": "graphs/728eb4ff4b38de5dc860.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "177",
     "movieName": "Get Out (2017)",
-    "imgurURL": "http://i.imgur.com/OAsIek5.png",
+    "imgurURL": "https://i.imgur.com/OAsIek5.png",
     "": "",
-    "imagePath": "graphs/315f6232754451dcc97d.jpg"
+    "imagePath": "graphs/315f6232754451dcc97d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "178",
     "movieName": "Ghost Stories (2017)",
     "imgurURL": "https://i.imgur.com/iuBfCUb.png",
     "": "",
-    "imagePath": "graphs/42e672b766419d4e0a69.jpg"
+    "imagePath": "graphs/42e672b766419d4e0a69.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "179",
     "movieName": "Ghost in the Shell (2017)",
-    "imgurURL": "http://i.imgur.com/nFnwwBY.png",
+    "imgurURL": "https://i.imgur.com/nFnwwBY.png",
     "": "",
-    "imagePath": "graphs/b19146b95f81d245339f.jpg"
+    "imagePath": "graphs/b19146b95f81d245339f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "180",
     "movieName": "Ghostbusters: Afterlife (2021) UHD",
     "imgurURL": "https://i.imgur.com/EQb3V8o.png",
     "": "",
-    "imagePath": "graphs/aea4d45c97c0a020494c.jpg"
+    "imagePath": "graphs/aea4d45c97c0a020494c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "181",
     "movieName": "Gladiator (2000)",
     "imgurURL": "https://i.imgur.com/QfZzGNU.png",
     "": "",
-    "imagePath": "graphs/30f15901e2640220a095.jpg"
+    "imagePath": "graphs/30f15901e2640220a095.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "182",
     "movieName": "Glass (2019) UHD",
     "imgurURL": "https://i.imgur.com/rEweAom.png",
     "": "",
-    "imagePath": "graphs/bdc4b66e9af0c59ea770.jpg"
+    "imagePath": "graphs/bdc4b66e9af0c59ea770.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "183",
     "movieName": "God Of War (2017) {CHINESE}",
     "imgurURL": "https://i.imgur.com/YNajL7R.png",
     "": "",
-    "imagePath": "graphs/c03e3c73b06bfc2f8250.jpg"
+    "imagePath": "graphs/c03e3c73b06bfc2f8250.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "184",
     "movieName": "Gods of Egypt (2016)",
-    "imgurURL": "http://i.imgur.com/OodTm2i.jpg",
+    "imgurURL": "https://i.imgur.com/OodTm2i.jpg",
     "": "",
-    "imagePath": "graphs/fad7c969429fd8dbe995.jpg"
+    "imagePath": "graphs/fad7c969429fd8dbe995.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "185",
     "movieName": "Godzilla (1998) UHD",
     "imgurURL": "https://i.imgur.com/oNFD45q.png",
     "": "",
-    "imagePath": "graphs/185179e279463c6e8c70.jpg"
+    "imagePath": "graphs/185179e279463c6e8c70.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "186",
     "movieName": "Gold (2016)",
-    "imgurURL": "http://i.imgur.com/tsLTd2J.png",
+    "imgurURL": "https://i.imgur.com/tsLTd2J.png",
     "": "",
-    "imagePath": "graphs/9fcf90f057a7e4cd1e0d.jpg"
+    "imagePath": "graphs/9fcf90f057a7e4cd1e0d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "187",
     "movieName": "Godzilla (2014)",
     "imgurURL": "https://i.imgur.com/Qpbto7H.png",
     "": "",
-    "imagePath": "graphs/d3510946782c44d571cf.jpg"
+    "imagePath": "graphs/d3510946782c44d571cf.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "188",
     "movieName": "Godzilla vs. Kong (2021) UHD",
     "imgurURL": "https://i.imgur.com/mjDra6R.png",
     "": "",
-    "imagePath": "graphs/b7e6a429844960fd6fc7.jpg"
+    "imagePath": "graphs/b7e6a429844960fd6fc7.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "189",
     "movieName": "Godzilla: King of the Monsters (2019)",
     "imgurURL": "https://i.imgur.com/V6UljQ2.png",
     "": "",
-    "imagePath": "graphs/dd208aac18dbbc1328ae.jpg"
+    "imagePath": "graphs/dd208aac18dbbc1328ae.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "190",
     "movieName": "Goosebumps (2015)",
-    "imgurURL": "http://i.imgur.com/ZeoLZBc.jpg",
+    "imgurURL": "https://i.imgur.com/ZeoLZBc.jpg",
     "": "",
-    "imagePath": "graphs/02b030402c9a95a597b6.jpg"
+    "imagePath": "graphs/02b030402c9a95a597b6.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "191",
     "movieName": "Gravity (2013)",
     "imgurURL": "https://i.imgur.com/HKi7Bi5.png",
     "": "",
-    "imagePath": "graphs/59cb1ef944e8488430f8.jpg"
+    "imagePath": "graphs/59cb1ef944e8488430f8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "192",
     "movieName": "Guardians of the Galaxy (2014)",
-    "imgurURL": "http://i.imgur.com/vz8qM91.png",
+    "imgurURL": "https://i.imgur.com/vz8qM91.png",
     "": "",
-    "imagePath": "graphs/de1e98113879f5162e28.jpg"
+    "imagePath": "graphs/de1e98113879f5162e28.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "193",
     "movieName": "Guardians of the Galaxy Vol. 2 (2017)",
-    "imgurURL": "http://i.imgur.com/vcm6r2y.png",
+    "imgurURL": "https://i.imgur.com/vcm6r2y.png",
     "": "",
-    "imagePath": "graphs/8814449bc414ac146bf7.jpg"
+    "imagePath": "graphs/8814449bc414ac146bf7.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-eaae29985a34a8d2",
+    "imagePath": "graphs/6aa7aebd2f06a80bc173.jpg",
+    "movieName": "Guardians of the Galaxy Vol. 3 (2023) UHD",
+    "imgurURL": "https://i.imgur.com/RrjEFMi.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/RrjEFMi.png"
   },
   {
     "id": "194",
     "movieName": "Halloween (2018)",
     "imgurURL": "https://i.imgur.com/kKt1UVZ.png",
     "": "",
-    "imagePath": "graphs/6c6c07628437f702e9ba.jpg"
+    "imagePath": "graphs/6c6c07628437f702e9ba.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "195",
     "movieName": "Hacksaw Ridge (2016)",
     "imgurURL": "https://i.imgur.com/WAF0BOH.png",
     "": "",
-    "imagePath": "graphs/e57659324fc79de060a5.jpg"
-  },
-  {
-    "id": "196",
-    "movieName": "Time stamp#1",
-    "imgurURL": "http://i.imgur.com/iQ95ix6.jpg",
-    "": "",
-    "imagePath": "graphs/f46cafe53aec23b84280.jpg"
-  },
-  {
-    "id": "197",
-    "movieName": "Time stamp #2",
-    "imgurURL": "http://i.imgur.com/rGSc1EQ.jpg",
-    "": "",
-    "imagePath": "graphs/8e6c3029abdccab5071a.jpg"
-  },
-  {
-    "id": "198",
-    "movieName": "Time stamp #3",
-    "imgurURL": "http://i.imgur.com/KTuMBaJ.jpg",
-    "": "",
-    "imagePath": "graphs/76efda3fddff4f180ff6.jpg"
+    "imagePath": "graphs/e57659324fc79de060a5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "199",
     "movieName": "Hancock (2008)",
     "imgurURL": "https://i.imgur.com/zjx2Zsw.png",
     "": "",
-    "imagePath": "graphs/c4d0ec201da9034abf1c.jpg"
+    "imagePath": "graphs/c4d0ec201da9034abf1c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "200",
     "movieName": "Hands of Stone (2016)",
-    "imgurURL": "http://i.imgur.com/k53lTtU.png",
+    "imgurURL": "https://i.imgur.com/k53lTtU.png",
     "": "",
-    "imagePath": "graphs/f0e1b870da8c3a7b130a.jpg"
+    "imagePath": "graphs/f0e1b870da8c3a7b130a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "201",
     "movieName": "Hans Zimmer: Live in Prague (2017)",
     "imgurURL": "https://i.imgur.com/RVTABBZ.png",
     "": "",
-    "imagePath": "graphs/3c064ceaa8d0a9ab8bae.jpg"
+    "imagePath": "graphs/3c064ceaa8d0a9ab8bae.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "202",
     "movieName": "Hardcore Henry (2015)",
-    "imgurURL": "http://i.imgur.com/DeVb3vj.jpg",
+    "imgurURL": "https://i.imgur.com/DeVb3vj.jpg",
     "": "",
-    "imagePath": "graphs/89e5428ee18ad4b6dff9.jpg"
+    "imagePath": "graphs/89e5428ee18ad4b6dff9.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "203",
     "movieName": "Heat (1995)",
-    "imgurURL": "http://i.imgur.com/dTtfoGr.png",
+    "imgurURL": "https://i.imgur.com/dTtfoGr.png",
     "": "",
-    "imagePath": "graphs/6dd7956429cefe86f17b.jpg"
+    "imagePath": "graphs/6dd7956429cefe86f17b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "204",
     "movieName": "Heist (2015)",
-    "imgurURL": "http://i.imgur.com/9RDCNxJ.jpg",
+    "imgurURL": "https://i.imgur.com/9RDCNxJ.jpg",
     "": "",
-    "imagePath": "graphs/6e7211ce46f14a076c93.jpg"
+    "imagePath": "graphs/6e7211ce46f14a076c93.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "205",
     "movieName": "Helios (2015)",
-    "imgurURL": "http://i.imgur.com/1LIfn1y.jpg",
+    "imgurURL": "https://i.imgur.com/1LIfn1y.jpg",
     "": "",
-    "imagePath": "graphs/0376015c7760657bb5ac.jpg"
+    "imagePath": "graphs/0376015c7760657bb5ac.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "206",
     "movieName": "Hellboy (2019) UHD",
     "imgurURL": "https://i.imgur.com/xDNCTmS.png",
     "": "",
-    "imagePath": "graphs/3b4699771da722d1a2e3.jpg"
+    "imagePath": "graphs/3b4699771da722d1a2e3.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "207",
     "movieName": "Hellboy II: The Golden Army (2008)",
     "imgurURL": "https://i.imgur.com/7Rw8urt.png",
     "": "",
-    "imagePath": "graphs/bf7952e5cf512db4d28f.jpg"
+    "imagePath": "graphs/bf7952e5cf512db4d28f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "208",
     "movieName": "Hereditary (2018)",
     "imgurURL": "https://i.imgur.com/cZrnzWd.png",
     "": "",
-    "imagePath": "graphs/97c75be32669e3704f1a.jpg"
+    "imagePath": "graphs/97c75be32669e3704f1a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "209",
     "movieName": "Higher Power (2018) UHD",
     "imgurURL": "https://i.imgur.com/Ffuh1XL.png",
     "": "",
-    "imagePath": "graphs/76d8401a5867a11c36fd.jpg"
+    "imagePath": "graphs/76d8401a5867a11c36fd.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "210",
     "movieName": "Hitman: Agent 47 (2015)",
-    "imgurURL": "http://i.imgur.com/c9EW5ev.jpg",
+    "imgurURL": "https://i.imgur.com/c9EW5ev.jpg",
     "": "",
-    "imagePath": "graphs/6f12d9af31dad222323f.jpg"
+    "imagePath": "graphs/6f12d9af31dad222323f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "211",
     "movieName": "Hot Pursuit (2015)",
-    "imgurURL": "http://i.imgur.com/5YqoPRd.jpg",
+    "imgurURL": "https://i.imgur.com/5YqoPRd.jpg",
     "": "",
-    "imagePath": "graphs/3375ca21223fc8bbe478.jpg"
+    "imagePath": "graphs/3375ca21223fc8bbe478.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "212",
     "movieName": "Hotel Artemis (2018)",
     "imgurURL": "https://i.imgur.com/rAwYkGu.png",
     "": "",
-    "imagePath": "graphs/78251d31046b4723fc08.jpg"
+    "imagePath": "graphs/78251d31046b4723fc08.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "213",
     "movieName": "How to Train your Dragon (2010)",
     "imgurURL": "https://i.imgur.com/7CUOrIa.png",
     "": "",
-    "imagePath": "graphs/4d481eeb26c6d4ea8d25.jpg"
+    "imagePath": "graphs/4d481eeb26c6d4ea8d25.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "214",
     "movieName": "How to Train Your Dragon (2010) UHD",
     "imgurURL": "https://i.imgur.com/dNJH5qJ.png",
     "": "",
-    "imagePath": "graphs/1d7446381cbf39eb1c0f.jpg"
+    "imagePath": "graphs/1d7446381cbf39eb1c0f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "215",
     "movieName": "How to Train your Dragon 2 (2014)",
     "imgurURL": "https://i.imgur.com/0bLYQsF.png",
     "": "",
-    "imagePath": "graphs/968111b719304732f33b.jpg"
+    "imagePath": "graphs/968111b719304732f33b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "216",
     "movieName": "Hunter Killer (2018)",
     "imgurURL": "https://i.imgur.com/MKgzpbC.png",
     "": "",
-    "imagePath": "graphs/a88e48c5cf3c14e635d2.jpg"
+    "imagePath": "graphs/a88e48c5cf3c14e635d2.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "217",
     "movieName": "How to Train Your Dragon 2 (2014) UHD",
     "imgurURL": "https://i.imgur.com/Cow4vf9.png",
     "": "",
-    "imagePath": "graphs/34168964b56e27aa8189.jpg"
+    "imagePath": "graphs/34168964b56e27aa8189.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "218",
     "movieName": "How to Train Your Dragon: The Hidden World (2019)",
     "imgurURL": "https://i.imgur.com/IEIffM5.png",
     "": "",
-    "imagePath": "graphs/1fec16d1c3dd25cd6d4d.jpg"
+    "imagePath": "graphs/1fec16d1c3dd25cd6d4d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "219",
     "movieName": "Hyena Road (2015)",
-    "imgurURL": "http://i.imgur.com/wFsVHYY.jpg",
+    "imgurURL": "https://i.imgur.com/wFsVHYY.jpg",
     "": "",
-    "imagePath": "graphs/250e79ef8e3ce90bb7d3.jpg"
+    "imagePath": "graphs/250e79ef8e3ce90bb7d3.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "220",
     "movieName": "I Am Legend (2007)",
     "imgurURL": "https://i.imgur.com/y3jCpEj.png",
     "": "",
-    "imagePath": "graphs/5db2812357dab82b9ce1.jpg"
-  },
-  {
-    "id": "221",
-    "movieName": "(Alternate ending)",
-    "imgurURL": "https://i.imgur.com/rCliHy8.png",
-    "": "",
-    "imagePath": "graphs/64c9134f46fa691bd959.jpg"
+    "imagePath": "graphs/5db2812357dab82b9ce1.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "222",
     "movieName": "I Am Wrath (2016)",
-    "imgurURL": "http://i.imgur.com/V04Rjby.jpg",
+    "imgurURL": "https://i.imgur.com/V04Rjby.jpg",
     "": "",
-    "imagePath": "graphs/09dc1b36ce10444fd4ac.jpg"
+    "imagePath": "graphs/09dc1b36ce10444fd4ac.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "223",
     "movieName": "I Think We're Alone Now (2018) UHD",
     "imgurURL": "https://i.imgur.com/hhEzjW8.png",
     "": "",
-    "imagePath": "graphs/aab067d9b8d660533630.jpg"
+    "imagePath": "graphs/aab067d9b8d660533630.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "224",
     "movieName": "Ice Age: Continental Drift (2012)",
-    "imgurURL": "http://i.imgur.com/ZLsvJQz.png",
+    "imgurURL": "https://i.imgur.com/ZLsvJQz.png",
     "": "",
-    "imagePath": "graphs/c2f616659f42f51b5ca6.jpg"
+    "imagePath": "graphs/c2f616659f42f51b5ca6.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "225",
     "movieName": "Ice Age: Dawn of the Dinosaurs (2009)",
-    "imgurURL": "http://i.imgur.com/NwF2DM0.png",
+    "imgurURL": "https://i.imgur.com/NwF2DM0.png",
     "": "",
-    "imagePath": "graphs/625055c8eb092cb7c5ad.jpg"
+    "imagePath": "graphs/625055c8eb092cb7c5ad.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "226",
     "movieName": "Ice Age: The Meltdown (2006)",
-    "imgurURL": "http://i.imgur.com/1fXQO5v.png",
+    "imgurURL": "https://i.imgur.com/1fXQO5v.png",
     "": "",
-    "imagePath": "graphs/5db885bf9fff0cc0657e.jpg"
+    "imagePath": "graphs/5db885bf9fff0cc0657e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "227",
     "movieName": "Ice Age (2002)",
-    "imgurURL": "http://i.imgur.com/cUjUuAJ.png",
+    "imgurURL": "https://i.imgur.com/cUjUuAJ.png",
     "": "",
-    "imagePath": "graphs/1b208d9ddff87bd0df21.jpg"
+    "imagePath": "graphs/1b208d9ddff87bd0df21.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "228",
     "movieName": "Immortals (2011)",
-    "imgurURL": "http://i.imgur.com/lVDW57D.jpg",
+    "imgurURL": "https://i.imgur.com/lVDW57D.jpg",
     "": "",
-    "imagePath": "graphs/c4bbbdac9275435de2bb.jpg"
+    "imagePath": "graphs/c4bbbdac9275435de2bb.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "229",
     "movieName": "Imperium (2016)",
-    "imgurURL": "http://i.imgur.com/zpiGbbj.jpg",
+    "imgurURL": "https://i.imgur.com/zpiGbbj.jpg",
     "": "",
-    "imagePath": "graphs/e396ae3d5044aaa1559a.jpg"
+    "imagePath": "graphs/e396ae3d5044aaa1559a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "230",
     "movieName": "In Time (2011)",
     "imgurURL": "https://i.imgur.com/0YDo4wI.png",
     "": "",
-    "imagePath": "graphs/994d1f49f4665c753dfa.jpg"
+    "imagePath": "graphs/994d1f49f4665c753dfa.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "231",
     "movieName": "Incarnate (2016)",
-    "imgurURL": "http://i.imgur.com/XHkVcqI.png",
+    "imgurURL": "https://i.imgur.com/XHkVcqI.png",
     "": "",
-    "imagePath": "graphs/95b59d0a6d0afef2a9dd.jpg"
+    "imagePath": "graphs/95b59d0a6d0afef2a9dd.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "232",
     "movieName": "Inception (2010)",
     "imgurURL": "https://i.imgur.com/W6csm1u.png",
     "": "",
-    "imagePath": "graphs/e8db5de60fa91b3a8889.jpg"
+    "imagePath": "graphs/e8db5de60fa91b3a8889.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "233",
     "movieName": "Incredibles 2 (2018)",
     "imgurURL": "https://i.imgur.com/rqSvylz.png",
     "": "",
-    "imagePath": "graphs/b682eeed5fcc8c8205e9.jpg"
+    "imagePath": "graphs/b682eeed5fcc8c8205e9.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "234",
     "movieName": "Incredibles 2 (2018) UHD",
     "imgurURL": "https://i.imgur.com/cq5RM7s.png",
     "": "",
-    "imagePath": "graphs/c821f222614f9abe3049.jpg"
+    "imagePath": "graphs/c821f222614f9abe3049.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "235",
     "movieName": "Independence Day: Resurgence (2016)",
-    "imgurURL": "http://i.imgur.com/LXCbeov.jpg",
+    "imgurURL": "https://i.imgur.com/LXCbeov.jpg",
     "": "",
-    "imagePath": "graphs/dee922631a4686bbbad8.jpg"
+    "imagePath": "graphs/dee922631a4686bbbad8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "236",
     "movieName": "Indiana Jones and Raiders of the Lost Ark (1981)",
     "imgurURL": "https://i.imgur.com/F4EEqTw.png",
     "": "",
-    "imagePath": "graphs/07865299e768bebfdf50.jpg"
+    "imagePath": "graphs/07865299e768bebfdf50.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "237",
     "movieName": "Indiana Jones and the Kingdom of the Crystal Skull (2008)",
     "imgurURL": "https://i.imgur.com/YGpn7A5.png",
     "": "",
-    "imagePath": "graphs/559c869be5d4b23d4d23.jpg"
+    "imagePath": "graphs/559c869be5d4b23d4d23.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "238",
     "movieName": "Indiana Jones and the Last Crusade (1989)",
     "imgurURL": "https://i.imgur.com/rbar1jf.png",
     "": "",
-    "imagePath": "graphs/1206ed9d60f87c92501b.jpg"
+    "imagePath": "graphs/1206ed9d60f87c92501b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "239",
     "movieName": "Indiana Jones and the Temple of Doom (1984)",
     "imgurURL": "https://i.imgur.com/rszXO46.png",
     "": "",
-    "imagePath": "graphs/607350451f6c5d42d43a.jpg"
+    "imagePath": "graphs/607350451f6c5d42d43a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "240",
     "movieName": "Insidious: The Last Key (2018)",
     "imgurURL": "https://i.imgur.com/rbfLC8I.png",
     "": "",
-    "imagePath": "graphs/8cd3d55bed642e64dd5b.jpg"
+    "imagePath": "graphs/8cd3d55bed642e64dd5b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "241",
     "movieName": "Insurgent (2015)",
-    "imgurURL": "http://i.imgur.com/rIq1byJ.jpg",
+    "imgurURL": "https://i.imgur.com/rIq1byJ.jpg",
     "": "",
-    "imagePath": "graphs/43ff22d06d4fc2e3dec4.jpg"
+    "imagePath": "graphs/43ff22d06d4fc2e3dec4.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "242",
     "movieName": "Interstellar (2014)",
-    "imgurURL": "http://i.imgur.com/t1YMPS0.jpg",
+    "imgurURL": "https://i.imgur.com/9xaidux.png",
     "": "",
-    "imagePath": "graphs/8010d67062086d308ebe.jpg"
+    "imagePath": "graphs/e6f285b9eabcc6b72cd4.jpg",
+    "cachedSourceURL": "https://i.imgur.com/9xaidux.png",
+    "source": "avs-first-post"
   },
   {
     "id": "243",
     "movieName": "In the Heart of the Sea (2015)",
-    "imgurURL": "http://i.imgur.com/Xf4QPht.jpg",
+    "imgurURL": "https://i.imgur.com/Xf4QPht.jpg",
     "": "",
-    "imagePath": "graphs/513c0230149d2cc7926c.jpg"
+    "imagePath": "graphs/513c0230149d2cc7926c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "244",
     "movieName": "Ip Man 3 (2015)",
-    "imgurURL": "http://i.imgur.com/d0ZwaK6.jpg",
+    "imgurURL": "https://i.imgur.com/d0ZwaK6.jpg",
     "": "",
-    "imagePath": "graphs/74ebe52354b01c83abb5.jpg"
+    "imagePath": "graphs/74ebe52354b01c83abb5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "245",
     "movieName": "Isle of Dogs (2018)",
     "imgurURL": "https://i.imgur.com/DqTkOUr.png",
     "": "",
-    "imagePath": "graphs/cc306b55131f1c66eb32.jpg"
+    "imagePath": "graphs/cc306b55131f1c66eb32.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "246",
     "movieName": "Iron Man (2008)",
     "imgurURL": "https://i.imgur.com/IxTdzvi.png",
     "": "",
-    "imagePath": "graphs/03950f87ce73dc7c800d.jpg"
+    "imagePath": "graphs/03950f87ce73dc7c800d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "247",
     "movieName": "Iron Man 2 (2010)",
     "imgurURL": "https://i.imgur.com/HPZs62h.png",
     "": "",
-    "imagePath": "graphs/2ae3ba71978889c13d7c.jpg"
+    "imagePath": "graphs/2ae3ba71978889c13d7c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "248",
     "movieName": "Iron Man 3 (2013)",
     "imgurURL": "https://i.imgur.com/O6tuoDn.png",
     "": "",
-    "imagePath": "graphs/58fd4f5f69705b5f1113.jpg"
+    "imagePath": "graphs/58fd4f5f69705b5f1113.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "249",
     "movieName": "It (2017)",
     "imgurURL": "https://i.imgur.com/sk5wUcv.png",
     "": "",
-    "imagePath": "graphs/0a738e0bdfd4052867ab.jpg"
+    "imagePath": "graphs/0a738e0bdfd4052867ab.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "250",
     "movieName": "Jason Bourne (2016)",
-    "imgurURL": "http://i.imgur.com/C2eBBwd.png",
+    "imgurURL": "https://i.imgur.com/C2eBBwd.png",
     "": "",
-    "imagePath": "graphs/3e1ee97917a8832173d1.jpg"
+    "imagePath": "graphs/3e1ee97917a8832173d1.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "251",
     "movieName": "Jawbone (2017)",
-    "imgurURL": "http://i.imgur.com/BN9L2bJ.png",
+    "imgurURL": "https://i.imgur.com/BN9L2bJ.png",
     "": "",
-    "imagePath": "graphs/4f450cd9ee35371a0abe.jpg"
+    "imagePath": "graphs/4f450cd9ee35371a0abe.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "252",
     "movieName": "John Carter (2012)",
     "imgurURL": "https://i.imgur.com/9drEozj.png",
     "": "",
-    "imagePath": "graphs/d7ef23422045321dba6f.jpg"
+    "imagePath": "graphs/d7ef23422045321dba6f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "253",
     "movieName": "John Wick (2014)",
-    "imgurURL": "http://i.imgur.com/PDpRBvt.png",
+    "imgurURL": "https://i.imgur.com/GQDMYfL.png",
     "": "",
-    "imagePath": "graphs/7b02d57e3f2a8b3d4329.jpg"
-  },
-  {
-    "id": "254",
-    "movieName": "Time Stamp #1",
-    "imgurURL": "http://i.imgur.com/i6GgaJ5.png",
-    "": "",
-    "imagePath": "graphs/51dbf91efcacf3e1d6b5.jpg"
+    "imagePath": "graphs/1ba485ab44307a1c74e1.jpg",
+    "cachedSourceURL": "https://i.imgur.com/GQDMYfL.png",
+    "source": "avs-first-post"
   },
   {
     "id": "255",
     "movieName": "John Wick Chapter 2 (2017)",
-    "imgurURL": "http://i.imgur.com/nXAlrTA.png",
+    "imgurURL": "https://i.imgur.com/nXAlrTA.png",
     "": "",
-    "imagePath": "graphs/e3b15d2694a16f152935.jpg"
+    "imagePath": "graphs/e3b15d2694a16f152935.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "256",
     "movieName": "John Wick Chapter 3 - Parabellum",
     "imgurURL": "https://i.imgur.com/tkCgHZH.png",
     "": "",
-    "imagePath": "graphs/f6e517de88d5caf445a5.jpg"
+    "imagePath": "graphs/f6e517de88d5caf445a5.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-809586910dedb029",
+    "imagePath": "graphs/06a993c6d216eccf2086.jpg",
+    "movieName": "John Wick Chapter 4 (2023)",
+    "imgurURL": "https://i.imgur.com/ugGD5Mr.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/ugGD5Mr.png"
   },
   {
     "id": "257",
     "movieName": "Johnny English Strikes Again (2018)",
     "imgurURL": "https://i.imgur.com/NaDvPAH.png",
     "": "",
-    "imagePath": "graphs/81668b6cb4c3c0afe788.jpg"
+    "imagePath": "graphs/81668b6cb4c3c0afe788.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "258",
     "movieName": "Jumanji Welcome to the Jungle (2017)",
     "imgurURL": "https://i.imgur.com/R83SwRE.png",
     "": "",
-    "imagePath": "graphs/40aef38d249935609cd5.jpg"
+    "imagePath": "graphs/40aef38d249935609cd5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "259",
     "movieName": "Jupiter Ascending (2015)",
     "imgurURL": "https://i.imgur.com/uFIjS5g.png",
     "": "",
-    "imagePath": "graphs/617f2f2c0fd87d306356.jpg"
+    "imagePath": "graphs/617f2f2c0fd87d306356.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "260",
     "movieName": "Jurassic Park (1993)",
     "imgurURL": "https://i.imgur.com/ahFnNQ3.png",
     "": "",
-    "imagePath": "graphs/79c77e8bba49810c8bc2.jpg"
+    "imagePath": "graphs/79c77e8bba49810c8bc2.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "261",
     "movieName": "Jurassic Park III (2001)",
     "imgurURL": "https://i.imgur.com/JkuegJJ.png",
     "": "",
-    "imagePath": "graphs/ffb372bcca5256122e18.jpg"
+    "imagePath": "graphs/ffb372bcca5256122e18.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "262",
     "movieName": "Jurassic World (2015)",
     "imgurURL": "https://i.imgur.com/aykXmwt.png",
     "": "",
-    "imagePath": "graphs/7528fb5abc072e3d7b78.jpg"
+    "imagePath": "graphs/7528fb5abc072e3d7b78.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "263",
     "movieName": "Jurassic World: Fallen Kingdom (2018)",
     "imgurURL": "https://i.imgur.com/TXkp1co.png",
     "": "",
-    "imagePath": "graphs/42115cb7c952336fba4b.jpg"
+    "imagePath": "graphs/42115cb7c952336fba4b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "264",
     "movieName": "Justice League (2017)",
     "imgurURL": "https://i.imgur.com/ekaIrLc.png",
     "": "",
-    "imagePath": "graphs/aebdf8921018b51c20f5.jpg"
+    "imagePath": "graphs/aebdf8921018b51c20f5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "265",
     "movieName": "Justice League: The Flashpoint Paradox (2013)",
-    "imgurURL": "http://i.imgur.com/HetOFdu.png",
+    "imgurURL": "https://i.imgur.com/HetOFdu.png",
     "": "",
-    "imagePath": "graphs/0f354626994222c0d13f.jpg"
+    "imagePath": "graphs/0f354626994222c0d13f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "266",
     "movieName": "The Lost World Jurassic Park (1997)",
     "imgurURL": "https://i.imgur.com/PBsUl3l.png",
     "": "",
-    "imagePath": "graphs/a76c2e795f14084e7d89.jpg"
+    "imagePath": "graphs/a76c2e795f14084e7d89.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "267",
     "movieName": "Justice League Dark (2017)",
-    "imgurURL": "http://i.imgur.com/Qz7bvOF.png",
+    "imgurURL": "https://i.imgur.com/Qz7bvOF.png",
     "": "",
-    "imagePath": "graphs/2bd737387464916b628a.jpg"
+    "imagePath": "graphs/2bd737387464916b628a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "268",
     "movieName": "King Arthur: Legend of the Sword (2017)",
-    "imgurURL": "http://i.imgur.com/raNVtIW.png",
+    "imgurURL": "https://i.imgur.com/raNVtIW.png",
     "": "",
-    "imagePath": "graphs/92066dcc4d0ff7b6c78a.jpg"
+    "imagePath": "graphs/92066dcc4d0ff7b6c78a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "269",
     "movieName": "Kingsman: The Golden Circle (2017)",
     "imgurURL": "https://i.imgur.com/OG55RHw.png",
     "": "",
-    "imagePath": "graphs/ea59b891a00f3fc10063.jpg"
+    "imagePath": "graphs/ea59b891a00f3fc10063.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "270",
     "movieName": "Kingsman: The Secret Service (2014)",
     "imgurURL": "https://i.imgur.com/SIrDbbj.png",
     "": "",
-    "imagePath": "graphs/007cccfcca084a835104.jpg"
+    "imagePath": "graphs/007cccfcca084a835104.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "271",
     "movieName": "Knowing (2009)",
     "imgurURL": "https://i.imgur.com/20i3Zt6.png",
     "": "",
-    "imagePath": "graphs/d6110403a7ea43fc0a3c.jpg"
+    "imagePath": "graphs/d6110403a7ea43fc0a3c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "272",
     "movieName": "KONG: Skull Island",
-    "imgurURL": "http://i.imgur.com/CGGCed3.png",
+    "imgurURL": "https://i.imgur.com/CGGCed3.png",
     "": "",
-    "imagePath": "graphs/cbc8caa767d7c8bb60a3.jpg"
+    "imagePath": "graphs/cbc8caa767d7c8bb60a3.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "273",
     "movieName": "Kill Bill Vol. 1 (2003)",
     "imgurURL": "https://i.imgur.com/5J5UZ1k.jpg",
     "": "",
-    "imagePath": "graphs/2cecba047577da627ae4.jpg"
+    "imagePath": "graphs/2cecba047577da627ae4.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "274",
     "movieName": "Kin (2018)",
     "imgurURL": "https://i.imgur.com/nl0SLI7.png",
     "": "",
-    "imagePath": "graphs/5a04f9e6516f9696188e.jpg"
+    "imagePath": "graphs/5a04f9e6516f9696188e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "275",
     "movieName": "Kubo and the Two Strings (2016)",
-    "imgurURL": "http://i.imgur.com/uPtT4uP.png",
+    "imgurURL": "https://i.imgur.com/uPtT4uP.png",
     "": "",
-    "imagePath": "graphs/28e72a17f1dd619c2f97.jpg"
+    "imagePath": "graphs/28e72a17f1dd619c2f97.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "276",
     "movieName": "Kung Fu Hustle (2004)",
     "imgurURL": "https://i.imgur.com/V87uY9W.png",
     "": "",
-    "imagePath": "graphs/6e8f24b1656154667d6d.jpg"
+    "imagePath": "graphs/6e8f24b1656154667d6d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "277",
     "movieName": "Kung Fu Panda (2008)",
-    "imgurURL": "http://i.imgur.com/C3bpUNz.png",
+    "imgurURL": "https://i.imgur.com/C3bpUNz.png",
     "": "",
-    "imagePath": "graphs/020ae4ea5548a7588348.jpg"
+    "imagePath": "graphs/020ae4ea5548a7588348.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "278",
     "movieName": "Kung Fu Panda 2 (2011)",
-    "imgurURL": "http://i.imgur.com/cjCjMLm.png",
+    "imgurURL": "https://i.imgur.com/cjCjMLm.png",
     "": "",
-    "imagePath": "graphs/630646d36660a6f76988.jpg"
+    "imagePath": "graphs/630646d36660a6f76988.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "279",
     "movieName": "League of Gods (2016)",
-    "imgurURL": "http://i.imgur.com/Sp5IReI.jpg",
+    "imgurURL": "https://i.imgur.com/Sp5IReI.jpg",
     "": "",
-    "imagePath": "graphs/7ab98a4c1b603eabf977.jpg"
+    "imagePath": "graphs/7ab98a4c1b603eabf977.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "280",
     "movieName": "Legend of the Naga Pearls (2017)",
     "imgurURL": "https://i.imgur.com/jMEL4pK.png",
     "": "",
-    "imagePath": "graphs/a6ff11db1e7063ed3894.jpg"
+    "imagePath": "graphs/a6ff11db1e7063ed3894.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "281",
     "movieName": "Legion (2010)",
-    "imgurURL": "http://i.imgur.com/MoFEjVp.png",
+    "imgurURL": "https://i.imgur.com/MoFEjVp.png",
     "": "",
-    "imagePath": "graphs/a3b9419a69be6847e848.jpg"
+    "imagePath": "graphs/a3b9419a69be6847e848.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "282",
     "movieName": "LIFE (2017)",
-    "imgurURL": "http://i.imgur.com/Cya7Aij.png",
+    "imgurURL": "https://i.imgur.com/Cya7Aij.png",
     "": "",
-    "imagePath": "graphs/c49fcc7fa0509e018911.jpg"
+    "imagePath": "graphs/c49fcc7fa0509e018911.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "283",
     "movieName": "Lights Out (2016)",
-    "imgurURL": "http://i.imgur.com/Pdk7T7O.jpg",
+    "imgurURL": "https://i.imgur.com/Pdk7T7O.jpg",
     "": "",
-    "imagePath": "graphs/91d8572e84e0c90989f6.jpg"
+    "imagePath": "graphs/91d8572e84e0c90989f6.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "284",
     "movieName": "Limitless (2011)",
     "imgurURL": "https://i.imgur.com/n8ps4kc.jpg",
     "": "",
-    "imagePath": "graphs/015f1f665677d572dea1.jpg"
+    "imagePath": "graphs/015f1f665677d572dea1.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "285",
     "movieName": "Line Walker (2016)",
-    "imgurURL": "http://i.imgur.com/tJCvCsl.png",
+    "imgurURL": "https://i.imgur.com/tJCvCsl.png",
     "": "",
-    "imagePath": "graphs/54cb4c0b88407d9c7d0a.jpg"
+    "imagePath": "graphs/54cb4c0b88407d9c7d0a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "286",
     "movieName": "Live by Night (2016)",
-    "imgurURL": "http://i.imgur.com/APKZLgc.png",
+    "imgurURL": "https://i.imgur.com/APKZLgc.png",
     "": "",
-    "imagePath": "graphs/9d0124ce15ae366a9d12.jpg"
+    "imagePath": "graphs/9d0124ce15ae366a9d12.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "287",
     "movieName": "Logan (2017)",
-    "imgurURL": "http://i.imgur.com/ee6KAeO.png",
+    "imgurURL": "https://i.imgur.com/ee6KAeO.png",
     "": "",
-    "imagePath": "graphs/8d80ddb6dc571279a4a2.jpg"
+    "imagePath": "graphs/8d80ddb6dc571279a4a2.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "288",
     "movieName": "Lone Survivor (2013)",
     "imgurURL": "https://i.imgur.com/XTJlDaL.png",
     "": "",
-    "imagePath": "graphs/1579eae01380dbbed921.jpg"
+    "imagePath": "graphs/1579eae01380dbbed921.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "289",
     "movieName": "Lost in Space (2018) Season 1",
     "imgurURL": "https://imgur.com/a/e18jT",
     "": "",
-    "imagePath": null
+    "imagePath": null,
+    "source": "avs-first-post"
   },
   {
     "id": "290",
     "movieName": "Lucy (2014)",
     "imgurURL": "https://i.imgur.com/mB2Zxbe.png",
     "": "",
-    "imagePath": "graphs/f5c7fe2eebbd24fcf264.jpg"
+    "imagePath": "graphs/f5c7fe2eebbd24fcf264.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "291",
     "movieName": "L\u00e9on: The Professional (1994)",
     "imgurURL": "https://i.imgur.com/AMHRRsw.png",
     "": "",
-    "imagePath": "graphs/91296847f45ee7be35fc.jpg"
+    "imagePath": "graphs/91296847f45ee7be35fc.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "292",
     "movieName": "The LEGO Ninjago Movie (2017)",
     "imgurURL": "https://i.imgur.com/m3jb1ez.png",
     "": "",
-    "imagePath": "graphs/76ed242736247e85ef77.jpg"
+    "imagePath": "graphs/76ed242736247e85ef77.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "293",
     "movieName": "Macbeth (2015)",
     "imgurURL": "https://i.imgur.com/S5YFzhO.png",
     "": "",
-    "imagePath": "graphs/ff03d025015c5fb1d9b7.jpg"
+    "imagePath": "graphs/ff03d025015c5fb1d9b7.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "294",
     "movieName": "Mad Max: Fury Road (2015)",
     "imgurURL": "https://i.imgur.com/rQ5el87.png",
     "": "",
-    "imagePath": "graphs/13d15256ff822ef5c45b.jpg"
+    "imagePath": "graphs/13d15256ff822ef5c45b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "295",
     "movieName": "Maleficent (2014)",
     "imgurURL": "https://i.imgur.com/3KGdC9x.png",
     "": "",
-    "imagePath": "graphs/e4bb0e742d3c19c3e6d4.jpg"
+    "imagePath": "graphs/e4bb0e742d3c19c3e6d4.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "296",
     "movieName": "Man Down (2015)",
-    "imgurURL": "http://i.imgur.com/DYp82FM.png",
+    "imgurURL": "https://i.imgur.com/DYp82FM.png",
     "": "",
-    "imagePath": "graphs/c0ba5040d341a6bb7816.jpg"
+    "imagePath": "graphs/c0ba5040d341a6bb7816.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "297",
     "movieName": "Man of Steel (2013)",
-    "imgurURL": "http://i.imgur.com/b7NaInn.png",
+    "imgurURL": "https://i.imgur.com/b7NaInn.png",
     "": "",
-    "imagePath": "graphs/ca3ab9a96ec980780b37.jpg"
+    "imagePath": "graphs/ca3ab9a96ec980780b37.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "298",
     "movieName": "Mandy (2018)",
     "imgurURL": "https://i.imgur.com/76cC3S4.png",
     "": "",
-    "imagePath": "graphs/433c3ef3d143b74af0ee.jpg"
+    "imagePath": "graphs/433c3ef3d143b74af0ee.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "299",
     "movieName": "Manhunt (2017)",
     "imgurURL": "https://i.imgur.com/R24UCSz.png",
     "": "",
-    "imagePath": "graphs/fa411d02043b89a20810.jpg"
+    "imagePath": "graphs/fa411d02043b89a20810.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "300",
     "movieName": "Marauders (2016)",
-    "imgurURL": "http://i.imgur.com/FzHhozq.png",
+    "imgurURL": "https://i.imgur.com/FzHhozq.png",
     "": "",
-    "imagePath": "graphs/14cea25e000dc584eb2f.jpg"
+    "imagePath": "graphs/14cea25e000dc584eb2f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "301",
     "movieName": "Marrowbone (2017)",
     "imgurURL": "https://i.imgur.com/dUgaumR.jpg",
     "": "",
-    "imagePath": "graphs/3952864484af70a310e5.jpg"
+    "imagePath": "graphs/3952864484af70a310e5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "302",
     "movieName": "Master Z: The Ip Man Legacy (2018)",
     "imgurURL": "https://i.imgur.com/LGUFJXX.png",
     "": "",
-    "imagePath": "graphs/33e420b5d7a47590e564.jpg"
+    "imagePath": "graphs/33e420b5d7a47590e564.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "303",
     "movieName": "Max Steel (2016)",
-    "imgurURL": "http://i.imgur.com/rrkZuj4.png",
+    "imgurURL": "https://i.imgur.com/rrkZuj4.png",
     "": "",
-    "imagePath": "graphs/b648f07c04eb09caf2f1.jpg"
+    "imagePath": "graphs/b648f07c04eb09caf2f1.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "304",
     "movieName": "Maze Runner: The Death Cure (2018)",
     "imgurURL": "https://i.imgur.com/npYZJcG.png",
     "": "",
-    "imagePath": "graphs/7ded0eb4d8c77cf5658a.jpg"
+    "imagePath": "graphs/7ded0eb4d8c77cf5658a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "305",
     "movieName": "Maze Runner: The Scorch Trials (2015)",
-    "imgurURL": "http://i.imgur.com/53NQ7or.jpg",
+    "imgurURL": "https://i.imgur.com/53NQ7or.jpg",
     "": "",
-    "imagePath": "graphs/f4b4c452b76709171269.jpg"
+    "imagePath": "graphs/f4b4c452b76709171269.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "306",
     "movieName": "Mechanic: Resurrection (2016)",
-    "imgurURL": "http://i.imgur.com/3ZBBRaQ.png",
+    "imgurURL": "https://i.imgur.com/3ZBBRaQ.png",
     "": "",
-    "imagePath": "graphs/cdeb26def5fc4c261710.jpg"
+    "imagePath": "graphs/cdeb26def5fc4c261710.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "307",
     "movieName": "Men in Black (1997) UHD",
     "imgurURL": "https://i.imgur.com/zXkLtJi.png",
     "": "",
-    "imagePath": "graphs/81fc12109de1375e5a9b.jpg"
+    "imagePath": "graphs/81fc12109de1375e5a9b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "308",
     "movieName": "Men in Black 3 (2012) UHD",
     "imgurURL": "https://i.imgur.com/EJOmxyV.png",
     "": "",
-    "imagePath": "graphs/df1ae9b26fdb0217db4a.jpg"
+    "imagePath": "graphs/df1ae9b26fdb0217db4a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "309",
     "movieName": "Men in Black II (2002) UHD",
     "imgurURL": "https://i.imgur.com/ZHDZJyZ.png",
     "": "",
-    "imagePath": "graphs/7f02588e20bd3f71a984.jpg"
+    "imagePath": "graphs/7f02588e20bd3f71a984.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "310",
     "movieName": "Men in Black: International (2019) BD",
     "imgurURL": "https://i.imgur.com/hxnasmD.png",
     "": "",
-    "imagePath": "graphs/0f3e55fad75c2e7fd9eb.jpg"
+    "imagePath": "graphs/0f3e55fad75c2e7fd9eb.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "312",
     "movieName": "Men in Black: International (2019)",
     "imgurURL": "https://i.imgur.com/ZViLXiA.png",
     "": "",
-    "imagePath": "graphs/a3ba584cf7890d240523.jpg"
+    "imagePath": "graphs/a3ba584cf7890d240523.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "313",
     "movieName": "Midnight Special (2016)",
-    "imgurURL": "http://i.imgur.com/2yfcowx.jpg",
+    "imgurURL": "https://i.imgur.com/2yfcowx.jpg",
     "": "",
-    "imagePath": "graphs/aacc343e8db9c7e5bb47.jpg"
+    "imagePath": "graphs/aacc343e8db9c7e5bb47.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "314",
     "movieName": "Mile 22 (2018)",
     "imgurURL": "https://i.imgur.com/QKGwCB2.png",
     "": "",
-    "imagePath": "graphs/7837edbdd1b475f57344.jpg"
+    "imagePath": "graphs/7837edbdd1b475f57344.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "315",
     "movieName": "Mine (2016)",
-    "imgurURL": "http://i.imgur.com/CJLYPe9.png",
+    "imgurURL": "https://i.imgur.com/CJLYPe9.png",
     "": "",
-    "imagePath": "graphs/025cf4b3104e32b1dfb8.jpg"
+    "imagePath": "graphs/025cf4b3104e32b1dfb8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "316",
     "movieName": "Mission: Impossible - Rogue Nation (2015)",
-    "imgurURL": "http://i.imgur.com/YT2Q2tJ.jpg",
+    "imgurURL": "https://i.imgur.com/YT2Q2tJ.jpg",
     "": "",
-    "imagePath": "graphs/7817b1222676fe0708ad.jpg"
+    "imagePath": "graphs/7817b1222676fe0708ad.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "317",
     "movieName": "Miss Peregrine's Home for Peculiar Children (2016)",
-    "imgurURL": "http://i.imgur.com/nD0WB5V.png",
+    "imgurURL": "https://i.imgur.com/nD0WB5V.png",
     "": "",
-    "imagePath": "graphs/25662066eff1e7b5a2a8.jpg"
+    "imagePath": "graphs/25662066eff1e7b5a2a8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "318",
     "movieName": "Mission: Impossible - Fallout (2018)",
     "imgurURL": "https://i.imgur.com/FzGsKHr.png",
     "": "",
-    "imagePath": "graphs/f2b28c416995a781f56a.jpg"
+    "imagePath": "graphs/f2b28c416995a781f56a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "319",
     "movieName": "Moana (2016)",
-    "imgurURL": "http://i.imgur.com/mOcGZch.png",
+    "imgurURL": "https://i.imgur.com/mOcGZch.png",
     "": "",
-    "imagePath": "graphs/e3f2732b7c2372928d52.jpg"
+    "imagePath": "graphs/e3f2732b7c2372928d52.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "320",
     "movieName": "Mom and Dad (2017)",
     "imgurURL": "https://i.imgur.com/PvOYKNm.png",
     "": "",
-    "imagePath": "graphs/7414e079cd4c05eea089.jpg"
+    "imagePath": "graphs/7414e079cd4c05eea089.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "321",
     "movieName": "Momentum (2015)",
-    "imgurURL": "http://i.imgur.com/VecrO30.jpg",
+    "imgurURL": "https://i.imgur.com/VecrO30.jpg",
     "": "",
-    "imagePath": "graphs/786b76fbdf5c2f76410e.jpg"
+    "imagePath": "graphs/786b76fbdf5c2f76410e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "322",
     "movieName": "Monsters, Inc. (2001)",
-    "imgurURL": "http://i.imgur.com/eO2aCRM.png",
+    "imgurURL": "https://i.imgur.com/eO2aCRM.png",
     "": "",
     "imagePath": "graphs/7592c34e0e846e4cd02f.jpg",
-    "cachedSourceURL": "https://i.imgur.com/eO2aCRM.png"
+    "cachedSourceURL": "https://i.imgur.com/eO2aCRM.png",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-b24546243d7a73c0",
+    "imagePath": "graphs/4371e534886239618ad9.jpg",
+    "movieName": "NOPE (2022)",
+    "imgurURL": "https://i.imgur.com/W60ewym.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/W60ewym.png"
   },
   {
     "id": "323",
     "movieName": "Monsters: Dark Continent (2014)",
-    "imgurURL": "http://i.imgur.com/V2q8Lwu.jpg",
+    "imgurURL": "https://i.imgur.com/V2q8Lwu.jpg",
     "": "",
-    "imagePath": "graphs/fb2ff47bc49d0d321d43.jpg"
+    "imagePath": "graphs/fb2ff47bc49d0d321d43.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "324",
     "movieName": "Monsters University (2013)",
-    "imgurURL": "http://i.imgur.com/tGKqp9i.png",
+    "imgurURL": "https://i.imgur.com/tGKqp9i.png",
     "": "",
-    "imagePath": "graphs/bdaa48f4fe80f1b01b34.jpg"
+    "imagePath": "graphs/bdaa48f4fe80f1b01b34.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "325",
     "movieName": "Monster Trucks (2016)",
-    "imgurURL": "http://i.imgur.com/hQe9Q8p.png",
+    "imgurURL": "https://i.imgur.com/hQe9Q8p.png",
     "": "",
-    "imagePath": "graphs/b3c6433a7a0c5902d44e.jpg"
+    "imagePath": "graphs/b3c6433a7a0c5902d44e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "326",
     "movieName": "Moon (2009)",
     "imgurURL": "https://i.imgur.com/lBejMfh.png",
     "": "",
-    "imagePath": "graphs/dedcf6b2f023f8554e21.jpg"
+    "imagePath": "graphs/dedcf6b2f023f8554e21.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-20be2cceae28c0ad",
+    "imagePath": "graphs/646abab2bebaece0904f.jpg",
+    "movieName": "Moonfall (2022)",
+    "imgurURL": "https://i.imgur.com/ItXdMPc.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/ItXdMPc.png"
   },
   {
     "id": "327",
     "movieName": "Morgan (2016)",
     "imgurURL": "https://i.imgur.com/qMShVYt.png",
     "": "",
-    "imagePath": "graphs/b63f5bfc591936686031.jpg"
+    "imagePath": "graphs/b63f5bfc591936686031.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "328",
     "movieName": "Mortal Engines (2018)",
     "imgurURL": "https://i.imgur.com/DLjinHY.png",
     "": "",
-    "imagePath": "graphs/72cd9b417f96de04b0ab.jpg"
+    "imagePath": "graphs/72cd9b417f96de04b0ab.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "329",
     "movieName": "Mortal Kombat (2021)",
     "imgurURL": "https://i.imgur.com/taXmWQ6.png",
     "": "",
-    "imagePath": "graphs/49f4ba41a8c804ae7b8a.jpg"
+    "imagePath": "graphs/49f4ba41a8c804ae7b8a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "330",
     "movieName": "Mother! (2017)",
     "imgurURL": "https://i.imgur.com/xTwoOSb.png",
     "": "",
-    "imagePath": "graphs/430e9fffaa0b6664ef9b.jpg"
+    "imagePath": "graphs/430e9fffaa0b6664ef9b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "331",
     "movieName": "Mulgoe (2018)",
     "imgurURL": "https://i.imgur.com/73iwDWK.png",
     "": "",
-    "imagePath": "graphs/5b0102da481b208ff872.jpg"
+    "imagePath": "graphs/5b0102da481b208ff872.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "332",
     "movieName": "Murder on the Orient Express (2017)",
     "imgurURL": "https://i.imgur.com/eMwLoqs.png",
     "": "",
-    "imagePath": "graphs/85b65479600d6ea7d8aa.jpg"
+    "imagePath": "graphs/85b65479600d6ea7d8aa.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "333",
     "movieName": "National Parks Adventure (2016)",
     "imgurURL": "https://i.imgur.com/v0Pj8kG.jpg",
     "": "",
-    "imagePath": "graphs/08e2c62dc194fca556d6.jpg"
+    "imagePath": "graphs/08e2c62dc194fca556d6.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "334",
     "movieName": "National Treasure (2004)",
     "imgurURL": "https://i.imgur.com/etU0In3.png",
     "": "",
-    "imagePath": "graphs/fab82646d23e5e9848f1.jpg"
+    "imagePath": "graphs/fab82646d23e5e9848f1.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "335",
     "movieName": "National Treasure 2: Book of Secrets (2007)",
     "imgurURL": "https://i.imgur.com/gmvWI6d.png",
     "": "",
-    "imagePath": "graphs/3259bf8549e10577323c.jpg"
+    "imagePath": "graphs/3259bf8549e10577323c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "336",
     "movieName": "Nerve (2016)",
-    "imgurURL": "http://i.imgur.com/zvwJceo.jpg",
+    "imgurURL": "https://i.imgur.com/zvwJceo.jpg",
     "": "",
-    "imagePath": "graphs/608b995250de8e651858.jpg"
+    "imagePath": "graphs/608b995250de8e651858.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "337",
     "movieName": "No Time to Die (2021)",
     "imgurURL": "https://i.imgur.com/mGYRygF.png",
     "": "",
-    "imagePath": "graphs/e01ec7ee49f4090f9358.jpg"
+    "imagePath": "graphs/e01ec7ee49f4090f9358.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "338",
     "movieName": "OVERLORD (2018)",
     "imgurURL": "https://i.imgur.com/YtUk465.png",
     "": "",
-    "imagePath": "graphs/ac7a6c4f1f80b3d150a7.jpg"
+    "imagePath": "graphs/ac7a6c4f1f80b3d150a7.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "339",
     "movieName": "Oblivion (2013)",
     "imgurURL": "https://i.imgur.com/GQFvOBZ.png",
     "": "",
-    "imagePath": "graphs/e84cfaf542fbb4807030.jpg"
+    "imagePath": "graphs/e84cfaf542fbb4807030.jpg",
+    "source": "avs-first-post"
   },
   {
-    "id": "340",
-    "movieName": "M83 SCORE TRACK",
-    "imgurURL": "https://i.imgur.com/sIVKo8z.png",
-    "": "",
-    "imagePath": "graphs/8d7215c31adc91e9e49c.jpg"
+    "id": "avs-0410974120027322",
+    "imagePath": "graphs/e84cfaf542fbb4807030.jpg",
+    "movieName": "Oblivion (2013)",
+    "imgurURL": "https://i.imgur.com/GQFvOBZ.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/GQFvOBZ.png"
   },
   {
     "id": "341",
     "movieName": "Occupation (2018)",
     "imgurURL": "https://i.imgur.com/fC3tYf4.png",
     "": "",
-    "imagePath": "graphs/89f85985c45ae8f48632.jpg"
+    "imagePath": "graphs/89f85985c45ae8f48632.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "342",
     "movieName": "Ocean's 8 (2018)",
     "imgurURL": "https://i.imgur.com/Z4IKwYO.png",
     "": "",
-    "imagePath": "graphs/2165a57663be3a37b110.jpg"
+    "imagePath": "graphs/2165a57663be3a37b110.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "343",
     "movieName": "Odd Thomas (2013)",
-    "imgurURL": "http://i.imgur.com/DZPaTyr.png",
+    "imgurURL": "https://i.imgur.com/DZPaTyr.png",
     "": "",
-    "imagePath": "graphs/a0728fe1b0af5ecb0290.jpg"
+    "imagePath": "graphs/a0728fe1b0af5ecb0290.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "344",
     "movieName": "Olympus Has Fallen (2013)",
     "imgurURL": "https://i.imgur.com/m6V2XEj.png",
     "": "",
-    "imagePath": "graphs/a40a71cef708fd7f15fb.jpg"
+    "imagePath": "graphs/a40a71cef708fd7f15fb.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "345",
     "movieName": "Only God Forgives (2013)",
-    "imgurURL": "http://i.imgur.com/4lNZ09o.png",
+    "imgurURL": "https://i.imgur.com/4lNZ09o.png",
     "": "",
-    "imagePath": "graphs/a27b623b6ceada54af58.jpg"
+    "imagePath": "graphs/a27b623b6ceada54af58.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "346",
     "movieName": "Only the Brave (2017)",
     "imgurURL": "https://i.imgur.com/DfvFtsT.png",
     "": "",
-    "imagePath": "graphs/a4c7e08f9d43aa4de6d8.jpg"
+    "imagePath": "graphs/a4c7e08f9d43aa4de6d8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "347",
     "movieName": "Only the Brave (2017) UHD",
     "imgurURL": "https://i.imgur.com/G6SquPo.png",
     "": "",
-    "imagePath": "graphs/60331e2d7bb632bed477.jpg"
+    "imagePath": "graphs/60331e2d7bb632bed477.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "348",
     "movieName": "Operation Mekong (2016)",
-    "imgurURL": "http://i.imgur.com/KdqrdPx.png",
+    "imgurURL": "https://i.imgur.com/KdqrdPx.png",
     "": "",
-    "imagePath": "graphs/c7ddccffc10411aa88a1.jpg"
+    "imagePath": "graphs/c7ddccffc10411aa88a1.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "349",
     "movieName": "Ouija: Origin of Evil (2016)",
-    "imgurURL": "http://i.imgur.com/oB91SKR.png",
+    "imgurURL": "https://i.imgur.com/oB91SKR.png",
     "": "",
-    "imagePath": "graphs/ace6364d86459295a56c.jpg"
+    "imagePath": "graphs/ace6364d86459295a56c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "350",
     "movieName": "Overdrive (2017)",
     "imgurURL": "https://i.imgur.com/3xraCYR.png",
     "": "",
-    "imagePath": "graphs/7f662c430a4f35935806.jpg"
+    "imagePath": "graphs/7f662c430a4f35935806.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-0b5fb02ef8dc56eb",
+    "imagePath": "graphs/6b9339b430147a9771a8.jpg",
+    "movieName": "Puss in Boots: The Last Wish (2022)",
+    "imgurURL": "https://i.imgur.com/CH9w6b0.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/CH9w6b0.png"
   },
   {
     "id": "351",
     "movieName": "Pacific Rim (2013)",
     "imgurURL": "https://i.imgur.com/tFPN3XQ.png",
     "": "",
-    "imagePath": "graphs/77770ca3603d1c94d5bc.jpg"
+    "imagePath": "graphs/77770ca3603d1c94d5bc.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "352",
     "movieName": "Pacific Rim Uprising (2018)",
     "imgurURL": "https://i.imgur.com/q1O9XK7.png",
     "": "",
-    "imagePath": "graphs/a5bf9341bc435918ddb2.jpg"
+    "imagePath": "graphs/a5bf9341bc435918ddb2.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "353",
     "movieName": "Pan (2015)",
-    "imgurURL": "http://i.imgur.com/JHnLkVo.jpg",
+    "imgurURL": "https://i.imgur.com/JHnLkVo.jpg",
     "": "",
-    "imagePath": "graphs/a7c0e07a8a042e5867e3.jpg"
+    "imagePath": "graphs/a7c0e07a8a042e5867e3.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "354",
     "movieName": "Paradox (2017)",
     "imgurURL": "https://i.imgur.com/nycMtkH.png",
     "": "",
-    "imagePath": "graphs/8a507748bc69e3e32c24.jpg"
+    "imagePath": "graphs/8a507748bc69e3e32c24.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "355",
     "movieName": "Passengers (2016)",
-    "imgurURL": "http://i.imgur.com/JF8WsJI.png",
+    "imgurURL": "https://i.imgur.com/JF8WsJI.png",
     "": "",
-    "imagePath": "graphs/94418021890a5ee46c00.jpg"
+    "imagePath": "graphs/94418021890a5ee46c00.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "356",
     "movieName": "Patriots Day (2016)",
-    "imgurURL": "http://i.imgur.com/Z8RUREZ.png",
+    "imgurURL": "https://i.imgur.com/Z8RUREZ.png",
     "": "",
-    "imagePath": "graphs/05eaca3ae72f87c89358.jpg"
+    "imagePath": "graphs/05eaca3ae72f87c89358.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "357",
     "movieName": "Paul (2011) Unrated",
-    "imgurURL": "http://i.imgur.com/UIQ52bA.png",
+    "imgurURL": "https://i.imgur.com/UIQ52bA.png",
     "": "",
-    "imagePath": "graphs/d78e47c4478f5e3e367c.jpg"
+    "imagePath": "graphs/d78e47c4478f5e3e367c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "358",
     "movieName": "Pete's Dragon (2016)",
-    "imgurURL": "http://i.imgur.com/hYjW1wd.png",
+    "imgurURL": "https://i.imgur.com/hYjW1wd.png",
     "": "",
-    "imagePath": "graphs/f833a4706fe1cc59c48a.jpg"
+    "imagePath": "graphs/f833a4706fe1cc59c48a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "359",
     "movieName": "Phantom of the Theatre (2016)",
-    "imgurURL": "http://i.imgur.com/3fOrFUR.png",
+    "imgurURL": "https://i.imgur.com/3fOrFUR.png",
     "": "",
-    "imagePath": "graphs/2e495ca18f0e1e746be5.jpg"
+    "imagePath": "graphs/2e495ca18f0e1e746be5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "360",
     "movieName": "Pirates of the Caribbean: At World's End (2007)",
     "imgurURL": "https://i.imgur.com/B1tMEDG.png",
     "": "",
-    "imagePath": "graphs/ff1e325288dca4e53192.jpg"
+    "imagePath": "graphs/ff1e325288dca4e53192.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "361",
     "movieName": "Pirates of the Caribbean: Dead Man's Chest (2006)",
     "imgurURL": "https://i.imgur.com/72bMRyX.png",
     "": "",
-    "imagePath": "graphs/fad4f4a82de0a684094e.jpg"
+    "imagePath": "graphs/fad4f4a82de0a684094e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "362",
     "movieName": "Pirates of the Caribbean: Dead Men Tell No Tales (2017)",
     "imgurURL": "https://i.imgur.com/MH2npuU.png",
     "": "",
-    "imagePath": "graphs/4071e11cadc64557c41c.jpg"
+    "imagePath": "graphs/4071e11cadc64557c41c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "363",
     "movieName": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
     "imgurURL": "https://i.imgur.com/tXQjLzF.png",
     "": "",
-    "imagePath": "graphs/f84e8cdf9e9005dc07f1.jpg"
+    "imagePath": "graphs/f84e8cdf9e9005dc07f1.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "364",
     "movieName": "Pixels (2015)",
-    "imgurURL": "http://i.imgur.com/ITJBeqf.jpg",
+    "imgurURL": "https://i.imgur.com/ITJBeqf.jpg",
     "": "",
-    "imagePath": "graphs/4879aa7574fdfcc2475d.jpg"
+    "imagePath": "graphs/4879aa7574fdfcc2475d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "365",
     "movieName": "Planet Terror (2007)",
-    "imgurURL": "http://i.imgur.com/u18CW0B.png",
+    "imgurURL": "https://i.imgur.com/u18CW0B.png",
     "": "",
-    "imagePath": "graphs/2686e30762e74fd34261.jpg"
+    "imagePath": "graphs/2686e30762e74fd34261.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "366",
     "movieName": "Point Break (2015)",
-    "imgurURL": "http://i.imgur.com/2zGGFxu.jpg",
+    "imgurURL": "https://i.imgur.com/2zGGFxu.jpg",
     "": "",
-    "imagePath": "graphs/b13d7a93f59b29d19149.jpg"
+    "imagePath": "graphs/b13d7a93f59b29d19149.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "367",
     "movieName": "Pok\u00e9mon: Detective Pikachu (2019)",
     "imgurURL": "https://i.imgur.com/S3dc6Jh.png",
     "": "",
-    "imagePath": "graphs/ae4a03eb6bf2f3ba954b.jpg"
+    "imagePath": "graphs/ae4a03eb6bf2f3ba954b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "368",
     "movieName": "Poltergeist (2015)",
-    "imgurURL": "http://i.imgur.com/wpZCKh5.jpg",
+    "imgurURL": "https://i.imgur.com/wpZCKh5.jpg",
     "": "",
-    "imagePath": "graphs/1b7763986f3c3819fd97.jpg"
+    "imagePath": "graphs/1b7763986f3c3819fd97.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "369",
     "movieName": "Power Rangers (2017)",
-    "imgurURL": "http://i.imgur.com/jWQzXq1.png",
+    "imgurURL": "https://i.imgur.com/jWQzXq1.png",
     "": "",
-    "imagePath": "graphs/77593fa0321e40472cbf.jpg"
+    "imagePath": "graphs/77593fa0321e40472cbf.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "370",
     "movieName": "Predator (1987)",
     "imgurURL": "https://i.imgur.com/vEP3MUM.png",
     "": "",
-    "imagePath": "graphs/1116b4bf3cb088635bfd.jpg"
+    "imagePath": "graphs/1116b4bf3cb088635bfd.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "371",
     "movieName": "Predator 2 (1990)",
     "imgurURL": "https://i.imgur.com/vlz7T3E.png",
     "": "",
-    "imagePath": "graphs/cbbedea78b47ac6e1eb9.jpg"
+    "imagePath": "graphs/cbbedea78b47ac6e1eb9.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "372",
     "movieName": "Predators (2010)",
     "imgurURL": "https://i.imgur.com/1fbfXUu.png",
     "": "",
-    "imagePath": "graphs/4119b43937a18f336d04.jpg"
+    "imagePath": "graphs/4119b43937a18f336d04.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "373",
     "movieName": "Pride and Prejudice and Zombies (2016)",
-    "imgurURL": "http://i.imgur.com/IaRY3J6.jpg",
+    "imgurURL": "https://i.imgur.com/IaRY3J6.jpg",
     "": "",
-    "imagePath": "graphs/c5378eccb0ff671a7428.jpg"
+    "imagePath": "graphs/c5378eccb0ff671a7428.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "374",
     "movieName": "Priest (2011)",
-    "imgurURL": "http://i.imgur.com/ejWOMBi.png",
+    "imgurURL": "https://i.imgur.com/ejWOMBi.png",
     "": "",
-    "imagePath": "graphs/6107cf3c697a5309a545.jpg"
+    "imagePath": "graphs/6107cf3c697a5309a545.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "375",
     "movieName": "Prometheus (2012)",
-    "imgurURL": "http://i.imgur.com/AIp52o8.png",
+    "imgurURL": "https://i.imgur.com/AIp52o8.png",
     "": "",
-    "imagePath": "graphs/ae031326a1b8d3c9ccd5.jpg"
+    "imagePath": "graphs/ae031326a1b8d3c9ccd5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "376",
     "movieName": "Push (2009)",
     "imgurURL": "https://i.imgur.com/nt86sNP.png",
     "": "",
-    "imagePath": "graphs/a206f0b34643b2b3b89c.jpg"
+    "imagePath": "graphs/a206f0b34643b2b3b89c.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-49dd48e1900b63ed",
+    "imagePath": "graphs/88f285a59a0cbb129ec9.jpg",
+    "movieName": "Puss in Boots: The Last Wish (2022)",
+    "imgurURL": "https://i.imgur.com/2gyDg33.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/2gyDg33.png"
   },
   {
     "id": "377",
     "movieName": "Ralph Breaks the Internet (2018)",
     "imgurURL": "https://i.imgur.com/pr7nt1f.png",
     "": "",
-    "imagePath": "graphs/bfe7329c6f791162165d.jpg"
+    "imagePath": "graphs/bfe7329c6f791162165d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "378",
     "movieName": "Ralph Breaks the Internet (2018) UHD",
     "imgurURL": "https://i.imgur.com/zVSCoDs.png",
     "": "",
-    "imagePath": "graphs/9a1113a4ebadb5a4ef23.jpg"
+    "imagePath": "graphs/9a1113a4ebadb5a4ef23.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "379",
     "movieName": "Rampage (2018)",
     "imgurURL": "https://i.imgur.com/CPGbPrM.png",
     "": "",
-    "imagePath": "graphs/f76fa685f90f0c8f4712.jpg"
+    "imagePath": "graphs/f76fa685f90f0c8f4712.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "380",
     "movieName": "Raw (2016)",
-    "imgurURL": "http://i.imgur.com/3GK8r1f.png",
+    "imgurURL": "https://i.imgur.com/3GK8r1f.png",
     "": "",
-    "imagePath": "graphs/29d81871af6c15949744.jpg"
+    "imagePath": "graphs/29d81871af6c15949744.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "381",
     "movieName": "Ready Player One (2018)",
     "imgurURL": "https://i.imgur.com/TAnOJ9s.png",
     "": "",
-    "imagePath": "graphs/1de6660cc02cd899fcfb.jpg"
+    "imagePath": "graphs/1de6660cc02cd899fcfb.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "382",
     "movieName": "Real Steel (2011)",
     "imgurURL": "https://i.imgur.com/CRlQjyz.png",
     "": "",
-    "imagePath": "graphs/1b70a885022ec4d1a227.jpg"
+    "imagePath": "graphs/1b70a885022ec4d1a227.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "383",
     "movieName": "Red Sparrow (2018)",
     "imgurURL": "https://i.imgur.com/KWBtc7W.png",
     "": "",
-    "imagePath": "graphs/050ec65c0b4aa3235457.jpg"
+    "imagePath": "graphs/050ec65c0b4aa3235457.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "384",
     "movieName": "Regression (2015)",
-    "imgurURL": "http://i.imgur.com/hZRPJc9.jpg",
+    "imgurURL": "https://i.imgur.com/hZRPJc9.jpg",
     "": "",
-    "imagePath": "graphs/a5ae43f942051f48802e.jpg"
+    "imagePath": "graphs/a5ae43f942051f48802e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "385",
     "movieName": "Resident Evil The Final Chapter (2016)",
-    "imgurURL": "http://i.imgur.com/X46qgro.png",
+    "imgurURL": "https://i.imgur.com/X46qgro.png",
     "": "",
-    "imagePath": "graphs/d049b9634302d1d7da87.jpg"
+    "imagePath": "graphs/d049b9634302d1d7da87.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "386",
     "movieName": "Resident Evil Vendetta (2017)",
-    "imgurURL": "http://i.imgur.com/2ruHKU9.png",
+    "imgurURL": "https://i.imgur.com/2ruHKU9.png",
     "": "",
-    "imagePath": "graphs/0d8b86c32adc10f52a76.jpg"
+    "imagePath": "graphs/0d8b86c32adc10f52a76.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "387",
     "movieName": "Revenge (2017)",
     "imgurURL": "https://i.imgur.com/4PAMiQ7.png",
     "": "",
-    "imagePath": "graphs/5498f835d6a917fd09c0.jpg"
+    "imagePath": "graphs/5498f835d6a917fd09c0.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "388",
     "movieName": "Revolt (2017)",
     "imgurURL": "https://i.imgur.com/loYAHOs.png",
     "": "",
-    "imagePath": "graphs/69e490a5a08c87968834.jpg"
+    "imagePath": "graphs/69e490a5a08c87968834.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-45b51252651a49f5",
+    "imagePath": "graphs/24503288acbb90316948.jpg",
+    "movieName": "Renfield (2023)",
+    "imgurURL": "https://i.imgur.com/HVVvvJf.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/HVVvvJf.png"
   },
   {
     "id": "389",
     "movieName": "Ride Along 2 (2016)",
-    "imgurURL": "http://i.imgur.com/Q1l5F9c.jpg",
+    "imgurURL": "https://i.imgur.com/Q1l5F9c.jpg",
     "": "",
-    "imagePath": "graphs/25841cc7f3cc15a02ce4.jpg"
+    "imagePath": "graphs/25841cc7f3cc15a02ce4.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "390",
     "movieName": "Rings (2017)",
-    "imgurURL": "http://i.imgur.com/IYQgOIU.png",
+    "imgurURL": "https://i.imgur.com/IYQgOIU.png",
     "": "",
-    "imagePath": "graphs/fe37ebeaf9b20e4dab16.jpg"
+    "imagePath": "graphs/fe37ebeaf9b20e4dab16.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "391",
     "movieName": "Robin Hood (2018)",
     "imgurURL": "https://i.imgur.com/sfCos99.png",
     "": "",
-    "imagePath": "graphs/cba84837255aeeed1f81.jpg"
+    "imagePath": "graphs/cba84837255aeeed1f81.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "392",
     "movieName": "Rocketman (2019)",
     "imgurURL": "https://i.imgur.com/xB6Va8n.png",
     "": "",
-    "imagePath": "graphs/b1533b22dcfb20a2bda7.jpg"
+    "imagePath": "graphs/b1533b22dcfb20a2bda7.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "393",
     "movieName": "Roger Waters: The Wall (2014)",
-    "imgurURL": "http://i.imgur.com/FVOibEH.jpg",
+    "imgurURL": "https://i.imgur.com/FVOibEH.jpg",
     "": "",
-    "imagePath": "graphs/466ad7b42f66e1e2f089.jpg"
+    "imagePath": "graphs/466ad7b42f66e1e2f089.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "394",
     "movieName": "Rogue One: A Star Wars Story (2016)",
     "imgurURL": "https://i.imgur.com/2OulNFk.png",
     "": "",
-    "imagePath": "graphs/01778610d0090d899966.jpg"
+    "imagePath": "graphs/01778610d0090d899966.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "395",
     "movieName": "SHADOW IN THE CLOUD (2020)",
     "imgurURL": "https://i.imgur.com/2SSG3Zk.png",
     "": "",
-    "imagePath": "graphs/25b4506bce934bb9e9b5.jpg"
+    "imagePath": "graphs/25b4506bce934bb9e9b5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "396",
     "movieName": "San Andreas (2015)",
     "imgurURL": "https://i.imgur.com/CiFdjbR.png",
     "": "",
-    "imagePath": "graphs/435d3639b4cb0ffa52d5.jpg"
+    "imagePath": "graphs/435d3639b4cb0ffa52d5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "397",
     "movieName": "Sausage Party (2016)",
-    "imgurURL": "http://i.imgur.com/zSjsEGZ.png",
+    "imgurURL": "https://i.imgur.com/zSjsEGZ.png",
     "": "",
-    "imagePath": "graphs/f0b6d56df253507cb8dc.jpg"
+    "imagePath": "graphs/f0b6d56df253507cb8dc.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "398",
     "movieName": "Saving Private Ryan (1998)",
     "imgurURL": "https://i.imgur.com/ZZNpi6y.png",
     "": "",
-    "imagePath": "graphs/212c89d1b5b736ef6cbb.jpg"
+    "imagePath": "graphs/212c89d1b5b736ef6cbb.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "399",
     "movieName": "Scott Pilgrim vs. the World (2010)",
     "imgurURL": "https://i.imgur.com/mQyjrre.png",
     "": "",
-    "imagePath": "graphs/18c727b4713988176c8b.jpg"
+    "imagePath": "graphs/18c727b4713988176c8b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "400",
     "movieName": "Searching (2018)",
     "imgurURL": "https://i.imgur.com/OZ8AMAL.png",
     "": "",
-    "imagePath": "graphs/921e93f93452c14af3d9.jpg"
+    "imagePath": "graphs/921e93f93452c14af3d9.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "401",
     "movieName": "Seoul Station (2016)",
-    "imgurURL": "http://i.imgur.com/QCMAmRB.png",
+    "imgurURL": "https://i.imgur.com/QCMAmRB.png",
     "": "",
-    "imagePath": "graphs/6d58a972e438638529e4.jpg"
+    "imagePath": "graphs/6d58a972e438638529e4.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "402",
     "movieName": "Serenity (2005)",
-    "imgurURL": "http://i.imgur.com/99sU1eA.jpg",
+    "imgurURL": "https://i.imgur.com/99sU1eA.jpg",
     "": "",
-    "imagePath": "graphs/3a477c03091c6c5fbdd4.jpg"
+    "imagePath": "graphs/3a477c03091c6c5fbdd4.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "403",
     "movieName": "Shang-Chi and the Legend of the Ten Rings (2021) UHD",
     "imgurURL": "https://i.imgur.com/9mY1ar8.png",
     "": "",
-    "imagePath": "graphs/66401e0f78939c26ab1a.jpg"
+    "imagePath": "graphs/66401e0f78939c26ab1a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "404",
     "movieName": "Shazam! (2019)",
     "imgurURL": "https://i.imgur.com/amkUfAU.png",
     "": "",
-    "imagePath": "graphs/2a8b2a681a7221aac0b4.jpg"
+    "imagePath": "graphs/2a8b2a681a7221aac0b4.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-f7ec4bc1c4058b76",
+    "imagePath": "graphs/94589c5c702c041b0cf9.jpg",
+    "movieName": "Shazam! Fury of the Gods (2023)",
+    "imgurURL": "https://i.imgur.com/4W0FlGo.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/4W0FlGo.png"
   },
   {
     "id": "405",
     "movieName": "Shock Wave (2017)",
-    "imgurURL": "http://i.imgur.com/o0fRRAx.png",
+    "imgurURL": "https://i.imgur.com/o0fRRAx.png",
     "": "",
-    "imagePath": "graphs/01b92df83dbce6a97acc.jpg"
+    "imagePath": "graphs/01b92df83dbce6a97acc.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "406",
     "movieName": "Shot Caller (2017)",
-    "imgurURL": "http://i.imgur.com/mnerDB1.png",
+    "imgurURL": "https://i.imgur.com/mnerDB1.png",
     "": "",
-    "imagePath": "graphs/17c08e60974c0494e7a8.jpg"
+    "imagePath": "graphs/17c08e60974c0494e7a8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "407",
     "movieName": "Sicario (2015)",
-    "imgurURL": "http://i.imgur.com/q0XtK9F.png",
+    "imgurURL": "https://i.imgur.com/q0XtK9F.png",
     "": "",
-    "imagePath": "graphs/22d397906efb65ed350d.jpg"
+    "imagePath": "graphs/22d397906efb65ed350d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "408",
     "movieName": "Sicario: Day of the Soldado (2018)",
     "imgurURL": "https://i.imgur.com/UIjODBt.png",
     "": "",
-    "imagePath": "graphs/c3631256f1eec49f420f.jpg"
+    "imagePath": "graphs/c3631256f1eec49f420f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "409",
     "movieName": "Sicario: Day of the Soldado (2018) UHD",
     "imgurURL": "https://i.imgur.com/GHLJ4lF.png",
     "": "",
-    "imagePath": "graphs/b7233df96e0472661cd9.jpg"
+    "imagePath": "graphs/b7233df96e0472661cd9.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "410",
     "movieName": "Sin City: A Dame to Kill For (2014)",
-    "imgurURL": "http://i.imgur.com/fb1yf5b.png",
+    "imgurURL": "https://i.imgur.com/fb1yf5b.png",
     "": "",
-    "imagePath": "graphs/f066247e998414f56924.jpg"
+    "imagePath": "graphs/f066247e998414f56924.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "411",
     "movieName": "Sin City (2005)",
-    "imgurURL": "http://i.imgur.com/ChJzXiT.png",
+    "imgurURL": "https://i.imgur.com/ChJzXiT.png",
     "": "",
-    "imagePath": "graphs/2beabdf428ffc9f58c65.jpg"
+    "imagePath": "graphs/2beabdf428ffc9f58c65.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "412",
     "movieName": "Sinister (2012)",
-    "imgurURL": "http://i.imgur.com/0FLyAYG.png",
+    "imgurURL": "https://i.imgur.com/0FLyAYG.png",
     "": "",
-    "imagePath": "graphs/e78055e5b93355f6b201.jpg"
+    "imagePath": "graphs/e78055e5b93355f6b201.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "413",
     "movieName": "Skiptrace (2016)",
-    "imgurURL": "http://i.imgur.com/DyGGZCg.jpg",
+    "imgurURL": "https://i.imgur.com/DyGGZCg.jpg",
     "": "",
-    "imagePath": "graphs/52165c6649fd53192741.jpg"
+    "imagePath": "graphs/52165c6649fd53192741.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "414",
     "movieName": "Skyscraper (2018)",
     "imgurURL": "https://i.imgur.com/7zmG3eQ.png",
     "": "",
-    "imagePath": "graphs/f0db8b0940e44119c5ac.jpg"
+    "imagePath": "graphs/f0db8b0940e44119c5ac.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "415",
     "movieName": "Sleepless (2017)",
-    "imgurURL": "http://i.imgur.com/iOtIvyI.png",
+    "imgurURL": "https://i.imgur.com/iOtIvyI.png",
     "": "",
-    "imagePath": "graphs/065c5c7da9cccb8d8f78.jpg"
+    "imagePath": "graphs/065c5c7da9cccb8d8f78.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "416",
     "movieName": "Slender Man (2018)",
     "imgurURL": "https://i.imgur.com/1bujBAu.png",
     "": "",
-    "imagePath": "graphs/9d7fb7a1efb446e2b584.jpg"
+    "imagePath": "graphs/9d7fb7a1efb446e2b584.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "417",
     "movieName": "Solo: A Star Wars Story (2018)",
     "imgurURL": "https://i.imgur.com/aCNsEFY.png",
     "": "",
-    "imagePath": "graphs/25a4fd0803527c083bb6.jpg"
+    "imagePath": "graphs/25a4fd0803527c083bb6.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "418",
     "movieName": "Solo: A Star Wars Story (2018) UHD",
     "imgurURL": "https://i.imgur.com/XWGTaAw.png",
     "": "",
-    "imagePath": "graphs/02ac9e2a730517a61390.jpg"
+    "imagePath": "graphs/02ac9e2a730517a61390.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "419",
     "movieName": "Sorry to Bother You (2018)",
     "imgurURL": "https://i.imgur.com/4ungsYW.png",
     "": "",
-    "imagePath": "graphs/4fb8d4ff1f3e7ce69b90.jpg"
+    "imagePath": "graphs/4fb8d4ff1f3e7ce69b90.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "420",
     "movieName": "Southpaw (2015)",
-    "imgurURL": "http://i.imgur.com/XaHFeeo.png",
+    "imgurURL": "https://i.imgur.com/XaHFeeo.png",
     "": "",
-    "imagePath": "graphs/cdfeda80d66860170e8d.jpg"
+    "imagePath": "graphs/cdfeda80d66860170e8d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "421",
     "movieName": "Spectral (2016)",
-    "imgurURL": "http://i.imgur.com/mYIruFN.png",
+    "imgurURL": "https://i.imgur.com/mYIruFN.png",
     "": "",
-    "imagePath": "graphs/9a985f5f900d4106912e.jpg"
+    "imagePath": "graphs/9a985f5f900d4106912e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "422",
     "movieName": "Spectre (2015)",
-    "imgurURL": "http://i.imgur.com/32ehg34.jpg",
+    "imgurURL": "https://i.imgur.com/32ehg34.jpg",
     "": "",
-    "imagePath": "graphs/b314e1ad744cd526a167.jpg"
+    "imagePath": "graphs/b314e1ad744cd526a167.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "423",
     "movieName": "Spider-Man: Far from Home (2019) BD",
     "imgurURL": "https://i.imgur.com/OPZ5EzF.png",
     "": "",
-    "imagePath": "graphs/a7687e087fd771a6b3e7.jpg"
+    "imagePath": "graphs/a7687e087fd771a6b3e7.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "424",
     "movieName": "Spider-Man: Far from Home (2019) UHD",
     "imgurURL": "https://i.imgur.com/jQlg9sy.png",
     "": "",
-    "imagePath": "graphs/d75d81df7d421890183a.jpg"
+    "imagePath": "graphs/d75d81df7d421890183a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "425",
     "movieName": "Spider-Man: Homecoming (2017)",
     "imgurURL": "https://i.imgur.com/KwkEYBH.png",
     "": "",
-    "imagePath": "graphs/f32a39f9da7c0a1cbc97.jpg"
+    "imagePath": "graphs/f32a39f9da7c0a1cbc97.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "426",
     "movieName": "Spider-Man: Into the Spider-Verse (2018) BD",
     "imgurURL": "https://i.imgur.com/7MNT6qg.png",
     "": "",
-    "imagePath": "graphs/915948081ee82a29df56.jpg"
+    "imagePath": "graphs/915948081ee82a29df56.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "427",
     "movieName": "Spider-Man: Into the Spider-Verse (2018) UHD",
     "imgurURL": "https://i.imgur.com/aIIkVN1.png",
     "": "",
-    "imagePath": "graphs/6f5a8e6654779d84e798.jpg"
+    "imagePath": "graphs/6f5a8e6654779d84e798.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-c2654762224ba55b",
+    "imagePath": "graphs/cb12cdb79a0c689cd0a2.jpg",
+    "movieName": "Spider-Man: No Way Home (2021) UHD",
+    "imgurURL": "https://i.imgur.com/JNNoNYu.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/JNNoNYu.png"
   },
   {
     "id": "428",
     "movieName": "Split (2016)",
-    "imgurURL": "http://i.imgur.com/XMUsNZM.png",
+    "imgurURL": "https://i.imgur.com/XMUsNZM.png",
     "": "",
-    "imagePath": "graphs/d4595bd5e36c6e880ddf.jpg"
+    "imagePath": "graphs/d4595bd5e36c6e880ddf.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "429",
     "movieName": "Spy (2015)",
-    "imgurURL": "http://i.imgur.com/Q8wYE4D.jpg",
+    "imgurURL": "https://i.imgur.com/Q8wYE4D.jpg",
     "": "",
-    "imagePath": "graphs/3ca60bd98a11d586dca5.jpg"
+    "imagePath": "graphs/3ca60bd98a11d586dca5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "430",
     "movieName": "Starship Troopers: Traitor of Mars (2017)",
     "imgurURL": "https://i.imgur.com/BpZgs6Z.png",
     "": "",
-    "imagePath": "graphs/60b8096eace8cd7298b6.jpg"
+    "imagePath": "graphs/60b8096eace8cd7298b6.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "431",
     "movieName": "Straight Outta Compton (2015)",
     "imgurURL": "https://i.imgur.com/DH2lU1m.png",
     "": "",
-    "imagePath": "graphs/e9eaad8695ce635a888a.jpg"
+    "imagePath": "graphs/e9eaad8695ce635a888a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "432",
     "movieName": "Star Trek (2009)",
     "imgurURL": "https://i.imgur.com/x2DIAt6.png",
     "": "",
-    "imagePath": "graphs/fe4adc6f639d6ce56398.jpg"
+    "imagePath": "graphs/fe4adc6f639d6ce56398.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "433",
     "movieName": "Star Trek Beyond (2016)",
-    "imgurURL": "http://i.imgur.com/Qx5IJ9e.jpg",
+    "imgurURL": "https://i.imgur.com/Qx5IJ9e.jpg",
     "": "",
-    "imagePath": "graphs/5c3b94b53ae4269b9cc8.jpg"
+    "imagePath": "graphs/5c3b94b53ae4269b9cc8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "434",
     "movieName": "Star Trek: Discovery - Season One (2017-2018)",
     "imgurURL": "https://imgur.com/a/GC8Q1B3",
     "": "",
-    "imagePath": null
+    "imagePath": null,
+    "source": "avs-first-post"
   },
   {
     "id": "435",
     "movieName": "Star Trek: Into Darkness (2013)",
     "imgurURL": "https://i.imgur.com/TXWbLEV.png",
     "": "",
-    "imagePath": "graphs/55be01fbc79e11860fdd.jpg"
+    "imagePath": "graphs/55be01fbc79e11860fdd.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "436",
     "movieName": "Star Wars: Episode VII - The Force Awakens (2015)",
     "imgurURL": "https://i.imgur.com/xY9VThg.png",
     "": "",
-    "imagePath": "graphs/f65a01f14f2cf2b99145.jpg"
+    "imagePath": "graphs/f65a01f14f2cf2b99145.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "437",
     "movieName": "Star Wars: Episode VIII - The Last Jedi (2017)",
     "imgurURL": "https://i.imgur.com/MsseA7J.png",
     "": "",
-    "imagePath": "graphs/2dd2ee3cf601572e18c9.jpg"
+    "imagePath": "graphs/2dd2ee3cf601572e18c9.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "438",
     "movieName": "Star Wars: Episode IX - The Rise of Skywalker",
     "imgurURL": "https://i.imgur.com/jQhQAjf.png",
     "": "",
-    "imagePath": "graphs/11d0f99498a1e3d61957.jpg"
+    "imagePath": "graphs/11d0f99498a1e3d61957.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "439",
     "movieName": "Stratton (2016)",
-    "imgurURL": "http://i.imgur.com/8W2hZNp.png",
+    "imgurURL": "https://i.imgur.com/8W2hZNp.png",
     "": "",
-    "imagePath": "graphs/f5232d34c4fb0c00cebb.jpg"
+    "imagePath": "graphs/f5232d34c4fb0c00cebb.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "440",
     "movieName": "Suicide Squad (2016)",
-    "imgurURL": "http://i.imgur.com/mjzKwPh.png",
+    "imgurURL": "https://i.imgur.com/mjzKwPh.png",
     "": "",
-    "imagePath": "graphs/14e6a7c8d605fad13fb6.jpg"
+    "imagePath": "graphs/14e6a7c8d605fad13fb6.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "441",
     "movieName": "Sully (2016)",
     "imgurURL": "https://i.imgur.com/EJ532S5.png",
     "": "",
-    "imagePath": "graphs/7beaf23ead79a5c37e35.jpg"
+    "imagePath": "graphs/7beaf23ead79a5c37e35.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "442",
     "movieName": "Sunshine (2007)",
-    "imgurURL": "http://i.imgur.com/nwgxNuM.png",
+    "imgurURL": "https://i.imgur.com/nwgxNuM.png",
     "": "",
-    "imagePath": "graphs/be9103ad5b21c1983e5d.jpg"
+    "imagePath": "graphs/be9103ad5b21c1983e5d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "443",
     "movieName": "Superfly (2018)",
     "imgurURL": "https://i.imgur.com/qmtTX7l.png",
     "": "",
-    "imagePath": "graphs/29f2ae06634e71bc28eb.jpg"
+    "imagePath": "graphs/29f2ae06634e71bc28eb.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "444",
     "movieName": "Survivor (2015)",
-    "imgurURL": "http://i.imgur.com/QFHBjVF.jpg",
+    "imgurURL": "https://i.imgur.com/QFHBjVF.jpg",
     "": "",
-    "imagePath": "graphs/424c45d71fff112c00a3.jpg"
+    "imagePath": "graphs/424c45d71fff112c00a3.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-0de71d02182ab06f",
+    "imagePath": "graphs/53bd7b9fe520361ee6b0.jpg",
+    "movieName": "Tenet (2020)",
+    "imgurURL": "https://i.imgur.com/lIzXGEO.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/lIzXGEO.png"
   },
   {
     "id": "445",
     "movieName": "T2 Trainspotting (2017)",
-    "imgurURL": "http://i.imgur.com/RiqsV3e.png",
+    "imgurURL": "https://i.imgur.com/RiqsV3e.png",
     "": "",
-    "imagePath": "graphs/a8d349b1700b31a113a1.jpg"
+    "imagePath": "graphs/a8d349b1700b31a113a1.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "446",
     "movieName": "THE MEG (2018)",
     "imgurURL": "https://i.imgur.com/55HjhRO.png",
     "": "",
-    "imagePath": "graphs/f9de22f40535818ed670.jpg"
+    "imagePath": "graphs/f9de22f40535818ed670.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "447",
     "movieName": "THE NUN (2018)",
     "imgurURL": "https://i.imgur.com/U7IxVt8.png",
     "": "",
-    "imagePath": "graphs/68820b3b9840f9cf5679.jpg"
+    "imagePath": "graphs/68820b3b9840f9cf5679.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-5a8190a4f9133918",
+    "imagePath": "graphs/2af9a5035acdeea66567.jpg",
+    "movieName": "TRON LEGACY (2010) UHD DISC",
+    "imgurURL": "https://i.imgur.com/2O5Gl9t.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/2O5Gl9t.png"
   },
   {
     "id": "448",
     "movieName": "TRON Legacy (2010)",
     "imgurURL": "https://i.imgur.com/D2I8l5o.png",
     "": "",
-    "imagePath": "graphs/a98e285e59ba53b6febf.jpg"
+    "imagePath": "graphs/a98e285e59ba53b6febf.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "449",
     "movieName": "Tag (2018)",
     "imgurURL": "https://i.imgur.com/WXCd5xZ.png",
     "": "",
-    "imagePath": "graphs/1a1cf8f286420d7a2607.jpg"
+    "imagePath": "graphs/1a1cf8f286420d7a2607.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "450",
     "movieName": "Take Shelter (2011)",
-    "imgurURL": "http://i.imgur.com/w6Phlse.png",
+    "imgurURL": "https://i.imgur.com/w6Phlse.png",
     "": "",
-    "imagePath": "graphs/d08b18f4e3aadf546d43.jpg"
+    "imagePath": "graphs/d08b18f4e3aadf546d43.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "451",
     "movieName": "Teen Titans: The Judas Contract (2017)",
-    "imgurURL": "http://i.imgur.com/hQ8Ho5Y.png",
+    "imgurURL": "https://i.imgur.com/hQ8Ho5Y.png",
     "": "",
-    "imagePath": "graphs/f905e81c721f5d6f93a2.jpg"
+    "imagePath": "graphs/f905e81c721f5d6f93a2.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "452",
     "movieName": "Teenage Mutant Ninja Turtles (2014)",
     "imgurURL": "https://i.imgur.com/LVnZsTm.png",
     "": "",
-    "imagePath": "graphs/3b123f198637b64cadf9.jpg"
+    "imagePath": "graphs/3b123f198637b64cadf9.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "453",
     "movieName": "Terminal (2018)",
     "imgurURL": "https://i.imgur.com/9gTsJJZ.png",
     "": "",
-    "imagePath": "graphs/0b60de773c7116fb607c.jpg"
+    "imagePath": "graphs/0b60de773c7116fb607c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "454",
     "movieName": "Terminator Genisys (2015)",
-    "imgurURL": "http://i.imgur.com/8ojRobj.jpg",
+    "imgurURL": "https://i.imgur.com/8ojRobj.jpg",
     "": "",
-    "imagePath": "graphs/6ae09bf065031c89c901.jpg"
+    "imagePath": "graphs/6ae09bf065031c89c901.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "455",
     "movieName": "Terminator Salvation (2009)",
-    "imgurURL": "http://i.imgur.com/SkkLL4i.png",
+    "imgurURL": "https://i.imgur.com/SkkLL4i.png",
     "": "",
-    "imagePath": "graphs/e1bcfc723e906f209a44.jpg"
-  },
-  {
-    "id": "456",
-    "movieName": "Time Stamp #1",
-    "imgurURL": "http://i.imgur.com/2ihhc0C.png",
-    "": "",
-    "imagePath": "graphs/dd07414816756627c67f.jpg"
+    "imagePath": "graphs/e1bcfc723e906f209a44.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "457",
     "movieName": "Terminator: Dark Fate (2019)",
     "imgurURL": "https://i.imgur.com/kKLS5CM.png",
     "": "",
-    "imagePath": "graphs/6f0cc674ca1d907835d3.jpg"
+    "imagePath": "graphs/6f0cc674ca1d907835d3.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "458",
     "movieName": "The 33 (2015)",
-    "imgurURL": "http://i.imgur.com/JqoaC0f.jpg",
+    "imgurURL": "https://i.imgur.com/JqoaC0f.jpg",
     "": "",
-    "imagePath": "graphs/8b4620459f5240250d85.jpg"
+    "imagePath": "graphs/8b4620459f5240250d85.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "459",
     "movieName": "The 5th Wave (2016)",
-    "imgurURL": "http://i.imgur.com/1BrqLfg.jpg",
+    "imgurURL": "https://i.imgur.com/1BrqLfg.jpg",
     "": "",
-    "imagePath": "graphs/1eb77c6d5cf1715ea7ed.jpg"
+    "imagePath": "graphs/1eb77c6d5cf1715ea7ed.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "460",
     "movieName": "The Accountant (2016)",
-    "imgurURL": "http://i.imgur.com/Tk4ZK1Y.png",
+    "imgurURL": "https://i.imgur.com/Tk4ZK1Y.png",
     "": "",
-    "imagePath": "graphs/16af658300e0c85eff87.jpg"
+    "imagePath": "graphs/16af658300e0c85eff87.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "461",
     "movieName": "The Age of Shadows (2016)",
-    "imgurURL": "http://i.imgur.com/HXDw0re.png",
+    "imgurURL": "https://i.imgur.com/HXDw0re.png",
     "": "",
-    "imagePath": "graphs/bc1c444aa2a015ccf2c3.jpg"
+    "imagePath": "graphs/bc1c444aa2a015ccf2c3.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "462",
     "movieName": "The Art of Flight (2011)",
-    "imgurURL": "http://i.imgur.com/HyZD5Cb.png",
+    "imgurURL": "https://i.imgur.com/HyZD5Cb.png",
     "": "",
-    "imagePath": "graphs/d594caa1b28546ed34b2.jpg"
+    "imagePath": "graphs/d594caa1b28546ed34b2.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-98f5fbe9015a260b",
+    "imagePath": "graphs/a9c4ad57321bc97f2355.jpg",
+    "movieName": "The Batman (2022)",
+    "imgurURL": "https://i.imgur.com/1Vhl3Ez.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/1Vhl3Ez.png"
   },
   {
     "id": "463",
     "movieName": "The BFG (2016)",
-    "imgurURL": "http://i.imgur.com/3G4oAco.png",
+    "imgurURL": "https://i.imgur.com/3G4oAco.png",
     "": "",
-    "imagePath": "graphs/8f23af69e0911c7123de.jpg"
+    "imagePath": "graphs/8f23af69e0911c7123de.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "464",
     "movieName": "The Big Lebowski (1998) UHD",
     "imgurURL": "https://i.imgur.com/g421rh6.png",
     "": "",
-    "imagePath": "graphs/31e45ffdea687595591d.jpg"
+    "imagePath": "graphs/31e45ffdea687595591d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "465",
     "movieName": "The Boy (2016)",
-    "imgurURL": "http://i.imgur.com/Y1zZi7y.jpg",
+    "imgurURL": "https://i.imgur.com/Y1zZi7y.jpg",
     "": "",
-    "imagePath": "graphs/d9b650178fc7c2578ea9.jpg"
+    "imagePath": "graphs/d9b650178fc7c2578ea9.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "466",
     "movieName": "The Burning Dead (2015)",
-    "imgurURL": "http://i.imgur.com/8GrBhHI.jpg",
+    "imgurURL": "https://i.imgur.com/8GrBhHI.jpg",
     "": "",
-    "imagePath": "graphs/c2a80c96dc1952a640f7.jpg"
+    "imagePath": "graphs/c2a80c96dc1952a640f7.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "467",
     "movieName": "The Bye Bye Man (2017)",
-    "imgurURL": "http://i.imgur.com/akHjOCJ.png",
+    "imgurURL": "https://i.imgur.com/akHjOCJ.png",
     "": "",
-    "imagePath": "graphs/a5898486cccc68055b01.jpg"
+    "imagePath": "graphs/a5898486cccc68055b01.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "468",
     "movieName": "The Cloverfield Paradox (2018)",
     "imgurURL": "https://i.imgur.com/o5KeLsM.png",
     "": "",
-    "imagePath": "graphs/cfe98c3469ff36b74444.jpg"
+    "imagePath": "graphs/cfe98c3469ff36b74444.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "469",
     "movieName": "The Commuter (2018)",
     "imgurURL": "https://i.imgur.com/mmmrJPt.png",
     "": "",
-    "imagePath": "graphs/0216258f50091b832132.jpg"
+    "imagePath": "graphs/0216258f50091b832132.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "470",
     "movieName": "The Conjuring (2013)",
     "imgurURL": "https://i.imgur.com/jaymdCd.png",
     "": "",
-    "imagePath": "graphs/ad3f6cc00d2976eb418f.jpg"
+    "imagePath": "graphs/ad3f6cc00d2976eb418f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "471",
     "movieName": "The Conjuring 2 (2016)",
     "imgurURL": "https://i.imgur.com/GtoIyOv.png",
     "": "",
-    "imagePath": "graphs/259ec5204aa993616eb7.jpg"
+    "imagePath": "graphs/259ec5204aa993616eb7.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "472",
     "movieName": "The Dark Knight (2008)",
     "imgurURL": "https://i.imgur.com/QWU7COK.png",
     "": "",
-    "imagePath": "graphs/c1a23f964e695207144f.jpg"
+    "imagePath": "graphs/c1a23f964e695207144f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "473",
     "movieName": "The Dark Tower (2017)",
     "imgurURL": "https://i.imgur.com/eHc01VQ.png",
     "": "",
-    "imagePath": "graphs/c88885678b39ceb9229d.jpg"
+    "imagePath": "graphs/c88885678b39ceb9229d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "474",
     "movieName": "The Darkest Minds (2018)",
     "imgurURL": "https://i.imgur.com/gUjFsa3.png",
     "": "",
-    "imagePath": "graphs/11872c480f6a700fae35.jpg"
+    "imagePath": "graphs/11872c480f6a700fae35.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "475",
     "movieName": "The Darkest Minds (2018)",
     "imgurURL": "https://i.imgur.com/6cI8BlD.png",
     "": "",
-    "imagePath": "graphs/4d93c23458e4dbe164b0.jpg"
+    "imagePath": "graphs/4d93c23458e4dbe164b0.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "476",
     "movieName": "The Day the Earth Stood Still (2008)",
     "imgurURL": "https://i.imgur.com/FA4mGJR.png",
     "": "",
-    "imagePath": "graphs/8cc10fe4717b8a4062c9.jpg"
+    "imagePath": "graphs/8cc10fe4717b8a4062c9.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "477",
     "movieName": "The Endless (2017)",
     "imgurURL": "https://i.imgur.com/S50wcFi.png",
     "": "",
-    "imagePath": "graphs/b65bbde6867c31b437e2.jpg"
+    "imagePath": "graphs/b65bbde6867c31b437e2.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "478",
     "movieName": "The Equalizer (2014)",
     "imgurURL": "https://i.imgur.com/9p7CzKF.png",
     "": "",
-    "imagePath": "graphs/35dfc42a9b0211eb2808.jpg"
+    "imagePath": "graphs/35dfc42a9b0211eb2808.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "479",
     "movieName": "The Equalizer 2 (2018)",
     "imgurURL": "https://i.imgur.com/BQvxIrL.png",
     "": "",
-    "imagePath": "graphs/a2c6102831977f5ab67b.jpg"
+    "imagePath": "graphs/a2c6102831977f5ab67b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "480",
     "movieName": "The Equalizer 2 (2018) UHD",
     "imgurURL": "https://i.imgur.com/JQhXmnN.png",
     "": "",
-    "imagePath": "graphs/30161953ea043858bdad.jpg"
+    "imagePath": "graphs/30161953ea043858bdad.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "481",
     "movieName": "The Exorcism of Emily Rose (2005)",
-    "imgurURL": "http://i.imgur.com/6UqUftC.png",
+    "imgurURL": "https://i.imgur.com/6UqUftC.png",
     "": "",
-    "imagePath": "graphs/ea0cf38cae218578edcf.jpg"
+    "imagePath": "graphs/ea0cf38cae218578edcf.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "482",
     "movieName": "The Fast and the Furious (2001)",
     "imgurURL": "https://i.imgur.com/D3OrL1u.png",
     "": "",
-    "imagePath": "graphs/cef2152c9d83c3e3f919.jpg"
+    "imagePath": "graphs/cef2152c9d83c3e3f919.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "483",
     "movieName": "The Fast and the Furious (2001) UHD",
     "imgurURL": "https://i.imgur.com/ZXdIE8M.png",
     "": "",
-    "imagePath": "graphs/7d70e50862567498bda0.jpg"
+    "imagePath": "graphs/7d70e50862567498bda0.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "484",
     "movieName": "The Fast and the Furious: Tokyo Drift (2006)",
     "imgurURL": "https://i.imgur.com/TLtdyC1.png",
     "": "",
-    "imagePath": "graphs/67040dd3b0c852c03a99.jpg"
+    "imagePath": "graphs/67040dd3b0c852c03a99.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "485",
     "movieName": "The Fast and the Furious: Tokyo Drift (2006) UHD",
     "imgurURL": "https://i.imgur.com/DkO04Ky.png",
     "": "",
-    "imagePath": "graphs/103c5b9537e1afed1d35.jpg"
+    "imagePath": "graphs/103c5b9537e1afed1d35.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "486",
     "movieName": "The Fate of the Furious (2017)",
-    "imgurURL": "http://i.imgur.com/GoBarD0.png",
+    "imgurURL": "https://i.imgur.com/GoBarD0.png",
     "": "",
-    "imagePath": "graphs/72eb50cb1a7a28f5a00d.jpg"
+    "imagePath": "graphs/72eb50cb1a7a28f5a00d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "487",
     "movieName": "The Fifth Element (1997)",
-    "imgurURL": "http://i.imgur.com/zCtLaGj.png",
+    "imgurURL": "https://i.imgur.com/zCtLaGj.png",
     "": "",
-    "imagePath": "graphs/1ce543fed850919aa440.jpg"
+    "imagePath": "graphs/1ce543fed850919aa440.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "488",
     "movieName": "The Finest Hours (2016)",
-    "imgurURL": "http://i.imgur.com/dmCFAvh.jpg",
+    "imgurURL": "https://i.imgur.com/dmCFAvh.jpg",
     "": "",
-    "imagePath": "graphs/979d5a9420c4831346a2.jpg"
+    "imagePath": "graphs/979d5a9420c4831346a2.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "489",
     "movieName": "The First Purge (2018)",
     "imgurURL": "https://i.imgur.com/0gZT1Fd.png",
     "": "",
-    "imagePath": "graphs/56774c0df02201353739.jpg"
+    "imagePath": "graphs/56774c0df02201353739.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "490",
     "movieName": "The Foreigner (2017)",
     "imgurURL": "https://i.imgur.com/y8t93DC.png",
     "": "",
-    "imagePath": "graphs/7d9eb6296b615b47cfd8.jpg"
+    "imagePath": "graphs/7d9eb6296b615b47cfd8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "491",
     "movieName": "The Fourth Kind (2009)",
-    "imgurURL": "http://i.imgur.com/FvDLd9h.png",
+    "imgurURL": "https://i.imgur.com/FvDLd9h.png",
     "": "",
-    "imagePath": "graphs/b1e8ad0bccbf72525fe3.jpg"
+    "imagePath": "graphs/b1e8ad0bccbf72525fe3.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "492",
     "movieName": "The Girl Who Leapt Through Time (2006)",
     "imgurURL": "https://i.imgur.com/anugAXQ.png",
     "": "",
-    "imagePath": "graphs/76a706fb53d7ec0febbd.jpg"
+    "imagePath": "graphs/76a706fb53d7ec0febbd.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "493",
     "movieName": "The Girl in the Spider's Web (2018)",
     "imgurURL": "https://i.imgur.com/cfDuqjt.png",
     "": "",
-    "imagePath": "graphs/3e652dcf2add8593d63f.jpg"
+    "imagePath": "graphs/3e652dcf2add8593d63f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "494",
     "movieName": "The Girl in the Spider's Web (2018) UHD",
     "imgurURL": "https://i.imgur.com/M93wgD8.png",
     "": "",
-    "imagePath": "graphs/bca8d16c6faac0170110.jpg"
+    "imagePath": "graphs/bca8d16c6faac0170110.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "495",
     "movieName": "The Girl with All the Gifts (2016)",
-    "imgurURL": "http://i.imgur.com/FV9OiAx.png",
+    "imgurURL": "https://i.imgur.com/FV9OiAx.png",
     "": "",
-    "imagePath": "graphs/98b702cf6742a40f0210.jpg"
+    "imagePath": "graphs/98b702cf6742a40f0210.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "496",
     "movieName": "The Good, the Bad, the Weird (2008)",
-    "imgurURL": "http://i.imgur.com/ZHjktv2.png",
+    "imgurURL": "https://i.imgur.com/ZHjktv2.png",
     "": "http://i.imgur.com/ZHjktv2.png",
     "imagePath": "graphs/d98fd29c5bf85a43f046.jpg",
-    "cachedSourceURL": "https://i.imgur.com/ZHjktv2.png"
+    "cachedSourceURL": "https://i.imgur.com/ZHjktv2.png",
+    "source": "avs-first-post"
   },
   {
     "id": "497",
     "movieName": "The Good Dinosaur (2015)",
-    "imgurURL": "http://i.imgur.com/9ezE8nW.jpg",
+    "imgurURL": "https://i.imgur.com/9ezE8nW.jpg",
     "": "",
-    "imagePath": "graphs/cf73993c59ce2249b4d8.jpg"
+    "imagePath": "graphs/cf73993c59ce2249b4d8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "498",
     "movieName": "The Great Wall (2016)",
-    "imgurURL": "http://i.imgur.com/whyxATn.png",
+    "imgurURL": "https://i.imgur.com/whyxATn.png",
     "": "",
-    "imagePath": "graphs/58a72b5cf88086a64660.jpg"
+    "imagePath": "graphs/58a72b5cf88086a64660.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "499",
     "movieName": "The Greatest Showman (2017)",
     "imgurURL": "https://i.imgur.com/B4k73Ju.png",
     "": "",
-    "imagePath": "graphs/9a2fd47ae058020dd870.jpg"
+    "imagePath": "graphs/9a2fd47ae058020dd870.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "500",
     "movieName": "The Hateful Eight (2015)",
-    "imgurURL": "http://i.imgur.com/9nidPrJ.jpg",
+    "imgurURL": "https://i.imgur.com/9nidPrJ.jpg",
     "": "",
-    "imagePath": "graphs/65f0575568543f753d55.jpg"
+    "imagePath": "graphs/65f0575568543f753d55.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "501",
     "movieName": "The Haunting (1999)",
-    "imgurURL": "http://i.imgur.com/F0WgBT4.png",
+    "imgurURL": "https://i.imgur.com/F0WgBT4.png",
     "": "",
-    "imagePath": "graphs/39cebc8e23f5c279d0d0.jpg"
+    "imagePath": "graphs/39cebc8e23f5c279d0d0.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "502",
     "movieName": "The Hurt Locker (2008) UHD",
     "imgurURL": "https://i.imgur.com/Khr7kfK.png",
     "": "",
-    "imagePath": "graphs/c0994a69ca87b4fc054e.jpg"
+    "imagePath": "graphs/c0994a69ca87b4fc054e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "503",
     "movieName": "The Hitman's Bodyguard (2017)",
     "imgurURL": "https://i.imgur.com/soWVYUk.png",
     "": "",
-    "imagePath": "graphs/4b9479059f6e0d306929.jpg"
+    "imagePath": "graphs/4b9479059f6e0d306929.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "504",
     "movieName": "The House of Magic (2013)",
-    "imgurURL": "http://i.imgur.com/SEL3jOP.png",
+    "imgurURL": "https://i.imgur.com/SEL3jOP.png",
     "": "",
-    "imagePath": "graphs/5a19338c546530d626f5.jpg"
+    "imagePath": "graphs/5a19338c546530d626f5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "505",
     "movieName": "The House with a Clock in Its Walls (2018)",
     "imgurURL": "https://i.imgur.com/WudrHNd.png",
     "": "",
-    "imagePath": "graphs/46131c5c0950907be6b2.jpg"
+    "imagePath": "graphs/46131c5c0950907be6b2.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "506",
     "movieName": "The Hunger Games: Mockingjay - Part 2 (2015)",
-    "imgurURL": "http://i.imgur.com/bmO9nrV.jpg",
+    "imgurURL": "https://i.imgur.com/bmO9nrV.jpg",
     "": "",
-    "imagePath": "graphs/6bc4e594c4dc40a04f79.jpg"
+    "imagePath": "graphs/6bc4e594c4dc40a04f79.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "507",
     "movieName": "he Hunter's Prayer (2017)",
-    "imgurURL": "http://i.imgur.com/mgAQtg5.png",
+    "imgurURL": "https://i.imgur.com/mgAQtg5.png",
     "": "",
-    "imagePath": "graphs/c0728f961dbae1b9b9ca.jpg"
+    "imagePath": "graphs/c0728f961dbae1b9b9ca.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "508",
     "movieName": "The Hurricane Heist (2018)",
     "imgurURL": "https://i.imgur.com/aERjZvz.png",
     "": "",
-    "imagePath": "graphs/a4714505e1e6ae3972d8.jpg"
+    "imagePath": "graphs/a4714505e1e6ae3972d8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "509",
     "movieName": "The Incredible Hulk (2008)",
     "imgurURL": "https://i.imgur.com/KZiCXu8.png",
     "": "",
-    "imagePath": "graphs/7f5329ebfb0cde81d9b9.jpg"
+    "imagePath": "graphs/7f5329ebfb0cde81d9b9.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "510",
     "movieName": "The Incredibles (2004)",
     "imgurURL": "https://i.imgur.com/Yaii8xG.png",
     "": "",
-    "imagePath": "graphs/6693b13523f0a855301f.jpg"
+    "imagePath": "graphs/6693b13523f0a855301f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "511",
     "movieName": "The Institute (2017)",
-    "imgurURL": "http://i.imgur.com/53mvPZl.png",
+    "imgurURL": "https://i.imgur.com/53mvPZl.png",
     "": "",
-    "imagePath": "graphs/94efe8f8a1e695a5ad44.jpg"
+    "imagePath": "graphs/94efe8f8a1e695a5ad44.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "512",
     "movieName": "The Jungle Book (2016)",
-    "imgurURL": "http://i.imgur.com/mXgHUQn.png",
+    "imgurURL": "https://i.imgur.com/mXgHUQn.png",
     "": "",
-    "imagePath": "graphs/85fbbaacd5cc0ac4d931.jpg"
+    "imagePath": "graphs/85fbbaacd5cc0ac4d931.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "513",
     "movieName": "The Kid Who Would Be King (2019) UHD",
     "imgurURL": "https://i.imgur.com/2suvysS.png",
     "": "",
-    "imagePath": "graphs/df0c4c9864c781705639.jpg"
+    "imagePath": "graphs/df0c4c9864c781705639.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "514",
     "movieName": "The King's Man (2021) UHD",
     "imgurURL": "https://i.imgur.com/lDQuqlj.png",
     "": "",
-    "imagePath": "graphs/8c761f5b37e249167c2f.jpg"
+    "imagePath": "graphs/8c761f5b37e249167c2f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "515",
     "movieName": "The Last Witch Hunter (2015)",
-    "imgurURL": "http://i.imgur.com/JDqYCRA.jpg",
+    "imgurURL": "https://i.imgur.com/JDqYCRA.jpg",
     "": "",
-    "imagePath": "graphs/e2748d7f298744fc84a5.jpg"
+    "imagePath": "graphs/e2748d7f298744fc84a5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "516",
     "movieName": "The Lion King (1994) UHD",
     "imgurURL": "https://i.imgur.com/S1dKn6y.png",
     "": "",
-    "imagePath": "graphs/6df8d869837a910d9ee0.jpg"
+    "imagePath": "graphs/6df8d869837a910d9ee0.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "517",
     "movieName": "The LEGO Batman Movie (2017)",
-    "imgurURL": "http://i.imgur.com/vE31lvS.png",
+    "imgurURL": "https://i.imgur.com/vE31lvS.png",
     "": "",
-    "imagePath": "graphs/c20526e6534f4d678179.jpg"
+    "imagePath": "graphs/c20526e6534f4d678179.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "518",
     "movieName": "The LEGO Movie 2: The Second Part (2019) UHD",
     "imgurURL": "https://i.imgur.com/HttPgrD.png",
     "": "",
-    "imagePath": "graphs/acf8f599451423e09fb7.jpg"
+    "imagePath": "graphs/acf8f599451423e09fb7.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "519",
     "movieName": "The Lone Ranger (2013)",
-    "imgurURL": "http://i.imgur.com/cC61Y2h.png",
+    "imgurURL": "https://i.imgur.com/cC61Y2h.png",
     "": "",
-    "imagePath": "graphs/aabdc434e961a9f10880.jpg"
+    "imagePath": "graphs/aabdc434e961a9f10880.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "520",
     "movieName": "The Lost City of Z (2016)",
-    "imgurURL": "http://i.imgur.com/4FNUvHN.png",
+    "imgurURL": "https://i.imgur.com/4FNUvHN.png",
     "": "",
-    "imagePath": "graphs/9a0fecfa2a746946866b.jpg"
+    "imagePath": "graphs/9a0fecfa2a746946866b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "521",
     "movieName": "The Lost World: Jurassic Park (1997)",
-    "imgurURL": "http://i.imgur.com/78rjQRv.png",
+    "imgurURL": "https://i.imgur.com/78rjQRv.png",
     "": "",
-    "imagePath": "graphs/b7d156bce1701e113223.jpg"
+    "imagePath": "graphs/b7d156bce1701e113223.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "522",
     "movieName": "The Magnificent Seven (2016)",
-    "imgurURL": "http://i.imgur.com/zMMjXq6.png",
+    "imgurURL": "https://i.imgur.com/zMMjXq6.png",
     "": "",
-    "imagePath": "graphs/a32c83b8ef9bf401ef0a.jpg"
+    "imagePath": "graphs/a32c83b8ef9bf401ef0a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "523",
     "movieName": "The Martian (2015)",
-    "imgurURL": "http://i.imgur.com/86OyRBL.jpg",
+    "imgurURL": "https://i.imgur.com/86OyRBL.jpg",
     "": "",
-    "imagePath": "graphs/16bf4d73924e6028b259.jpg"
+    "imagePath": "graphs/16bf4d73924e6028b259.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "524",
     "movieName": "The Matador (2005)",
-    "imgurURL": "http://i.imgur.com/99cpbJc.jpg",
+    "imgurURL": "https://i.imgur.com/99cpbJc.jpg",
     "": "",
-    "imagePath": "graphs/06228bd5f2ab7f9ff3d4.jpg"
+    "imagePath": "graphs/06228bd5f2ab7f9ff3d4.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "525",
     "movieName": "The Matrix (1999) UHD",
     "imgurURL": "https://i.imgur.com/Gzxlcei.png",
     "": "",
-    "imagePath": "graphs/95d71ef839b156ee6676.jpg"
+    "imagePath": "graphs/95d71ef839b156ee6676.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "526",
     "movieName": "The Matrix Reloaded (2003)",
     "imgurURL": "https://i.imgur.com/4xpcSYi.png",
     "": "",
-    "imagePath": "graphs/d76e77f4f00f4d32f483.jpg"
+    "imagePath": "graphs/d76e77f4f00f4d32f483.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "527",
     "movieName": "The Matrix Resurrections (2021)",
     "imgurURL": "https://i.imgur.com/hIjw5A3.png",
     "": "",
-    "imagePath": "graphs/62064c70057cc92b3ec3.jpg"
+    "imagePath": "graphs/62064c70057cc92b3ec3.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "528",
     "movieName": "The Matrix Revolutions (2003)",
     "imgurURL": "https://i.imgur.com/XFw3y6k.png",
     "": "",
-    "imagePath": "graphs/6dd44de72d21029669dd.jpg"
+    "imagePath": "graphs/6dd44de72d21029669dd.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "529",
     "movieName": "The Mist (2007)",
-    "imgurURL": "http://i.imgur.com/x65oFXa.jpg",
+    "imgurURL": "https://i.imgur.com/x65oFXa.jpg",
     "": "",
-    "imagePath": "graphs/ce47d31df4f22c90593a.jpg"
+    "imagePath": "graphs/ce47d31df4f22c90593a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "530",
     "movieName": "The Monster (2016)",
-    "imgurURL": "http://i.imgur.com/16RS9cx.png",
+    "imgurURL": "https://i.imgur.com/16RS9cx.png",
     "": "",
-    "imagePath": "graphs/66124628fc3a565ed1ae.jpg"
+    "imagePath": "graphs/66124628fc3a565ed1ae.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "531",
     "movieName": "The Mule (2018)",
     "imgurURL": "https://i.imgur.com/jq1G76F.png",
     "": "",
-    "imagePath": "graphs/d928134fb9569e46919e.jpg"
+    "imagePath": "graphs/d928134fb9569e46919e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "532",
     "movieName": "The Mummy (2017)",
     "imgurURL": "https://i.imgur.com/kSOwrrz.png",
     "": "",
-    "imagePath": "graphs/4515df25b2d0d920ae37.jpg"
+    "imagePath": "graphs/4515df25b2d0d920ae37.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "533",
     "movieName": "The Nutcracker and the Four Realms (2018) UHD",
     "imgurURL": "https://i.imgur.com/w0ptjDw.png",
     "": "",
-    "imagePath": "graphs/3157c873ffcf84e8ccde.jpg"
+    "imagePath": "graphs/3157c873ffcf84e8ccde.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "534",
     "movieName": "The Peanuts Movie (2015)",
-    "imgurURL": "http://i.imgur.com/8L8O3rH.jpg",
+    "imgurURL": "https://i.imgur.com/8L8O3rH.jpg",
     "": "",
-    "imagePath": "graphs/c54301c00a3251b7b4c8.jpg"
+    "imagePath": "graphs/c54301c00a3251b7b4c8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "535",
     "movieName": "The Place Beyond the Pines (2012)",
     "imgurURL": "https://i.imgur.com/rfu5T2I.png",
     "": "",
-    "imagePath": "graphs/7d721f4367fd6ca9b443.jpg"
+    "imagePath": "graphs/7d721f4367fd6ca9b443.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "536",
     "movieName": "The Predator (2018)",
     "imgurURL": "https://i.imgur.com/mpJi0RN.png",
     "": "",
-    "imagePath": "graphs/66a8cf4310b20e971543.jpg"
+    "imagePath": "graphs/66a8cf4310b20e971543.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "537",
     "movieName": "The Predator (2018) UHD",
     "imgurURL": "https://i.imgur.com/cfai2jJ.png",
     "": "",
-    "imagePath": "graphs/232a9bc40e45aff766d3.jpg"
+    "imagePath": "graphs/232a9bc40e45aff766d3.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "538",
     "movieName": "The Punisher (2004) UHD",
     "imgurURL": "https://i.imgur.com/wyYZRhM.png",
     "": "",
-    "imagePath": "graphs/8c621f0a81350daddaeb.jpg"
+    "imagePath": "graphs/8c621f0a81350daddaeb.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "539",
     "movieName": "The Purge (2013)",
     "imgurURL": "https://i.imgur.com/A2iKt06.jpg",
     "": "",
-    "imagePath": "graphs/dce6e1dac3c2a177506d.jpg"
+    "imagePath": "graphs/dce6e1dac3c2a177506d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "540",
     "movieName": "The Purge Anarchy (2014)",
     "imgurURL": "https://i.imgur.com/1ho5VPS.jpg",
     "": "",
-    "imagePath": "graphs/ce30b721672cd1ed6a73.jpg"
+    "imagePath": "graphs/ce30b721672cd1ed6a73.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "541",
     "movieName": "The Purge Election Year (2016)",
     "imgurURL": "https://i.imgur.com/SJYQK6a.jpg",
     "": "",
-    "imagePath": "graphs/aa6bcced896bb88e4036.jpg"
+    "imagePath": "graphs/aa6bcced896bb88e4036.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "542",
     "movieName": "The Quake (2018)",
     "imgurURL": "https://i.imgur.com/EFjMl7g.png",
     "": "",
-    "imagePath": "graphs/89aabb8373412ec29d64.jpg"
+    "imagePath": "graphs/89aabb8373412ec29d64.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "543",
     "movieName": "The Revenant (2015)",
-    "imgurURL": "http://i.imgur.com/8JaUvNn.jpg",
+    "imgurURL": "https://i.imgur.com/8JaUvNn.jpg",
     "": "",
-    "imagePath": "graphs/70230f77862c351b0616.jpg"
+    "imagePath": "graphs/70230f77862c351b0616.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "544",
     "movieName": "The Road (2009)",
     "imgurURL": "https://i.imgur.com/YYVOdS1.jpg",
     "": "",
-    "imagePath": "graphs/f4be01d327cbb6a04aba.jpg"
+    "imagePath": "graphs/f4be01d327cbb6a04aba.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "545",
     "movieName": "The Runner (2015)",
-    "imgurURL": "http://i.imgur.com/qmouZiJ.jpg",
+    "imgurURL": "https://i.imgur.com/qmouZiJ.jpg",
     "": "",
-    "imagePath": "graphs/94183e941c894d7540c1.jpg"
+    "imagePath": "graphs/94183e941c894d7540c1.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "546",
     "movieName": "The Secret Life of Pets (2016)",
-    "imgurURL": "http://i.imgur.com/nJU0aDb.png",
+    "imgurURL": "https://i.imgur.com/nJU0aDb.png",
     "": "",
-    "imagePath": "graphs/8ba9d7506f8cc0b05fff.jpg"
+    "imagePath": "graphs/8ba9d7506f8cc0b05fff.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-4608fb1b0c7fbc5f",
+    "imagePath": "graphs/913c36647310e415c387.jpg",
+    "movieName": "The Super Mario Bros Movie (2023)",
+    "imgurURL": "https://i.imgur.com/6v2fM0L.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/6v2fM0L.png"
   },
   {
     "id": "547",
     "movieName": "The Shallows (2016)",
     "imgurURL": "https://i.imgur.com/CGtfkQg.png",
     "": "",
-    "imagePath": "graphs/8d05c318e3e2667613c5.jpg"
+    "imagePath": "graphs/8d05c318e3e2667613c5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "548",
     "movieName": "The Thing (2011)",
     "imgurURL": "https://i.imgur.com/Cot2dmF.png",
     "": "",
-    "imagePath": "graphs/bc341033e373d7704920.jpg"
+    "imagePath": "graphs/bc341033e373d7704920.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "549",
     "movieName": "The Thousand Faces of Dunjia (2017)",
     "imgurURL": "https://i.imgur.com/aVYJIch.png",
     "": "",
-    "imagePath": "graphs/0449ec230d621d74390f.jpg"
+    "imagePath": "graphs/0449ec230d621d74390f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "550",
     "movieName": "The Titan (2018)",
     "imgurURL": "https://i.imgur.com/7nrDjjn.png",
     "": "",
-    "imagePath": "graphs/4d127214f233458c3b22.jpg"
+    "imagePath": "graphs/4d127214f233458c3b22.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "551",
     "movieName": "The Town (2010)",
-    "imgurURL": "http://i.imgur.com/2R3Y4U1.png",
+    "imgurURL": "https://i.imgur.com/2R3Y4U1.png",
     "": "",
-    "imagePath": "graphs/825c186b25e37e6823cd.jpg"
+    "imagePath": "graphs/825c186b25e37e6823cd.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "552",
     "movieName": "The Town (2010) UHD",
     "imgurURL": "https://i.imgur.com/R0yAsCs.png",
     "": "",
-    "imagePath": "graphs/3970b0fba1d4fbd62f71.jpg"
+    "imagePath": "graphs/3970b0fba1d4fbd62f71.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "553",
     "movieName": "The Transporter Refueled (2015)",
-    "imgurURL": "http://i.imgur.com/D8miEX2.jpg",
+    "imgurURL": "https://i.imgur.com/D8miEX2.jpg",
     "": "",
-    "imagePath": "graphs/cd8cafbf539efe0b496f.jpg"
+    "imagePath": "graphs/cd8cafbf539efe0b496f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "554",
     "movieName": "The Villainess (2017)",
     "imgurURL": "https://i.imgur.com/Y4AgRU9.png",
     "": "",
-    "imagePath": "graphs/e140f992c17c11bb0546.jpg"
+    "imagePath": "graphs/e140f992c17c11bb0546.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "555",
     "movieName": "The Wave (2015)",
     "imgurURL": "https://i.imgur.com/4qR0BiR.png",
     "": "",
-    "imagePath": "graphs/7f7b110f1a9a82453c41.jpg"
+    "imagePath": "graphs/7f7b110f1a9a82453c41.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "556",
     "movieName": "The Witch: Part 1 - The Subversion (2018)",
     "imgurURL": "https://i.imgur.com/jHavw0y.png",
     "": "",
-    "imagePath": "graphs/d882471ce2e27b0aab67.jpg"
+    "imagePath": "graphs/d882471ce2e27b0aab67.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "557",
     "movieName": "The Wolverine (2013)",
-    "imgurURL": "http://i.imgur.com/H5iNla4.png",
+    "imgurURL": "https://i.imgur.com/H5iNla4.png",
     "": "",
-    "imagePath": "graphs/9802002e101243c8cc18.jpg"
+    "imagePath": "graphs/9802002e101243c8cc18.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "558",
     "movieName": "The World's End (2013)",
-    "imgurURL": "http://i.imgur.com/39EZ0JJ.png",
+    "imgurURL": "https://i.imgur.com/39EZ0JJ.png",
     "": "",
-    "imagePath": "graphs/bc1d2b1101b1a77656fa.jpg"
+    "imagePath": "graphs/bc1d2b1101b1a77656fa.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "559",
     "movieName": "Thor: Ragnarok (2017)",
     "imgurURL": "https://i.imgur.com/jtURG2I.png",
     "": "",
-    "imagePath": "graphs/5a7a6fd39cb8245d38b8.jpg"
+    "imagePath": "graphs/5a7a6fd39cb8245d38b8.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "560",
     "movieName": "Thor: The Dark World (2013)",
-    "imgurURL": "http://i.imgur.com/wjr8dXT.jpg",
+    "imgurURL": "https://i.imgur.com/wjr8dXT.jpg",
     "": "",
-    "imagePath": "graphs/9b6d2678463b215076e4.jpg"
+    "imagePath": "graphs/9b6d2678463b215076e4.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "561",
     "movieName": "Titan A.E. (2000)",
-    "imgurURL": "http://i.imgur.com/oCBJh7s.png",
+    "imgurURL": "https://i.imgur.com/oCBJh7s.png",
     "": "",
-    "imagePath": "graphs/c82e8dfec3127183db6f.jpg"
+    "imagePath": "graphs/c82e8dfec3127183db6f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "562",
     "movieName": "Tom Clancy's Without Remorse (2021)",
     "imgurURL": "https://i.imgur.com/yvol3w4.png",
     "": "",
-    "imagePath": "graphs/014567af375ab0f84f1e.jpg"
+    "imagePath": "graphs/014567af375ab0f84f1e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "563",
     "movieName": "Tomb Raider (2018)",
     "imgurURL": "https://i.imgur.com/ui6JIy5.png",
     "": "",
-    "imagePath": "graphs/53c8c339cbd6eef087cb.jpg"
+    "imagePath": "graphs/53c8c339cbd6eef087cb.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "564",
     "movieName": "Tomorrowland (2015)",
     "imgurURL": "https://i.imgur.com/LFEkrpr.png",
     "": "",
-    "imagePath": "graphs/7e2ab2bc0ede3676ce9a.jpg"
+    "imagePath": "graphs/7e2ab2bc0ede3676ce9a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "565",
     "movieName": "Top Gun (1986)",
     "imgurURL": "https://i.imgur.com/k6n90Mb.png",
     "": "",
-    "imagePath": "graphs/c9300352619d0804a15b.jpg"
+    "imagePath": "graphs/c9300352619d0804a15b.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-cc0335703b286d90",
+    "imagePath": "graphs/a497ff69999ce9df5b38.jpg",
+    "movieName": "Top Gun: Maverick (2022)",
+    "imgurURL": "https://i.imgur.com/OwEOFgf.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/OwEOFgf.png"
   },
   {
     "id": "566",
     "movieName": "Total Recall (2012)",
     "imgurURL": "https://i.imgur.com/OwDmHvG.png",
     "": "",
-    "imagePath": "graphs/b53c9da0f94ed92a70cc.jpg"
+    "imagePath": "graphs/b53c9da0f94ed92a70cc.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "567",
     "movieName": "Train To Busan (2016)",
     "imgurURL": "https://i.imgur.com/SdDvsMM.png",
     "": "",
-    "imagePath": "graphs/e7ce1d85bf590e07e069.jpg"
+    "imagePath": "graphs/e7ce1d85bf590e07e069.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "568",
     "movieName": "Trance (2013)",
-    "imgurURL": "http://i.imgur.com/vmur01c.png",
+    "imgurURL": "https://i.imgur.com/vmur01c.png",
     "": "",
-    "imagePath": "graphs/a892fc4b4c28eef2419c.jpg"
+    "imagePath": "graphs/a892fc4b4c28eef2419c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "569",
     "movieName": "Transformers: Age of Extinction (2014) UHD",
     "imgurURL": "https://i.imgur.com/wg0eUhp.png",
     "": "",
-    "imagePath": "graphs/7e15a9eb02ba544e121b.jpg"
+    "imagePath": "graphs/7e15a9eb02ba544e121b.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "570",
     "movieName": "Transformers: Dark of the Moon (2011) UHD",
     "imgurURL": "https://i.imgur.com/qwKkBav.png",
     "": "",
-    "imagePath": "graphs/dbc1ff3db98ba29053bb.jpg"
+    "imagePath": "graphs/dbc1ff3db98ba29053bb.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "571",
     "movieName": "Transformers: Revenge of the Fallen (2009) UHD",
     "imgurURL": "https://i.imgur.com/nzp6JTF.png",
     "": "",
-    "imagePath": "graphs/3366e5b6b27ee261499a.jpg"
+    "imagePath": "graphs/3366e5b6b27ee261499a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "572",
     "movieName": "Transformers: The Last Knight (2017) UHD",
     "imgurURL": "https://i.imgur.com/7VTzy76.png",
     "": "",
-    "imagePath": "graphs/1acd59e2f5363d7061b1.jpg"
+    "imagePath": "graphs/1acd59e2f5363d7061b1.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "573",
     "movieName": "Transporter 3 (2008)",
     "imgurURL": "https://i.imgur.com/aFwGjPF.png",
     "": "",
-    "imagePath": "graphs/88663f434b76f6206111.jpg"
+    "imagePath": "graphs/88663f434b76f6206111.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "574",
     "movieName": "Transformers (2007) UHD",
     "imgurURL": "https://i.imgur.com/mIbQsbf.png",
     "": "",
-    "imagePath": "graphs/3ad25cb3322fa59c3452.jpg"
+    "imagePath": "graphs/3ad25cb3322fa59c3452.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "575",
     "movieName": "Tremors 5: Bloodlines (2015)",
-    "imgurURL": "http://i.imgur.com/fUBuACf.jpg",
+    "imgurURL": "https://i.imgur.com/fUBuACf.jpg",
     "": "",
-    "imagePath": "graphs/598a0bc24e7624229e91.jpg"
+    "imagePath": "graphs/598a0bc24e7624229e91.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "576",
     "movieName": "Triangle (2009)",
     "imgurURL": "https://i.imgur.com/YfZWJEv.png",
     "": "",
-    "imagePath": "graphs/e81c26b9f9967cb9a072.jpg"
+    "imagePath": "graphs/e81c26b9f9967cb9a072.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "577",
     "movieName": "Trollhunter (2010)",
-    "imgurURL": "http://i.imgur.com/dbHFiwT.png",
+    "imgurURL": "https://i.imgur.com/dbHFiwT.png",
     "": "",
-    "imagePath": "graphs/a782dbd97578cf6a3d79.jpg"
+    "imagePath": "graphs/a782dbd97578cf6a3d79.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "578",
     "movieName": "Tunnel (2016)",
-    "imgurURL": "http://i.imgur.com/SpUw0Bw.png",
+    "imgurURL": "https://i.imgur.com/SpUw0Bw.png",
     "": "",
-    "imagePath": "graphs/70b3895b55692d4f01d5.jpg"
+    "imagePath": "graphs/70b3895b55692d4f01d5.jpg",
+    "source": "avs-first-post"
+  },
+  {
+    "id": "avs-65168210a77a963a",
+    "imagePath": "graphs/ff50d5cfb595fe058674.jpg",
+    "movieName": "Turning Red (2022)",
+    "imgurURL": "https://i.imgur.com/7uWkiFL.png",
+    "source": "avs-first-post",
+    "cachedSourceURL": "https://i.imgur.com/7uWkiFL.png"
   },
   {
     "id": "579",
     "movieName": "Turbo (2013)",
-    "imgurURL": "http://i.imgur.com/Dv2pTLw.png",
+    "imgurURL": "https://i.imgur.com/Dv2pTLw.png",
     "": "",
-    "imagePath": "graphs/9b5fd9f8d0b2d0fff7ca.jpg"
+    "imagePath": "graphs/9b5fd9f8d0b2d0fff7ca.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "580",
     "movieName": "Unbreakable (2000)",
-    "imgurURL": "http://i.imgur.com/BFbndgN.png",
+    "imgurURL": "https://i.imgur.com/BFbndgN.png",
     "": "",
-    "imagePath": "graphs/ffb90930cee314c016b1.jpg"
+    "imagePath": "graphs/ffb90930cee314c016b1.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "581",
     "movieName": "Unbroken (2014)",
     "imgurURL": "https://i.imgur.com/761IC3l.png",
     "": "",
-    "imagePath": "graphs/29e73009960563c7cc64.jpg"
+    "imagePath": "graphs/29e73009960563c7cc64.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "582",
     "movieName": "Uncle Drew (2018)",
     "imgurURL": "https://i.imgur.com/IsCU0Pc.png",
     "": "",
-    "imagePath": "graphs/24ad698f4d2da15c4b45.jpg"
+    "imagePath": "graphs/24ad698f4d2da15c4b45.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "583",
     "movieName": "Underwater (2020)",
     "imgurURL": "https://i.imgur.com/W7GZVSI.png",
     "": "",
-    "imagePath": "graphs/c8a0f7aa2224c456afe2.jpg"
+    "imagePath": "graphs/c8a0f7aa2224c456afe2.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "584",
     "movieName": "Underworld Blood Wars (2016)",
-    "imgurURL": "http://i.imgur.com/lZoHJtZ.png",
+    "imgurURL": "https://i.imgur.com/lZoHJtZ.png",
     "": "",
-    "imagePath": "graphs/2d44a539509d0e169a44.jpg"
+    "imagePath": "graphs/2d44a539509d0e169a44.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "585",
     "movieName": "Unfriended: Dark Web (2018)",
     "imgurURL": "https://i.imgur.com/GIgk6Js.png",
     "": "",
-    "imagePath": "graphs/7fd6ce94485ba4fdd471.jpg"
+    "imagePath": "graphs/7fd6ce94485ba4fdd471.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "586",
     "movieName": "Upgrade (2018)",
     "imgurURL": "https://i.imgur.com/nvWuhcF.png",
     "": "",
-    "imagePath": "graphs/589db5f0fa4980e22f1e.jpg"
+    "imagePath": "graphs/589db5f0fa4980e22f1e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "587",
     "movieName": "Us (2019)",
     "imgurURL": "https://i.imgur.com/C74PMSM.png",
     "": "",
-    "imagePath": "graphs/50d10742d42582443cd6.jpg"
+    "imagePath": "graphs/50d10742d42582443cd6.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "588",
     "movieName": "V/H/S/2 (2013)",
-    "imgurURL": "http://i.imgur.com/4kYAASN.png",
+    "imgurURL": "https://i.imgur.com/4kYAASN.png",
     "": "",
-    "imagePath": "graphs/49555d654322bd0a2317.jpg"
+    "imagePath": "graphs/49555d654322bd0a2317.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "589",
     "movieName": "Valerian and the City of a Thousand Planets (2017)",
     "imgurURL": "https://i.imgur.com/m0nUyyy.png",
     "": "",
-    "imagePath": "graphs/1408eb45c18f0f0a6912.jpg"
+    "imagePath": "graphs/1408eb45c18f0f0a6912.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "590",
     "movieName": "Valkyrie (2008)",
-    "imgurURL": "http://i.imgur.com/rk15yEN.png",
+    "imgurURL": "https://i.imgur.com/rk15yEN.png",
     "": "",
-    "imagePath": "graphs/709f0dc1640df6318d46.jpg"
+    "imagePath": "graphs/709f0dc1640df6318d46.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "591",
     "movieName": "Venom (2018) UHD",
     "imgurURL": "https://i.imgur.com/f4yLRvQ.png",
     "": "",
-    "imagePath": "graphs/18b082e8f8ccb2fe8fdb.jpg"
+    "imagePath": "graphs/18b082e8f8ccb2fe8fdb.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "592",
     "movieName": "Venom Let There Be Carnage (2021)",
     "imgurURL": "https://i.imgur.com/OTgk2C9.png",
     "": "",
-    "imagePath": "graphs/7ed430164b2f2ebf2af5.jpg"
+    "imagePath": "graphs/7ed430164b2f2ebf2af5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "593",
     "movieName": "Walking with Dinosaurs 3D (2013)",
-    "imgurURL": "http://i.imgur.com/E6LQIHn.jpg",
+    "imgurURL": "https://i.imgur.com/E6LQIHn.jpg",
     "": "",
-    "imagePath": "graphs/9c73ec8455fe1fa13c0e.jpg"
+    "imagePath": "graphs/9c73ec8455fe1fa13c0e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "594",
     "movieName": "Warcraft (2016)",
-    "imgurURL": "http://i.imgur.com/OnQNauz.png",
+    "imgurURL": "https://i.imgur.com/OnQNauz.png",
     "": "",
-    "imagePath": "graphs/b5da93d3df0af3946206.jpg"
+    "imagePath": "graphs/b5da93d3df0af3946206.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "595",
     "movieName": "Watchmen (2009) Director's Cut",
     "imgurURL": "https://i.imgur.com/51dMs69.png",
     "": "",
-    "imagePath": "graphs/a9185060c80fda87a219.jpg"
+    "imagePath": "graphs/a9185060c80fda87a219.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "596",
     "movieName": "Westworld: Season One (2016)",
     "imgurURL": "https://imgur.com/a/2vbwU",
     "": "",
-    "imagePath": null
+    "imagePath": null,
+    "source": "avs-first-post"
   },
   {
     "id": "597",
     "movieName": "War Dogs (2016)",
-    "imgurURL": "http://i.imgur.com/JaLOAlN.png",
+    "imgurURL": "https://i.imgur.com/JaLOAlN.png",
     "": "",
-    "imagePath": "graphs/f5d91ce8d4200cc36dc5.jpg"
+    "imagePath": "graphs/f5d91ce8d4200cc36dc5.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "598",
     "movieName": "War for the Planet of the Apes (2017)",
     "imgurURL": "https://i.imgur.com/0KuPxFq.png",
     "": "",
-    "imagePath": "graphs/f92db96d6e0ad8273388.jpg"
+    "imagePath": "graphs/f92db96d6e0ad8273388.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "599",
     "movieName": "War of the Worlds (2005)",
-    "imgurURL": "http://i.imgur.com/xOHoR5q.png",
+    "imgurURL": "https://i.imgur.com/xOHoR5q.png",
     "": "",
-    "imagePath": "graphs/19a9050171e06d3a8ec2.jpg"
+    "imagePath": "graphs/19a9050171e06d3a8ec2.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "600",
     "movieName": "WEAPONiZED (2016)",
-    "imgurURL": "http://i.imgur.com/irOXUDK.jpg",
+    "imgurURL": "https://i.imgur.com/irOXUDK.jpg",
     "": "",
-    "imagePath": "graphs/4bbae5de3bbc4cd4cd4f.jpg"
+    "imagePath": "graphs/4bbae5de3bbc4cd4cd4f.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "601",
     "movieName": "Wheelman (2017)",
     "imgurURL": "https://i.imgur.com/OPH7X77.png",
     "": "",
-    "imagePath": "graphs/08767070a8bbbc489523.jpg"
+    "imagePath": "graphs/08767070a8bbbc489523.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "602",
     "movieName": "White House Down (2013)",
-    "imgurURL": "http://i.imgur.com/5TCRgJa.gif",
+    "imgurURL": "https://i.imgur.com/5TCRgJa.gif",
     "": "",
-    "imagePath": "graphs/20ebf3bd2e8536393fca.jpg"
+    "imagePath": "graphs/20ebf3bd2e8536393fca.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "603",
     "movieName": "Widows (2018) UHD",
     "imgurURL": "https://i.imgur.com/mdjrDpI.png",
     "": "",
-    "imagePath": "graphs/bdeaf84092ea361359d3.jpg"
+    "imagePath": "graphs/bdeaf84092ea361359d3.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "604",
     "movieName": "Widows (2018)",
     "imgurURL": "https://i.imgur.com/bqpRdHe.png",
     "": "",
-    "imagePath": "graphs/13f2defc81b29fc6a9db.jpg"
+    "imagePath": "graphs/13f2defc81b29fc6a9db.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "605",
     "movieName": "Wind River (2017)",
     "imgurURL": "https://i.imgur.com/VmnvU4f.png",
     "": "",
-    "imagePath": "graphs/88584641692c69349b1d.jpg"
+    "imagePath": "graphs/88584641692c69349b1d.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "606",
     "movieName": "Wonder Woman (2017)",
     "imgurURL": "https://i.imgur.com/UUpI3GB.png",
     "": "",
-    "imagePath": "graphs/e68dfd7db18f852634ab.jpg"
+    "imagePath": "graphs/e68dfd7db18f852634ab.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "607",
     "movieName": "World War Z (2013)",
     "imgurURL": "https://i.imgur.com/lGlhK2g.png",
     "": "",
-    "imagePath": "graphs/ca1d856fde656f1c47d9.jpg"
+    "imagePath": "graphs/ca1d856fde656f1c47d9.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "608",
     "movieName": "Wrath of the Titans (2012)",
     "imgurURL": "https://i.imgur.com/M8DFpXn.png",
     "": "",
-    "imagePath": "graphs/8fe425b03a884d6a9a2c.jpg"
+    "imagePath": "graphs/8fe425b03a884d6a9a2c.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "609",
     "movieName": "X-Men: Apocalypse (2016)",
-    "imgurURL": "http://i.imgur.com/28sL7j1.png",
+    "imgurURL": "https://i.imgur.com/28sL7j1.png",
     "": "",
-    "imagePath": "graphs/075d9ad109b33b95aa5e.jpg"
+    "imagePath": "graphs/075d9ad109b33b95aa5e.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "610",
     "movieName": "X-Men: Dark Phoenix (2019) BD",
     "imgurURL": "https://i.imgur.com/onZSEpZ.png",
     "": "",
-    "imagePath": "graphs/7e87476db3025313d360.jpg"
+    "imagePath": "graphs/7e87476db3025313d360.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "611",
     "movieName": "X-Men: Dark Phoenix (2019) UHD",
     "imgurURL": "https://i.imgur.com/ng4F5Dm.png",
     "": "",
-    "imagePath": "graphs/0903d2e3a27cde0ac093.jpg"
+    "imagePath": "graphs/0903d2e3a27cde0ac093.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "612",
     "movieName": "X-Men: Days of Future Past (2014)",
     "imgurURL": "https://i.imgur.com/OktpWo2.png",
     "": "",
-    "imagePath": "graphs/6222ff4f58884a0750d2.jpg"
+    "imagePath": "graphs/6222ff4f58884a0750d2.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "613",
     "movieName": "X-Men: First Class (2011)",
     "imgurURL": "https://i.imgur.com/CJlAdh8.png",
     "": "",
-    "imagePath": "graphs/01ee0a33e02b8ac4baa7.jpg"
+    "imagePath": "graphs/01ee0a33e02b8ac4baa7.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "614",
     "movieName": "You Were Never Really Here (2017)",
     "imgurURL": "https://i.imgur.com/2QNNHgz.png",
     "": "",
-    "imagePath": "graphs/8e3af00154d91623619a.jpg"
+    "imagePath": "graphs/8e3af00154d91623619a.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "615",
     "movieName": "Your Name (2016)",
     "imgurURL": "https://i.imgur.com/pLEnZh6.png",
     "": "",
-    "imagePath": "graphs/db5604e570f51c63bcb3.jpg"
+    "imagePath": "graphs/db5604e570f51c63bcb3.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "616",
     "movieName": "xXx: Return of Xander Cage (2017)",
-    "imgurURL": "http://i.imgur.com/BViR1HO.png",
+    "imgurURL": "https://i.imgur.com/BViR1HO.png",
     "": "",
-    "imagePath": "graphs/b18ca7036fac37362169.jpg"
+    "imagePath": "graphs/b18ca7036fac37362169.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "617",
     "movieName": "Zack Snyder's Justice League (2021)",
     "imgurURL": "https://i.imgur.com/dA73tPc.png",
     "": "",
-    "imagePath": "graphs/338e47138f5d168029e3.jpg"
+    "imagePath": "graphs/338e47138f5d168029e3.jpg",
+    "source": "avs-first-post"
   },
   {
     "id": "618",
     "movieName": "Zoolander 2 (2016)",
-    "imgurURL": "http://i.imgur.com/1czzIvy.jpg",
+    "imgurURL": "https://i.imgur.com/1czzIvy.jpg",
     "": "",
-    "imagePath": "graphs/3a9d5e2903281b685632.jpg"
-  },
-  {
-    "id": "53",
-    "movieName": "Avengers: Endgame (2019)",
-    "imgurURL": "https://i.imgur.com/n9lIn0w.png",
-    "": "",
-    "imagePath": "graphs/7433f45c6a279f43999c.jpg"
-  },
-  {
-    "id": "121",
-    "movieName": "Deadpool 2 (2018)",
-    "imgurURL": "https://i.imgur.com/5U5ojt9.png",
-    "": "",
-    "imagePath": "graphs/9d8bd17f8442b60c96c6.jpg"
-  },
-  {
-    "id": "311",
-    "movieName": "Men in Black: International (2019)",
-    "imgurURL": "https://i.imgur.com/ZViLXiA.png",
-    "": "",
-    "imagePath": "graphs/a3ba584cf7890d240523.jpg"
+    "imagePath": "graphs/3a9d5e2903281b685632.jpg",
+    "source": "avs-first-post"
   }
 ]
