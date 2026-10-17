@@ -49,9 +49,12 @@ export default function App() {
   const rankingLabel = state.octave
     ? `average across ${state.octave.replace('-', '–')} Hz`
     : `at ${state.frequency} Hz`;
-  const rankedCount = rankingActive
-    ? filtered.filter(movie => rankingLevel(movie, state) !== null).length
-    : 0;
+  const unrankedMovies = rankingActive
+    ? filtered.filter(movie => rankingLevel(movie, state) === null)
+    : [];
+  // Ranked entries come first; keep missing readings in a compact names-only list.
+  const rankedCount = filtered.length - unrankedMovies.length;
+  const visibleMovies = rankingActive ? filtered.slice(0, rankedCount) : filtered;
   const selected = state.compare
     .map(id => movies.find(movie => movie.id === id))
     .filter(movie => movie && imageURL(movie));
@@ -59,7 +62,7 @@ export default function App() {
     && (state.scope !== 'comparison' || state.compare.includes(movie.id)));
   const sequence = state.scope === 'comparison'
     ? selected
-    : filtered.filter(movie => imageURL(movie));
+    : visibleMovies.filter(movie => imageURL(movie));
   const index = viewing ? sequence.findIndex(movie => movie.id === viewing.id) : -1;
 
   useEffect(() => {
@@ -147,7 +150,7 @@ export default function App() {
           {rankingActive && (
             <p className="mt-0 mb-[14px] text-[12px] text-[#b9da9c]" role="status">
               {levelsStatus === 'ready'
-                ? `${rankedCount} of ${filtered.length} matching graphs ranked by the ${state.curve} curve ${rankingLabel}, highest first. Graphs with uncertain or missing readings are listed afterward as unranked.`
+                ? `${rankedCount} of ${filtered.length} matching graphs ranked by the ${state.curve} curve ${rankingLabel}, highest first. Graphs with uncertain or missing readings are listed under “Show unranked movies”.`
                 : levelsStatus === 'outdated'
                   ? 'The frequency data is outdated. Reload this page to retrieve the 0.5 Hz readings; rankings are temporarily unavailable.'
                   : 'Frequency readings are unavailable. Graphs are shown without a ranking.'}
@@ -157,7 +160,7 @@ export default function App() {
 
           <div ref={resultsRef} className="min-h-[calc(100svh_-_16px)] scroll-mt-4">
             <section className="grid grid-cols-1 gap-[22px] desktop:grid-cols-2" aria-label="Movie graphs">
-              {filtered.map((movie, movieIndex) => (
+              {visibleMovies.map((movie, movieIndex) => (
                 <GraphCard
                   key={movie.id}
                   movie={movie}
@@ -170,6 +173,17 @@ export default function App() {
                 />
               ))}
             </section>
+            {rankingActive && unrankedMovies.length > 0 && (
+              <details className="my-5 rounded-lg border border-[#314039] px-4 py-3">
+                <summary className="cursor-pointer text-[14px] text-[#b9da9c]">
+                  Show unranked movies
+                  <span className="ml-2 text-[12px] text-[#9bad9f]">({unrankedMovies.length})</span>
+                </summary>
+                <ul className="mt-3 mb-0 space-y-2 pl-5 text-[13px] text-[#c4d0c6]">
+                  {unrankedMovies.map(movie => <li key={movie.id}>{movie.movieName}</li>)}
+                </ul>
+              </details>
+            )}
             {!filtered.length && (
               <p className="my-[16px] px-[15px] py-[60px] text-center text-[#a9b9ad]">
                 No titles match these filters. Try a broader search or reset the filters.
