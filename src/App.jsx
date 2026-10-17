@@ -76,11 +76,16 @@ export default function App() {
   const comparisonRef = useRef(null);
   const resultsRef = useRef(null);
   const scrollPending = useRef(false);
-  function scrollToResults() {
-    resultsRef.current?.scrollIntoView({
-      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
-      block: 'start',
-    });
+  const scrollTimer = useRef(null);
+  useEffect(() => () => window.clearTimeout(scrollTimer.current), []);
+  function scrollToResults(delay = 0) {
+    window.clearTimeout(scrollTimer.current);
+    scrollTimer.current = window.setTimeout(() => {
+      resultsRef.current?.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start',
+      });
+    }, delay);
   }
   function selectFilter(patch) {
     scrollPending.current = true;
@@ -167,7 +172,7 @@ export default function App() {
             if (event.key === 'Enter' && !event.nativeEvent.isComposing) {
               event.preventDefault();
               event.currentTarget.blur();
-              scrollToResults();
+              scrollToResults(350);
             }
           }}
           onBlur={() => { queryEditing.current = false; }}
@@ -195,9 +200,10 @@ export default function App() {
           <div className="comparison-viewport" tabIndex={0} aria-label={`Scrollable comparison graph for ${movie.movieName}`}><div style={{ width: `${comparisonZoom * 100}%` }}><GraphImage movie={movie} /></div></div>
         </article>)}{selected.length === 1 && <div className="comparison-empty">Select a second graph below to compare it here.</div>}</div>
       </section>}
-      <div className="results-heading" ref={resultsRef} style={{ scrollMarginTop: 16 }}><p><strong>{filtered.length}</strong> {filtered.length === 1 ? 'entry' : 'entries'}<span> / {movies.length} in the archive</span></p>
+      <div className="results-heading"><p><strong>{filtered.length}</strong> {filtered.length === 1 ? 'entry' : 'entries'}<span> / {movies.length} in the archive</span></p>
         <span>Select up to two graphs to compare</span></div>
       <p role="status" className="action-message">{message}</p>
+      <div ref={resultsRef} style={{ scrollMarginTop: 16, minHeight: 'calc(100svh - 16px)' }}>
       <section className="gallery" aria-label="Movie graphs">{filtered.map(movie => <article className="graph-card" key={movie.id}>
         <div className="card-heading"><div><span className="card-meta">{movie.year} · {movie.type}{movie.format !== 'Unknown' ? ' · ' + movie.format : ''}</span><h2>{movie.movieName}</h2></div>
           <button aria-pressed={state.compare.includes(movie.id)} disabled={!imageURL(movie)} onClick={() => toggleCompare(movie)}>{state.compare.includes(movie.id) ? '✓ Selected' : '+ Compare'}<span className="sr-only"> {movie.movieName}</span></button></div>
@@ -205,6 +211,7 @@ export default function App() {
         <div style={{ padding: '12px 16px' }}><button disabled={!imageURL(movie)} onClick={() => update({ graph: movie.id, scope: '', view: '' })} aria-label={`Inspect graph for ${movie.movieName}`}>Inspect graph ↗</button></div>
       </article>)}</section>
       {!filtered.length && <p className="empty">No titles match these filters. Try a broader search or reset the filters.</p>}
+      </div>
       <footer>Movie soundtrack graphs · Original credits and measurement details appear on each image.</footer>
       {selected.length > 0 && <aside className="compare-tray" aria-label="Comparison selection"><span>{selected.length}/2 graphs selected</span><button onClick={() => comparisonRef.current?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })}>View comparison ↑</button></aside>}
       {state.view === 'comparison' && selected.length > 0 && <Viewer movie={selected[0]} comparison={selected}
