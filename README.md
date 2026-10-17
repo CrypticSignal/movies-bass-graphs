@@ -34,7 +34,7 @@ npm run build
 
 The build is written to `build/`. The app uses the `homepage` setting in [package.json](package.json) for its asset base path. Change it when hosting under a different URL.
 
-The [deployment workflow](.github/workflows/deploy.yml) tests and builds the app, then deploys pushes to `main` using GitHub Pages. Repository Pages settings must use GitHub Actions as the build source.
+The [deployment workflow](.github/workflows/deploy.yml) tests and builds the app, then deploys pushes to `main` using GitHub Pages. Builds are copied to the existing `gh-pages` branch, and publishing runs from that branch to respect the repository's deployment restrictions.
 
 ## Catalogue and images
 
