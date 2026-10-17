@@ -9,6 +9,14 @@ function GraphImage({ movie, ...props }) {
     : <p className="unavailable">Graph unavailable. The original image could not be recovered.</p>;
 }
 
+function ZoomControl({ value, onChange }) {
+  const percentage = Math.round(value * 100);
+  return <label className="zoom-control"><span>Zoom <output>{percentage}%</output></span>
+    <input type="range" min="50" max="200" step="1" value={percentage}
+      aria-valuetext={`${percentage}%`} onChange={event => onChange(Number(event.target.value) / 100)} />
+  </label>;
+}
+
 function Viewer({ movie, comparison, previous, next, onClose }) {
   const dialog = useRef(null);
   const [zoom, setZoom] = useState(1);
@@ -50,15 +58,13 @@ function Viewer({ movie, comparison, previous, next, onClose }) {
         <button onClick={next} disabled={!next}>Next graph →</button></>}
         {comparison && <span className="shared-zoom-label">Zoom applies to both graphs</span>}
         <span className="toolbar-spacer" />
-        <button disabled={zoom <= 1} onClick={() => setZoom(value => Math.max(1, value - 0.5))} aria-label="Zoom out">−</button>
-        <output aria-live="polite">{Math.round(zoom * 100)}%</output>
-        <button disabled={zoom >= 4} onClick={() => setZoom(value => Math.min(4, value + 0.5))} aria-label="Zoom in">+</button>
+        <ZoomControl value={zoom} onChange={setZoom} />
         <button onClick={() => setZoom(1)}>Fit</button><button onClick={fullscreen}>Fullscreen</button>
         {!comparison && <a className="button" href={imageURL(movie)} target="_blank" rel="noreferrer">Original image ↗</a>}
       </div>
       {notice && <p role="status">{notice}</p>}
       <div className={comparison ? "graph-viewport stacked-viewport" : "graph-viewport"} tabIndex={0} aria-label={comparison ? "Stacked comparison graphs; scroll to pan when zoomed" : "Graph image; scroll to pan when zoomed"}>
-        <div style={{ width: `${zoom * 100}%` }}>{comparison ? comparison.map(graph => <GraphImage key={graph.id} movie={graph} />) : <GraphImage movie={movie} />}</div>
+        <div style={{ width: `${zoom * 100}%`, marginInline: zoom < 1 ? 'auto' : 0 }}>{comparison ? comparison.map(graph => <GraphImage key={graph.id} movie={graph} />) : <GraphImage movie={movie} />}</div>
       </div>
       <p className="viewer-hint">Zoom to inspect detail, then scroll to pan. Use Escape to close.</p>
     </div>
@@ -247,12 +253,12 @@ export default function App() {
       <p className="metadata-note">Years and types are inferred from titles. Soundtrack labels are read automatically from graphs; unclear labels stay Unknown.</p>
       {selected.length > 0 && <section className="comparison" ref={comparisonRef} aria-labelledby="comparison-title">
         <div className="section-heading"><div><span className="eyebrow">A / B COMPARISON</span><h2 id="comparison-title">Compare soundtracks</h2></div>
-          <div className="comparison-controls"><label>Detail<select value={comparisonZoom} onChange={event => setComparisonZoom(Number(event.target.value))}><option value={1}>Fit</option><option value={1.5}>150%</option><option value={2}>200%</option><option value={3}>300%</option></select></label>
+          <div className="comparison-controls"><ZoomControl value={comparisonZoom} onChange={setComparisonZoom} />
             <button disabled={selected.length < 2} onClick={() => update({ view: 'comparison', graph: '', scope: '' })}>Inspect graphs ↗</button>
             <button onClick={() => update({ compare: [] })}>Clear comparison</button></div></div>
         <p className="comparison-note">Compare shapes and labelled values; graphs may use different axis ranges and measurement methods.</p>
         <div className="comparison-grid compact-comparison">{selected.map(movie => <article key={movie.id}>
-          <div className="comparison-viewport" tabIndex={0} aria-label={`Scrollable comparison graph for ${movie.movieName}`}><div style={{ width: `${comparisonZoom * 100}%` }}><GraphImage movie={movie} /></div></div>
+          <div className="comparison-viewport" tabIndex={0} aria-label={`Scrollable comparison graph for ${movie.movieName}`}><div style={{ width: `${comparisonZoom * 100}%`, marginInline: comparisonZoom < 1 ? 'auto' : 0 }}><GraphImage movie={movie} /></div></div>
         </article>)}{selected.length === 1 && <div className="comparison-empty">Select a second graph below to compare it here.</div>}</div>
       </section>}
       <div className="results-heading"><p><strong>{filtered.length}</strong> {filtered.length === 1 ? 'entry' : 'entries'}<span> / {movies.length} in the archive</span></p>

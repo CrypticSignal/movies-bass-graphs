@@ -30,3 +30,8 @@
 .frequency-summary{font-size:12px;color:#b9da9c;margin:0 0 14px}.frequency-value{font-size:12px;color:#c4ed9b;padding:0 16px;margin:14px 0 0}
 
 .card-rank{display:table;margin-bottom:7px;padding:3px 7px;border-radius:4px;background:#c4ed9b;color:#162016;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}
+
+.zoom-control{flex:0 1 200px;min-width:140px;gap:3px}
+.zoom-control>span{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.zoom-control output{font-variant-numeric:tabular-nums;color:#e1eae4}
+.zoom-control input[type=range]{width:100%;min-height:32px;margin:0;padding:0;border:0;background:transparent;accent-color:#c4ed9b;cursor:pointer}
