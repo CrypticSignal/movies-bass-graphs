@@ -187,7 +187,7 @@ export default function App() {
       </section>
       <nav className="alphabet" aria-label="Browse by title">
         {['', '0-9', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map(letter => <button key={letter || 'all'} aria-pressed={!state.q.trim() && state.letter === letter}
-          onClick={() => selectFilter({ letter })}>{letter === '' ? 'All' : letter === '0-9' ? '0–9' : letter}</button>)}
+          onClick={() => selectFilter({ letter, q: '' })}>{letter === '' ? 'All' : letter === '0-9' ? '0–9' : letter}</button>)}
       </nav>
       <p className="metadata-note">Years and types are inferred from titles. Soundtrack labels are read automatically from graphs; unclear labels stay Unknown.</p>
       {selected.length > 0 && <section className="comparison" ref={comparisonRef} aria-labelledby="comparison-title">
