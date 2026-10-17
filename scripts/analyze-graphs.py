@@ -15,7 +15,7 @@ from PIL import Image, ImageOps
 
 ROOT = Path('public/graphs')
 OUTPUT = ROOT / 'levels.json'
-VERSION = 3
+VERSION = 4
 START_HZ = 0.5
 STEP_HZ = 0.5
 MAX_HZ = 200
@@ -54,9 +54,13 @@ def fit_axis(points, tolerance, minimum=4):
             best = score, inliers
     if not best or best[0] < minimum:
         raise ValueError('Too few consistent axis labels')
+    if len(best[1]) / len(points) < .75:
+        raise ValueError('Axis labels disagree; calibration rejected')
     points = np.array(best[1])
     slope, intercept = np.polyfit(points[:, 0], points[:, 1], 1)
     error = float(np.max(np.abs(points[:, 1] - (slope * points[:, 0] + intercept))))
+    if error > tolerance:
+        raise ValueError('Axis fit exceeds calibration tolerance')
     return float(slope), float(intercept), best[1], error
 
 def analyze(path):
@@ -80,6 +84,8 @@ def analyze(path):
     labels = ocr(image.crop((width - right_width, 0, width, int(bottom))), (width - right_width, 0))
     db_points = []
     for text, x, y in labels:
+        if x < width - right_width * .6:
+            continue
         match = re.fullmatch(r'(-?\d{1,3}(?:[.,]\d{1,2})?)(?:dB)?', text, re.I)
         if not match:
             continue
@@ -168,3 +174,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

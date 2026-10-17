@@ -125,11 +125,11 @@ export default function App() {
       }),
       fetch(import.meta.env.BASE_URL + 'graphs/metadata.json', { signal: controller.signal })
         .then(response => response.ok ? response.json() : {}).catch(() => ({})),
-      fetch(import.meta.env.BASE_URL + 'graphs/levels.json?sampling=0.5&schema=3', { signal: controller.signal, cache: 'no-cache' })
+      fetch(import.meta.env.BASE_URL + 'graphs/levels.json?sampling=0.5&schema=4', { signal: controller.signal, cache: 'no-cache' })
         .then(response => response.ok ? response.json() : null).catch(() => null),
     ]).then(([rows, details, levels]) => {
       if (!Array.isArray(rows) || rows.some(row => typeof row.movieName !== 'string' || !row.id)) throw new Error('Invalid catalogue');
-      if (!controller.signal.aborted) { setMovies(rows.map(row => ({ ...metadata(row, details[row.id] || {}), frequencyAnalysis: levels?.stepHz === 0.5 && levels?.version >= 3 && levels?.graphs?.[row.id] ? { ...levels.graphs[row.id], startHz: levels.startHz, stepHz: levels.stepHz } : undefined }))); setLevelsStatus(levels?.graphs ? levels.stepHz === 0.5 && levels.version >= 3 ? 'ready' : 'outdated' : 'unavailable'); setStatus('ready'); }
+      if (!controller.signal.aborted) { setMovies(rows.map(row => ({ ...metadata(row, details[row.id] || {}), frequencyAnalysis: levels?.stepHz === 0.5 && levels?.version >= 4 && levels?.graphs?.[row.id] ? { ...levels.graphs[row.id], startHz: levels.startHz, stepHz: levels.stepHz } : undefined }))); setLevelsStatus(levels?.graphs ? levels.stepHz === 0.5 && levels.version >= 4 ? 'ready' : 'outdated' : 'unavailable'); setStatus('ready'); }
     }).catch(error => { if (error.name !== 'AbortError' && !controller.signal.aborted) setStatus('error'); });
     return () => controller.abort();
   }, [attempt]);
