@@ -1,19 +1,20 @@
 # Movies Bass Graphs
 
-A searchable gallery of movie bass graphs, built with React. Browse graph images, search by movie title, and open a graph at its source.
+A searchable gallery of bass frequency graphs for 618 movies and TV entries.
 
-## Features
+[Open the gallery](https://crypticsignal.github.io/movies-bass-graphs/)
 
-- Browse movie graphs in pages of 10.
-- Search movie titles with case-insensitive matching.
-- Click a movie card to open its linked image in the same tab.
-- Responsive cards for desktop and mobile screens.
+## Using the gallery
 
-This app displays existing graph images; it does not analyse audio or generate graphs.
+Search by title and browse results in pages of 10. Click a graph to open its full-size image in the same tab.
+
+The catalogue and 611 recovered graph images are bundled with the site, so visitors do not need access to Imgur or Google Sheets. Seven entries could not be recovered and display an unavailable message. Images load as you scroll.
+
+This app displays existing graphs; it does not analyse audio or generate measurements. Refer to each graph for its title, soundtrack format, axes, and units.
 
 ## Run locally
 
-Install Node.js and npm, then run:
+Install Node.js 22 and npm:
 
 ```sh
 git clone https://github.com/CrypticSignal/movies-bass-graphs.git
@@ -22,61 +23,39 @@ npm install
 npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000). The development server reloads when you edit source files.
+Open [http://localhost:3000](http://localhost:3000). No API keys or environment variables are required.
 
-The repository also includes a `yarn.lock` file if you prefer Yarn. No API key or environment variables are required by the current app.
-
-## Using the gallery
-
-Browse with the page controls, or enter part of a movie title in the search box. Search displays all matching entries rather than limiting results to 10. Clear the search box to return to the first 10 entries.
-
-Click a card to view its linked graph image. Use your browser's Back button to return to the gallery.
-
-## Data source
-
-The catalogue is loaded at runtime from [Sheet1 of this Google spreadsheet](https://docs.google.com/spreadsheets/d/1SdwJ_mfYgghxZG8gy41ke22e2AM9gUPTB1EmZgYcHoY/edit), through the [OpenSheet JSON endpoint](https://opensheet.elk.sh/1SdwJ_mfYgghxZG8gy41ke22e2AM9gUPTB1EmZgYcHoY/Sheet1).
-
-Each row is expected to provide:
-
-| Column | Purpose |
-| --- | --- |
-| `id` | Unique identifier used as the React list key. |
-| `movieName` | Movie title displayed on the card and used for search. |
-| `imgurURL` | Graph image URL, also opened when the card is clicked. |
-
-To use another catalogue, change the fetch URL in [`src/App.js`](src/App.js) and provide the same columns. Keep the spreadsheet accessible to OpenSheet.
-
-Internet access is required to retrieve the catalogue and remote images. There is no offline cache or fetch-error screen; if the catalogue request fails, the app may remain on “Loading...”.
-
-## Build and deploy
-
-Create a production build:
+## Checks and production build
 
 ```sh
+npm test -- --watchAll=false
 npm run build
 ```
 
-The generated static files are written to `build/`.
+The build is written to `build/`. The app uses the `homepage` setting in [package.json](package.json) for its asset base path. Change it when hosting under a different URL.
 
-The project is configured for GitHub Pages at `https://crypticsignal.github.io/movies-bass-graphs`. To publish using the configured Git remote:
+The [deployment workflow](.github/workflows/deploy.yml) tests and builds the app, then deploys pushes to `main` using GitHub Pages. Repository Pages settings must use GitHub Actions as the build source.
 
-```sh
-npm run deploy
-```
+## Catalogue and images
 
-This runs the production build and publishes `build/` to the `gh-pages` branch. Configure GitHub Pages to serve that branch. Update `homepage` in [`package.json`](package.json) when deploying under a different URL.
+The original catalogue came from [this Google spreadsheet](https://docs.google.com/spreadsheets/d/1SdwJ_mfYgghxZG8gy41ke22e2AM9gUPTB1EmZgYcHoY/edit), which linked to images on Imgur. Copies were recovered in October 2026 to remove the runtime dependency on Imgur and its regional availability.
+
+[`public/graphs/catalogue.json`](public/graphs/catalogue.json) contains:
+
+| Field | Meaning |
+| --- | --- |
+| `id` | Entry identifier. |
+| `movieName` | Display title and search text. |
+| `imgurURL` | Original source reference, retained for provenance. |
+| `imagePath` | Bundled image path relative to `public/`, or `null` when unavailable. |
+
+To add or repair a graph, place its image in `public/graphs/` and update the matching catalogue entry. Preserve any credits shown on the original graph. Catalogue changes are included on the next deployment; the spreadsheet is no longer fetched at runtime.
 
 ## Project structure
 
-- [`src/App.js`](src/App.js): catalogue fetching, title search, movie cards, and pagination state.
-- [`src/PageSelector.js`](src/PageSelector.js): page controls.
-- [`src/App.css`](src/App.css): gallery layout and responsive sizing.
-- [`public/index.html`](public/index.html): HTML entry point.
+- [`src/App.js`](src/App.js): catalogue loading, search, pagination, graph rendering, and error handling.
+- [`src/App.test.js`](src/App.test.js): local image loading, search/pagination, unavailable images, and retry tests.
+- [`src/App.css`](src/App.css): responsive gallery layout.
+- [`public/graphs/`](public/graphs/): recovered images and catalogue.
 
-Built with React 17, Create React App, React Bootstrap, and Semantic UI React.
-
-## Current limitations
-
-Pagination uses the full catalogue even while search results are displayed, so changing pages during a search can replace the filtered results. Clear the search before using the page controls.
-
-Graph measurement methods, units, and credits are not defined in the application code. Refer to the individual graphs and their original sources when interpreting results.
+Built with React 17, Create React App, and React Bootstrap.
