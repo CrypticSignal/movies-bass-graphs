@@ -63,11 +63,11 @@ Only changed catalogue, metadata, or image files are committed. The sync then ex
 
 ## Ranking by frequency
 
-Enter a frequency from **0.5–200 Hz** in **0.5 Hz steps** and choose the **green** or **red** curve. Ranking updates automatically; press Enter to scroll to the results. Existing title, alphabet, year, and soundtrack filters still apply.
+Enter a frequency from **0.5–200 Hz** in **0.5 Hz steps** and choose the **green** (peak dB) or **red** (average dB) curve. Ranking updates automatically; press Enter to scroll to the results. Existing title, alphabet, year, and soundtrack filters still apply.
 
-Single-frequency values are digitized at that frequency's pixel column without averaging across a band. Octave options **10–20, 20–40, 30–60, and 40–80 Hz** use the arithmetic mean of the dB samples every **0.5 Hz**, including both endpoints; every sample in the range must be readable. Values are estimates in the graph's labelled dB scale, not subwoofer SPL. Curve colours are used because peak/average labels are not consistently available. Different soundtrack versions and measurement methods may not be directly comparable.
+Single-frequency values are digitized at that frequency's pixel column without averaging across a band. Octave options (**10–20, 20–40, 30–60, 40–80, 50-100, 60-120 Hz**) use the arithmetic mean of the dB samples every **0.5 Hz**, including both endpoints; every sample in the range must be readable. Values are estimates as there is no numeric data, the graphs are analysed using Python.
 
-The analysis requires consistent frequency and dB axis labels. Uncertain graphs, missing curves, and frequencies outside a graph's calibrated range remain **unranked** and sort after readable results. The original graphs are the reference for interpreting a reading.
+The analysis requires consistent frequency and dB axis labels. Uncertain graphs, missing curves, and frequencies outside a graph's calibrated range remain **unranked** and sort after readable results.
 
 `scripts/analyze-graphs.py` generates `public/graphs/levels.json` using Pillow, NumPy, and Tesseract. The daily spreadsheet sync refreshes analysis for new or changed images and reuses cached analysis for unchanged images. The **Analyze graph levels** workflow can also be started manually. To force a full recalibration after improving the analyzer, increment its `VERSION`.
 

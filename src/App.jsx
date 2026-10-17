@@ -244,7 +244,7 @@ export default function App() {
           <option value="green">Green curve</option><option value="red">Red curve</option>
         </select></label>
         {rankingActive && <button type="button" onClick={() => { setFrequencyInput(''); update({ frequency: '', octave: '' }); }}>Clear ranking</button>}
-        <span>{state.octave ? 'Octave ranking uses the arithmetic mean of dB readings at every 0.5 Hz, including both endpoints. The complete range must be readable.' : 'Single-frequency ranking uses the value at that frequency, not an average.'} Values are image estimates, not subwoofer SPL.</span>
+        <span>{state.octave ? 'Octave ranking uses the arithmetic mean of dB readings at every 0.5 Hz, including both endpoints. The complete range must be readable.' : 'Single-frequency ranking uses the value at that frequency, not an average.'} Values are estimates as there is no numeric data, the graphs are analysed using Python.</span>
       </form>
       <nav className="alphabet" aria-label="Browse by title">
         {['', '0-9', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'].map(letter => <button key={letter || 'all'} aria-pressed={!state.q.trim() && state.letter === letter}
