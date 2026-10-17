@@ -262,8 +262,8 @@ export default function App() {
         : `${rankedCount} of ${filtered.length} matching graphs ranked by the ${state.curve} curve ${rankingLabel}, highest first. Graphs with uncertain or missing readings are listed afterward as unranked.`}</p>}
       <p role="status" className="action-message">{message}</p>
       <div ref={resultsRef} style={{ scrollMarginTop: 16, minHeight: 'calc(100svh - 16px)' }}>
-      <section className="gallery" aria-label="Movie graphs">{filtered.map(movie => <article className="graph-card" key={movie.id}>
-        <div className="card-heading"><div><span className="card-meta">{movie.year} · {movie.type}{movie.format !== 'Unknown' ? ' · ' + movie.format : ''}</span><h2>{movie.movieName}</h2></div>
+      <section className="gallery" aria-label="Movie graphs">{filtered.map((movie, movieIndex) => <article className="graph-card" key={movie.id}>
+        <div className="card-heading"><div>{rankingActive && rankingLevel(movie, state) !== null && <span className="card-rank">Rank #{movieIndex + 1}</span>}<span className="card-meta">{movie.year} · {movie.type}{movie.format !== 'Unknown' ? ' · ' + movie.format : ''}</span><h2>{movie.movieName}</h2></div>
           <button aria-pressed={state.compare.includes(movie.id)} disabled={!imageURL(movie)} onClick={() => toggleCompare(movie)}>{state.compare.includes(movie.id) ? '✓ Selected' : '+ Compare'}<span className="sr-only"> {movie.movieName}</span></button></div>
         {imageURL(movie) ? <button className="graph-open" onClick={() => update({ graph: movie.id, scope: '', view: '' })} aria-label={`View graph for ${movie.movieName}`}><GraphImage movie={movie} loading="lazy" /><span className="inspect-tag">Inspect graph ↗</span></button> : <GraphImage movie={movie} />}
         {rankingActive && <p className="frequency-value">{rankingLevel(movie, state) === null

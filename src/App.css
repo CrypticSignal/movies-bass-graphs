@@ -28,3 +28,5 @@
 .frequency-panel label{font-size:10px;gap:5px}.frequency-panel input{width:115px}.frequency-panel input,.frequency-panel select{min-height:34px;padding:7px 9px;font-size:12px}
 .frequency-panel button{min-height:34px;padding:7px 10px;font-size:12px}.frequency-panel>span{flex:1;min-width:210px;font-size:11px;line-height:1.6;color:#9eafa6}
 .frequency-summary{font-size:12px;color:#b9da9c;margin:0 0 14px}.frequency-value{font-size:12px;color:#c4ed9b;padding:0 16px;margin:14px 0 0}
+
+.card-rank{display:table;margin-bottom:7px;padding:3px 7px;border-radius:4px;background:#c4ed9b;color:#162016;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}
