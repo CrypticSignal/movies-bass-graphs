@@ -159,7 +159,7 @@ export default function App() {
           <p role="status" className="mt-0 mb-3 min-h-0 text-[13px] text-accent empty:hidden">{message}</p>
 
           <div ref={resultsRef} className="min-h-[calc(100svh_-_16px)] scroll-mt-4">
-            <section className="grid grid-cols-1 gap-[22px] desktop:grid-cols-2" aria-label="Movie graphs">
+            <section className="grid grid-cols-1 items-start gap-[22px] desktop:grid-cols-2" aria-label="Movie graphs">
               {visibleMovies.map((movie, movieIndex) => (
                 <GraphCard
                   key={movie.id}
