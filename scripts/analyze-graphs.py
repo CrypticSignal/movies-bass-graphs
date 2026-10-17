@@ -11,11 +11,11 @@ import re
 import subprocess
 
 import numpy as np
-from PIL import Image, ImageOps
+from PIL import Image, ImageOps, ImageFilter
 
 ROOT = Path('public/graphs')
 OUTPUT = ROOT / 'levels.json'
-VERSION = 5
+VERSION = 6
 START_HZ = 0.5
 STEP_HZ = 0.5
 MAX_HZ = 200
@@ -62,6 +62,33 @@ def fit_axis(points, tolerance, minimum=4):
     if error > tolerance:
         raise ValueError('Axis fit exceeds calibration tolerance')
     return float(slope), float(intercept), best[1], error
+
+def artwork_mask(pixels, curves):
+    # Remove curve-coloured pixels before finding broad image backgrounds.
+    # Thin traces and grid lines must not themselves create an artwork mask.
+    brightness = np.max(pixels, axis=2).astype(np.uint8)
+    broad_colour = np.asarray(Image.fromarray(curves.astype(np.uint8) * 255)
+                              .filter(ImageFilter.MinFilter(9)).filter(ImageFilter.MaxFilter(9))) > 0
+    brightness[curves & ~broad_colour] = 0
+    height, width = brightness.shape
+    scale = min(1, 640 / width)
+    background = Image.fromarray(brightness).resize(
+        (max(1, round(width * scale)), max(1, round(height * scale))),
+        Image.Resampling.BILINEAR).filter(ImageFilter.MedianFilter(5))
+    mask = Image.fromarray((np.asarray(background) > 35).astype(np.uint8) * 255)
+    # Close small dark holes in artwork, then cover its antialiased edges.
+    mask = mask.filter(ImageFilter.MaxFilter(15)).filter(ImageFilter.MinFilter(15))
+    mask = mask.filter(ImageFilter.MaxFilter(3))
+    return np.asarray(mask.resize((width, height), Image.Resampling.NEAREST)) > 0
+
+def curve_pixels_outside_artwork(ys, artwork_column):
+    if not len(ys):
+        return ys
+    runs = np.split(ys, np.flatnonzero(np.diff(ys) > 1) + 1)
+    # Preserve an entire stroke that crosses the artwork boundary, so masking
+    # cannot shift its centre by clipping only one end of a steep trace.
+    kept = [run for run in runs if not np.all(artwork_column[run])]
+    return np.concatenate(kept) if kept else np.array([], dtype=int)
 
 def analyze(path, manual=None):
     image = Image.open(path).convert('RGB')
@@ -132,6 +159,7 @@ def analyze(path, manual=None):
             raise ValueError('Insufficient frequency-axis coverage')
     green = (g > 65) & (g > r * 1.5) & (g > b * 1.4)
     red = (r > 70) & (r > g * 1.5) & (r > b * 1.4)
+    artwork = artwork_mask(pixels, green | red)
     profiles = {}
     frequency_low = max(START_HZ, min(p[1] for p in hz_inliers))
     frequency_high = min(MAX_HZ, max(p[1] for p in hz_inliers))
@@ -144,6 +172,7 @@ def analyze(path, manual=None):
                 values.append(None)
                 continue
             ys = np.nonzero(mask[int(plot_top):int(bottom), x:x + 1])[0] + int(plot_top)
+            ys = curve_pixels_outside_artwork(ys, artwork[:, x])
             if not len(ys):
                 values.append(None)
                 continue
