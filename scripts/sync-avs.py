@@ -23,6 +23,10 @@ def normalized(url):
 def recover(row):
     row = dict(row)
     if row.get('sourceImagePath'):
+        cached_url = normalized(row.get('cachedSourceURL', ''))
+        cached_path = 'graphs/' + hashlib.sha256(cached_url.encode()).hexdigest()[:20] + '.jpg'
+        if cached_url and (Path('public') / cached_path).is_file():
+            row['sourceImagePath'] = cached_path
         row['imagePath'] = row['sourceImagePath']
     source = normalized(row.get('imgurURL', ''))
     cached = normalized(row.get('cachedSourceURL', row.get('_oldSource', '')))
@@ -60,6 +64,8 @@ def recover(row):
             temporary.write_bytes(new_data)
             temporary.replace(destination)
         row['imagePath'] = 'graphs/' + name
+        if row.get('sourceImagePath'):
+            row['sourceImagePath'] = row['imagePath']
         row['cachedSourceURL'] = source
         print(f"Cached: {row['movieName']}", flush=True)
         return row, True
@@ -78,12 +84,15 @@ def split_graphs(rows, metadata):
             continue
         source_path = row.get('sourceImagePath', row['imagePath'])
         with Image.open(Path('public') / source_path) as image:
-            if image.size != (1790, 1861):
+            layouts = {(1790, 1861): (865, 1858), (1922, 1987): (994, 1986)}
+            if image.size not in layouts:
                 raise ValueError('Edge of Tomorrow source layout changed; split needs review')
+            divider, bottom = layouts[image.size]
+            width = image.width
             for identifier, title, box, suffix in [
-                ('149', 'Edge of Tomorrow (2014)', (0, 0, 1790, 865), 'top'),
+                ('149', 'Edge of Tomorrow (2014)', (0, 0, width, divider), 'top'),
                 ('149-without-sine-wave-intro', 'Edge of Tomorrow (2014) | without sine wave intro',
-                 (0, 865, 1790, 1858), 'without-intro'),
+                 (0, divider, width, bottom), 'without-intro'),
             ]:
                 destination = ROOT / (Path(source_path).stem + '-' + suffix + '.png')
                 output = io.BytesIO()
