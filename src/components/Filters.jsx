@@ -13,13 +13,16 @@ function isEnter(event) {
 
 export default function Filters({ movies, state, update, selectFilter, scrollToResults }) {
   const [frequencyInput, setFrequencyInput] = useState(() => state.frequency || '');
+  const [rankingEnabled, setRankingEnabled] = useState(() => Boolean(state.frequency || state.octave));
   const queryEditing = useRef(false);
   const rankingActive = Boolean(state.frequency || state.octave);
 
   useEffect(() => {
     function restore() {
       queryEditing.current = false;
-      setFrequencyInput(readState().frequency || '');
+      const restoredState = readState();
+      setFrequencyInput(restoredState.frequency || '');
+      setRankingEnabled(Boolean(restoredState.frequency || restoredState.octave));
     }
     window.addEventListener('popstate', restore);
     return () => window.removeEventListener('popstate', restore);
@@ -27,6 +30,7 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
 
   function resetFilters() {
     setFrequencyInput('');
+    setRankingEnabled(false);
     queryEditing.current = false;
     update({ q: '', year: '', format: '', letter: '', frequency: '', octave: '' });
   }
@@ -107,7 +111,42 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
         <button className={`${COMPACT_BUTTON} bg-transparent`} onClick={resetFilters}>Reset filters</button>
       </section>
 
-      <form
+      <nav className="mt-3 flex flex-wrap gap-1 desktop:gap-[5px]" aria-label="Browse by title">
+        {LETTERS.map(letter => (
+          <button
+            className="min-h-8.5 min-w-7.5 flex-none px-2 py-1.5 text-[11px] desktop:min-h-[33px] desktop:min-w-[31px]"
+            key={letter || 'all'}
+            aria-pressed={!state.q.trim() && state.letter === letter}
+            onClick={() => selectFilter({ letter, q: '' })}
+          >
+            {letter === '' ? 'All' : letter === '0-9' ? '0–9' : letter}
+          </button>
+        ))}
+      </nav>
+
+      <label className="mx-auto mt-2.5 flex min-h-8.5 w-fit cursor-pointer flex-row items-center gap-2 text-[12px]">
+        <input
+          className="peer sr-only"
+          type="checkbox"
+          role="switch"
+          checked={rankingEnabled}
+          onChange={event => {
+            const enabled = event.target.checked;
+            setRankingEnabled(enabled);
+            if (!enabled) {
+              setFrequencyInput('');
+              update({ frequency: '', octave: '' });
+            }
+          }}
+        />
+        <span
+          aria-hidden="true"
+          className="relative h-5 w-9 shrink-0 rounded-full border border-[#52655a] bg-[#324138] transition-colors after:absolute after:left-0.5 after:top-0.5 after:h-3.5 after:w-3.5 after:rounded-full after:bg-white after:transition-transform peer-checked:border-[#78b88e] peer-checked:bg-[#39734c] peer-checked:after:translate-x-4 peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[#78b88e]"
+        />
+        Rank movies by output
+      </label>
+
+      {rankingEnabled && <form
         className="mt-2.5 flex flex-wrap items-end gap-2.5 rounded-lg border border-[#324138] bg-[#152019] px-4 py-3"
         onSubmit={submitRanking}
       >
@@ -170,20 +209,8 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
             : 'Single-frequency ranking uses the value at that frequency, not an average.'}
           {' '}Values are estimates as there is no numeric data, the graphs are analysed using Python.
         </span>
-      </form>
+      </form>}
 
-      <nav className="mt-3 flex flex-wrap gap-1 desktop:gap-[5px]" aria-label="Browse by title">
-        {LETTERS.map(letter => (
-          <button
-            className="min-h-8.5 min-w-7.5 flex-none px-2 py-1.5 text-[11px] desktop:min-h-[33px] desktop:min-w-[31px]"
-            key={letter || 'all'}
-            aria-pressed={!state.q.trim() && state.letter === letter}
-            onClick={() => selectFilter({ letter, q: '' })}
-          >
-            {letter === '' ? 'All' : letter === '0-9' ? '0–9' : letter}
-          </button>
-        ))}
-      </nav>
     </>
   );
 }
