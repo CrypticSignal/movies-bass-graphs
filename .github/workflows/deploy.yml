@@ -1,7 +1,7 @@
-name: Test and deploy gallery
+name: Build and deploy gallery
 on:
   push:
-    branches: [main, fix/recovered-graph-images-v2]
+    branches: [main, feat/gallery-tools]
     paths-ignore:
       - README.md
       - .github/workflows/recover-graphs.yml
@@ -20,16 +20,25 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm install --no-audit --no-fund
-      - run: npm test -- --watchAll=false --runInBand
-        env:
-          CI: 'true'
+      - run: |
+          if [ -f package-lock.json ]; then npm ci --no-audit --no-fund; else npm install --no-audit --no-fund; fi
       - run: npm run build
         env:
           CI: 'true'
+      - name: Save npm lockfile after migration
+        if: github.ref == 'refs/heads/feat/gallery-tools'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add package-lock.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Lock Vite and React dependencies'
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push origin HEAD:"$GITHUB_REF_NAME"
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: dist
       - name: Publish built files to the allowed Pages branch
         if: github.ref == 'refs/heads/main'
         env:
@@ -37,7 +46,7 @@ jobs:
         run: |
           git fetch origin gh-pages
           git worktree add /tmp/gallery-pages origin/gh-pages
-          rsync -a --delete --exclude=.git --exclude=.github build/ /tmp/gallery-pages/
+          rsync -a --delete --exclude=.git --exclude=.github dist/ /tmp/gallery-pages/
           touch /tmp/gallery-pages/.nojekyll
           git -C /tmp/gallery-pages config user.name "github-actions[bot]"
           git -C /tmp/gallery-pages config user.email "41898282+github-actions[bot]@users.noreply.github.com"

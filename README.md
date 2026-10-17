@@ -1,61 +1,54 @@
 # Movies Bass Graphs
 
-A searchable gallery of bass frequency graphs for 618 movies and TV entries.
+Explore bass frequency graphs for 618 movie and television entries.
 
-[Open the gallery](https://crypticsignal.github.io/movies-bass-graphs/)
+[Open the archive](https://crypticsignal.github.io/movies-bass-graphs/)
 
-## Using the gallery
+## Browse, inspect, and compare
 
-Search by title and browse results in pages of 10. Click a graph to open its full-size image in the same tab.
+- Search titles and filter by year, type, and soundtrack format.
+- Open a graph in the viewer, zoom up to 400%, scroll to pan, or enter fullscreen.
+- Move between graphs in the filtered results without leaving the viewer.
+- Select up to two graphs for side-by-side comparison, with shared zoom controls. On narrow screens they stack vertically.
+- Use **Copy view link** to share your search, filters, page, selected graphs, and open viewer. Refresh and browser Back/Forward restore the view.
 
-The catalogue and 611 recovered graph images are bundled with the site, so visitors do not need access to Imgur or Google Sheets. Seven entries could not be recovered and display an unavailable message. Images load as you scroll.
+Comparison preserves each image's original axes. Check labelled scales and measurement methods before comparing values; the graphs are not normalized.
 
-This app displays existing graphs; it does not analyse audio or generate measurements. Refer to each graph for its title, soundtrack format, axes, and units.
+## Catalogue and metadata
 
-## Run locally
+The catalogue and 611 recovered graph images are bundled with the site. Seven unavailable entries remain visible with an explanation. No Imgur or Google Sheets access is required at runtime.
 
-Install Node.js 22 and npm:
+Years and types are inferred from titles. Soundtrack formats are read automatically from graph headers and can contain recognition errors; the label on the graph remains authoritative. Unrecognized formats stay **Unknown**.
+
+- `public/graphs/catalogue.json`: IDs, titles, source references, and bundled image paths.
+- `public/graphs/metadata.json`: soundtrack format labels keyed by entry ID.
+- `scripts/extract-metadata.py`: optional metadata extraction with Python, Pillow, and Tesseract. It is not needed to build or run the app.
+- The **Extract soundtrack metadata** workflow regenerates metadata when the extraction script changes, or when manually dispatched.
+
+To repair a title, edit its catalogue entry. To correct an automatically read format, edit its entry in `metadata.json`. Metadata extraction overwrites that generated file, so retain any corrections when regenerating it.
+
+The [original spreadsheet](https://docs.google.com/spreadsheets/d/1SdwJ_mfYgghxZG8gy41ke22e2AM9gUPTB1EmZgYcHoY/edit) linked to Imgur graphs. Copies were recovered in October 2026. Preserve the credits shown on each graph.
+
+## Develop and build
+
+Use Node.js 22.12+ and npm.
 
 ```sh
 git clone https://github.com/CrypticSignal/movies-bass-graphs.git
 cd movies-bass-graphs
-npm install
-npm start
+npm ci
+npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). No API keys or environment variables are required.
-
-## Checks and production build
+Open the URL printed by Vite, including the `/movies-bass-graphs/` path.
 
 ```sh
-npm test -- --watchAll=false
 npm run build
+npm run preview
 ```
 
-The build is written to `build/`. The app uses the `homepage` setting in [package.json](package.json) for its asset base path. Change it when hosting under a different URL.
+Vite writes the production site to `dist/`. Update `base` in `vite.config.js` if hosting under another path. No API keys are required.
 
-The [deployment workflow](.github/workflows/deploy.yml) tests and builds the app, then deploys pushes to `main` using GitHub Pages. Builds are copied to the existing `gh-pages` branch, and publishing runs from that branch to respect the repository's deployment restrictions.
+The build workflow publishes `dist/` to the existing `gh-pages` branch. Publishing runs from that branch to respect the repository's deployment restriction. Only successful builds are published.
 
-## Catalogue and images
-
-The original catalogue came from [this Google spreadsheet](https://docs.google.com/spreadsheets/d/1SdwJ_mfYgghxZG8gy41ke22e2AM9gUPTB1EmZgYcHoY/edit), which linked to images on Imgur. Copies were recovered in October 2026 to remove the runtime dependency on Imgur and its regional availability.
-
-[`public/graphs/catalogue.json`](public/graphs/catalogue.json) contains:
-
-| Field | Meaning |
-| --- | --- |
-| `id` | Entry identifier. |
-| `movieName` | Display title and search text. |
-| `imgurURL` | Original source reference, retained for provenance. |
-| `imagePath` | Bundled image path relative to `public/`, or `null` when unavailable. |
-
-To add or repair a graph, place its image in `public/graphs/` and update the matching catalogue entry. Preserve any credits shown on the original graph. Catalogue changes are included on the next deployment; the spreadsheet is no longer fetched at runtime.
-
-## Project structure
-
-- [`src/App.js`](src/App.js): catalogue loading, search, pagination, graph rendering, and error handling.
-- [`src/App.test.js`](src/App.test.js): local image loading, search/pagination, unavailable images, and retry tests.
-- [`src/App.css`](src/App.css): responsive gallery layout.
-- [`public/graphs/`](public/graphs/): recovered images and catalogue.
-
-Built with React 17, Create React App, and React Bootstrap.
+Built with React 19, Vite, and plain CSS.
