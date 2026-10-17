@@ -50,15 +50,7 @@ export default function GraphCard({
         </div>
         <div className="flex w-full flex-wrap items-center gap-2 text-[11px]">
           {hasImage && <ZoomControl value={zoom} onChange={setZoom} min={100} max={300} compact />}
-          <div className="grid flex-1 grid-cols-2 gap-2">
-          <button
-            className="px-2.5 py-[7px] text-[11px] whitespace-nowrap"
-            disabled={!hasImage}
-            onClick={onInspect}
-            aria-label={`Inspect graph for ${movie.movieName}`}
-          >
-            Inspect graph ↗
-          </button>
+          <div className="flex flex-1 justify-end">
           <button
             className="px-2.5 py-[7px] text-[11px] whitespace-nowrap"
             aria-pressed={selected}
@@ -72,18 +64,28 @@ export default function GraphCard({
         </div>
       </div>
       {hasImage ? (
-        <div className="overflow-auto bg-black">
-        <button
-          className="group relative block w-full rounded-none border-0 bg-black p-0 hover:bg-black"
-          style={zoomStyle(zoom)}
-          onClick={onInspect}
-          aria-label={`View graph for ${movie.movieName}`}
-        >
-          <GraphImage movie={movie} loading="lazy" />
-          <span className="absolute right-3 bottom-3 rounded border border-[#6b835a] bg-[#203127e8] px-[9px] py-1.5 text-[10px] opacity-0 transition-opacity duration-150 group-hover:opacity-100 group-focus-visible:opacity-100 motion-reduce:transition-none">
-            Inspect graph ↗
-          </span>
-        </button>
+        <div className="relative">
+          <div className="overflow-auto bg-black">
+            <button
+              className="block w-full rounded-none border-0 bg-black p-0 hover:bg-black"
+              style={zoomStyle(zoom)}
+              onClick={onInspect}
+              aria-label={`View graph for ${movie.movieName}`}
+            >
+              <GraphImage movie={movie} loading="lazy" />
+            </button>
+          </div>
+          <button
+            className="absolute top-2 right-2 flex h-10 w-10 items-center justify-center rounded border border-[#6b835a] bg-[#203127e8] p-0 text-accent"
+            onClick={onInspect}
+            aria-label={`Inspect graph for ${movie.movieName}`}
+            title="Inspect graph"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </button>
         </div>
       ) : <GraphImage movie={movie} />}
       {(reading || overallPeak) && (
