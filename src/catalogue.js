@@ -1,4 +1,16 @@
 export const OCTAVE_RANGES = ['10-20', '20-40', '30-60', '40-80', '50-100', '60-120'];
+export const FREQUENCY_STEP = 0.5;
+export const MIN_FREQUENCY = 0.5;
+export const MAX_FREQUENCY = 200;
+
+// Empty and invalid inputs use the same empty-string value as the URL state.
+export function parseFrequency(value) {
+  const frequency = Number(String(value).replace(',', '.'));
+  return Number.isInteger(frequency / FREQUENCY_STEP)
+    && frequency >= MIN_FREQUENCY && frequency <= MAX_FREQUENCY
+    ? frequency : '';
+}
+
 export const imageURL = movie => movie?.imagePath ? import.meta.env.BASE_URL + movie.imagePath : null;
 
 export function metadata(movie, extra = {}) {
@@ -7,35 +19,6 @@ export function metadata(movie, extra = {}) {
   const type = /\bseason\b|\bseries\b|Cosmos: A Spacetime Odyssey/i.test(title)
     ? 'TV series' : year !== 'Unknown' ? 'Movie' : 'Unknown';
   return { ...movie, year, type, format: 'Unknown', ...extra, id: String(movie.id) };
-}
-
-export function readState(search = window.location.search) {
-  const p = new URLSearchParams(search);
-  const frequency = Number(p.get('hz'));
-  const octave = OCTAVE_RANGES.includes(p.get('octave')) ? p.get('octave') : '';
-  const letter = (p.get('letter') || '').toUpperCase();
-  return {
-    octave,
-    frequency: !octave && Number.isInteger(frequency * 2) && frequency >= 0.5 && frequency <= 200 ? frequency : '',
-    curve: p.get('curve') === 'red' ? 'red' : 'green',
-    q: p.get('q') || '', year: p.get('year') || '', format: p.get('format') || '',
-    letter: /^(?:[A-Z]|0-9)$/.test(letter) ? letter : '',
-    view: p.get('view') === 'comparison' ? 'comparison' : '',
-    scope: p.get('scope') === 'comparison' ? 'comparison' : '',
-    graph: p.get('graph') || '', compare: [...new Set((p.get('compare') || '').split(',').filter(Boolean))].slice(0, 2),
-  };
-}
-
-export function stateURL(state) {
-  const p = new URLSearchParams();
-  for (const key of ['q', 'year', 'format', 'letter', 'graph']) if (state[key]) p.set(key, state[key]);
-  if (state.octave) p.set('octave', state.octave);
-  else if (state.frequency) p.set('hz', String(state.frequency));
-  if ((state.frequency || state.octave) && state.curve === 'red') p.set('curve', 'red');
-  if (state.view === 'comparison' && state.compare.length) p.set('view', 'comparison');
-  if (state.graph && state.scope === 'comparison') p.set('scope', 'comparison');
-  if (state.compare.length) p.set('compare', state.compare.join(','));
-  return window.location.pathname + (p.size ? '?' + p.toString() : '') + window.location.hash;
 }
 
 function initial(title) {
@@ -51,29 +34,30 @@ export function levelAt(movie, frequency, curve = 'green') {
   return Number.isFinite(value) ? value : null;
 }
 
-export function rankingLevel(movie, state) {
-  if (!state.octave) return levelAt(movie, state.frequency, state.curve);
-  if (!OCTAVE_RANGES.includes(state.octave)) return null;
+// Single-frequency values and octave summaries share one entry point.
+export function rankingReading(movie, state) {
+  if (!state.octave) {
+    return { level: levelAt(movie, state.frequency, state.curve), peak: null };
+  }
+  if (!OCTAVE_RANGES.includes(state.octave)) return { level: null, peak: null };
+
   const [low, high] = state.octave.split('-').map(Number);
   let sum = 0;
-  for (let frequency = low; frequency <= high; frequency += 0.5) {
-    const value = levelAt(movie, frequency, state.curve);
-    if (value === null) return null;
-    sum += value;
-  }
-  return sum / ((high - low) / 0.5 + 1);
-}
-
-export function octavePeak(movie, state) {
-  if (!OCTAVE_RANGES.includes(state.octave)) return null;
-  const [low, high] = state.octave.split('-').map(Number);
+  let count = 0;
   let peak = null;
-  for (let frequency = low; frequency <= high; frequency += 0.5) {
+  for (let frequency = low; frequency <= high; frequency += FREQUENCY_STEP) {
     const level = levelAt(movie, frequency, state.curve);
-    if (level === null) return null;
+    // A partial octave must not be presented as a complete reading.
+    if (level === null) return { level: null, peak: null };
+    sum += level;
+    count += 1;
     if (!peak || level > peak.level) peak = { level, frequency };
   }
-  return peak;
+  return { level: sum / count, peak };
+}
+
+export function rankingLevel(movie, state) {
+  return rankingReading(movie, state).level;
 }
 
 export function filterMovies(movies, state) {
