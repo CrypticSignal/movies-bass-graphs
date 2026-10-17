@@ -207,7 +207,7 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
           {state.octave
             ? 'Octave ranking uses the arithmetic mean of dB readings at every 0.5 Hz, including both endpoints. The complete range must be readable.'
             : 'Single-frequency ranking uses the value at that frequency, not an average.'}
-          {' '}Values are estimates as there is no numeric data, the graphs are analysed using Python.
+          {' '}Values are estimates derived from graph images using Pillow for image processing, Tesseract OCR to read axis labels, and NumPy to extract curve values, as the underlying numerical data is unavailable.
         </span>
       </form>}
 

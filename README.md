@@ -3,9 +3,8 @@
 Explore bass frequency graphs of movies. Source: https://www.avsforum.com/threads/the-ultimate-list-of-bass-in-movies-w-frequency-charts-bass-charts-are-on-the-first-page.2763785
 
 - Filter by title, year, sound format or title starting number/letter. Opening punctuation is ignored, e.g. `[Rec]` appears under the "R" letter filter.
-- Rank movies by estimated bass level at a particular frequency or by the average level across a selected octave (see [Ranking by frequency or octave](#ranking-by-frequency-or-octave)).
+- Rank movies by their output at a particular frequency, or by their output across one of the following octaves: 10–20 Hz, 20–40 Hz, 30–60 Hz, 40–80 Hz, 50–100 Hz, or 60–120 Hz. See [Ranking by frequency or octave](#ranking-by-frequency-or-octave)
 - Select up to two graphs to compare, with shared zoom controls.
-- Rank movies by their output at a particular frequency, or by their output across one of the following octaves: 10–20 Hz, 20–40 Hz, 30–60 Hz, 40–80 Hz, 50–100 Hz, or 60–120 Hz
 
 ## Table of Contents
 
@@ -20,15 +19,15 @@ Explore bass frequency graphs of movies. Source: https://www.avsforum.com/thread
 
 ## Ranking by frequency or octave
 
-Use the **Rank by** control to choose how to compare bass levels:
+Use the **Rank movies by output** toggle to rank movies based on one of the following criteria:
 
 - **Single frequency:** select **Single frequency**, then enter a frequency in Hz. For example, enter **20** to rank movies by their level at 20 Hz, without averaging across a band. Press Enter to scroll to the results.
 - **Octave average:** select an octave from **Rank by**: **10–20, 20–40, 30–60, 40–80, 50–100, or 60–120 Hz**. For example, choose **20–40 Hz octave average** to rank movies by their average level across that range rather than at one frequency.
 
 For either mode, choose **Green (peak dB)** or **Red (average dB)** in **Curve**. Ranking updates automatically, with the highest estimated dB level first. Existing title, year, sound format and title starting letter/number filters still apply. Use **Clear ranking** to return to browsing without changing those filters.
 
-- Single-frequency values are digitized at that frequency's pixel column.
-- Octave rankings use the arithmetic mean of the selected curve's dB samples every **0.5 Hz**, including both endpoints; every sample in the range must be readable. This is an average of dB readings, not an energy-weighted average. Each ranked octave card also shows the highest sampled value within that octave and its frequency for the selected curve; ties show the lowest matching frequency. This additional peak reading does not determine the octave ranking.
+- Single-frequency rankings use the saved reading at the entered frequency. Frequencies must be between **0.5 and 200 Hz** in **0.5 Hz increments** (for example, 20 or 20.5 Hz); other values are not accepted or rounded to a nearby sample. Readings are not interpolated between samples.
+- Octave rankings use the arithmetic mean of the selected curve's dB samples every **0.5 Hz**, including both endpoints; every sample in the range must be readable. This is an average of dB readings, not an energy-weighted average. Each ranked octave card also shows **Octave Peak**, the highest sampled value within that octave, and **Peak**, an additional reading showing the highest available sampled value across the selected curve's entire analysed frequency range. Both show the corresponding frequency; ties show the lowest matching frequency. Neither peak reading determines the movie's octave output ranking, which is based on the octave average.
 
 Values are estimates extracted from graph images using Python, not original numeric soundtrack measurements.
 
@@ -38,7 +37,15 @@ The analysis requires consistent frequency and dB axis labels. Uncertain graphs,
 
 ### How readings are extracted
 
-GitHub Actions runs Python with Pillow and NumPy to find the plot grid and coloured curves, and Tesseract OCR to read axis labels. Consistent labels calibrate pixel coordinates to Hz and dB. The reader then samples the selected pixel column at each 0.5 Hz point, saves estimated curve values, and excludes ambiguous readings. The browser loads these saved readings and sorts or averages them.
+The analysis runs ahead of time in GitHub Actions, not in the browser. It reads the saved graph images rather than the original movie audio or numerical soundtrack data.
+
+1. **Locate the plot:** Pillow and NumPy process the image to identify its grid and plot boundaries.
+2. **Calibrate the axes:** Tesseract OCR reads frequency and dB labels. Multiple consistent labels are used to map pixel coordinates to Hz and dB; unreliable calibrations are rejected. Saved manual axis calibrations are used for specified images where available.
+3. **Identify the curves:** colour thresholds detect the green and red traces, while artwork masking reduces interference from embedded images.
+4. **Extract readings:** at 0.5 Hz intervals, within the calibrated range and up to 200 Hz, the analyzer selects the corresponding pixel column. For each curve, it converts the median vertical position of the remaining coloured pixels into a dB value, rounded to one decimal place. Missing curve pixels or frequencies outside the calibrated range produce no reading.
+5. **Save and rank:** the estimated readings are saved for the browser to load. The browser uses these values for single-frequency rankings and calculates arithmetic means for octave rankings.
+
+These are estimates of the values displayed on the graph, not independent measurements of playback SPL. Image resolution, compression, artwork, and OCR errors can affect the results; rounding to one decimal place does not imply 0.1 dB accuracy.
 
 ## Catalogue and metadata
 
