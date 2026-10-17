@@ -15,7 +15,7 @@ from PIL import Image, ImageOps
 
 ROOT = Path('public/graphs')
 OUTPUT = ROOT / 'levels.json'
-VERSION = 1
+VERSION = 2
 MAX_HZ = 200
 
 def ocr(image, offset=(0, 0), scale=3):
@@ -64,11 +64,14 @@ def analyze(path):
     if width < 500 or height < 200:
         raise ValueError('Image too small')
     r, g, b = pixels[:, :, 0], pixels[:, :, 1], pixels[:, :, 2]
-    grey = (np.max(pixels, axis=2) - np.min(pixels, axis=2) < 18) & (r > 45)
+    grey = (np.max(pixels, axis=2) - np.min(pixels, axis=2) < 18) & (r > 45) & (r < 230)
     lines = centres(np.mean(grey[:, int(width * .05):int(width * .90)], axis=1) > .65)
     if len(lines) < 5:
         raise ValueError('Plot grid not detected')
-    bottom = max(lines)
+    dark_rows = np.flatnonzero(np.mean(np.max(pixels[:, int(width * .05):int(width * .90)], axis=2) < 45, axis=1) > .65)
+    if not len(dark_rows):
+        raise ValueError('Plot background uncertain')
+    bottom = float(dark_rows[-1] + 1)
     if bottom < height * .6 or bottom > height - 5:
         raise ValueError('Plot boundary uncertain')
     right_width = max(80, int(width * .065))
@@ -89,7 +92,8 @@ def analyze(path):
         raise ValueError('dB scale uncertain')
     plot_top = min(p[0] for p in db_inliers)
     vertical = centres(np.mean(grey[int(height * .2):int(bottom), :], axis=0) > .65)
-    labels = ocr(image.crop((0, int(bottom), width, height)), (0, int(bottom)))
+    label_top = height - min(60, max(30, int(height * .06)))
+    labels = ocr(image.crop((0, label_top, width, height)), (0, label_top))
     frequency_points = []
     for text, x, y in labels:
         match = re.fullmatch(r'(\d{1,3})(?:Hz)?', text, re.I)
