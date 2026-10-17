@@ -54,7 +54,7 @@ def parse_films(html):
         if not title:
             raise RuntimeError('Empty film title in AVS list; catalogue unchanged')
         rows.append({'movieName': title, 'imgurURL': direct_url(anchor['href'])})
-    if len(rows) < 500 or len({row['movieName'].casefold() for row in rows}) != len(rows):
+    if len(rows) < 500:
         raise RuntimeError(f'Unexpected AVS film list ({len(rows)} entries); catalogue unchanged')
     return rows
 

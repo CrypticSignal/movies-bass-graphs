@@ -103,23 +103,30 @@ def main():
     remote = read_films()
     metadata = json.loads(METADATA.read_text()) if METADATA.exists() else {}
     base_rows = [row for row in previous if not row.get('splitFrom')]
-    by_source = {image_key(row.get('imgurURL', '')): row for row in base_rows if row.get('imgurURL')}
-    by_title = {row['movieName'].casefold(): row for row in base_rows}
+    by_source, by_title = {}, {}
+    for row in base_rows:
+        by_source.setdefault(image_key(row.get('imgurURL', '')), []).append(row)
+        by_title.setdefault(row['movieName'].casefold(), []).append(row)
     occupied = {str(row['id']) for row in previous}
     used = set()
     pending = []
     for incoming in remote:
         source = normalized(incoming['imgurURL'])
-        old = by_source.get(image_key(source)) or by_title.get(incoming['movieName'].casefold())
-        if old and str(old['id']) in used:
-            old = None
+        source_matches = [row for row in by_source.get(image_key(source), []) if str(row['id']) not in used]
+        title_matches = [row for row in by_title.get(incoming['movieName'].casefold(), []) if str(row['id']) not in used]
+        exact_matches = [row for row in source_matches if row['movieName'].casefold() == incoming['movieName'].casefold()]
+        candidates = exact_matches or source_matches or title_matches
+        old = candidates[0] if candidates else None
         if old:
             item = dict(old)
             item['_oldSource'] = old.get('imgurURL', '')
         else:
-            identifier = 'avs-' + hashlib.sha256(incoming['movieName'].casefold().encode()).hexdigest()[:16]
-            if identifier in occupied:
-                raise RuntimeError('Duplicate film identity in AVS list; catalogue unchanged')
+            base_identifier = 'avs-' + hashlib.sha256((incoming['movieName'].casefold() + '|' + image_key(source)).encode()).hexdigest()[:16]
+            identifier = base_identifier
+            occurrence = 1
+            while identifier in occupied:
+                occurrence += 1
+                identifier = f'{base_identifier}-{occurrence}'
             occupied.add(identifier)
             item = {'id': identifier, 'imagePath': None, '_oldSource': ''}
         used.add(str(item['id']))
