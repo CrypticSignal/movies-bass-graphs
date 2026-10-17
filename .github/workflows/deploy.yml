@@ -7,7 +7,8 @@ on:
       - .github/workflows/recover-graphs.yml
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
+  actions: write
 concurrency:
   group: gallery-${{ github.ref }}
   cancel-in-progress: true
@@ -29,17 +30,20 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: build
-  deploy:
-    if: github.ref == 'refs/heads/main'
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Publish built files to the allowed Pages branch
+        if: github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch origin gh-pages
+          git worktree add /tmp/gallery-pages origin/gh-pages
+          rsync -a --delete --exclude=.git --exclude=.github build/ /tmp/gallery-pages/
+          touch /tmp/gallery-pages/.nojekyll
+          git -C /tmp/gallery-pages config user.name "github-actions[bot]"
+          git -C /tmp/gallery-pages config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C /tmp/gallery-pages add .
+          if ! git -C /tmp/gallery-pages diff --cached --quiet; then
+            git -C /tmp/gallery-pages commit -m "Deploy gallery from $GITHUB_SHA"
+            git -C /tmp/gallery-pages push origin HEAD:gh-pages
+          fi
+          gh workflow run publish.yml --ref gh-pages
