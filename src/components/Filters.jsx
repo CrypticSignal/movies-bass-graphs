@@ -72,7 +72,7 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
           <input
             className={CONTROL}
             type="search"
-            placeholder="Try Blade Runner…"
+            placeholder="Blade Runner"
             value={state.q}
             onKeyDown={event => {
               if (!isEnter(event)) return;

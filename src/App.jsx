@@ -46,7 +46,7 @@ export default function App() {
   const filtered = filterMovies(movies, state);
   const rankingActive = Boolean(state.frequency || state.octave);
   const rankingLabel = state.octave
-    ? `average across ${state.octave.replace('-', '–')} Hz`
+    ? `average across the ${state.octave.replace('-', '–')} Hz octave`
     : `at ${state.frequency} Hz`;
   const unrankedMovies = rankingActive
     ? filtered.filter(movie => rankingLevel(movie, state) === null)
@@ -138,8 +138,7 @@ export default function App() {
           <div className="mt-5 mb-3 flex flex-col items-start justify-between gap-0 text-[12px] text-[#9bad9f] desktop:my-0 desktop:flex-row desktop:items-center desktop:gap-3.5">
             <p className="mt-0 mb-2 text-[15px] desktop:my-[15px]">
               <strong className="text-[#e8f0e7]">{filtered.length}</strong>
-              {' '}{filtered.length === 1 ? 'entry' : 'entries'}
-              <span className="ml-2 text-[12px]"> / {movies.length} in the archive</span>
+              <span className="ml-2 text-[12px]"> / {movies.length} total</span>
             </p>
             <span>Select up to two graphs to compare</span>
           </div>
