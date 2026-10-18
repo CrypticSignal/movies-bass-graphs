@@ -30,7 +30,7 @@ For either mode, choose **Green (peak dB)** or **Red (average dB)** in **Curve**
 - Single-frequency rankings use the saved reading at the entered frequency. Frequencies must be between **0.5 and 160 Hz** in **0.5 Hz increments** (for example, 20 or 20.5 Hz); other values are not accepted or rounded to a nearby sample. Readings are not interpolated between samples.
 - Octave rankings use the arithmetic mean of the selected curve's dB samples every **0.5 Hz**, including both endpoints; every sample in the range must be readable. This is an average of dB readings, not an energy-weighted average. Each ranked octave card also shows **Octave Peak**, the highest sampled value within that octave, and **Peak**, an additional reading showing the highest available sampled value across the selected curve's entire analysed frequency range. Both show the corresponding frequency; ties show the lowest matching frequency. Neither peak value determines the movie's ranking. The rank is based on the average dB reading across the selected octave.
 
-Values are estimates extracted from graph images using Python, not original numeric soundtrack measurements.
+Values are estimated from graph image analysis. Small differences in readings between movies should not be treated as definitive.
 
 The analysis requires consistent frequency and dB axis labels. Uncertain graphs, missing curves, and frequencies outside a graph's calibrated range remain **unranked** and sort after readable results.
 

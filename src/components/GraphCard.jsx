@@ -80,8 +80,8 @@ export default function GraphCard({
       )}
       {movie.frequencyAnalysis && (
         <details className="mx-4 mt-0 mb-12 text-[12px] leading-relaxed text-[#9bad9f]">
-          <summary className="cursor-pointer py-1">About the peak readings</summary>
-          <p className="my-2">Peak readings are estimated from the graphs because the original numerical data is unavailable. Small differences in readings between movies should not be treated as definitive.
+          <summary className="cursor-pointer py-1">Info</summary>
+          <p className="my-2">Values are estimated from graph image analysis. Small differences in readings between movies should not be treated as definitive.
           </p>
           {movie.frequencyAnalysis.imagePath !== movie.imagePath && (
             <p className="my-2">Analysis does not match this image; its readings are not used.</p>
