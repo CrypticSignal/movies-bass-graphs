@@ -13,6 +13,9 @@ function isEnter(event) {
 
 export default function Filters({ movies, state, update, selectFilter, scrollToResults }) {
   const [frequencyInput, setFrequencyInput] = useState(() => state.frequency || '');
+  const [octaveInput, setOctaveInput] = useState(() => state.octave || '');
+  const [frequencyError, setFrequencyError] = useState('');
+  const frequencyRef = useRef(null);
   const [rankingEnabled, setRankingEnabled] = useState(() => Boolean(state.frequency || state.octave));
   const queryEditing = useRef(false);
   const rankingActive = Boolean(state.frequency || state.octave);
@@ -22,6 +25,8 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
       queryEditing.current = false;
       const restoredState = readState();
       setFrequencyInput(restoredState.frequency || '');
+      setOctaveInput(restoredState.octave || '');
+      setFrequencyError('');
       setRankingEnabled(Boolean(restoredState.frequency || restoredState.octave));
     }
     window.addEventListener('popstate', restore);
@@ -30,6 +35,8 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
 
   function resetFilters() {
     setFrequencyInput('');
+    setOctaveInput('');
+    setFrequencyError('');
     setRankingEnabled(false);
     queryEditing.current = false;
     update({ q: '', year: '', format: '', letter: '', frequency: '', octave: '' });
@@ -38,27 +45,15 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
   function submitRanking(event) {
     event.preventDefault();
     const frequency = parseFrequency(frequencyInput);
-    if (!state.octave && !frequency) return;
-    document.activeElement?.blur();
-    if (!state.octave) update({ frequency });
-    scrollToResults(350);
-  }
-
-  function enterFrequency(event) {
-    if (!isEnter(event)) return;
-    event.preventDefault();
-    event.stopPropagation();
-    const input = event.currentTarget;
-    const frequency = parseFrequency(input.value);
-    if (!frequency) {
-      input.setCustomValidity('Enter a frequency in Hz');
-      input.reportValidity();
+    if (!octaveInput && !frequency) {
+      setFrequencyError('Enter a frequency from 0.5 to 160 Hz in 0.5 Hz steps.');
+      frequencyRef.current?.focus();
       return;
     }
-    input.setCustomValidity('');
-    update({ frequency, octave: '' });
-    input.blur();
-    scrollToResults(400);
+    setFrequencyError('');
+    document.activeElement?.blur();
+    update({ frequency: octaveInput ? '' : frequency, octave: octaveInput });
+    scrollToResults(350);
   }
 
   const filters = [
@@ -135,6 +130,8 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
             setRankingEnabled(enabled);
             if (!enabled) {
               setFrequencyInput('');
+              setOctaveInput('');
+              setFrequencyError('');
               update({ frequency: '', octave: '' });
             }
           }}
@@ -149,14 +146,17 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
       {rankingEnabled && <form
         className="mt-2.5 flex flex-wrap items-end gap-2.5 rounded-lg border border-[#324138] bg-[#152019] px-4 py-3"
         onSubmit={submitRanking}
+        noValidate
       >
         <label className={LABEL}>
           Rank by
           <select
             className={CONTROL}
-            value={state.octave || ''}
+            value={octaveInput}
             onChange={event => {
               const octave = event.target.value;
+              setOctaveInput(octave);
+              setFrequencyError('');
               selectFilter({ octave, frequency: octave ? '' : parseFrequency(frequencyInput) });
             }}
           >
@@ -166,23 +166,23 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
             ))}
           </select>
         </label>
-        {!state.octave && (
+        {!octaveInput && (
           <label className={LABEL}>
             Frequency (Hz)
             <input
               className={`${CONTROL} w-[115px]`}
               type="text"
               inputMode="decimal"
+              ref={frequencyRef}
               required
+              aria-invalid={Boolean(frequencyError)}
+              aria-describedby={frequencyError ? 'frequency-error' : undefined}
               placeholder="20"
               enterKeyHint="go"
               value={frequencyInput}
-              onKeyDown={enterFrequency}
               onChange={event => {
-                event.target.setCustomValidity('');
-                const value = event.target.value;
-                setFrequencyInput(value);
-                update({ frequency: parseFrequency(value), octave: '' }, true);
+                setFrequencyError('');
+                setFrequencyInput(event.target.value);
               }}
             />
           </label>
@@ -194,21 +194,36 @@ export default function Filters({ movies, state, update, selectFilter, scrollToR
             <option value="red">Red (average dB)</option>
           </select>
         </label>
+        {!octaveInput && <button className={COMPACT_BUTTON} type="submit">Rank movies</button>}
         {rankingActive && (
           <button
             className={COMPACT_BUTTON}
             type="button"
-            onClick={() => { setFrequencyInput(''); update({ frequency: '', octave: '' }); }}
+            onClick={() => {
+              setFrequencyInput('');
+              setOctaveInput('');
+              setFrequencyError('');
+              update({ frequency: '', octave: '' });
+            }}
           >
             Clear ranking
           </button>
         )}
-        <span className="min-w-52.5 flex-1 text-[11px] leading-[1.6] text-[#9eafa6]">
-          {state.octave
-            ? 'Octave ranking uses the arithmetic mean of dB readings at every 0.5 Hz, including both endpoints. The complete range must be readable.'
-            : 'Single-frequency ranking uses the value at that frequency, not an average.'}
-          {' '}Values are estimates derived from graph images using Pillow for image processing, Tesseract OCR to read axis labels, and NumPy to extract curve values, as the underlying numerical data is unavailable.
-        </span>
+        {frequencyError && (
+          <p id="frequency-error" role="alert" className="m-0 basis-full text-[12px] text-accent">
+            {frequencyError}
+          </p>
+        )}
+        <details className="basis-full text-[12px] leading-relaxed text-[#9eafa6]">
+          <summary className="cursor-pointer py-2 text-accent">How rankings work</summary>
+          <ul className="my-2 space-y-2 pl-5">
+            <li><strong>Single frequency:</strong> uses the selected curve’s reading at exactly that frequency, not an average across nearby frequencies.</li>
+            <li><strong>Octave average:</strong> the arithmetic mean of dB readings sampled every 0.5 Hz across the selected range, including both endpoints. Every sample must be readable. This is an average of the dB readings, not a measure of perceived loudness.</li>
+            <li><strong>Estimates, not original measurements:</strong> values are extracted from graph images using Pillow for image processing and Tesseract OCR for axis labels. NumPy handles calculations on the graph’s pixel values. A Python script uses those calculations to identify coloured curves and estimate dB readings at each sampled frequency. The original numerical data is unavailable. Image resolution, overlapping curves, and axis calibration can affect accuracy. Small differences should not be treated as definitive.</li>
+            <li><strong>Unranked graphs:</strong> missing, incompatible, or unreliable readings are excluded from the rankings. You can still view and compare those graphs in “Show unranked movies”.</li>
+            <li><strong>Compare with care:</strong> a higher ranked value does not by itself mean a movie sounds louder or better.</li>
+          </ul>
+        </details>
       </form>}
 
     </>

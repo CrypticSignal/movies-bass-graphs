@@ -19,7 +19,7 @@ PLOT_BOUNDARY_VERSION = 2
 AXIS_READER_VERSION = 3
 START_HZ = 0.5
 STEP_HZ = 0.5
-MAX_HZ = 200
+MAX_HZ = 160
 
 def ocr(image, offset=(0, 0), scale=3):
     image = ImageOps.invert(image.convert('L')).resize((image.width * scale, image.height * scale))

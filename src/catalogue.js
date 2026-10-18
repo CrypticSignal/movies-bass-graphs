@@ -1,7 +1,7 @@
 export const OCTAVE_RANGES = ['10-20', '20-40', '30-60', '40-80', '50-100', '60-120'];
 export const FREQUENCY_STEP = 0.5;
 export const MIN_FREQUENCY = 0.5;
-export const MAX_FREQUENCY = 200;
+export const MAX_FREQUENCY = 160;
 
 // Empty and invalid inputs use the same empty-string value as the URL state.
 export function parseFrequency(value) {
@@ -74,6 +74,19 @@ export function rankingReading(movie, state) {
 
 export function rankingLevel(movie, state) {
   return rankingReading(movie, state).level;
+}
+
+export function unrankedReason(movie, state) {
+  if (!imageURL(movie)) return 'No graph image is available.';
+  const analysis = movie.frequencyAnalysis;
+  if (!analysis) return 'Frequency analysis is unavailable for this graph.';
+  if (analysis.imagePath !== movie.imagePath) return 'The analysis belongs to a different graph image and cannot be used.';
+  if (!analysis.profiles?.[state.curve]?.some(Number.isFinite)) {
+    return `No usable readings are available for the ${state.curve} curve.`;
+  }
+  return state.octave
+    ? `One or more readings in the ${state.octave.replace('-', '–')} Hz range are missing or unreliable; a complete range is required.`
+    : `No reliable ${state.curve} curve reading is available at ${state.frequency} Hz.`;
 }
 
 export function filterMovies(movies, state) {

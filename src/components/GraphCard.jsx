@@ -5,7 +5,7 @@ import { GraphImage, ZoomControl, zoomStyle } from './GraphTools.jsx';
 function FrequencyReading({ reading, overallPeak, curve, label }) {
   const { level, peak } = reading ?? {};
   return (
-    <p className="mt-3.5 mb-4 pl-4 pr-24 text-[12px] text-accent">
+    <p className="mt-3.5 mb-1 pl-4 pr-24 text-[12px] text-accent">
       {reading && (level === null
         ? `Unranked ${label} — no complete, reliable ${curve} curve reading`
         : `${level.toFixed(1)} dB ${label} | ${curve} curve`)}
@@ -77,6 +77,16 @@ export default function GraphCard({
           curve={curve}
           label={rankingLabel}
         />
+      )}
+      {movie.frequencyAnalysis && (
+        <details className="mx-4 mt-0 mb-12 text-[12px] leading-relaxed text-[#9bad9f]">
+          <summary className="cursor-pointer py-1">About these readings</summary>
+          <p className="my-2">Readings are estimated from the graph image because the original numerical data is unavailable. Small differences in readings between movies should not be treated as definitive.
+          </p>
+          {movie.frequencyAnalysis.imagePath !== movie.imagePath && (
+            <p className="my-2">Analysis does not match this image; its readings are not used.</p>
+          )}
+        </details>
       )}
       {hasImage && (
         <>

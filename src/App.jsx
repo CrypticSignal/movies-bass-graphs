@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { filterMovies, imageURL, rankingLevel } from './catalogue.js';
+import { filterMovies, imageURL, rankingLevel, unrankedReason } from './catalogue.js';
 import useCatalogue from './useCatalogue.js';
 import useViewState from './useViewState.js';
 import Filters from './components/Filters.jsx';
@@ -61,7 +61,7 @@ export default function App() {
     && (state.scope !== 'comparison' || state.compare.includes(movie.id)));
   const sequence = state.scope === 'comparison'
     ? selected
-    : visibleMovies.filter(movie => imageURL(movie));
+    : filtered.filter(movie => imageURL(movie));
   const index = viewing ? sequence.findIndex(movie => movie.id === viewing.id) : -1;
 
   useEffect(() => {
@@ -177,7 +177,27 @@ export default function App() {
                   <span className="ml-2 text-[12px] text-[#9bad9f]">({unrankedMovies.length})</span>
                 </summary>
                 <ul className="mt-3 mb-0 space-y-2 pl-5 text-[13px] text-[#c4d0c6]">
-                  {unrankedMovies.map(movie => <li key={movie.id}>{movie.movieName}</li>)}
+                  {unrankedMovies.map(movie => (
+                    <li key={movie.id} className="py-2">
+                      <span className="font-semibold">{movie.movieName}</span>
+                      <p className="my-1 text-[12px] text-[#9bad9f]">{unrankedReason(movie, state)}</p>
+                      <div className="flex flex-wrap gap-2">
+                        <button
+                          className="min-h-11 px-3 text-[12px]"
+                          disabled={!imageURL(movie)}
+                          onClick={() => inspect(movie)}
+                          aria-label={`View graph for ${movie.movieName}`}
+                        >View graph</button>
+                        <button
+                          className="min-h-11 px-3 text-[12px]"
+                          disabled={!imageURL(movie)}
+                          aria-pressed={state.compare.includes(movie.id)}
+                          aria-label={`Compare ${movie.movieName}`}
+                          onClick={() => toggleCompare(movie)}
+                        >{state.compare.includes(movie.id) ? '✓ Selected' : '+ Compare'}</button>
+                      </div>
+                    </li>
+                  ))}
                 </ul>
               </details>
             )}

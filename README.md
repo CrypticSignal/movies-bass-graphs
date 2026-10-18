@@ -9,6 +9,7 @@ Explore bass frequency graphs of movies. Source: https://www.avsforum.com/thread
 ## Table of Contents
 
 - [Ranking by frequency or octave](#ranking-by-frequency-or-octave)
+  - [How rankings work](#how-rankings-work)
   - [How readings are extracted](#how-readings-are-extracted)
 - [Catalogue and metadata](#catalogue-and-metadata)
   - [When metadata extraction runs](#when-metadata-extraction-runs)
@@ -21,19 +22,29 @@ Explore bass frequency graphs of movies. Source: https://www.avsforum.com/thread
 
 Use the **Rank movies by output** toggle to rank movies based on one of the following criteria:
 
-- **Single frequency:** select **Single frequency**, then enter a frequency in Hz. For example, enter **20** to rank movies by their level at 20 Hz, without averaging across a band. Press Enter to scroll to the results.
-- **Octave average:** select an octave from **Rank by**: **10–20, 20–40, 30–60, 40–80, 50–100, or 60–120 Hz**. For example, choose **20–40 Hz octave average** to rank movies by their average level across that range rather than at one frequency.
+- **Single frequency:** select **Single frequency**, then enter a frequency in Hz. For example, enter **20** to rank movies by their level at 20 Hz, without averaging across a band. Click **Rank movies** or press Enter in the frequency field to apply the ranking and scroll to the results.
+- **Octave average:** select an octave from **Rank by**: **10–20, 20–40, 30–60, 40–80, 50–100, or 60–120 Hz**. For example, choose **20–40 Hz octave average** to rank movies by their average level across that range rather than at one frequency. Selecting an octave applies the ranking immediately; no submission button is needed.
 
-For either mode, choose **Green (peak dB)** or **Red (average dB)** in **Curve**. Ranking updates automatically, with the highest estimated dB level first. Existing title, year, sound format and title starting letter/number filters still apply. Use **Clear ranking** to return to browsing without changing those filters.
+For either mode, choose **Green (peak dB)** or **Red (average dB)** in **Curve**. Curve changes take effect immediately, updating displayed readings and any active ranking. Single-frequency edits remain drafts until you click **Rank movies** or press Enter in the frequency field. Octave selections apply immediately. Rankings show the highest estimated dB level first. Existing title, year, sound format and title starting letter/number filters still apply. Use **Clear ranking** to return to browsing without changing those filters.
 
-- Single-frequency rankings use the saved reading at the entered frequency. Frequencies must be between **0.5 and 200 Hz** in **0.5 Hz increments** (for example, 20 or 20.5 Hz); other values are not accepted or rounded to a nearby sample. Readings are not interpolated between samples.
-- Octave rankings use the arithmetic mean of the selected curve's dB samples every **0.5 Hz**, including both endpoints; every sample in the range must be readable. This is an average of dB readings, not an energy-weighted average. Each ranked octave card also shows **Octave Peak**, the highest sampled value within that octave, and **Peak**, an additional reading showing the highest available sampled value across the selected curve's entire analysed frequency range. Both show the corresponding frequency; ties show the lowest matching frequency. Neither peak reading determines the movie's octave output ranking, which is based on the octave average.
+- Single-frequency rankings use the saved reading at the entered frequency. Frequencies must be between **0.5 and 160 Hz** in **0.5 Hz increments** (for example, 20 or 20.5 Hz); other values are not accepted or rounded to a nearby sample. Readings are not interpolated between samples.
+- Octave rankings use the arithmetic mean of the selected curve's dB samples every **0.5 Hz**, including both endpoints; every sample in the range must be readable. This is an average of dB readings, not an energy-weighted average. Each ranked octave card also shows **Octave Peak**, the highest sampled value within that octave, and **Peak**, an additional reading showing the highest available sampled value across the selected curve's entire analysed frequency range. Both show the corresponding frequency; ties show the lowest matching frequency. Neither peak value determines the movie's ranking. The rank is based on the average dB reading across the selected octave.
 
 Values are estimates extracted from graph images using Python, not original numeric soundtrack measurements.
 
 The analysis requires consistent frequency and dB axis labels. Uncertain graphs, missing curves, and frequencies outside a graph's calibrated range remain **unranked** and sort after readable results.
 
 `scripts/analyze_graphs.py` generates `public/graphs/levels.json` using Pillow, NumPy, and Tesseract. The daily AVS sync refreshes analysis for new or changed images and reuses cached analysis for unchanged images. The **Analyze graph levels** workflow can also be started manually. To force a full recalibration after improving the analyzer, increment its `VERSION`.
+
+### How rankings work
+
+The app's **How rankings work** disclosure explains:
+
+- **Single frequency:** uses the selected curve’s reading at exactly that frequency, not an average across nearby frequencies.
+- **Octave average:** the arithmetic mean of dB readings sampled every 0.5 Hz across the selected range, including both endpoints. Every sample must be readable. This is an average of dB readings, not a measure of perceived loudness.
+- **Estimates, not original measurements:** values are extracted from graph images using Pillow for image processing and Tesseract OCR for axis labels. NumPy handles calculations on the graph’s pixel values. A Python script uses those calculations to identify coloured curves and estimate dB readings at each sampled frequency. The original numerical data is unavailable. Image resolution, overlapping curves, and axis calibration can affect accuracy. Small differences should not be treated as definitive.
+- **Unranked graphs:** missing, incompatible, or unreliable readings are excluded from the rankings. You can still view and compare those graphs in “Show unranked movies”.
+- **Compare with care:** a higher ranked value does not by itself mean a movie sounds louder or better.
 
 ### How readings are extracted
 
@@ -42,10 +53,12 @@ The analysis runs ahead of time in GitHub Actions, not in the browser. It reads 
 1. **Locate the plot:** Pillow and NumPy process the image to identify its grid and plot boundaries.
 2. **Calibrate the axes:** Tesseract OCR reads frequency and dB labels. Multiple consistent labels are used to map pixel coordinates to Hz and dB; unreliable calibrations are rejected. Saved manual axis calibrations are used for specified images where available.
 3. **Identify the curves:** colour thresholds detect the green and red traces, while artwork masking reduces interference from embedded images.
-4. **Extract readings:** at 0.5 Hz intervals, within the calibrated range and up to 200 Hz, the analyzer selects the corresponding pixel column. For each curve, it converts the median vertical position of the remaining coloured pixels into a dB value, rounded to one decimal place. Missing curve pixels or frequencies outside the calibrated range produce no reading.
+4. **Extract readings:** at 0.5 Hz intervals, within the calibrated range and up to 160 Hz, the analyzer selects the corresponding pixel column. For each curve, it converts the median vertical position of the remaining coloured pixels into a dB value, rounded to one decimal place. Missing curve pixels or frequencies outside the calibrated range produce no reading.
 5. **Save and rank:** the estimated readings are saved for the browser to load. The browser uses these values for single-frequency rankings and calculates arithmetic means for octave rankings.
 
 These are estimates of the values displayed on the graph, not independent measurements of playback SPL. Image resolution, compression, artwork, and OCR errors can affect the results; rounding to one decimal place does not imply 0.1 dB accuracy.
+
+**What NumPy does:** NumPy handles calculations on the graph’s pixel values. A Python script uses those calculations to identify coloured curves and estimate dB readings at each sampled frequency. It does not analyse movie audio or read text labels; Tesseract reads the labels. This work happens before the website loads, and the browser uses the saved results.
 
 ## Catalogue and metadata
 
